@@ -1,108 +1,184 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align=center> Best beer</h1>
 
-Welcome nandabritto,
+<p align=center>Rate your beer
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+ <br>
+ </p>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+<img src="">
 
-## Gitpod Reminders
+Live app link [here]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+ ## Project Purpose
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Stories
 
-A blue button should appear to click: _Make Public_,
++ As a user, I would like to be able to …
 
-Another blue button should appear to click: _Open Browser_.
+1. 
+2. 
+3. 
+4. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### App Owner Stories
 
-To log into the Heroku toolbelt CLI:
++ As App Owner, I would like to be able to provide …
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+1. 
+2. 
+3. 
+4. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Functional Scope 
 
-------
+The following flowchart shows the flow of "Best Beer" graphically.
 
-## Release History
+<img width= "800" src="">
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Features
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Future Features
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+I would like to ...
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Languages Used
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Python 3.0
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Frameworks, Libraries & Programs Used
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Grammarly: Used to correct any spell mistakes on readme and app text.
+Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+GitHub: GitHub is used to store the project's code after being pushed from Git.
+Django: 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Testing and Code validation 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+All testing and code validation details are described in a separate file called TESTING.md and can be found [here]().
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Project Bugs and Solutions:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+| Bugs              | Solutions |
+| ---               | --------- |
+| 
+| 
+| 
+| 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Deployment 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+This app is deployed using Heroku.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<details>
+<summary>Heroku Deployment steps </summary>
+ 
+ 1. Ensure all dependencies are listed on requirements.txt. 
+ 
+ Write on python terminal ` pip3 freeze > requirements.txt` and a list with all requirements will be created to be read by Heroku. 
+ 
+ 2. Setting up your Heroku
 
-------
+    2.1 Go to Heroku website (https://www.heroku.com/). 
+    2.2 Login to Heroku and go to Create App.
+    
+    <img src="images/readme_images/deployment/heroku_login.png">
+    
+    <img src="images/readme_images/deployment/heroku_login2.png">
+    
+    2.3 Click in New and Create a new app
+    
+    <img src="images/readme_images/deployment/heroku_newapp.png">
+    
+    2.4 Choose a name and set your location
+    
+    <img src="images/readme_images/deployment/heroku_createnewapp.png">
+    
+    2.5. Navigate to the deploy tab
+    
+    <img src="images/readme_images/deployment/heroku_dashboard_deploy.png">
+    
+    2.6. Click in Connect to Github and search for 'nandabritto' GitHub account and 'search_your_brand' repository
+    
+    <img src="images/readme_images/deployment/heroku_github_deploy.png">
+    
+    2.7.  Navigate to the settings tab
+    
+    <img src="images/readme_images/deployment/heroku_dashboard_settings.png">
+    
+    2.8.  Click on Config Vars, and add your Twitter and Google Sheets API keys, Google Spreadsheets file and worksheets names.
+    
+    <img src="images/readme_images/deployment/heroku_vars_settings.png">
+    
+    2.9. Click on Add a buildpack on the same page. Select Python and node.js, ensuring Python is listed first after you save the changes.
+    
+    <img src="images/readme_images/deployment/heroku_buildpacks_settings.png">
 
-## FAQ about the uptime script
+3. Deployment on Heroku
 
-**Why have you added this script?**
+    3.1.  Navigate to the Deploy tab.
+    
+    <img src="images/readme_images/deployment/heroku_dashboard_deploy.png">
+    
+    3.2.  Choose main branch to deploy and enable automatic deployment to build Heroku everytime any changes are pushed on the repository.
+    
+    <img src="images/readme_images/deployment/heroku_automatic_deploys.png">
+    
+    3.3 Click on manual deploy to build the app.  When complete, click on View to redirect to the live site. 
+    
+    <img src="images/readme_images/deployment/heroku_view.png">
+</details>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<details>
+<summary>Forking the GitHub Repository </summary>
 
-**How will this affect me?**
+* By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+    Log in to GitHub and locate the GitHub Repository
+    At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
+    You should now have a copy of the original repository in your GitHub account.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+* Making a Local Clone
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+    Log in to GitHub and locate the GitHub Repository
+    Under the repository name, click "Clone or download".
+    To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+    Open Git Bash
+    Change the current working directory to the location where you want the cloned directory to be made.
+    Type git clone, and then paste the URL you copied in Step 3.
 
-**So….?**
+$ git clone https://github.com/nandabritto/Bestbeer
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Press Enter. Your local clone will be created.
+</details>
 
-**Can I opt out?**
+# Credits
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Work based on other code
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+[]() -
+[]() -<br>
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+# Acknowledgements
 
----
++ To the Slack community as I have used the different channels to find answers to problems!
++ Stack Overflow is a valuable resource for solving lots of issues.
++ W3schools and Python libraries documentation for general reference.
 
-Happy coding!
+I would also like to thank:
+
++ My husband Guilherme for all the support on stressful moments, help to figure out lots of bugs and for reviewing everything.
++ Code institute tutors, for help with several issues and bugs.
+
+
