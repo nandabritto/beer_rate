@@ -9,4 +9,5 @@ class BeerReviewAdmin(admin.ModelAdmin):
     search_fields = ['review']
     
 admin.site.register(BeerStyle)
+admin.site.register(Beer)
 admin.site.register(BeerReview, BeerReviewAdmin)
