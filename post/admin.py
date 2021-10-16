@@ -4,7 +4,7 @@ from .models import BeerStyle, Beer, BeerReview
 
 class BeerReviewAdmin(admin.ModelAdmin):
     model = BeerReview
-    list_display = ('beer', 'user_name', 'review', 'pub_date')
+    list_display = ('beer_style','beer', 'user_name', 'review', 'pub_date',)
     list_filter = ['pub_date', 'user_name']
     search_fields = ['review']
     
