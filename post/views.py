@@ -15,7 +15,7 @@ def review_list(request):
 
 def review_detail(request, review_id):
     review = get_object_or_404(BeerReview, pk=review_id)
-    return render(request, 'reviews/review_detail.html', {'review': review})
+    return render(request, 'reviews/review_list.html', {'review': review})
 
 
 def beer_list(request):
