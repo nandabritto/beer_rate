@@ -1,19 +1,16 @@
 <h1> Reviews List </h1>
 
-{{ review.beer.name }}
 
-{% if reviews_list %}
+{% if review_list %}
 
 <div>
     {% for review in review_list %}
 
 
     <div>
-        <h2> <a href="{% url 'review_list' %}">
-                {{ review.beer.name }}
-            </a></h2>
-
-        <h3> rated {{ review.bitterness }} | {{ review.money_value }} </h3>
+        <h4> Beer name: {{ review.beer.beer_name }}</h4>
+        <h5> Bitterness : {{ review.bitterness }} | Money/Value: {{ review.money_value }} </h5>
+        <h4>Beer review: <br /></h4>
         <p> {{ review.review }} </p>
 
     </div>
