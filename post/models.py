@@ -42,6 +42,14 @@ class BeerReview(models.Model):
         (5, '5'),
     )
 
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+
     beer_style = models.ForeignKey(BeerStyle, on_delete=models.CASCADE)
     beer = models.ForeignKey(Beer, on_delete=models.CASCADE)
     pub_date = models.DateTimeField('date published')
@@ -50,6 +58,7 @@ class BeerReview(models.Model):
     review = models.CharField(max_length=200)
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
+    # rating = models.IntegerField(choices=RATING_CHOICES)
 
 
 
