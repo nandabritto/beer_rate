@@ -11,8 +11,8 @@ class BeerStyle(models.Model):
         all_ratings = map(lambda x: x.rating, self.review_set.all())
         return np.mean(all_ratings)
         
-    def __unicode__(self):
-        return self.name
+    def __str__(self):
+        return self.beer_style
 
 class Beer(models.Model):
     beer_name = models.CharField(max_length=200)
@@ -22,8 +22,8 @@ class Beer(models.Model):
         all_ratings = map(lambda x: x.rating, self.review_set.all())
         return np.mean(all_ratings)
         
-    def __unicode__(self):
-        return self.name
+    def __str__(self):
+        return self.beer_name
 
 
 class BeerReview(models.Model):
@@ -50,8 +50,8 @@ class BeerReview(models.Model):
         (5, '5'),
     )
 
-    beer_style = models.ForeignKey(BeerStyle, on_delete=models.CASCADE)
-    beer = models.ForeignKey(Beer, on_delete=models.CASCADE)
+    beer_style = models.CharField(max_length=200)
+    beer = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE)
@@ -59,6 +59,8 @@ class BeerReview(models.Model):
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
     # rating = models.IntegerField(choices=RATING_CHOICES)
+
+    
 
 
 

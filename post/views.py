@@ -2,8 +2,10 @@ from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
 from .forms import Beer_Review_Form
 
+
 def home(request):
     return render(request, 'home.html', {})
+
 
 def add_review(request):
     form = Beer_Review_Form(request.POST or None)
@@ -14,6 +16,7 @@ def add_review(request):
     }
 
     return render(request, 'add_review.html', context)
+
 
 def review_list(request):
     review_list = BeerReview.objects.order_by('-pub_date')[:9]

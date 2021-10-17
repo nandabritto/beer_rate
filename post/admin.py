@@ -10,4 +10,4 @@ class BeerReviewAdmin(admin.ModelAdmin):
     
 admin.site.register(BeerStyle)
 admin.site.register(Beer)
-admin.site.register(BeerReview, BeerReviewAdmin)
+admin.site.register(BeerReview)

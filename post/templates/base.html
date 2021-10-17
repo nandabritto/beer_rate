@@ -44,17 +44,17 @@
 
                     <li class="nav-item">
                         {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                        <a class="nav-link" href="">Logout</a></li>
                         {% else %}
                         <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                        <a class="nav-link" href="">Register</a></li>
                         <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">Login</a></li>
 
                         {% endif %}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add-rate' %}">Rate your Beer</a>
+                        <a class="nav-link" href="{% url 'add_review' %}">Rate your Beer</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
