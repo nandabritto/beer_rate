@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1> List view</h1>
+<ul> 
+    <li>{% for beer in objects_list %} 
 
-<h1> Home</h1>
+    {{beer.beer }} - {{beer.user_name}} 
+    {{beer.review}}</li>
 
+    </ul>
+{% endfor %}
 {% endblock content %}

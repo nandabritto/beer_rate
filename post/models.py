@@ -1,4 +1,4 @@
-
+from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 import numpy as np
@@ -58,8 +58,13 @@ class BeerReview(models.Model):
     review = models.CharField(max_length=200)
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
-    # rating = models.IntegerField(choices=RATING_CHOICES)
+    # rating = models.IntegerField(choices=RATING_CHOICES)#
+    
+    def __str__(self):
+        return self.beer + '|' + str(self.user_name)
 
+    def get_absolute_url(self):
+        return reverse('beer-rate', kwargs={'pk': self.pk})
     
 
 

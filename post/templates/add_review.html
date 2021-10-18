@@ -5,10 +5,10 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="/add_review/" method="post">
+<form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
-
+ 
 {% endblock content %}
