@@ -1,12 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> List view</h1>
+
 <ul> 
-    <li>{% for beer in objects_list %} 
+   
+    {% if object_list %}
+    
+    <div>
+    
+        {% for review in object_list %} 
+    
+    
+        <div>
+            <h4> Beer name: {{ review.beer }}
+            </h4>
+            <h3> beer style : {{ review.beer_style }} </h3>
+            <h5> Bitterness : {{ review.bitterness }} | Money/Value: {{ review.money_value }} </h5>
+            <h4>Beer review: <br /></h4>
+            <p> {{ review.review }} </p>
+    
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    
+    <p> No reviews are available. </p>
+    
+    {% endif %}
+    
+    {% endblock content %}
+    
 
-    {{beer.beer }} - {{beer.user_name}} 
-    {{beer.review}}</li>
 
-    </ul>
-{% endfor %}
-{% endblock content %}
+
+
+
