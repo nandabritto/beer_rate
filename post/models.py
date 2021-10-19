@@ -49,9 +49,14 @@ class BeerReview(models.Model):
         (4, '4'),
         (5, '5'),
     )
-
-    beer_style = models.CharField(max_length=200)
-    beer = models.CharField(max_length=200)
+    
+    try: 
+        beer_style = BeerStyle()
+    except: 
+        beer_style = models.ForeignKey(
+        BeerStyle, on_delete=models.CASCADE)
+    beer = models.ForeignKey(
+        Beer, on_delete=models.CASCADE)
     pub_date = models.DateTimeField('date published')
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE)
