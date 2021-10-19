@@ -50,10 +50,7 @@ class BeerReview(models.Model):
         (5, '5'),
     )
     
-    try: 
-        beer_style = BeerStyle()
-    except: 
-        beer_style = models.ForeignKey(
+    beer_style = models.ForeignKey(
         BeerStyle, on_delete=models.CASCADE)
     beer = models.ForeignKey(
         Beer, on_delete=models.CASCADE)
