@@ -1,7 +1,13 @@
 body {
-    background: #9c4848 url("/static/images/background_home_page.jpg") ;
+    background: #9c4848 url("/static/images/background_home_page.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 100vh;
 }
 
+
+.container-welcome {
+    margin-top: 18%;
+    margin-left: 5%;
+    width: 34%;
+}
