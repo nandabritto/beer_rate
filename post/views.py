@@ -14,6 +14,7 @@ class AddReviewView(CreateView):
     model = BeerReview
     template_name = 'add_review.html'
     fields = '__all__'
+    
     def get_absolute_url(self):
         return reverse('home')
 
