@@ -6,8 +6,39 @@ body {
 }
 
 
-.container-welcome {
+.container-box {
     margin-top: 18%;
     margin-left: 5%;
     ;
+}
+
+.card {
+    height: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+}
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: #d4b044;
+    color: #ffff;
+    border:0 !important;
+    }
+    
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }   
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login-button:hover {
+    transform: scale(1.2);
+    transition: transform 330ms ease-in-out;
 }
