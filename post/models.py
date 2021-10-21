@@ -7,9 +7,9 @@ import numpy as np
 class BeerStyle(models.Model):
     beer_style = models.CharField(max_length=200, unique=True)
     
-    def average_rating(self):
-        all_ratings = map(lambda x: x.rating, self.review_set.all())
-        return np.mean(all_ratings)
+    # def average_rating(self):
+    #     all_ratings = map(lambda x: x.rating, self.review_set.all())
+    #     return np.mean(all_ratings)
         
     def __str__(self):
         return self.beer_style
@@ -18,9 +18,9 @@ class Beer(models.Model):
     beer_name = models.CharField(max_length=200)
     style = models.ManyToManyField(BeerStyle)
     
-    def average_rating(self):
-        all_ratings = map(lambda x: x.rating, self.review_set.all())
-        return np.mean(all_ratings)
+    # def average_rating(self):
+    #     all_ratings = map(lambda x: x.rating, self.review_set.all())
+    #     return np.mean(all_ratings)
         
     def __str__(self):
         return self.beer_name
@@ -63,11 +63,11 @@ class BeerReview(models.Model):
     # rating = models.IntegerField(choices=RATING_CHOICES)#
     
     def __str__(self):
-        return self.beer + '|' + str(self.user_name)
+        return self.beer 
 
     def get_absolute_url(self):
         return reverse('beer-rate', kwargs={'pk': self.pk})
     
 
-
+beer_review = BeerReview.objects.all()
 

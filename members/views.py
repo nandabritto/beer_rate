@@ -15,6 +15,7 @@ def login_user(request):
             login(request, user)
             messages.success(request,("You're logged in"))
             return redirect('home')
+        
         else:
             messages.success(request,('There was an error loggging in. Please, Try again.'))
             return redirect('login')
@@ -47,3 +48,5 @@ def register_user(request):
         'form': form,
         
         })
+
+        

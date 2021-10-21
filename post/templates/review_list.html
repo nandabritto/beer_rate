@@ -1,33 +1,15 @@
-{% extends 'base.html' %}
-
-
+{% extends "base.html" %}
 
 {% block content %}
+    <h2>Reviews</h2>
+    <ul>
+        {% for review in object_list %}
+        <li>{{ review.beer }}</li>
+        <li>{{ review.beer_style }}</li>
+            <li>{{ review.review }}</li>
+            <li>{{ review.bitterness }}</li>
+            <li>{{ review.money_value }}</li>
 
-<h1> Reviews List </h1>
-
-<ul> 
-   
-{% if beer_review %}
-
-<div>
-
-    {% for review in beer_review %} 
-
-
-    <div>
-        <h4> Beer name: {{ review.beer.beer_name }}</h4>
-        <h5> Bitterness : {{ review.bitterness }} | Money/Value: {{ review.money_value }} </h5>
-        <h4>Beer review: <br /></h4>
-        <p> {{ review.review }} </p>
-
-    </div>
-</div>
-{% endfor %}
-{% else %}
-
-<p> No reviews are available. </p>
-
-{% endif %}
-
-{% endblock content %}
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -20,9 +20,8 @@ class AddReviewView(CreateView):
 
 
     
-class BeerRatingView(DetailView):
+class BeerRatingView(ListView):
     model = BeerReview
-    queryset = BeerReview.objects.order_by("-pub_date")
     template_name = 'review_list.html'
 
 
