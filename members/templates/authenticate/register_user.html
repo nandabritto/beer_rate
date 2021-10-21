@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
 {%block title %} Register {% endblock %}
 
 {% block content %}
@@ -16,19 +17,17 @@
 {% endif %}
 
 <div class="container container-box-signin">
-  <div class="d-flex justify-content-center col-lg-8 col-11">
-    <div class="bg-dark bg-opacity-50">
-      <div class="text-light">
-        <h3>Sign In In</h3>
-         <form action="{% url 'register' %}" method="POST">
-          {% csrf_token %}
-           {{form}}
+  <div class="bg-dark bg-opacity-50 col-lg-6 col-11 m-auto rounded">
+    <div class="text-light">
+      <h3>Sign In</h3>
+      <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
 
-
-          <input type="submit" value="Register" class="btn btn-secondary">
-
-        </form>
-      </div>
+        <div class= "p-3 d-flex justify-content-center">
+          <input type="submit" value="Register" class="btn btn-secondary btn-success login-button">
+        </div>
+      </form>
 
     </div>
   </div>
