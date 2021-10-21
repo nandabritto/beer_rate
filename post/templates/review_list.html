@@ -1,15 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Reviews</h2>
-    <ul>
-        {% for review in object_list %}
-        <li>{{ review.beer }}</li>
-        <li>{{ review.beer_style }}</li>
-            <li>{{ review.review }}</li>
-            <li>{{ review.bitterness }}</li>
-            <li>{{ review.money_value }}</li>
 
-        {% endfor %}
-    </ul>
+<section id="blog" class="py-3">
+
+    {% for review in object_list %}
+
+    <div class="container">
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card">
+                <img src="" class="img-fluid card-img-top" />
+                <div class="card-body">
+                    <h4 class="card-title">{{ review.beer }}</h4>
+                    <small class=""></small>
+                    <hr>
+                    <p class="card-text">
+                        {{ review.review }}
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+{% endfor %}
+
+
+
+
+
+
 {% endblock %}

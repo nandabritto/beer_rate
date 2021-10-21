@@ -63,7 +63,7 @@ class BeerReview(models.Model):
     # rating = models.IntegerField(choices=RATING_CHOICES)#
     
     def __str__(self):
-        return self.beer 
+        return str(self.beer)
 
     def get_absolute_url(self):
         return reverse('beer-rate', kwargs={'pk': self.pk})
