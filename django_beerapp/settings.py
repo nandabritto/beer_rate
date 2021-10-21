@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'bootstrap5',
+    'crispy_forms',
 
     # apps
     'post',
@@ -66,6 +67,8 @@ TEMPLATES = [
         },
     },
 ]
+
+crispy_template_pack ='uni_form'
 
 WSGI_APPLICATION = 'django_beerapp.wsgi.application'
 
