@@ -2,13 +2,22 @@
 {% block content %}
 <h1> Add review</h1>
 
+{% if error_message %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+    <p><strong>{{ error_message }} </strong></p>{% endif %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
- 
+<div class="container container-box-signin">
+    <div class="bg-dark bg-opacity-50 col-lg-6 col-11 m-auto rounded">
+        <div class="text-light">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Save">
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
