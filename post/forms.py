@@ -16,7 +16,7 @@ class Beer_Review_Form(forms.ModelForm):
             # 'money_value' : forms.Select(),
         }
 
-class CreateBeerStyleForm(BSModalModelForm):
+class Create_BeerStyle_Form(BSModalModelForm):
     class Meta:
         model = BeerStyle
-        field = ['beer_style']
+        fields = '__all__'
