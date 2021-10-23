@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> Add review</h1>
+
 
 {% if error_message %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
@@ -9,13 +9,25 @@
 </div>
 
 
-<div class="container container-box-signin">
-    <div class="bg-dark bg-opacity-50 col-lg-6 col-11 m-auto rounded">
+<div class="container mt-5">
+
+    <div class="bg-dark bg-opacity-50 col-lg-9 col-11 m-auto rounded">
+        <h1 class="text-light text-center bold p-3"> Add your beer review</h1>
         <div class="text-light">
             <form method="POST">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Save">
+                Beer Style: {{ form.beer_style}} <input value="+"
+                class="btn btn-secondary "><br /><br />
+                Beer : {{ form.beer}}<br /><br />
+                Write your review: {{ form.review}}<br /><br />
+
+                Bitterness: {{ form.bitterness}} &nbsp;| &nbsp; Money Value : {{ form.money_value}}
+                | &nbsp; Add your beer picture : {{form.beer_image}}
+
+                <div class="text-center p-4">
+                    <input type="submit" value="Save your review"
+                        class="btn btn-secondary btn-success login-button btn-lg ">
+                </div>
             </form>
         </div>
     </div>

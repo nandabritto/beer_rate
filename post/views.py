@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
-from .forms import Beer_Review_Form
+from .forms import Beer_Review_Form, Beer_Review_Form
 from django.views.generic import ListView, DetailView, CreateView
 
 
@@ -12,8 +12,9 @@ class HomeView(ListView):
 
 class AddReviewView(CreateView):
     model = BeerReview
+    form_class = Beer_Review_Form
     template_name = 'add_review.html'
-    fields = '__all__'
+     
     
     def get_absolute_url(self):
         return reverse('home')

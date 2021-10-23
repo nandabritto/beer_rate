@@ -2,7 +2,8 @@ body {
     background: #9c4848 url("/static/images/background_home_page.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100%;
+    margin-bottom: 100px;
 }
 
 
