@@ -28,7 +28,7 @@ class BeerRatingView(ListView):
     template_name = 'review_list.html'
 
 class BeerStyleCreateView(BSModalCreateView):
-    template_name = 'add_review'
+    template_name = 'add_review/create_style'
     form_class = Create_BeerStyle_Form
     success_message = 'Success: Book was created.'
     success_url = reverse_lazy('add_review')

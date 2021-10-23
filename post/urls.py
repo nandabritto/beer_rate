@@ -6,7 +6,7 @@ urlpatterns = [
     path('rate/<int:pk>', BeerRatingView.as_view(), name='beer-rate'),
     path('add_review/', AddReviewView.as_view(), name='add_review'),
     path('review_list/', BeerRatingView.as_view(), name='review_list'),
-    path('add_review/', BeerStyleCreateView.as_view(), name='add_review'),
+    path('add_review/create_style', BeerStyleCreateView.as_view(), name='create_style'),
 
 
 ]

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
 
@@ -16,8 +17,16 @@
         <div class="text-light">
             <form method="POST">
                 {% csrf_token %}
-                Beer Style: {{ form.beer_style}} <input value="+"
-                class="btn btn-secondary "><br /><br />
+                Beer Style: {{ form.beer_style}} 
+                <div class="row">
+                    <div class="col-12 mb-3">
+                      <button id="create-beer-style-sync" class="btn btn-primary" type="button" name="button">
+                        <span class="fa fa-plus mr-2"></span>Create beer_style
+                      </button>
+                  
+                
+                
+                <br /><br />
                 Beer : {{ form.beer}}<br /><br />
                 Write your review: {{ form.review}}<br /><br />
 
@@ -35,33 +44,75 @@
 
 
 
-<form method="post" action="">
-    {% csrf_token %}
-  
-   <div class="modal-header">
-      <h5 class="modal-title">Create new Beer Style</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  
-    <div class="modal-body">
-        <div class="form-group{% if field.errors %} invalid{% endif %}">
-          <label for="{{ field.id_for_label }}">{{ field.beer_style }}</label>
-          {{ field }}
-          {% for error in field.errors %}
-            <p class="help-block">{{ error }}</p>
-          {% endfor %}
-        </div>
-  
-    </div>
-  
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="submit" class="btn btn-primary">Create</button>
-    </div>
-  
-  </form>
-
-
 {% endblock content %}
+
+
+{% block extrascripts %}
+
+<script type="text/javascript">
+    $(function () {
+       
+        // Create book synchronous
+        function createBeerStyleSyncModalForm() {
+          $("#create-style-sync").modalForm({
+              formURL: "{% url 'create_style' %}",
+              modalID: "#create-modal"
+          });
+        }
+        createBeerstyleSyncModalForm();
+
+        // Create book asynchronous button
+        // message
+        var asyncSuccessMessageCreate = [
+          "<div ",
+          "style='position:fixed;top:0;z-index:10000;width:100%;border-radius:0;' ",
+          "class='alert alert-icon alert-success alert-dismissible fade show mb-0' role='alert'>",
+          "Success: Beer Style was created.",
+          "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>",
+          "<span aria-hidden='true'>&times;</span>",
+          "</button>",
+          "</div>",
+          "<script>",
+          "$('.alert').fadeTo(2000, 500).slideUp(500, function () {$('.alert').slideUp(500).remove();});",
+          "<\/script>"
+        ].join("");
+
+        // modal form
+        function createBeerStyleAsyncModalForm() {
+          $("#create-style-async").modalForm({
+              formURL: "{% url 'create_style' %}",
+              modalID: "#create-modal",
+              asyncUpdate: true,
+              asyncSettings: {
+                closeOnSubmit: true,
+                successMessage: asyncSuccessMessageCreate,
+                dataUrl: "add_review/",
+                dataElementId: "#style-table",
+                dataKey: "table",
+                addModalFormFunction: reinstantiateModalForms
+              }
+          });
+        }
+        createBookAsyncModalForm();
+
+        
+
+        function reinstantiateModalForms() {
+          createBookAsyncModalForm();
+        
+        }
+
+        // Filter books button
+        $("#filter-book").each(function () {
+            $(this).modalForm({formURL: $(this).data("form-url")});
+        });
+
+        // Hide message
+        $(".alert").fadeTo(2000, 500).slideUp(500, function () {
+            $(".alert").slideUp(500);
+        });
+    });
+</script>
+
+
+{% endblock extrascripts %}
