@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'bootstrap5',
     'crispy_forms',
+    'bootstrap_modal_forms',
 
     # apps
     'post',

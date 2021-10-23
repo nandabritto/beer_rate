@@ -1,23 +1,63 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> Add review</h1>
+
 
 {% if error_message %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
-    <p><strong>{{ error_message }} </strong></p>{% endif %}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <p><strong>{{ error_message }} </strong></p>{% endif %}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
 
-<div class="container container-box-signin">
-    <div class="bg-dark bg-opacity-50 col-lg-6 col-11 m-auto rounded">
-        <div class="text-light">
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Save">
-            </form>
+<div class="container mt-5">
+
+  <div class="bg-dark bg-opacity-50 col-lg-9 col-11 m-auto rounded">
+    <h1 class="text-light text-center bold p-3"> Add your beer review</h1>
+    <div class="text-light">
+      <form method="POST">
+        {% csrf_token %}
+        Beer Style: {{ form.beer_style}}
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beerstylemodal">
+          Create Beer Style
+        </button>
+
+
+        <br /><br />
+        Beer : {{ form.beer}}<br /><br />
+        Write your review: {{ form.review}}<br /><br />
+
+        Bitterness: {{ form.bitterness}} &nbsp;| &nbsp; Money Value : {{ form.money_value}}
+        | &nbsp; Add your beer picture : {{form.beer_image}}
+
+        <div class="text-center p-4">
+          <input type="submit" value="Save your review" class="btn btn-secondary btn-success login-button btn-lg ">
         </div>
+      </form>
     </div>
+  </div>
 </div>
+
+
+
+
+<!-- Beer Style Modal -->
+<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-labelledby="BeerStyleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="BeerStyleModalLabel">Create a beer Style</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock content %}

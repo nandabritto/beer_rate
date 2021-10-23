@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
-from .forms import Beer_Review_Form
+from .forms import Beer_Review_Form, Create_BeerStyle_Form
+from .models import BeerStyle
 from django.views.generic import ListView, DetailView, CreateView
 
 
@@ -12,8 +13,9 @@ class HomeView(ListView):
 
 class AddReviewView(CreateView):
     model = BeerReview
+    form_class = Beer_Review_Form
     template_name = 'add_review.html'
-    fields = '__all__'
+     
     
     def get_absolute_url(self):
         return reverse('home')
@@ -24,6 +26,12 @@ class BeerRatingView(ListView):
     model = BeerReview
     template_name = 'review_list.html'
 
+
+# class BeerStyleCreateView(BSModalCreateView):
+#     template_name = 'add_review//create_style.html'
+#     form_class = Create_BeerStyle_Form
+#     success_message = 'Success: Book was created.'
+#     success_url = reverse_lazy('add_review')
 
 # def add_review(request):
 #     form = Beer_Review_Form(request.POST or None)
