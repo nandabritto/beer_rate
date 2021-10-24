@@ -10,10 +10,14 @@ class Beer_Review_Form(forms.ModelForm):
 
         widgets = {
             'review' : forms.Textarea(attrs={'class':'form-control'}),
-          
         }
 
-class Create_BeerStyle_Form(BSModalModelForm):
+class Create_BeerStyle_Form(forms.ModelForm):
     class Meta:
         model = BeerStyle
-        fields = '__all__'
+        fields = ['beer_style']
+
+        widgets = {
+            'beer_style' : forms.TextInput(attrs={'class':'form-control'}),
+        }
+    
