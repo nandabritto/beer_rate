@@ -15,6 +15,9 @@ class BeerStyle(models.Model):
     def __str__(self):
         return self.beer_style
 
+    def get_absolute_url(self):
+        return reverse('add_review')
+
 class Beer(models.Model):
     beer_name = models.CharField(max_length=200)
     style = models.ManyToManyField(BeerStyle)
@@ -25,6 +28,9 @@ class Beer(models.Model):
         
     def __str__(self):
         return self.beer_name
+        
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 class BeerReview(models.Model):

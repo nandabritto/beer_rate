@@ -14,7 +14,7 @@
   <div class="bg-dark bg-opacity-50 col-lg-9 col-11 m-auto rounded">
     <h1 class="text-light text-center bold p-3"> Add your beer review</h1>
     <div class="text-light">
-      <form method="POST">
+      <form method="POST" action="">
         {% csrf_token %}
         Beer Style: {{ form.beer_style}}
         <!-- Button trigger modal -->
@@ -29,6 +29,7 @@
 
         Bitterness: {{ form.bitterness}} &nbsp;| &nbsp; Money Value : {{ form.money_value}}
         | &nbsp; Add your beer picture : {{form.beer_image}}
+        {{ form.user_name}}
 
         <div class="text-center p-4">
           <input type="submit" value="Save your review" class="btn btn-secondary btn-success login-button btn-lg ">
@@ -50,7 +51,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+      
+        <form method="POST">
+       
+          <textarea name="style" cols="40" rows="10" class="form-control" maxlength="200" required="" id="id_create_style"></textarea>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beerstylemodal" name="htmlsubmitbutton2">
+            Create
+          </button>
+  
+  
+        </form>
+
+
+
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

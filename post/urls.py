@@ -1,5 +1,5 @@
-from django.urls import path
-from .views import HomeView, BeerRatingView, AddReviewView
+from django.urls import path, include
+from .views import HomeView, BeerRatingView, AddReviewView, BeerStyleCreateView
 
 urlpatterns = [
     path('', HomeView.as_view(), name = "home"),

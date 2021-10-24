@@ -5,7 +5,6 @@ from .models import BeerStyle
 from django.views.generic import ListView, DetailView, CreateView
 
 
-
 class HomeView(ListView):
     model = BeerReview
     template_name = 'home.html'
@@ -15,54 +14,34 @@ class AddReviewView(CreateView):
     model = BeerReview
     form_class = Beer_Review_Form
     template_name = 'add_review.html'
-     
-    
-    def get_absolute_url(self):
-        return reverse('home')
+
+    def get_review(request):
+        if request.method == 'POST':
+            
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect('/thanks/')
+
+        else:
+            form = form_class
+
+        return render(request, 'home.html', {'form': form_class})
 
 
-    
+        
 class BeerRatingView(ListView):
     model = BeerReview
     template_name = 'review_list.html'
 
 
-# class BeerStyleCreateView(BSModalCreateView):
-#     template_name = 'add_review//create_style.html'
-#     form_class = Create_BeerStyle_Form
-#     success_message = 'Success: Book was created.'
-#     success_url = reverse_lazy('add_review')
-
-# def add_review(request):
-#     form = Beer_Review_Form(request.POST or None)
-#     if form.is_valid():
-#         form.save()
-#     context = {
-#         'form' : form
-#     }
-
-#     return render(request, 'add_review.html', context)
+class BeerStyleCreateView(ListView):
+    template_name = 'add_review/create_style.html'
+    form_class = Create_BeerStyle_Form
+    success_message = 'Success: Beer Style was created.'
+        
 
 
 
 
-# def review_list(request):
-#     review_list = BeerReview.objects.order_by('-pub_date')[:9]
-#     context = {'review_list':review_list}
-#     return render(request, 'review_list.html', context)
 
-
-# def review_detail(request, review_id):
-#     review = get_object_or_404(BeerReview, pk=review_id)
-#     return render(request, 'reviews/review_list.html', {'review': review})
-
-
-# def beer_list(request):
-#     beer_list = Beer.objects.order_by('-name')
-#     context = {'beer_list':beer_list}
-#     return render(request, 'reviews/beer_list.html', context)
-
-
-# def beer_detail(request, beer_id):
-#     beer = get_object_or_404(Beer, pk=wine_id)
-#     return render(request, 'reviews/beer_detail.html', {'beer': beer})
+    

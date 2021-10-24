@@ -9,11 +9,8 @@ class Beer_Review_Form(forms.ModelForm):
         fields = ['beer_style', 'beer', 'review','bitterness', 'user_name' , 'money_value', 'beer_image']
 
         widgets = {
-            # 'beer_style' : forms.TextInput(attrs={'class':'col-form-label'}),
-            # 'beer' : forms.TextInput(attrs={'class':'col-form-label'}),
             'review' : forms.Textarea(attrs={'class':'form-control'}),
-            # 'bitterness' : forms.Select(),
-            # 'money_value' : forms.Select(),
+          
         }
 
 class Create_BeerStyle_Form(BSModalModelForm):
