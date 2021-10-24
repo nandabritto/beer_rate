@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
-from .forms import Beer_Review_Form, Create_BeerStyle_Form
+from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from .models import BeerStyle
 from django.views.generic import ListView, DetailView, CreateView, View
 
@@ -22,10 +22,13 @@ class AddReviewView(View):
 
     def get_context_data(self, **kwargs):
         kwargs['review'] = self.get_object()
+        
         if 'review_form' not in kwargs:
             kwargs['review_form'] = Beer_Review_Form()
         if 'style_form' not in kwargs:
             kwargs['style_form'] = Create_BeerStyle_Form()
+        if 'beer_form' not in kwargs:
+            kwargs['beer_form'] = Create_Beer_Form()
 
         return kwargs
 
@@ -50,6 +53,14 @@ class AddReviewView(View):
                 style_form.save()
             else:
                 ctxt['style_form'] = style_form
+
+        elif 'beer_name' in request.POST:
+            beer_form = Create_Beer_Form(request.POST)
+
+            if beer_form.is_valid():
+                beer_form.save()
+            else:
+                ctxt['beer_form'] = beer_form
 
         return render(request, self.template_name, self.get_context_data(**ctxt))
 
