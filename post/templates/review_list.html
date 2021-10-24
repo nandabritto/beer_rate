@@ -2,27 +2,27 @@
 
 {% block content %}
 
-{% for review in object_list %}
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-       
-        <div class="card">
-
-       
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{ review.beer }}</h5>
-                <p class="card-text">{{ review.beer }}</p>
+<div class="container-fluid m-4">
+    <div class="row">
+        {% for review in object_list %}
+            <div class="col-auto">
+                <div class="card border-primary mb-3">
+                    
+                    </a>
+                    <div class="card-header">
+                        {{ review.beer_image }}
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ review.beer }}</h4>
+                        <p class="card-text">{{ review.review|slice:":200" }}</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-
 </div>
 
-
-
-{% endfor %}
 
 
 
