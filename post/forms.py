@@ -1,5 +1,5 @@
 from django import forms
-from .models import BeerReview, BeerStyle
+from .models import BeerReview, BeerStyle, Beer
 from bootstrap_modal_forms.forms import BSModalModelForm
 
 
@@ -9,14 +9,25 @@ class Beer_Review_Form(forms.ModelForm):
         fields = ['beer_style', 'beer', 'review','bitterness', 'user_name' , 'money_value', 'beer_image']
 
         widgets = {
-            # 'beer_style' : forms.TextInput(attrs={'class':'col-form-label'}),
-            # 'beer' : forms.TextInput(attrs={'class':'col-form-label'}),
             'review' : forms.Textarea(attrs={'class':'form-control'}),
-            # 'bitterness' : forms.Select(),
-            # 'money_value' : forms.Select(),
         }
 
-class Create_BeerStyle_Form(BSModalModelForm):
+class Create_BeerStyle_Form(forms.ModelForm):
     class Meta:
         model = BeerStyle
-        fields = '__all__'
+        fields = ['beer_style']
+
+        widgets = {
+            'beer_style' : forms.TextInput(attrs={'class':'form-control'}),
+        }
+
+
+class Create_Beer_Form(forms.ModelForm):
+    class Meta:
+        model = Beer
+        fields = ['beer_name']
+
+        widgets = {
+            'beer_name' : forms.TextInput(attrs={'class':'form-control'}),
+        }
+    
