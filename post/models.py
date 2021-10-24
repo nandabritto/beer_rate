@@ -19,7 +19,7 @@ class BeerStyle(models.Model):
         return reverse('add_review')
 
 class Beer(models.Model):
-    beer_name = models.CharField(max_length=200)
+    beer_name = models.CharField(max_length=200, unique=True)
     style = models.ManyToManyField(BeerStyle)
     
     # def average_rating(self):
