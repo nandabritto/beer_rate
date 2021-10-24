@@ -16,23 +16,30 @@
       <div class="text-light">
         <form method="POST" actions="/add_review">
           {% csrf_token %}
+          <div class="m-3 align-middle p-2">
+            Beer Style: {{ review_form.beer_style}}
 
-          Beer Style: {{ review_form.beer_style}}
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beerstylemodal">
-            Create Beer Style
-          </button>
+            <!------------------------------------------------ Button trigger create a beer style modal -->
+            <button type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal"
+              data-bs-target="#beerstylemodal">
+              Create Beer Style
+            </button></div>
 
+          <div class="m-3 align-middle p-2">
+            Beer : {{ review_form.beer}}
+            <!------------------------------------------------------- Button trigger create a beer  modal -->
+            <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#beermodal">
+              Create Beer </button>
+          </div>
+          Write your review: {{ review_form.review}}
 
-          <br /><br />
-          Beer : {{ review_form.beer}} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#beermodal">
-            Create Beer 
-          </button><br /><br />
-          Write your review: {{ review_form.review}}<br /><br />
-
-          Bitterness: {{ review_form.bitterness}} &nbsp;| &nbsp; Money Value : {{ review_form.money_value}}
-          | &nbsp; Add your beer picture : {{review_form.beer_image}}
-          {{ review_form.user_name}}
+          <div class="m-3 align-middle p-2 text-center">
+            Bitterness: {{ review_form.bitterness}} &nbsp;| &nbsp; Money Value : {{ review_form.money_value}}
+            | &nbsp; Add your beer picture : {{review_form.beer_image}}
+          </div>
+          <div class="m-3 align-middle p-2 text-center">
+            {{ review_form.user_name}}
+          </div>
           <div class="text-center p-4">
             <input type="submit" value="Save your review" name="htmlsubmitbutton1"
               class="btn btn-secondary btn-success login-button btn-lg ">
@@ -44,43 +51,43 @@
 </fieldset>
 
 <fieldset>
-  <!-- Beer Style Modal -->
+  <!------------------------------------------------------ Beer Style Modal -------------------------------->
   <div class="modal fade" id="beerstylemodal" tabindex="-1" aria-labelledby="BeerStyleModal" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="BeerStyleModalLabel">Create a beer Style</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-
           <form method="POST" actions="/add_review">
             {% csrf_token %}
             {{ style_form }}
-            <!-- Button trigger modal -->
-            <input name="comment" type="submit" value="Submit" />
-            </button>
+            <!------------------------------------------- Button trigger modal ----------------------------->
+            <div class="m-2 text-center">
+              <input name="comment" class="btn btn-success" type="submit" value="Submit" />
+              </button> </div>
           </form>
 </fieldset>
 
 
 <fieldset>
-  <!-- Beer Modal -->
+  <!---------------------------------------------------- Beer Modal --------------------------------------->
   <div class="modal fade" id="beermodal" tabindex="-1" aria-labelledby="BeerModal" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="BeerModalLabel">Create a beer </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-
           <form method="POST" actions="">
             {% csrf_token %}
             {{ beer_form.beer_name }}
-            <!-- Button trigger modal -->
-            <input name="comment" type="submit" value="Submit" />
-            </button>
+            <!------------------------------------------- Button trigger modal ----------------------------->
+            <div class="m-2 text-center">
+              <input name="comment" class="btn btn-success " type="submit" value="Create" />
+              </button></div>
           </form>
 </fieldset>
 
