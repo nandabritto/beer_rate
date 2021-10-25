@@ -1,5 +1,5 @@
 body {
-    background: #9c4848 url("/static/images/background_home_page.jpg");
+    background: #9c4848 url("/media/background_home_page.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     height: 100%;
@@ -48,11 +48,9 @@ input:focus{
     transition: transform 330ms ease-in-out;
 }
 
-
-
-
-
-
+.card {
+    height: 500px;
+}
 
   
 /* Popup Open button */ 

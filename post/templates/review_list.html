@@ -1,32 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
 
+<section class="pt-5 pb-5 shadow-sm m-auto ">
 
-<div class="container-fluid m-4">
-    <div class="row">
-        {% for review in object_list %}
-            <div class="col-auto">
-                <div class="card border-primary mb-3">
-                    
-                    </a>
-                    <div class="card-header">
-                        {{ review.beer_image }}
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">{{ review.beer }}</h4>
-                        <p class="card-text">{{ review.review|slice:":200" }}</p>
+    <div class="container text-light text-center ">
+        <h3> Beer reviews </h3>
+        <div class="row pt-5 ">
+            <div class="col-12">
+              
+            </div>
+        </div>
+        <div class="row ">
+            {% for review in object_list %}
+            <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+                <div class="card text-light bg-dark bg-opacity-25 rounded">
+                    {% if review.beer_image %}
+                    <h4 class ="m-3 text-center"> {{ review.beer }} </h3>
+                    <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 embed-responsive">
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" alt="default error image">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ review.style}}</h5>
+                        <p class="card-text mb-4 text-truncate">{{ review.review}}</p>
+
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
 
-
-
-
-
-
-
-{% endblock %}
+    {% endblock %}
