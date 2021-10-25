@@ -3,12 +3,12 @@ from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
 from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from .models import BeerStyle
-from django.views.generic import ListView, DetailView, CreateView, View
+from django.views.generic import ListView, DetailView, CreateView, View, TemplateView
+from django.views import generic
 
 class HomeView(ListView):
     model = BeerReview
     template_name = 'home.html'
-
 
 class AddReviewView(View):
     template_name = 'add_review.html'
@@ -74,7 +74,9 @@ class BeerStyleCreateView(ListView):
     form_class = Create_BeerStyle_Form
     success_message = 'Success: Beer Style was created.'
 
-
+class ReviewDetailView(DetailView):
+    model = BeerReview
+    template_name = 'review_list/review_detail.html'
 
 
 

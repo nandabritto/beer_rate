@@ -74,7 +74,7 @@ class BeerReview(models.Model):
         return str(self.beer)
 
     def get_absolute_url(self):
-        return reverse('beer-rate', kwargs={'pk': self.pk})
+        return reverse('review_list', kwargs={'pk': self.pk})
     
 
 beer_review = BeerReview.objects.all()
