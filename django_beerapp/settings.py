@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'crispy_forms',
     'bootstrap_modal_forms',
+    'active_link',
 
     # apps
     'post',
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                
             ],
         },
     },
