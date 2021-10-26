@@ -6,6 +6,8 @@ from .models import BeerStyle
 from django.views.generic import ListView, DetailView, CreateView, View, TemplateView
 from django.views import generic
 
+
+
 class HomeView(ListView):
     model = BeerReview
     template_name = 'home.html'
@@ -45,7 +47,7 @@ class AddReviewView(View):
                 review = review_form.save(commit=False)
                 review.user_name = request.user
                 review.save()
-                
+                                                
             else:
                 ctxt['review_form'] = review_form
 
@@ -81,7 +83,3 @@ class BeerStyleCreateView(ListView):
 class ReviewDetailView(DetailView):
     model = BeerReview
     template_name = 'review_list/review_detail.html'
-
-
-
-    
