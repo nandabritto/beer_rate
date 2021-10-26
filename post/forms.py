@@ -10,6 +10,7 @@ class Beer_Review_Form(forms.ModelForm):
 
         widgets = {
             'review' : forms.Textarea(attrs={'class':'form-control'}),
+            
         }
 
 class Create_BeerStyle_Form(forms.ModelForm):

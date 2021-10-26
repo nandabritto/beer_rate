@@ -1,9 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card mb-3 mt-5 m-auto detail-container bg-light bg-opacity-75">
+    <div class="card-header">
+        {{ object.beer }}
+    </div>
+    <div class="row g-0">
+        <div class="col-md-5">
+            {% if object.beer_image %}
+            <img src="{{ object.beer_image.url }}" class="img-fluid rounded-start" alt="beer image">
+            {% else %}
+            <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" alt="default error image">
+            {% endif %}
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <p class="card-text">{{ object.review }}</p>
+                <p class="card-text">Bitterness: {{ object.bitterness }}</p>
+                <p class="card-text">Money/Value: {{ object.money_value }}</p>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="card-footer text-center"><small>Written by: {{ object.user_name }} <br /> Created at:
+            {{ object.pub_date }}</small></div>
+</div>
 
 
-<h1> You seached for... </h1>
-<h1> {{ object.money_value }} </h1>
 
-<h3>Book detail</h3>
-<p>{{ post.review }}</p>
-<img src="{{ object.beer_image.url }}" class="card-img-top rounded-2 img-container">
-<p></p>
+
+
+
+{% endblock %}

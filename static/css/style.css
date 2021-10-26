@@ -27,3 +27,8 @@ body {
     height: 300px;
         
 }
+
+
+.detail-container{
+    max-width: 840px;
+}
