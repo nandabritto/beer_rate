@@ -5,6 +5,9 @@ from cloudinary.models import CloudinaryField
 import numpy as np
 
 
+from django.conf import settings
+
+
 class BeerStyle(models.Model):
     beer_style = models.CharField(max_length=200, unique=True)
     
@@ -62,8 +65,7 @@ class BeerReview(models.Model):
     beer = models.ForeignKey(
         Beer, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    user_name = models.ForeignKey(
-        User, on_delete=models.CASCADE)
+    user_name = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     review = models.CharField(max_length=200)
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
