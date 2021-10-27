@@ -87,8 +87,9 @@ class ReviewDetailView(DetailView):
 
 class UpdateReviewView(UpdateView):
     model = BeerReview
+    form_class = Beer_Review_Form
     template_name = 'update_review.html'
-    fields = ['beer', 'review', 'beer_style', 'bitterness', 'money_value']
+    
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
