@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
 from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from .models import BeerStyle
-from django.views.generic import ListView, DetailView, CreateView, View, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, View, UpdateView, DeleteView
 from django.views import generic
 
 
@@ -96,4 +96,7 @@ class UpdateReviewView(UpdateView):
         self.object.save()
         return redirect ('review_detail', self.object.pk)
     
-    
+
+class DeleteReviewView(DeleteView):
+    model = BeerReview
+    template_name = 'delete_review.html'
