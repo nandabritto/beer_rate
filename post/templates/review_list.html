@@ -20,12 +20,14 @@
             {% for review in object_list %}
 
 
-            <div class="col-lg-4 mb-3 d-flex align-items-stretch">
+            <div class="col-lg-4 mb-3 d-flex ">
                 <div class="card text-light bg-dark bg-opacity-75 rounded">
                     <a href="{% url 'review_detail' review.pk %}"
                         class="text-decoration-none text-uppercase fw-bold text-white">
-                     
+
                         <h4 class="m-3 text-center "> {{ review.beer }} </h3>
+                            <h5>{{ review.beer_style}}</h5>
+
                     </a>
 
 
@@ -37,23 +39,23 @@
                     <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" alt="default error image">
                     {% endif %}
                     <div class="card-body d-flex flex-column text-center">
-                        <p class= "text-truncate "> {{ review.review }} </p>
-                        <h5>{{ review.beer_style}}</h5>
-
-                        {% if user.is_authenticated %}
-                        {% if user.id == review.user_name.id %}
-
-
-                        <a href="{% url 'update_review' review.pk %}" class="text-decoration-none text-white">
-                            <h4 class="m-3 text-center"> Edit </h3>
-                        </a>
-
-                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white">
-                            <h4 class="m-3 text-center"> Delete </h3>
-                        </a>
-                        {% endif %}
-                        {% endif %}
+                        <p class="text-truncate "> {{ review.review }} </p>
                     </div>
+                    {% if user.is_authenticated %}
+                    {% if user.id == review.user_name.id %}
+
+                    <span class="m-auto">
+                        <h4>
+                            <a href="{% url 'update_review' review.pk %}" class="text-decoration-none text-white"><i
+                                    class="fas fa-edit px-2"></i>
+                            </a>
+                            <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white">
+                                <i class="fas fa-trash px-2 pb-2"></i>
+                            </a></h4>
+                    </span>
+                    {% endif %}
+                    {% endif %}
+
 
                 </div>
 
