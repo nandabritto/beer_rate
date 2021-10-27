@@ -46,11 +46,11 @@
 
                     <span class="m-auto">
                         <h4>
-                            <a href="{% url 'update_review' review.pk %}" class="text-decoration-none text-white"><i
+                            <a href="{% url 'update_review' review.pk %}" class="text-decoration-none text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
                                     class="fas fa-edit px-2"></i>
                             </a>
-                            <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white">
-                                <i class="fas fa-trash px-2 pb-2"></i>
+                            <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
+                                <i class="fas fa-trash px-2 pb-2 "></i>
                             </a></h4>
                     </span>
                     {% endif %}

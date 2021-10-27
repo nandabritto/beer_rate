@@ -6,11 +6,7 @@ myModal.addEventListener('shown.bs.modal', function () {
 })
 
 
-$(document).on('click', '.confirm-delete', function () {
-  $("#confirmDeleteModal").attr("caller-id", $(this).attr("id"));
-});
-
-$(document).on('click', '#confirmDeleteButtonModal', function () {
-  var caller = $("#confirmDeleteButtonModal").closest(".modal").attr("caller-id");
-  window.location = $("#".concat(caller)).attr("href");
-});
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
