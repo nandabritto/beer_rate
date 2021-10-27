@@ -1,10 +1,13 @@
 from django.http import Http404
+from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
 from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from .models import BeerStyle
-from django.views.generic import ListView, DetailView, CreateView, View, TemplateView
+from django.views.generic import ListView, DetailView, CreateView, View, UpdateView, DeleteView
 from django.views import generic
+from django.urls import reverse_lazy
+
 
 
 
@@ -12,8 +15,10 @@ class HomeView(ListView):
     model = BeerReview
     template_name = 'home.html'
 
+
 class AddReviewView(View):
     template_name = 'add_review.html'
+
 
     def get_object(self):
         try:
@@ -21,6 +26,7 @@ class AddReviewView(View):
         except BeerReview.DoesNotExist:
             raise Http404('Beer Review not found!')
         return obj
+
 
     def get_context_data(self, **kwargs):
         kwargs['review'] = self.get_object()
@@ -34,8 +40,10 @@ class AddReviewView(View):
 
         return kwargs
 
+
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, self.get_context_data())
+
 
     def post(self, request, *args, **kwargs):
         ctxt = {}
@@ -75,11 +83,32 @@ class BeerRatingView(ListView):
     model = BeerReview
     template_name = 'review_list.html'
 
+
 class BeerStyleCreateView(ListView):
     template_name = 'add_review/create_style.html'
     form_class = Create_BeerStyle_Form
     success_message = 'Success: Beer Style was created.'
 
+
 class ReviewDetailView(DetailView):
     model = BeerReview
     template_name = 'review_list/review_detail.html'
+
+
+class UpdateReviewView(UpdateView):
+    model = BeerReview
+    form_class = Beer_Review_Form
+    template_name = 'update_review.html'
+    
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.save()
+        return redirect ('review_detail', self.object.pk)
+    
+
+class DeleteReviewView(DeleteView):
+    model = BeerReview
+    form_class = Beer_Review_Form
+    template_name = 'review_list/review_delete.html'
+    success_url = reverse_lazy('review_list')

@@ -28,7 +28,14 @@ body {
         
 }
 
-
 .detail-container{
     max-width: 840px;
+}
+
+.card img {
+    width: 300px;
+}
+
+.card p{
+    max-width: 250px;
 }

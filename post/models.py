@@ -64,7 +64,7 @@ class BeerReview(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE)
-    review = models.CharField(max_length=200)
+    review = models.TextField(max_length=200)
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
     beer_image = CloudinaryField('image', blank=True)
