@@ -34,5 +34,9 @@ body {
 }
 
 .card img {
-    max-width: 300px;
+    width: 300px;
+}
+
+.card p{
+    max-width: 250px;
 }
