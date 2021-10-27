@@ -47,6 +47,10 @@
                         <a href="{% url 'update_review' review.pk %}" class="text-decoration-none text-white">
                             <h4 class="m-3 text-center"> Edit </h3>
                         </a>
+
+                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white">
+                            <h4 class="m-3 text-center"> Delete </h3>
+                        </a>
                         {% endif %}
                         {% endif %}
                     </div>

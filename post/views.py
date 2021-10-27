@@ -6,7 +6,7 @@ from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from .models import BeerStyle
 from django.views.generic import ListView, DetailView, CreateView, View, UpdateView, DeleteView
 from django.views import generic
-
+from django.urls import reverse_lazy
 
 
 
@@ -107,3 +107,8 @@ class UpdateReviewView(UpdateView):
         return redirect ('review_detail', self.object.pk)
     
 
+class DeleteReviewView(DeleteView):
+    model = BeerReview
+    form_class = Beer_Review_Form
+    template_name = 'review_list/review_delete.html'
+    success_url = reverse_lazy('review_list')
