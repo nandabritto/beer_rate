@@ -24,6 +24,8 @@
                         class="text-decoration-none text-uppercase fw-bold text-white">
                         <h4 class="m-3 text-center"> {{ review.beer }} </h3>
                     </a>
+
+                   
                     {% if review.beer_image %}
 
 
@@ -31,8 +33,9 @@
                     {% else %}
                     <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" alt="default error image">
                     {% endif %}
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ review.style}}</h5>
+                    <div class="card-body d-flex flex-column"> 
+                        <p> {{ review.review }} </p>
+                        <h5>{{ review.beer_style}}</h5>
                         <a href="{% url 'update_review' review.pk %}"
                         class="text-decoration-none text-white">
                         <h4 class="m-3 text-center"> Edit </h3>
