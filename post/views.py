@@ -1,9 +1,10 @@
 from django.http import Http404
+from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404, render
 from .models import BeerReview, Beer
 from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from .models import BeerStyle
-from django.views.generic import ListView, DetailView, CreateView, View, TemplateView
+from django.views.generic import ListView, DetailView, CreateView, View, UpdateView
 from django.views import generic
 
 
@@ -83,3 +84,15 @@ class BeerStyleCreateView(ListView):
 class ReviewDetailView(DetailView):
     model = BeerReview
     template_name = 'review_list/review_detail.html'
+
+class UpdateReviewView(UpdateView):
+    model = BeerReview
+    template_name = 'update_review.html'
+    fields = ['beer', 'review', 'beer_style', 'bitterness', 'money_value']
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.save()
+        return redirect ('review_detail', self.object.pk)
+    
+    
