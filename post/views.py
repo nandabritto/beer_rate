@@ -1,14 +1,10 @@
 from django.http import Http404
-from django.shortcuts import redirect
-from django.shortcuts import render, get_object_or_404, render
-from .models import BeerReview, Beer
+from django.shortcuts import redirect, render
+from .models import BeerReview
 from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
-from .models import BeerStyle
-from django.views.generic import ListView, DetailView, CreateView, View, UpdateView, DeleteView
-from django.views import generic
+from django.views.generic import ListView, DetailView, \
+    View, UpdateView, DeleteView
 from django.urls import reverse_lazy
-
-
 
 
 class HomeView(ListView):
@@ -19,7 +15,6 @@ class HomeView(ListView):
 class AddReviewView(View):
     template_name = 'add_review.html'
 
-
     def get_object(self):
         try:
             obj = BeerReview.objects.all()
@@ -27,10 +22,9 @@ class AddReviewView(View):
             raise Http404('Beer Review not found!')
         return obj
 
-
     def get_context_data(self, **kwargs):
         kwargs['review'] = self.get_object()
-        
+
         if 'review_form' not in kwargs:
             kwargs['review_form'] = Beer_Review_Form()
         if 'style_form' not in kwargs:
@@ -40,10 +34,8 @@ class AddReviewView(View):
 
         return kwargs
 
-
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, self.get_context_data())
-
 
     def post(self, request, *args, **kwargs):
         ctxt = {}
@@ -55,7 +47,6 @@ class AddReviewView(View):
                 review = review_form.save(commit=False)
                 review.user_name = request.user
                 review.save()
-                                                
             else:
                 ctxt['review_form'] = review_form
 
@@ -75,8 +66,10 @@ class AddReviewView(View):
             else:
                 ctxt['beer_form'] = beer_form
 
-   
-        return render(request, self.template_name, self.get_context_data(**ctxt))
+        return render(
+            request, self.template_name, self.get_context_data(**ctxt))
+
+
 
 
 class BeerRatingView(ListView):
@@ -98,17 +91,17 @@ class ReviewDetailView(DetailView):
 class UpdateReviewView(UpdateView):
     model = BeerReview
     form_class = Beer_Review_Form
-    template_name = 'update_review.html'
-    
+    template_name = 'review_list/review_update.html'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.save()
-        return redirect ('review_detail', self.object.pk)
-    
+        return redirect('review_detail', self.object.pk)
+
 
 class DeleteReviewView(DeleteView):
     model = BeerReview
     form_class = Beer_Review_Form
     template_name = 'review_list/review_delete.html'
     success_url = reverse_lazy('review_list')
+    
