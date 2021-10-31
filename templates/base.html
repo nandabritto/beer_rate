@@ -28,11 +28,14 @@
 
     <!---------------------------- My CSS link --------->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block additional_styles %}
+    {% endblock %}
     <title>Best Beer</title>
 
 </head>
 
-<body class ="bg">
+<body class="bg">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light bg-opacity-75 mt-2">
@@ -45,19 +48,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
+
                     <li class="nav-item ">
-                        <a class="nav-link {% active_link 'home' %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% active_link 'home' %}" aria-current="page"
+                            href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% active_link 'review_list' %}" aria-current="page" href="{% url 'review_list' %}">Beer Reviews</a>
+                        <a class="nav-link {% active_link 'review_list' %}" aria-current="page"
+                            href="{% url 'review_list' %}">Beer Reviews</a>
                     </li>
 
                     <li class="nav-item">
                         {% if user.is_authenticated %}
                         <a class="nav-link {% active_link 'logout' %}" href="{% url 'logout' %}">Logout</a></li>
                     <li class="nav-item">
-                        <a class="nav-link {% active_link 'add_review' %}" href="{% url 'add_review' %}">Rate your Beer</a>
+                        <a class="nav-link {% active_link 'add_review' %}" href="{% url 'add_review' %}">Rate your
+                            Beer</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -143,4 +149,3 @@
 </body>
 
 </html>
-

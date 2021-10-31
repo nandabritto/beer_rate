@@ -4,8 +4,8 @@ html {
 }
 
 .bg {
-    background-image: url("/media/background_image.jpg");
-    height: 100%;
+    background-image: url("/media/background.jpg");
+    height: 110%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,7 +28,7 @@ html {
 }
 
 .img-container {
-    height: 300px;
+    max-height: 300px;
 
 }
 
@@ -36,13 +36,7 @@ html {
     max-width: 840px;
 }
 
-.card img {
-    width: 300px;
-}
 
-.card p {
-    max-width: 250px;
-}
 
 #id_beer_style,
 #id_beer,
@@ -68,4 +62,11 @@ html {
 
 #id_score{
     display: none;
+}
+
+
+
+.container-reviews{
+    width:60%;
+    margin:0px auto;
 }

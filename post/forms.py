@@ -19,6 +19,7 @@ class Create_BeerStyle_Form(forms.ModelForm):
 
         widgets = {
             'beer_style' : forms.TextInput(attrs={'class':'form-control'}),
+            
         }
 
 

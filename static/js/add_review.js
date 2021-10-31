@@ -10,7 +10,7 @@ const form = document.querySelector('.review-form')
 
 const handleSelect = (selection) => {
     switch (selection) {
-        case 'first': {
+        case 'first'|| 'cheap': {
             one.classList.add('checked')
             two.classList.remove('checked')
             three.classList.remove('checked')
