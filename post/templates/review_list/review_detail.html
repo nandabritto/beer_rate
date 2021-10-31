@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<div class="card mb-3 mt-5 m-auto detail-container bg-light bg-opacity-75">
+<div class="card mb-3 mt-5 m-auto detail-container bg-dark text-light">
     <div class="card-header">
-        {{ object.beer }}
+        <h1 class = "text-center">{{ object.beer }}</h1>
     </div>
     <div class="row g-0">
         <div class="col-md-5">
@@ -16,15 +16,17 @@
         </div>
         <div class="col-md-7">
             <div class="card-body">
-                <p class="card-text">{{ object.review }}</p>
+                <p class="text-right">Beer Style : {{ object.beer_style }}</p>
+                <p class="card-text">Beer review: {{ object.review }}</p>
                 <p class="card-text">Bitterness: {{ object.bitterness }}</p>
                 <p class="card-text">Money/Value: {{ object.money_value }}</p>
+                <p class="card-text">Rating: {{ object.score }}</p>
 
             </div>
 
         </div>
     </div>
-    <div class="card-footer text-center"><small>Written by: {{ object.user_name }} <br /> Created at:
+    <div class="card-footer text-center text-muted"><small>Written by: {{ object.user_name }} <br /> Created at:
             {{ object.pub_date }}</small></div>
 </div>
 

@@ -15,7 +15,7 @@
 
 {% block content %}
 
-<div class = "container-reviews">
+
 
 
 <section class="pt-5 pb-5 shadow-sm m-auto ">
@@ -46,9 +46,8 @@
                     {% endif %}
                 <div class="card-body">
                         <p class="card-text text-truncate"> {{ review.review }} </p>
-                        
                         <p class="card-text text-truncate"> {{ review.score }} </p>
-                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }} - {{ review.pub_date }} </p>
+                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }} -{{ review.pub_date }} </p>
                         
                     </div>
                     {% if user.is_authenticated %}
@@ -74,7 +73,7 @@
             </div>
             {% endfor %}
         </div>
-    </div>
+
 
 
     <nav aria-label="Page navigation example ">
