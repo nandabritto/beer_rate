@@ -59,7 +59,7 @@ class BeerReview(models.Model):
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE)
     review = models.TextField(max_length=200)
-    bitterness = models.IntegerField(choices=BITTERNESS_CHOICES, default = 1)
+    bitterness = models.IntegerField(choices=BITTERNESS_CHOICES)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
     beer_image = CloudinaryField('image', blank=True)
     score = models.IntegerField()
