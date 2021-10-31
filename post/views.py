@@ -5,6 +5,7 @@ from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
+import logging
 
 
 class HomeView(ListView):
@@ -24,7 +25,6 @@ class AddReviewView(View):
 
     def get_context_data(self, **kwargs):
         kwargs['review'] = self.get_object()
-
         if 'review_form' not in kwargs:
             kwargs['review_form'] = Beer_Review_Form()
         if 'style_form' not in kwargs:
@@ -47,8 +47,13 @@ class AddReviewView(View):
                 review = review_form.save(commit=False)
                 review.user_name = request.user
                 review.save()
+                logging.debug('debug message1')
+                return redirect('review_detail',review.pk)
+
             else:
                 ctxt['review_form'] = review_form
+                logging.debug('debug message2')
+
 
         elif 'beer_style' in request.POST:
             style_form = Create_BeerStyle_Form(request.POST)
@@ -65,6 +70,8 @@ class AddReviewView(View):
                 beer_form.save()
             else:
                 ctxt['beer_form'] = beer_form
+        
+        logging.debug('debug message3')
 
         return render(
             request, self.template_name, self.get_context_data(**ctxt))
