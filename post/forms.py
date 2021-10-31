@@ -9,7 +9,7 @@ class Beer_Review_Form(forms.ModelForm):
         fields = ['beer_style', 'beer', 'review','bitterness',  'money_value', 'beer_image', 'score']
 
         widgets = {
-            'review' : forms.Textarea(attrs={'class':'form-control'}),
+            'review' : forms.Textarea(attrs={'class':'form-control', 'placeholder': 'Write your review here!'}),
         }
 
 class Create_BeerStyle_Form(forms.ModelForm):
