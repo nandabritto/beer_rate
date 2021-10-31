@@ -13,7 +13,7 @@
     <div class="bg-dark bg-opacity-50 col-lg-9 col-11 m-auto rounded">
       <h1 class="text-light text-center bold p-3"> Add your beer review</h1>
       <div class="text-light">
-        <form method="POST" actions="/add_review">
+        <form method="POST" actions="/add_review" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="m-3 align-middle p-2">
             Beer Style: {{ review_form.beer_style}}
@@ -35,6 +35,7 @@
           <div class="m-3 align-middle p-2 text-center">
             Bitterness: {{ review_form.bitterness}} &nbsp;| &nbsp; Money Value : {{ review_form.money_value}}
             | &nbsp; Add your beer picture : {{review_form.beer_image}}
+            {{review_form.score}}
           </div>
           <div class="m-3 align-middle p-2 text-center">
             <!-- {{ review_form.user_name}} -->

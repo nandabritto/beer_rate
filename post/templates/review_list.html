@@ -46,7 +46,7 @@
 
                     <span class="m-auto">
                         <h4>
-                            <a href="{% url 'update_review' review.pk %}" class="text-decoration-none text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
+                            <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
                                     class="fas fa-edit px-2"></i>
                             </a>
                             <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
@@ -64,4 +64,27 @@
         </div>
     </div>
 
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+
+    <!---------------------------- My JS -->
+    <script src="{% static 'js/script.js' %}"></script> 
     {% endblock %}

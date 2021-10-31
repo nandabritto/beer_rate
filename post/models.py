@@ -49,13 +49,7 @@ class BeerReview(models.Model):
         (5, '5'),
     )
 
-    # RATING_CHOICES = (
-    #     (1, '1'),
-    #     (2, '2'),
-    #     (3, '3'),
-    #     (4, '4'),
-    #     (5, '5'),
-    # )
+    
     
     beer_style = models.ForeignKey(
         BeerStyle, on_delete=models.CASCADE)
@@ -68,7 +62,7 @@ class BeerReview(models.Model):
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES, default = 1)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES)
     beer_image = CloudinaryField('image', blank=True)
-    # rating = models.IntegerField(choices=RATING_CHOICES)#
+    score = models.IntegerField()
     
     def __str__(self):
         return str(self.beer)
