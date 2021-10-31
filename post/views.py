@@ -82,7 +82,7 @@ class AddReviewView(View):
 class BeerRatingView(ListView):
     model = BeerReview
     template_name = 'review_list.html'
-    paginate_by = 3
+    paginate_by = 6
 
 
 class BeerStyleCreateView(ListView):

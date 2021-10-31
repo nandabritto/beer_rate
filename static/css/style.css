@@ -5,10 +5,8 @@ html {
 
 .bg {
     background-image: url("/media/background.jpg");
-    height: 110%;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  
 }
 
 /* Container box */
@@ -70,3 +68,4 @@ html {
     width:60%;
     margin:0px auto;
 }
+

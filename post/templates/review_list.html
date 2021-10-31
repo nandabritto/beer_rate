@@ -26,8 +26,8 @@
             {% for review in object_list %}
 
 
-            <div class="col col-md-6 col-lg-4 d-flex ">
-                <div class="card w-100 text-light bg-dark bg-opacity-75 rounded">
+            <div class="col col-md-6 col-lg-4 d-flex">
+                <div class="card w-100 text-light bg-dark rounded ">
                     <a href="{% url 'review_detail' review.pk %}"
                         class="text-decoration-none text-uppercase fw-bold text-white">
 
@@ -45,10 +45,11 @@
                     <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" class="card-img-top rounded-2" alt="default error image">
                     {% endif %}
                 <div class="card-body">
-
-
-
                         <p class="card-text text-truncate"> {{ review.review }} </p>
+                        
+                        <p class="card-text text-truncate"> {{ review.score }} </p>
+                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }} - {{ review.pub_date }} </p>
+                        
                     </div>
                     {% if user.is_authenticated %}
                     {% if user.id == review.user_name.id %}
