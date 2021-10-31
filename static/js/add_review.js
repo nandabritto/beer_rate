@@ -1,3 +1,4 @@
+// get all the stars
 const one = document.getElementById('first')
 const two = document.getElementById('second')
 const three = document.getElementById('third')

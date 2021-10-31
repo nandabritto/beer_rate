@@ -58,5 +58,14 @@ html {
 }
 
 .checked{
-    color: yellow;
+    color: rgb(255, 202, 44);
+}
+
+.stars{
+    margin:0 auto;
+    width:fit-content;
+}
+
+#id_score{
+    display: none;
 }
