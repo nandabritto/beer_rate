@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
 
 <fieldset>
 
-  <div class="container mt-5">
-    <div class="bg-dark bg-opacity-50 col-lg-9 col-11 m-auto rounded">
+  <div class="container mt-3">
+    <div class="bg-dark col-lg-9 col-11 m-auto rounded">
       <h1 class="text-light text-center bold p-3"> Update your beer review</h1>
       <div class="text-light">
-        <form method="POST" actions="/add_review">
+        <form method="POST" actions="/add_review" class=" review-form">
           {% csrf_token %}
           <div class="m-3 align-middle p-2">
             Beer Style: {{ form.beer_style}}
@@ -26,9 +26,19 @@
               Bitterness: {{ form.bitterness}} &nbsp;| &nbsp; Money Value : {{ form.money_value}}
               <div class="p-3"> Add your beer picture : {{form.beer_image}}</div>
             </div>
+        
+              
+             <div class="mt-2 stars"> {{form.score}}
+            <h3 class="text-center">Rate your beer!</h3>
+              <span class="fa fa-star fa-3x my-btn" id="first"></span>
+              <span class="fa fa-star fa-3x my-btn" id="second"></span>
+              <span class="fa fa-star fa-3x my-btn" id="third"></span>
+              <span class="fa fa-star fa-3x my-btn" id="fourth"></span>
+              <span class="fa fa-star fa-3x my-btn" id="fifth"></span>
+          </div>
             <div class="text-center">
               <input type="submit" value="Update" name="htmlsubmitbutton1"
-                class="btn btn-secondary btn-success login-button btn-lg ">
+                class="btn btn-secondary btn-success login-button btn-lg m-3">
             </div>
         </form>
       </div>
@@ -37,6 +47,6 @@
 </fieldset>
 
 
-
+<script src="{% static 'js/add_review.js' %}"></script>
 
 {% endblock content %}
