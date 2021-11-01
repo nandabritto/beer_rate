@@ -5,23 +5,31 @@ html {
 
 .bg {
     background-image: url("/media/background.jpg");
-    background-position: center;
     background-size: cover;
 
 }
 
 /* Container box */
 .bg-dark,
-.bg-light{
+.bg-light {
     opacity: 0.9;
 }
+
+.container-box-home {
+    margin-top: 25vh;
+    margin-left: 5%;
+}
+
+
 .container-box {
-    margin-top: 15%;
+    margin-top: 15vh;
     margin-right: 25%;
+
 }
 
 .container-box-signin {
-    margin-top: 6%;
+    margin-top: 15vh;
+    margin-right: 10vw;
 }
 
 .login-button:hover {
@@ -38,8 +46,6 @@ html {
     max-width: 840px;
 }
 
-
-
 #id_beer_style,
 #id_beer,
 #id_bitterness,
@@ -51,7 +57,7 @@ html {
 #id_email,
 #id_password1,
 #id_password2 {
-    width: 400px;
+    width: 300px;
     margin: 0 auto;
 }
 
@@ -79,4 +85,13 @@ html {
 .container-reviews {
     width: 60%;
     margin: 0px auto;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+    body {
+        background-position-x: 20%;
+    }
 }
