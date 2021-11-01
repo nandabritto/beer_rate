@@ -1,11 +1,17 @@
 {% extends "base.html" %}
-
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url("{{MEDIA_URL}}login_background.jpg")!important;
+   }
+</style>
+{% endblock %}
 {%block title %} Login {% endblock %}
 
 {% block content %}
 <!-----------------------------------Login container ----------------------->
 <div class="container container-box">
-  <div class="d-flex justify-content-center col-lg-4 col-11">
+  <div class="d-flex justify-content-center col-lg-4 col-12 float-end">
     <div class="card bg-dark">
       <div class="card-header text-light">
         <h3>Log In</h3>
