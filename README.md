@@ -1,6 +1,10 @@
 <h1 align=center> Best beer</h1>
 
-<p align=center>Rate your beer
+<p align=center>Are you a beer lover?<br/> Would you like to know what people are saying about a beer that you are eager to buy? <br/>
+ Would you like to have your own review list of all beers that you already tasted on your life?<br/> This app is for you! <br/>
+On beer rating you can add a review about your favorites beers or research about beers that your are curous to tste it!! <br/>
+Check it out! <br/>
+Cheers! 
 
  <br>
  </p>
@@ -19,10 +23,23 @@ Live app link [here]()
 
 + As a user, I would like to be able to …
 
-1. 
-2. 
-3. 
-4. 
+1. Register on website using my username, email and password;
+2. Check all beer reviews added on website;
+3. Check beer review details about all added beers.
+4. Search for a beer or beer style on navbar.
+
++ As a logged user, I would like to be able to …
+
+1. Create a beer review of my favorites beers including :
+ + Beer Name,
+ + Beer Style,
+ + My thoughts about the beer,
+ + Beer bitterness level,
+ + Beer maney and value ratio, and
+ + Overall beer rating;
+2. Create a new beer or beer style if my beer or beer style are not added on Database;
+3. Check my beer review after added;
+4. Edit or delete my beer reviews. 
 
 ### App Owner Stories
 
@@ -45,11 +62,11 @@ The following flowchart shows the flow of "Best Beer" graphically.
 
 I would like to ...
 
-1. 
-2. 
-3. 
-4. 
-5. 
+1. Add a infinite carroussel to present beer reviews on reviews list webpage;
+2. Create a placeholder image database to be added on post if user doesn't add a beer image on their review;
+3. Add a beer style json database on Beer style form;
+4. Add a beer json database on Beer Form; 
+5. Include icon rating for bitterness and money vale field. 
 6. 
 
 ## Languages Used
@@ -71,7 +88,7 @@ All testing and code validation details are described in a separate file called 
 
 | Bugs              | Solutions |
 | ---               | --------- |
-| 
+| Database inconsistency during unittests|Restart all project adding two different databases (development and production) in order to  make possible to run tests successfully.
 | 
 | 
 | 
@@ -162,19 +179,20 @@ $ git clone https://github.com/nandabritto/Bestbeer
 Press Enter. Your local clone will be created.
 </details>
 
+
 # Credits
 
 ### Work based on other code
 
-[]() -
-[]() -<br>
+[Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw) - Used as a base to develop several features as: login, registration and beer review form. <br>
+[Pyplane](https://www.youtube.com/channel/UCQtHyVB4O4Nwy1ff5qQnyRw) - Star rating tutorial used to develop beer ratin feature. <br>
+[Tutorials Point](https://www.tutorialspoint.com/django-handling-multiple-forms-in-single-view) - Used to add different  django forms on same add review page. <br>
 
 
 # Acknowledgements
 
-+ To the Slack community as I have used the different channels to find answers to problems!
 + Stack Overflow is a valuable resource for solving lots of issues.
-+ W3schools and Python libraries documentation for general reference.
++ W3schools and Django documentation for general reference.
 
 I would also like to thank:
 
