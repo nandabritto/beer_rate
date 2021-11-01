@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 class BeerStyle(models.Model):
     '''Create a beer style model form'''
 
-    beer_style = models.CharField(max_length=200, unique=True)
+    beer_style = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.beer_style
@@ -18,7 +18,7 @@ class BeerStyle(models.Model):
 
 class Beer(models.Model):
     '''Create a beer model form'''
-    beer_name = models.CharField(max_length=200, unique=True)
+    beer_name = models.CharField(max_length=50, unique=True)
     style = models.ManyToManyField(BeerStyle)
 
     def __str__(self):
@@ -57,7 +57,7 @@ class BeerReview(models.Model):
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES, default=0)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES, default=0)
     beer_image = CloudinaryField('image', blank=True)
-    score = models.IntegerField()
+    score = models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.beer)
