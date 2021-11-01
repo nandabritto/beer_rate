@@ -14,26 +14,23 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-# For debugging 
+# For debugging
 if DEBUG:
     # will output to your console
     logging.basicConfig(
-        level = logging.DEBUG,
-        format = '%(asctime)s %(levelname)s %(message)s',
+        level=logging.DEBUG,
+        format='%(asctime)s %(levelname)s %(message)s',
     )
 else:
     # will output to logging file
     logging.basicConfig(
-        level = logging.DEBUG,
-        format = '%(asctime)s %(levelname)s %(message)s',
-        filename = '/my_log_file.log',
-        filemode = 'a'
+        level=logging.DEBUG,
+        format='%(asctime)s %(levelname)s %(message)s',
+        filename='/my_log_file.log',
+        filemode='a'
     )
 
-
-
 ALLOWED_HOSTS = ["bestbeer-app.herokuapp.com", "localhost"]
-
 
 # Application definition
 
@@ -50,7 +47,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap_modal_forms',
     'active_link',
-    
     # apps
     'post',
     'members',
@@ -80,13 +76,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                
             ],
         },
     },
 ]
 
-crispy_template_pack ='uni_form'
+crispy_template_pack = 'uni_form'
 
 WSGI_APPLICATION = 'django_beerapp.wsgi.application'
 
@@ -94,10 +89,13 @@ WSGI_APPLICATION = 'django_beerapp.wsgi.application'
 # Database
 
 if DEBUG:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get("DEV_DATABASE_URL"))}
-    
+    DATABASES = {
+        'default': dj_database_url.parse(
+            os.environ.get("DEV_DATABASE_URL"))}
 else:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+    DATABASES = {
+        'default': dj_database_url.parse(
+            os.environ.get("DATABASE_URL"))}
 
 # Password validation
 

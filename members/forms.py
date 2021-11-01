@@ -1,34 +1,49 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django import forms 
+from django.core.exceptions import ValidationError
+from django import forms
+
 
 class SignUpForm(forms.Form):
-    username = forms.CharField(label='Enter Username', min_length=4, max_length=150)
-    email = forms.EmailField(label='Enter Email')
-    password1 = forms.CharField(label='Enter Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
+    '''Create a signup form'''
+    username = forms.CharField(
+        label='Enter Username',
+        min_length=4,
+        max_length=150)
+    email = forms.EmailField(
+        label='Enter Email')
+    password1 = forms.CharField(
+        label='Enter Password',
+        widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label='Confirm Password',
+        widget=forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)
         for field in self.fields:
-            self.fields[field].widget.attrs.update({'class': 'form-control'})
-
+            self.fields[field].widget.attrs.update({
+                'class': 'form-control'})
 
     def clean_username(self):
+        '''Clean username field after form creation'''
         username = self.cleaned_data['username'].lower()
         r = User.objects.filter(username=username)
         if r.count():
-            raise  ValidationError("Username already exists")
+            raise ValidationError("Username already exists")
         return username
 
     def clean_email(self):
+        '''Clean email field after form creation'''
+
         email = self.cleaned_data['email'].lower()
         r = User.objects.filter(email=email)
         if r.count():
-            raise  ValidationError("Email already exists")
+            raise ValidationError("Email already exists")
         return email
 
     def clean_password2(self):
+        '''Clean confirm password field after form creation'''
+
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
 
@@ -38,6 +53,7 @@ class SignUpForm(forms.Form):
         return password2
 
     def save(self, commit=True):
+        '''Save register form if all information is valid'''
         user = User.objects.create_user(
             self.cleaned_data['username'],
             self.cleaned_data['email'],

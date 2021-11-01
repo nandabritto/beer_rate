@@ -1,19 +1,23 @@
+import logging
 from django.http import Http404
 from django.shortcuts import redirect, render
-from .models import BeerReview
-from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
-import logging
+from .models import BeerReview
+from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 
 
 class HomeView(ListView):
+    '''Render homepage view '''
+
     model = BeerReview
     template_name = 'home.html'
 
 
 class AddReviewView(View):
+    '''Render add review page'''
+
     template_name = 'add_review.html'
 
     def get_object(self):
@@ -24,6 +28,8 @@ class AddReviewView(View):
         return obj
 
     def get_context_data(self, **kwargs):
+        '''Get the right form according to the part of the page clicked'''
+
         kwargs['review'] = self.get_object()
         if 'review_form' not in kwargs:
             kwargs['review_form'] = Beer_Review_Form()
@@ -35,9 +41,13 @@ class AddReviewView(View):
         return kwargs
 
     def get(self, request, *args, **kwargs):
+        '''Return to add form page after creating a beer or beer style '''
+
         return render(request, self.template_name, self.get_context_data())
 
     def post(self, request, *args, **kwargs):
+        ''' Validate and create data from forms on add review page'''
+
         ctxt = {}
 
         if 'review' in request.POST:
@@ -54,7 +64,6 @@ class AddReviewView(View):
                 ctxt['review_form'] = review_form
                 logging.debug('debug message2')
 
-
         elif 'beer_style' in request.POST:
             style_form = Create_BeerStyle_Form(request.POST)
 
@@ -70,46 +79,52 @@ class AddReviewView(View):
                 beer_form.save()
             else:
                 ctxt['beer_form'] = beer_form
-        
+
         logging.debug('debug message3')
 
         return render(
             request, self.template_name, self.get_context_data(**ctxt))
 
 
-
-
 class BeerRatingView(ListView):
+    '''Creates a list view of all reviews on website'''
+
     model = BeerReview
     template_name = 'review_list.html'
     paginate_by = 6
 
 
 class BeerStyleCreateView(ListView):
+    '''Create a beer style on add review page'''
+
     template_name = 'add_review/create_style.html'
     form_class = Create_BeerStyle_Form
     success_message = 'Success: Beer Style was created.'
 
 
 class ReviewDetailView(DetailView):
+    '''Create a detailed view of every review on website'''
+
     model = BeerReview
     template_name = 'review_list/review_detail.html'
 
 
 class UpdateReviewView(UpdateView):
+    '''Update a review after editing'''
     model = BeerReview
     form_class = Beer_Review_Form
     template_name = 'review_list/review_update.html'
 
     def form_valid(self, form):
+        '''validate update review form and save it'''
         self.object = form.save(commit=False)
         self.object.save()
         return redirect('review_detail', self.object.pk)
 
 
 class DeleteReviewView(DeleteView):
+    '''Delete a beer review form'''
     model = BeerReview
     form_class = Beer_Review_Form
     template_name = 'review_list/review_delete.html'
     success_url = reverse_lazy('review_list')
-    

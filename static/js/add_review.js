@@ -7,7 +7,7 @@ const five = document.getElementById('fifth')
 
 const form = document.querySelector('.review-form')
 
-
+// get the hover stars and add/remove checked class
 const handleSelect = (selection) => {
     switch (selection) {
         case 'first'|| 'cheap': {
@@ -58,6 +58,7 @@ const handleSelect = (selection) => {
     }
 }
 
+///Get string value from stars and add numeric value 
 const getNumericValue = (stringValue) => {
     let numericValue;
     if (stringValue === 'first') {
@@ -79,19 +80,15 @@ const getNumericValue = (stringValue) => {
 
 const arr = [one, two, three, four, five]
 
+///Add event listener to mouse hover on rating stars
 arr.forEach(item => item.addEventListener('mouseover', (event) => {
     handleSelect(event.target.id)
 
 }))
 
-
+/// Tranform string value from stars into numeric value 
 arr.forEach(item => item.addEventListener('click', (event) => {
-    // value of the rating not numeric
     const val = event.target.id
-    console.log(val)
-
     const val_num = getNumericValue(val)
-    console.log(val_num)
     form.score.value = val_num
-    console.log(form.score.value)
 }))
