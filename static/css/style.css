@@ -40,11 +40,20 @@ html {
 #id_beer_style,
 #id_beer,
 #id_bitterness,
-#id_money_value {
+#id_money_value,
+ {
     width: 200px;
 }
 
-#id_review{
+#id_username, 
+#id_email,
+#id_password1,
+#id_password2{
+    width: 400px;
+    margin:0 auto;
+}
+
+#id_review, {
     width:500px;
     margin: 0 auto;
 
