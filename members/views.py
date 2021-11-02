@@ -48,5 +48,3 @@ def register_user(request):
         'form': form,
         
         })
-
-        

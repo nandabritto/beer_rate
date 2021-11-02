@@ -68,6 +68,7 @@ class Create_SignUpForm_Test(TestCase):
         username = User.objects.get(username="fernandaa") 
         self.assertEqual(str(username.username), "fernandaa")
 
+# https://goodcode.io/articles/django-assert-raises-validationerror/
     # def test_SignUpForm_clean_username_is_diplicated(self):
     #     # Sign Up form is valid 
     #     form = SignUpForm(data={
