@@ -92,6 +92,7 @@ class BeerRatingView(ListView):
     model = BeerReview
     template_name = 'review_list.html'
     paginate_by = 6
+    ordering = ['pub_date']
 
 
 class BeerStyleCreateView(ListView):
@@ -99,7 +100,7 @@ class BeerStyleCreateView(ListView):
 
     template_name = 'add_review/create_style.html'
     form_class = Create_BeerStyle_Form
-    success_message = 'Success: Beer Style was created.'
+    # success_message = 'Success: Beer Style was created.'
 
 
 class ReviewDetailView(DetailView):
