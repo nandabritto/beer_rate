@@ -21,11 +21,11 @@ class TestUrls(TestCase):
 
     def test_AddReviewView_is_resolved(self):
         response = self.client.get('/add_review')
-        self.assertEquals(response.status_code, 200)
+        self.assertEquals(response.status_code, 301)
 
     def test_BeerRatingView_is_resolved(self):
         response = self.client.get('/review_list')
-        self.assertEquals(response.status_code, 200)
+        self.assertEquals(response.status_code, 301)
 
     def test_ReviewDetailView_is_resolved(self):
         response = self.client.get('/review_detail')

@@ -1,7 +1,9 @@
-from django.test import TestCase, Client
+from django.test import RequestFactory, TestCase, Client
 from django.contrib.auth.models import User
 from django.urls import reverse
+from .views import AddReviewView
 from .models import BeerReview, Beer, BeerStyle
+from .forms import Beer_Review_Form
 
 
 class BeerRatingView(TestCase):
@@ -140,3 +142,55 @@ class AddReviewViewTest(TestCase):
                     }
         response = self.client.post(reverse('add_review'), data=payload)
         self.assertEqual(response.status_code, 302)
+
+
+class UpdateReviewViewTest(TestCase):
+    '''Test Update review view response, correct url and template'''
+    def setUp(self):
+        user = User.objects.create(username="joe", password="12345")
+        beer = Beer.objects.create(beer_name='Beer')
+        beer_style = BeerStyle.objects.create(beer_style='Style')
+
+        self.BeerReview = BeerReview.objects.create(
+            beer_style=beer_style,
+            beer=beer,
+            user_name=user,
+            pub_date='Oct. 24, 2021, 8:52 p.m.',
+            review='Review Test',
+            bitterness='5',
+            money_value='3',
+            score='1')
+
+    def test_review_update_url_exists(self):
+        response = self.client.get(
+            '/review_list/edit/' + str(self.BeerReview.id))
+        self.assertEqual(response.status_code, 200)
+
+    def test_review_update_view_success_status_code(self):
+        url = reverse('review_update', kwargs={
+            'pk': self.BeerReview.id})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_review_update_url_by_name(self):
+        response = self.client.get(reverse('review_update', kwargs={
+            'pk': self.BeerReview.id}))
+        self.assertEqual(response.status_code, 200)
+
+    def test_review_update_uses_correct_template(self):
+        response = self.client.get(reverse('review_update', kwargs={
+            'pk': self.BeerReview.id}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'review_list/review_update.html')
+
+    def test_review_update_contains_correct_html(self):
+        response = self.client.get(reverse('review_update', kwargs={
+            'pk': self.BeerReview.id}))
+        self.assertContains(response, 'Bitterness')
+
+    def test_review_update__page_does_not_contain_incorrect_html(self):
+        response = self.client.get(reverse('review_update', kwargs={
+            'pk': self.BeerReview.id}))
+        self.assertNotContains(
+            response, 'Hi there! I should not be on the page.')
+

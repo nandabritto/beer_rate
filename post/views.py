@@ -40,7 +40,6 @@ class AddReviewView(View):
 
     def get(self, request, *args, **kwargs):
         '''Return to add form page after creating a beer or beer style '''
-
         return render(request, self.template_name, self.get_context_data())
 
     def post(self, request, *args, **kwargs):
@@ -50,13 +49,11 @@ class AddReviewView(View):
 
         if 'review' in request.POST:
             review_form = Beer_Review_Form(request.POST)
-            logging.debug('post - review')
 
             if review_form.is_valid():
                 review = review_form.save(commit=False)
                 review.user_name = request.user
                 review.save()
-                logging.debug('post - review - save')
                 return redirect('review_detail',review.pk)
 
             else:
@@ -64,7 +61,6 @@ class AddReviewView(View):
 
         elif 'beer_style' in request.POST:
             style_form = Create_BeerStyle_Form(request.POST)
-            logging.debug('post - beer_style')
 
             if style_form.is_valid():
                 style_form.save()
