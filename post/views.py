@@ -10,14 +10,12 @@ from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
 
 class HomeView(ListView):
     '''Render homepage view '''
-
     model = BeerReview
     template_name = 'home.html'
 
 
 class AddReviewView(View):
     '''Render add review page'''
-
     template_name = 'add_review.html'
 
     def get_object(self):
@@ -52,20 +50,21 @@ class AddReviewView(View):
 
         if 'review' in request.POST:
             review_form = Beer_Review_Form(request.POST)
+            logging.debug('post - review')
 
             if review_form.is_valid():
                 review = review_form.save(commit=False)
                 review.user_name = request.user
                 review.save()
-                logging.debug('debug message1')
+                logging.debug('post - review - save')
                 return redirect('review_detail',review.pk)
 
             else:
                 ctxt['review_form'] = review_form
-                logging.debug('debug message2')
 
         elif 'beer_style' in request.POST:
             style_form = Create_BeerStyle_Form(request.POST)
+            logging.debug('post - beer_style')
 
             if style_form.is_valid():
                 style_form.save()
@@ -80,15 +79,12 @@ class AddReviewView(View):
             else:
                 ctxt['beer_form'] = beer_form
 
-        logging.debug('debug message3')
-
         return render(
             request, self.template_name, self.get_context_data(**ctxt))
 
 
 class BeerRatingView(ListView):
     '''Creates a list view of all reviews on website'''
-
     model = BeerReview
     template_name = 'review_list.html'
     paginate_by = 6
@@ -97,7 +93,6 @@ class BeerRatingView(ListView):
 
 class BeerStyleCreateView(ListView):
     '''Create a beer style on add review page'''
-
     template_name = 'add_review/create_style.html'
     form_class = Create_BeerStyle_Form
     # success_message = 'Success: Beer Style was created.'
@@ -105,7 +100,6 @@ class BeerStyleCreateView(ListView):
 
 class ReviewDetailView(DetailView):
     '''Create a detailed view of every review on website'''
-
     model = BeerReview
     template_name = 'review_list/review_detail.html'
 

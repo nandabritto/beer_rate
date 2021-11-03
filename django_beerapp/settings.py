@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap_modal_forms',
     'active_link',
+    'rest_framework',
     # apps
     'post',
     'members',
