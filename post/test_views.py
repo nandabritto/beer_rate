@@ -1,3 +1,4 @@
+import logging
 from django.test import RequestFactory, TestCase, Client
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -160,6 +161,32 @@ class UpdateReviewViewTest(TestCase):
             bitterness='5',
             money_value='3',
             score='1')
+
+    def test_update_review(self):
+        review = self.BeerReview
+        # response = self.client.post(
+        #     reverse('review_update', kwargs={'pk': review.id})) 
+
+
+        self.client.login(username='joe', password='12345')
+        # logging.debug('UpdateReviewViewTest - test_update_review - login')
+        # logging.debug(self.client)
+        payload = {
+                    'review': 'Review from post method',
+                    'bitterness': '4',
+                    'money_value': '4',
+                    'beer_image': '',
+                    'score': '5'
+                    }
+        # logging.debug('UpdateReviewViewTest - test_update_review - reverse')
+        # logging.debug(reverse('review_update', kwargs={'pk': review.id}))
+        review.save()
+        response = self.client.get(reverse('review_detail', kwargs={'pk': review.id}), data=payload)
+        # logging.debug('UpdateReviewViewTest - test_update_review - response')
+        # logging.debug(response)
+        self.assertEqual(response.status_code, 302)
+
+        
 
     def test_review_update_url_exists(self):
         response = self.client.get(
