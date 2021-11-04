@@ -19,11 +19,11 @@ class AddReviewView(View):
     template_name = 'add_review.html'
 
     def get_object(self):
-        try:
-            obj = BeerReview.objects.all()
-        except BeerReview.DoesNotExist:
-            raise Http404('Beer Review not found!')
-        return obj
+        # try:
+        obj = BeerReview.objects.all()
+        # except BeerReview.DoesNotExist:
+        #     raise Http404('Beer Review not found!')
+        # return obj
 
     def get_context_data(self, **kwargs):
         '''Get the right form according to the part of the page clicked'''
@@ -104,21 +104,18 @@ class UpdateReviewView(UpdateView):
     '''Update a review after editing'''
     model = BeerReview
     form_class = Beer_Review_Form
-    logging.debug('Executing func: form_valid')
     template_name = 'review_list/review_update.html'
 
     def form_valid(self, form):
         '''validate update review form and save it'''
-        logging.debug('Executing func: form_valid')
-        logging.debug(form)
+    
         self.object = form.save(commit=False)
-        logging.debug('Executing func: form_valid - form.save')
-        logging.debug(self.object)
         self.object.save()
         return redirect('review_detail', self.object.pk)
+    
 
-    # def post(self, request, *args, **kwargs):
-    #     self.form_valid(self, *args, **kwargs)
+
+
 
 
 class DeleteReviewView(DeleteView):

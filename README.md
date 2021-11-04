@@ -89,7 +89,7 @@ All testing and code validation details are described in a separate file called 
 | Bugs              | Solutions |
 | ---               | --------- |
 | Database inconsistency during unittests|Restart all project adding two different databases (development and production) in order to  make possible to run tests successfully.
-| 
+| Update Review Unittest failed when tried to change a review | 
 | 
 | 
 
