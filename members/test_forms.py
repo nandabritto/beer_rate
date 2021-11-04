@@ -4,13 +4,13 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
 
-class Setup_Class(TestCase):
-     def setUp(self):
-        username = User.objects.create(
-            username="fernanda",
-            password1="12345",
-            password2="12345",
-            email="fernandabrito@gmail.com")
+# class Setup_Class(TestCase):
+#      def setUp(self):
+#         username = User.objects.create(
+#             username="fernanda",
+#             password1="12345",
+#             password2="12345",
+#             email="fernandabrito@gmail.com")
        
 
 class Create_SignUpForm_Test(TestCase):

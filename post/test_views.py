@@ -115,15 +115,36 @@ class AddReviewViewTest(TestCase):
         self.beer = Beer.objects.create(beer_name='Beer_Post')
         self.beer_style = BeerStyle.objects.create(beer_style='Style_post')
 
-    def test_add_review_beer_stype_post(self):
-        payload = {'beer_style': 'Style_post'}
+    def test_add_review_beer_style_post(self):
+        self.client = Client()
+        self.client.login(username='testuser', password='12345')
+        payload = {'beer_style': 'Style_post2'}
         response = self.client.post(reverse('add_review'), payload)
         self.assertEqual(response.status_code, 200)
+        self.assertIn('style_form', response.context)
+
+    def test_add_review_beer_style_form_invalid(self):
+        self.client = Client()
+        self.client.login(username='testuser', password='12345')
+        payload = {'beer_style': ''}
+        response = self.client.post(reverse('add_review'), payload)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('style_form', response.context)
 
     def test_add_review_beer_name_post(self):
         payload = {'beer_name': 'Beer_post'}
         response = self.client.post(reverse('add_review'), payload)
         self.assertEqual(response.status_code, 200)
+        self.assertIn('beer_form', response.context)
+
+    def test_add_review_beer_form_invalid(self):
+        self.client = Client()
+        self.client.login(username='testuser', password='12345')
+        payload = {'beer_name': ''}
+        response = self.client.post(reverse('add_review'), payload)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('beer_form', response.context)
+
 
     def test_add_review_beer_review_post(self):
         user = User.objects.create(username='testuser')
@@ -143,7 +164,22 @@ class AddReviewViewTest(TestCase):
                     }
         response = self.client.post(reverse('add_review'), data=payload)
         self.assertEqual(response.status_code, 302)
-
+    
+    def test_add_review_form_invalid(self):
+        self.client = Client()
+        self.client.login(username='testuser', password='12345')
+        payload = {
+                    'beer_style': self.beer_style.id,
+                    'beer': self.beer.id,
+                    'review': 'Review from post method',
+                    'bitterness': '',
+                    'money_value': '',
+                    'beer_image': '',
+                    'score': '1'
+                    }
+        response = self.client.post(reverse('add_review'), payload)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('review_form', response.context)
 
 class PostUpdateViewTestCase(TestCase):
     '''
