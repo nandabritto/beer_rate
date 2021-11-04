@@ -32,9 +32,21 @@ class test_logout(TestCase):
         self.user = User.objects.create_user(
             username='fernanda', email='fernanda@gmail.com', password='12345')
 
-
     def test_logout(self):
-        self.client.logout()
-        self.assertTrue(self.user.is_authenticated)
-        self.assertFalse(self.user.is_anonymous)
+        response = self.client.get(reverse('logout'))
+        self.assertRedirects(response, '/', status_code=302)
 
+
+class test_register(TestCase):
+
+    def test_register__user(self):
+        response = self.client.post(reverse('register'), data={
+            'username': self.username,
+            'email': self.email,
+            'password1': self.password,
+            'password2': self.password
+        })
+    self.assertEqual(response.status_code, 200)
+
+    users = get_user_model().objects.all()
+    self.assertEqual(users.count(), 1)

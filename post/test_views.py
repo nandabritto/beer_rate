@@ -179,12 +179,12 @@ class UpdateReviewViewTest(TestCase):
                     'score': '5'
                     }
         # logging.debug('UpdateReviewViewTest - test_update_review - reverse')
-        # logging.debug(reverse('review_update', kwargs={'pk': review.id}))
+        logging.debug(reverse('review_update', kwargs={'pk': review.id}))
         review.save()
         response = self.client.get(reverse('review_detail', kwargs={'pk': review.id}), data=payload)
         # logging.debug('UpdateReviewViewTest - test_update_review - response')
         # logging.debug(response)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
         
 
