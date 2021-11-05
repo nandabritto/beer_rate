@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'active_link',
     'rest_framework',
+
     # apps
     'post',
     'members',

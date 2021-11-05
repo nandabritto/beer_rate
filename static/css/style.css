@@ -9,6 +9,10 @@ html {
 
 }
 
+.section-container {
+    max-width: 1000px;
+}
+
 /* Container box */
 .bg-dark,
 .bg-light {
@@ -22,14 +26,9 @@ html {
 
 
 .container-box {
-    margin-top: 15vh;
-    margin-right: 25%;
+    margin-top: 20vh;
 
-}
 
-.container-box-signin {
-    margin-top: 15vh;
-    margin-right: 10vw;
 }
 
 .login-button:hover {
@@ -87,11 +86,20 @@ html {
     margin: 0px auto;
 }
 
+@media (min-width: 1200px) {
+    .pull-right-lg {
+        float: right;
+        
+    }
 
 @media only screen and (max-width: 600px) {
 
 
     body {
         background-position-x: 20%;
+    }
+
+    .section-container {
+        max-width: 80%;
     }
 }

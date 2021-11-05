@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block additional_styles %}
 <style>
-   body {
-    background-image: url("{{MEDIA_URL}}login_background.jpg")!important;
-   }
+  body {
+    background-image: url("{{MEDIA_URL}}login_background.jpg") !important;
+  }
 </style>
 {% endblock %}
 {% load crispy_forms_tags %}
@@ -22,22 +22,32 @@
 
 {% endif %}
 
-<div class="container-box-signin text-center">
-  <div class="bg-dark  col-lg-4 col-md-6 col-11 rounded float-end">
-    <div class="text-light">
-      <h3>Sign In</h3>
-      <form action="{% url 'register' %}" method="POST">
-        {% csrf_token %}
-        {{form}}
 
-        <div class= "p-3 d-flex justify-content-center">
-          <input type="submit" value="Register" class="btn btn-secondary btn-success login-button">
-        </div>
-      </form>
 
+
+<!-----------------------------------Login container ----------------------->
+<div class="container container-box">
+  <div class="d-flex justify-content-center col-lg-6 col-12 float-end">
+    <div class="card bg-dark">
+      <div class="card-header text-light">
+        <h3 class="text-end">Register &nbsp<i class="fas fa-user-plus"></i></h3>
+      </div>
+      <!-----------------------------------Login form ----------------------->
+      <div class="card-body m-auto text-light">
+        <form action="" method="POST">
+
+          {% csrf_token %}
+          {{form.as_p}}
+
+
+          <div class="p-3 d-flex justify-content-center">
+            <input type="submit" value="Sign In" class="btn btn-secondary btn-warning login-button">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+
 
 
 
