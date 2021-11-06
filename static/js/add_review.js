@@ -10,7 +10,7 @@ const form = document.querySelector('.review-form')
 // get the hover stars and add/remove checked class
 const handleSelect = (selection) => {
     switch (selection) {
-        case 'first'|| 'cheap': {
+        case 'first': {
             one.classList.add('checked')
             two.classList.remove('checked')
             three.classList.remove('checked')
