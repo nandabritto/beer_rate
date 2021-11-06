@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import BeerReview
-from .forms import Beer_Review_Form, Create_BeerStyle_Form, Create_Beer_Form
+from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
 
 
 class HomeView(ListView):
@@ -19,22 +19,18 @@ class AddReviewView(View):
     template_name = 'add_review.html'
 
     def get_object(self):
-        # try:
-        obj = BeerReview.objects.all()
-        # except BeerReview.DoesNotExist:
-        #     raise Http404('Beer Review not found!')
-        # return obj
+        obj = BeerReview.objects.all()       
 
     def get_context_data(self, **kwargs):
         '''Get the right form according to the part of the page clicked'''
 
         kwargs['review'] = self.get_object()
         if 'review_form' not in kwargs:
-            kwargs['review_form'] = Beer_Review_Form()
+            kwargs['review_form'] = BeerReviewForm()
         if 'style_form' not in kwargs:
-            kwargs['style_form'] = Create_BeerStyle_Form()
+            kwargs['style_form'] = CreateBeerStyleForm()
         if 'beer_form' not in kwargs:
-            kwargs['beer_form'] = Create_Beer_Form()
+            kwargs['beer_form'] = CreateBeerForm()
 
         return kwargs
 
@@ -48,7 +44,7 @@ class AddReviewView(View):
         ctxt = {}
 
         if 'review' in request.POST:
-            review_form = Beer_Review_Form(request.POST)
+            review_form = BeerReviewForm(request.POST)
 
             if review_form.is_valid():
                 review = review_form.save(commit=False)
@@ -60,7 +56,7 @@ class AddReviewView(View):
                 ctxt['review_form'] = review_form
 
         elif 'beer_style' in request.POST:
-            style_form = Create_BeerStyle_Form(request.POST)
+            style_form = CreateBeerStyleForm(request.POST)
 
             if style_form.is_valid():
                 style_form.save()
@@ -68,7 +64,7 @@ class AddReviewView(View):
                 ctxt['style_form'] = style_form
 
         elif 'beer_name' in request.POST:
-            beer_form = Create_Beer_Form(request.POST)
+            beer_form = CreateBeerForm(request.POST)
 
             if beer_form.is_valid():
                 beer_form.save()
@@ -90,7 +86,7 @@ class BeerRatingView(ListView):
 class BeerStyleCreateView(ListView):
     '''Create a beer style on add review page'''
     template_name = 'add_review/create_style.html'
-    form_class = Create_BeerStyle_Form
+    form_class = CreateBeerStyleForm
     # success_message = 'Success: Beer Style was created.'
 
 
@@ -103,7 +99,7 @@ class ReviewDetailView(DetailView):
 class UpdateReviewView(UpdateView):
     '''Update a review after editing'''
     model = BeerReview
-    form_class = Beer_Review_Form
+    form_class = BeerReviewForm
     template_name = 'review_list/review_update.html'
 
     def form_valid(self, form):
@@ -121,6 +117,6 @@ class UpdateReviewView(UpdateView):
 class DeleteReviewView(DeleteView):
     '''Delete a beer review form'''
     model = BeerReview
-    form_class = Beer_Review_Form
+    form_class = BeerReviewForm
     template_name = 'review_list/review_delete.html'
     success_url = reverse_lazy('review_list')

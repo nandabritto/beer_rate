@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import Beer
-from .forms import Create_Beer_Form, Create_BeerStyle_Form, Beer_Review_Form
+from .forms import CreateBeerForm, CreateBeerStyleForm, BeerReviewForm
 from unittest import mock
 
 
@@ -16,56 +16,43 @@ from unittest import mock
     #     self.user_name = BeerReview.objects.create(usr_name='Fernanda')
 
 
-class Create_Beer_Form_Test(TestCase):
+class CreateBeerForm_Test(TestCase):
 
-    def test_Create_Beer_Form_valid(self):
+    def test_CreateBeerForm_valid(self):
         # Valid beer form
-        form = Create_Beer_Form(data={
+        form = CreateBeerForm(data={
             "beer_name": "nametest1"
         })
         self.assertTrue(form.is_valid())
 
-    def test_Create_Beer_Form_invalid(self):
+    def test_CreateBeerForm_invalid(self):
         # Invalid beer form - beer_name empty
-        form = Create_Beer_Form(data={
+        form = CreateBeerForm(data={
             "beer_name": ""
         })
         self.assertFalse(form.is_valid())
 
-    def test_Create_Beer_Form_lenght(self):
+    def test_CreateBeerForm_lenght(self):
         # Invalid beer form beer_name too long
-        form = Create_Beer_Form(data={
+        form = CreateBeerForm(data={
             "beer_name": str('a'*300)
         })
         self.assertFalse(form.is_valid())
 
 class Create_Beer_Style_Form_Test(TestCase):
 
-    def test_Create_BeerStyle_Form_valid(self):
+    def test_CreateBeerStyleForm_valid(self):
         # Valid beer style form
-        form = Create_BeerStyle_Form(data={
+        form = CreateBeerStyleForm(data={
             "beer_style": "styletest"
         })
         self.assertTrue(form.is_valid())
 
-    def test_Create_BeerStyle_Form_invalid(self):
+    def test_CreateBeerStyle_Form_invalid(self):
         # Invalid beer style form
-        form = Create_BeerStyle_Form(data={
+        form = CreateBeerStyleForm(data={
             "beer_style": ""
         })
         self.assertFalse(form.is_valid())
 
 
-# class Create_Beer_Review_Form_Test(TestCase):
-
-#     def test_Beer_Review_Form_valid(self):
-#         form = Beer_Review_Form(data={
-#             "beer_name": "nametest1",
-#             "beer_style": "styletest",
-#             "review": "Review Test",
-#             "bitterness": "5",
-#             "money_value":"2",
-#             "score":"5",
-#             "user_name":"Fernanda"
-#         })
-#         self.assertTrue(form.is_valid())

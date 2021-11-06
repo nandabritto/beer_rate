@@ -1,3 +1,4 @@
+'''System module'''
 from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
@@ -10,9 +11,11 @@ class BeerStyle(models.Model):
     beer_style = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
-        return self.beer_style
+        '''Return beer style name string'''
+        return str(self.beer_style)
 
     def get_absolute_url(self):
+        '''Redirect user to add review page'''
         return reverse('add_review')
 
 
@@ -22,9 +25,11 @@ class Beer(models.Model):
     style = models.ManyToManyField(BeerStyle)
 
     def __str__(self):
-        return self.beer_name
+        '''Return beer name string'''
+        return str(self.beer_name)
 
     def get_absolute_url(self):
+        '''Redirect user to add home'''
         return reverse('home')
 
 
@@ -60,10 +65,12 @@ class BeerReview(models.Model):
     score = models.IntegerField(default=0)
 
     def __str__(self):
+        '''Return beer review with beer name string'''
         return str(self.beer)
 
     def get_absolute_url(self):
+        '''Redirect user to review detail page'''
         return reverse('review_list', kwargs={'pk': self.pk})
 
 
-beer_review = BeerReview.objects.all()
+# beer_review = BeerReview.objects.all()

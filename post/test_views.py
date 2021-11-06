@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse, resolve
 from .views import AddReviewView, UpdateReviewView
 from .models import BeerReview, Beer, BeerStyle
-from .forms import Beer_Review_Form
+from .forms import BeerReviewForm
 
 
 class BeerRatingView(TestCase):

@@ -68,8 +68,8 @@ button,
 #id_beer_style,
 #id_beer,
 #id_bitterness,
-#id_money_value, 
-#id_beer_image{
+#id_money_value,
+#id_beer_image {
     width: 200px;
     font-size: 1rem !important;
 }
@@ -125,3 +125,4 @@ button,
             max-width: 80%;
         }
     }
+}

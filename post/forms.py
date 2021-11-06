@@ -1,9 +1,13 @@
+'''System module'''
 from django import forms
 from .models import BeerReview, BeerStyle, Beer
 
 
-class Beer_Review_Form(forms.ModelForm):
+class BeerReviewForm(forms.ModelForm):
+    '''Create a BeerReview Form'''
     class Meta:
+        '''Get beer review model, choose fields to display and add widgets
+        with bootstrap classes'''
         model = BeerReview
         fields = [
             'beer_style',
@@ -20,8 +24,11 @@ class Beer_Review_Form(forms.ModelForm):
         }
 
 
-class Create_BeerStyle_Form(forms.ModelForm):
+class CreateBeerStyleForm(forms.ModelForm):
+    '''Create a BeerStyle Form'''
     class Meta:
+        '''Get beer model, choose field to display and add widget
+        with bootstrap class'''
         model = BeerStyle
         fields = ['beer_style']
         widgets = {
@@ -30,8 +37,11 @@ class Create_BeerStyle_Form(forms.ModelForm):
         }
 
 
-class Create_Beer_Form(forms.ModelForm):
+class CreateBeerForm(forms.ModelForm):
+    '''Create a Bear Form'''
     class Meta:
+        '''Get beer style model, choose field to display and add widget
+        with bootstrap classes'''
         model = Beer
         fields = ['beer_name']
         widgets = {
