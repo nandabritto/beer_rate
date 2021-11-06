@@ -3,13 +3,26 @@ html {
     height: 100%;
 }
 
-h1, h2, h3, h4, .label {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Lobster', cursive;
 }
 
-p, a, {
+
+
+
+p,
+a,
+button,
+#id_bitterness,
+#id_money_value,
+#id_beer_image {
     font-family: 'Open Sans', sans-serif;
 }
+
+
 .bg {
     background-image: url("/media/background.jpg");
     background-size: cover;
@@ -55,8 +68,10 @@ p, a, {
 #id_beer_style,
 #id_beer,
 #id_bitterness,
-#id_money_value {
+#id_money_value, 
+#id_beer_image{
     width: 200px;
+    font-size: 1rem !important;
 }
 
 #id_username,
@@ -96,17 +111,17 @@ p, a, {
 @media (min-width: 1200px) {
     .pull-right-lg {
         float: right;
-        
+
     }
 
-@media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 600px) {
 
 
-    body {
-        background-position-x: 20%;
+        body {
+            background-position-x: 20%;
+        }
+
+        .section-container {
+            max-width: 80%;
+        }
     }
-
-    .section-container {
-        max-width: 80%;
-    }
-}

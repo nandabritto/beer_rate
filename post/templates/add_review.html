@@ -10,44 +10,43 @@
 </div>
 <fieldset>
 
-  <div class="container">
+  <div class="container mt-2">
     <div class="bg-dark  col-lg-9 col-11 m-auto rounded">
       <h1 class="text-light text-center bold p-3"> Add your beer review</h1>
       <div class="text-light">
         <form method="POST" actions="/add_review" enctype="multipart/form-data" class=" review-form">
           {% csrf_token %}
-          <div class="m-2 align-middle field_container p-1 ">
-            Beer Style: &nbsp; {{ review_form.beer_style}}
+          <div class="m-2 align-middle field_container">
+            <h4>Beer Style: &nbsp; {{ review_form.beer_style}}
 
             <!------------------------------------------------ Button trigger create a beer style modal -->
             <button type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal"
               data-bs-target="#beerstylemodal">
               Create Beer Style
-            </button></div>
+            </button></h4></div>
 
-          <div class="m-2 align-middle p-1">
-            Beer Name: {{ review_form.beer}}
+          <div class="m-2 align-middle label">
+           <h4> Beer Name: {{ review_form.beer}}
             <!------------------------------------------------------- Button trigger create a beer  modal -->
             <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#beermodal">
-              Create Beer </button>
+              Create Beer </button></h4>
           </div>
-          <div class="text-center m-2">
-            <h2 class="p-1"> Write your review: {{ review_form.review}}</h2>
-          </div>
-          <div class="m-2 field_container">
-            Money Value: {{ review_form.money_value}}
-          </div>
+          <div class="text-center label">
+           <h2 class="m-2"> Write your review: {{ review_form.review}}</h2></div>
+          <div class="m-2 field_container label">
+            <h4>Money Value: {{ review_form.money_value}} </h4>
+                   </div>
 
-          <div class="m-2 field_container p-1">
-            Bitterness: {{review_form.bitterness}} </div>
-          <div class="m-2 p-1"> Add a image of your beer: {{review_form.beer_image}}</div>
-          <div class="stars p-1"> {{review_form.score}}
+          <div class="m-2 field_container label">
+           <h4> Bitterness: {{review_form.bitterness}} </h3></div>
+          <div class="m-2"><h3> Image: {{review_form.beer_image}}</h3></div>
+          <div class="stars p-2"> {{review_form.score}}
             <h3 class="text-center">Rate your beer!</h3>
-            <span class="fa fa-star fa-3x my-btn" id="first"></span>
-            <span class="fa fa-star fa-3x my-btn" id="second"></span>
-            <span class="fa fa-star fa-3x my-btn" id="third"></span>
-            <span class="fa fa-star fa-3x my-btn" id="fourth"></span>
-            <span class="fa fa-star fa-3x my-btn" id="fifth"></span>
+              <span class="fa fa-star fa-3x my-btn" id="first"></span>
+              <span class="fa fa-star fa-3x my-btn" id="second"></span>
+              <span class="fa fa-star fa-3x my-btn" id="third"></span>
+              <span class="fa fa-star fa-3x my-btn" id="fourth"></span>
+              <span class="fa fa-star fa-3x my-btn" id="fifth"></span>
           </div>
 
 
