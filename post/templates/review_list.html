@@ -46,7 +46,25 @@
                     {% endif %}
                 <div class="card-body">
                         <p class="card-text text-truncate"> {{ review.review }} </p>
-                        <p class="card-text text-truncate"> 
+                        <p class="card-text"> Biterness: 
+                            <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
+
+                           </p>
+                        
+                        <p class="card-text"> Money-value: 
+                            <span class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
+                            <span class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
+                            <span class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
+                            <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
+                            <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
+
+                           </p>
+
+                        <p class="card-text"> Rating:
                             <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span> 
                             <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
