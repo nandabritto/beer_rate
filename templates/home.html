@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block additional_styles %}
 <style>
    body {
@@ -22,4 +22,8 @@
     </div>
 </div>
 <ul>
+
+
+    <!---------------------------- My JS -->
+    <script src="{% static 'js/script.js' %}"></script>
     {% endblock content %}

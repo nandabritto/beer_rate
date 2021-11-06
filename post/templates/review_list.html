@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
-  <!---------------------------- My CSS link --------->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!---------------------------- My CSS link --------->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
 {% block additional_styles %}
 <style>
-   body {
-    background-image: url("/media/background.jpg");
-   }
+    body {
+        background-image: url("/media/background.jpg");
+    }
 </style>
 {% endblock %}
-{% load cloudinary %}      
+{% load cloudinary %}
 
 {% block content %}
 
@@ -42,36 +42,38 @@
 
                     <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" class="card-img-top rounded-2" alt="default error image">
+                    <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp"
+                        class="card-img-top rounded-2" alt="default error image">
                     {% endif %}
-                <div class="card-body">
+                    <div class="card-body">
                         <p class="card-text text-truncate"> {{ review.review }} </p>
-                        <p class="card-text"> Biterness: 
+                        <p class="card-text"> Biterness:
                             <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
                             <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
                             <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
                             <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
                             <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
+                        </p>
 
-                           </p>
-                        
-                        <p class="card-text"> Money-value: 
-                            <span class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
-                            <span class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
-                            <span class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
+                        <p class="card-text"> Money-value:
+                            <span
+                                class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
+                            <span
+                                class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
+                            <span
+                                class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
                             <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
                             <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
-
-                           </p>
+                        </p>
 
                         <p class="card-text"> Rating:
                             <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span> 
+                            <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
-                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }} -{{ review.pub_date }} </p>
-                        
+                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
+                            -{{ review.pub_date }} </p>
                     </div>
                     {% if user.is_authenticated %}
                     {% if user.id == review.user_name.id %}
@@ -89,41 +91,35 @@
                     </span>
                     {% endif %}
                     {% endif %}
-
-
                 </div>
-
             </div>
             {% endfor %}
         </div>
 
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-center ">
 
+                <li class="page-item"><a class="page-link bg-dark text-white border-0  " href="?page=1">First</a></li>
 
-    <nav aria-label="Page navigation example ">
-        <ul class="pagination justify-content-center ">
-            
-            <li class="page-item"><a class="page-link bg-dark text-white border-0  " href="?page=1">First</a></li>
-            {% if page_obj.has_previous %}
-            <li class="page-item">
-            <li class="page-item"><a class="page-link bg-dark text-white border-0 " href="?page={{ page_obj.previous_page_number }}">Previous</a>
-            </li>
-            </li>{% endif %}
-            <li class="page-item">
-                {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link bg-dark text-white border-0 " href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                <li class="page-item"><a class="page-link bg-dark text-white border-0 " href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-            </li>
-            
-            {% endif %}
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                <li class="page-item"><a class="page-link bg-dark text-white border-0 "
+                        href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+                </li>{% endif %}
+                <li class="page-item">
+                    {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link bg-dark text-white border-0 "
+                        href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                <li class="page-item"><a class="page-link bg-dark text-white border-0 "
+                        href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                </li>
 
-        </ul>
-    </nav>
+                {% endif %}
+            </ul>
+        </nav>
 
-    <!---------------------------- My JS -->
-    <script src="{% static 'js/review_list.js' %}"></script>
-    <script>
-        var score = "{{ object_list }}"
-        console.log(score)
-    </script>
-    <script src="{% static 'js/star_rating.js' %}"></script>
-    {% endblock %}
+        <!---------------------------- My JS -->
+        <script src="{% static 'js/review_list.js' %}"></script>
+
+        {% endblock %}
