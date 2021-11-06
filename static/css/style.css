@@ -3,6 +3,13 @@ html {
     height: 100%;
 }
 
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+
+p, a {
+    font-family: 'Open Sans', sans-serif;
+}
 .bg {
     background-image: url("/media/background.jpg");
     background-size: cover;
