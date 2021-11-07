@@ -1,5 +1,4 @@
-import logging
-from django.http import Http404
+'''System module'''
 from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
@@ -19,7 +18,9 @@ class AddReviewView(View):
     template_name = 'add_review.html'
 
     def get_object(self):
-        obj = BeerReview.objects.all()       
+        '''Get objects from BeerReview model'''
+        obj = BeerReview.objects.all()
+        return obj
 
     def get_context_data(self, **kwargs):
         '''Get the right form according to the part of the page clicked'''
@@ -34,11 +35,11 @@ class AddReviewView(View):
 
         return kwargs
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         '''Return to add form page after creating a beer or beer style '''
         return render(request, self.template_name, self.get_context_data())
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         ''' Validate and create data from forms on add review page'''
 
         ctxt = {}
@@ -50,7 +51,7 @@ class AddReviewView(View):
                 review = review_form.save(commit=False)
                 review.user_name = request.user
                 review.save()
-                return redirect('review_detail',review.pk)
+                return redirect('review_detail', review.pk)
 
             else:
                 ctxt['review_form'] = review_form
@@ -102,16 +103,13 @@ class UpdateReviewView(UpdateView):
     form_class = BeerReviewForm
     template_name = 'review_list/review_update.html'
 
+    def __init__(self, form):
+        self.object = form.save(commit=False)
+
     def form_valid(self, form):
         '''validate update review form and save it'''
-    
-        self.object = form.save(commit=False)
         self.object.save()
         return redirect('review_detail', self.object.pk)
-    
-
-
-
 
 
 class DeleteReviewView(DeleteView):
