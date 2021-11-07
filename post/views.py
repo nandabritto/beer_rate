@@ -45,7 +45,7 @@ class AddReviewView(View):
         ctxt = {}
 
         if 'review' in request.POST:
-            review_form = BeerReviewForm(request.POST)
+            review_form = BeerReviewForm(request.POST, request.FILES)
 
             if review_form.is_valid():
                 review = review_form.save(commit=False)
@@ -103,11 +103,12 @@ class UpdateReviewView(UpdateView):
     form_class = BeerReviewForm
     template_name = 'review_list/review_update.html'
 
-    def __init__(self, form):
-        self.object = form.save(commit=False)
+    # def __init__(self, form):
+    #     self.object = form.save(commit=False)
 
-    def form_valid(self, form):
+    def form_valid(self,form):
         '''validate update review form and save it'''
+        self.object = form.save(commit=False)
         self.object.save()
         return redirect('review_detail', self.object.pk)
 

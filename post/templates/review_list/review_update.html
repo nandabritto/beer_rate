@@ -10,7 +10,7 @@
     <div class="bg-dark col-lg-9 col-11 m-auto rounded">
       <h1 class="text-light text-center bold p-3"> Update your beer review</h1>
       <div class="text-light">
-        <form method="POST" actions="/add_review" class=" review-form">
+        <form method="POST" actions="/add_review" class=" review-form" enctype="multipart/form-data">
           {% csrf_token %}
           <div class="m-3 align-middle p-2">
             Beer Style: {{ form.beer_style}}

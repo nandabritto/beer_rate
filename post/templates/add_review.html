@@ -16,6 +16,7 @@
       <div class="text-light">
         <form method="POST" actions="/add_review" enctype="multipart/form-data" class=" review-form">
           {% csrf_token %}
+          
           <div class="m-2 align-middle field_container">
             <h4>Beer Style: &nbsp; {{ review_form.beer_style}}
 
@@ -39,7 +40,7 @@
 
           <div class="m-2 field_container label">
            <h4> Bitterness: {{review_form.bitterness}} </h3></div>
-          <div class="m-2"><h3> Image: {{review_form.beer_image}}</h3></div>
+          <div class="m-2"> Image: {{review_form.beer_image}}</div>
           <div class="stars p-2"> {{review_form.score}}
             <h3 class="text-center">Rate your beer!</h3>
               <span class="fa fa-star fa-3x my-btn" id="first"></span>

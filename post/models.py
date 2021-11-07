@@ -73,4 +73,4 @@ class BeerReview(models.Model):
         return reverse('review_list', kwargs={'pk': self.pk})
 
 
-# beer_review = BeerReview.objects.all()
+beer_review = BeerReview.objects.all()
