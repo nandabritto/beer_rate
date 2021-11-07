@@ -1,7 +1,18 @@
+:root {
+    --green: #718f5a;
+    --white: #f7F7F1;
+    --red: #8E1205;
+    --yellow: #F3C659;
+    --black: #151314;
+}
+
+
 body,
 html {
     height: 100%;
 }
+
+/*------------------------ Typho settings  ---------------------- */
 
 h1,
 h2,
@@ -9,9 +20,6 @@ h3,
 h4 {
     font-family: 'Lobster', cursive;
 }
-
-
-
 
 p,
 a,
@@ -22,6 +30,7 @@ button,
     font-family: 'Open Sans', sans-serif;
 }
 
+/*------------------------ Background settings  ---------------------- */
 
 .bg {
     background-image: url("/media/background.jpg");
@@ -29,14 +38,45 @@ button,
 
 }
 
-.section-container {
-    max-width: 1000px;
-}
-
-/* Container box */
 .bg-dark,
 .bg-light {
     opacity: 0.98;
+}
+
+/*------------------------ Buttons ---------------------- */
+
+.btn-submit {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+
+.btn-warning {
+    background-color: var(--yellow);
+    border: var(--yellow);
+    color: var(--black);
+}
+
+.login-button:hover,
+.btn-submit:hover {
+    transform: scale(1.2);
+    transition: transform 330ms ease-in-out;
+    color: var(--white);
+}
+
+
+.fa-edit:hover {
+    color: var(--green);
+}
+
+.fa-trash:hover {
+    color: var(--red);
+}
+
+/*------------------------ Containers ---------------------- */
+
+.section-container {
+    max-width: 1000px;
 }
 
 .container-box-home {
@@ -44,26 +84,24 @@ button,
     margin-left: 5%;
 }
 
-
 .container-box {
     margin-top: 20vh;
-
-
-}
-
-.login-button:hover {
-    transform: scale(1.2);
-    transition: transform 330ms ease-in-out;
 }
 
 .img-container {
     max-height: 300px;
-
 }
 
 .detail-container {
     max-width: 840px;
 }
+
+.container-reviews {
+    width: 60%;
+    margin: 0px auto;
+}
+
+/*------------------------ Form fields ---------------------- */
 
 #id_beer_style,
 #id_beer,
@@ -85,11 +123,15 @@ button,
 #id_review {
     width: 500px;
     margin: 0 auto;
-
 }
 
+#id_score {
+    display: none;
+}
+
+/*------------------------ Star rating  ---------------------- */
 .checked {
-    color: rgb(255, 202, 44);
+    color: var(--yellow);
 }
 
 .stars {
@@ -97,16 +139,7 @@ button,
     width: fit-content;
 }
 
-#id_score {
-    display: none;
-}
-
-
-
-.container-reviews {
-    width: 60%;
-    margin: 0px auto;
-}
+/*------------------------ Media Query  ---------------------- */
 
 @media (min-width: 1200px) {
     .pull-right-lg {

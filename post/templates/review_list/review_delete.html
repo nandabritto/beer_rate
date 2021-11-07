@@ -6,16 +6,17 @@
 <fieldset>
 
     <div class="container mt-5">
-        <div class="bg-dark bg-opacity-75 col-lg-9 col-11 m-auto rounded m-2">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2">
             <h1 class="text-light text-center bold p-3"> Delete review</h1>
             <div class="text-light text-center">
                 <h5> Beer: {{ object.beer }}</h5>
+                <h5> Beer: {{ object.beer_style }}</h5>
                 <p>{{ object.review }}</p>
                 <p class= "text-muted">Author:{{ object.user_name }} <br/>Created at: {{ object.pub_date }}</p>
                 <form method="POST" actions="">
                     {% csrf_token %}
                   
-                        <button class="btn btn-secondary btn-success login-button btn-lg m-2" >Delete </button>
+                        <button class="btn btn-secondary btn-danger login-button btn-lg m-2 fw-bold" >Delete </button>
                     </div>
                 </form>
             </div>
