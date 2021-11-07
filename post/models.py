@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-
+from slugger import AutoSlugField
 
 class BeerStyle(models.Model):
     '''Create a beer style model form'''
@@ -55,6 +55,7 @@ class BeerReview(models.Model):
         BeerStyle, on_delete=models.CASCADE)
     beer = models.ForeignKey(
         Beer, on_delete=models.CASCADE)
+    slug = AutoSlugField(populate_from='beer_style', default='style')
     pub_date = models.DateTimeField(auto_now_add=True)
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE)

@@ -18,7 +18,7 @@
 
 
 
-<section class="pt-5 pb-5 shadow-sm m-auto section-container ">
+<section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
 
     <div class="container text-light text-center ">
         <h1 class="title p-2"> Beer reviews </h1>
@@ -32,7 +32,7 @@
                         class="text-decoration-none text-capitalize fw-bold text-white">
 
                         <h2 class="card-title m-3 text-center text-truncate "> {{ review.beer }} </h2>
-                            <h3>{{ review.beer_style}}</h3>
+                        <h3>{{ review.beer_style}}</h3>
 
                     </a>
 
@@ -84,8 +84,9 @@
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
                                     class="fas fa-edit px-2"></i>
                             </a>
-                            <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" id="edit"
-                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
+                            <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white"
+                                id="edit" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                title="Delete your review">
                                 <i class="fas fa-trash px-2 pb-2 "></i>
                             </a></h4>
                     </span>
@@ -118,8 +119,10 @@
                 {% endif %}
             </ul>
         </nav>
+    </div>
+</section>
 
-        <!---------------------------- My JS -->
-        <script src="{% static 'js/review_list.js' %}"></script>
+<!---------------------------- My JS -->
+<script src="{% static 'js/review_list.js' %}"></script>
 
-        {% endblock %}
+{% endblock %}

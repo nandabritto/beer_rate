@@ -106,7 +106,7 @@ class UpdateReviewView(UpdateView):
     # def __init__(self, form):
     #     self.object = form.save(commit=False)
 
-    def form_valid(self,form):
+    def form_valid(self, form):
         '''validate update review form and save it'''
         self.object = form.save(commit=False)
         self.object.save()
@@ -119,3 +119,8 @@ class DeleteReviewView(DeleteView):
     form_class = BeerReviewForm
     template_name = 'review_list/review_delete.html'
     success_url = reverse_lazy('review_list')
+
+
+def style_category_view(request, style):
+    style_reviews = BeerReview.objects.filter(slug = style)
+    return render(request, 'review_list/stylecategories.html', {'style': style, 'style_reviews': style_reviews })
