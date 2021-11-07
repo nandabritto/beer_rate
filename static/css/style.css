@@ -43,13 +43,18 @@ button,
     opacity: 0.98;
 }
 
+.title {
+    width: fit-content;
+    background-color: var(--black);
+    margin: 2% auto;
+}
+
 /*------------------------ Buttons ---------------------- */
 
 .btn-submit {
     background-color: var(--green);
     color: var(--white);
 }
-
 
 .btn-warning {
     background-color: var(--yellow);
@@ -64,13 +69,22 @@ button,
     color: var(--white);
 }
 
-
 .fa-edit:hover {
     color: var(--green);
 }
 
 .fa-trash:hover {
     color: var(--red);
+}
+
+.page-link {
+    color: var(--white);
+    font-weight: 200;
+}
+
+.page-link:hover {
+    color: var(--yellow);
+    font-weight: 600;
 }
 
 /*------------------------ Containers ---------------------- */
