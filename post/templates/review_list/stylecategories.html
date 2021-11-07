@@ -25,18 +25,14 @@
 
 
         <div class="col col-md-6 col-lg-4 d-flex">
-            <div class="card w-100 text-light bg-dark rounded ">
+            <div class="card w-100 text-light bg-dark rounded text-center ">
                 <a href="{% url 'review_detail' review.pk %}"
                     class="text-decoration-none text-capitalize fw-bold text-white">
-
-                    <h2 class="card-title m-3 text-center text-truncate "> {{ review.beer }} </h2>
+                    <h2 class="card-title m-3 text-truncate "> {{ review.beer }} </h2>
                     <h3>{{ review.beer_style}}</h3>
-
                 </a>
 
-
                 {% if review.beer_image %}
-
 
                 <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
                 {% else %}
