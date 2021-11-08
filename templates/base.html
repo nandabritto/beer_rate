@@ -87,9 +87,11 @@
                         </ul>
                       </li>
                     </ul>
-                <form class="d-flex text-end" action="{% url 'review_list'%}" method="get">
+                <form class="d-flex text-end" action="{% url 'beercategory' %}" method="post">
+                    {% csrf_token %}
+
                     <input class="form-control me-2" type="search" placeholder="Search your beer"
-                        aria-label="Search your beer" name="search">
+                        aria-label="Search your beer" name="searched">
                     <button class="btn btn-light" name="submit" type="submit">Search</button>
                 </form>
             </div>

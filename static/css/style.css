@@ -52,7 +52,7 @@ button,
 ul.dropdown-menu {
     height: 250px !important;
     overflow: auto;
-    z-index: 3;
+
 }
 
 /*------------------------ Buttons ---------------------- */
@@ -94,11 +94,6 @@ ul.dropdown-menu {
 }
 
 /*------------------------ Containers ---------------------- */
-
-.container,
-.card {
-    z-index: -1;
-}
 
 .section-container {
     max-width: 1000px;

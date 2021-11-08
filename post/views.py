@@ -3,9 +3,10 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import BeerReview, BeerStyle
+from .models import BeerReview, BeerStyle, Beer
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
 from django.db.models import Q 
+from django.core.paginator import Paginator
 
 
 class HomeView(ListView):
@@ -126,10 +127,10 @@ def style_category_view(request, style):
     return render(request, 'review_list/stylecategories.html', {'style': style, 'style_reviews': style_reviews })
 
 
-def category_list(request):
-    # Category loops on index page.
-    cat_style_menu=BeerStyle.objects.all
-    return render(request, 'base.html', {'cat_style_menu': cat_style_menu})
+# def category_list(request):
+#     # Category loops on index page.
+#     cat_style_menu=BeerStyle.objects.all
+#     return render(request, 'base.html', {'cat_style_menu': cat_style_menu})
 
 
 
@@ -137,24 +138,16 @@ def cat_style_menu_on_all_pages(request):
     return {'cat_style_menu': BeerStyle.objects.all()}
 
 
+def beer_category_view(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
 
-# def beer_list(request):
-#     beer_list = request.Get('search')
+        p = Paginator(beers, 2) 
+        page = request.GET.get('page')
+        beers_page = p.get_page(page)
 
-#     if beer_list:
-#         posts = BeerReview.objects.filter(Q(beer_name=beer_list))
-#     else:
-#         # If not searched, return default posts  
-#         posts = BeerReview.objects.all().order_by("-pub_date")
+        return render(request, 'review_list/beercategories.html', {'searched':searched, 'beers': beers, 'beers_page':beers_page})
 
-# class BaseView(ListView):
-#     '''Render homepage view '''
-#     model = BeerReview
-#     template_name = 'base.html'
-
-#     def get_context_data(self, *args, **kwargs):
-#         cat_style_menu = BeerStyle.objects.all()
-#         context = super().get_context_data(*args, **kwargs)
-#         context["cat_style_menu"] = cat_style_menu
-#         return context
-     
+    else:
+         return render(request, 'review_list/beercategories.html', {})

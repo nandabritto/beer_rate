@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import HomeView, BeerRatingView, AddReviewView, \
     ReviewDetailView, UpdateReviewView, DeleteReviewView, \
-    style_category_view
+    style_category_view, beer_category_view
 from . import views
 
 urlpatterns = [
@@ -16,6 +16,7 @@ urlpatterns = [
          DeleteReviewView.as_view(), name='review_delete'),
     path('review_list/category/<str:style>',
          style_category_view, name='category'),
-
+    path('review_list/category',
+         views.beer_category_view, name='beercategory'),
      
 ]
