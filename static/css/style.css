@@ -126,6 +126,10 @@ ul.dropdown-menu {
     margin: 0px auto;
 }
 
+.no-review-container {
+    width: 400px;
+}
+
 /*------------------------ Form fields ---------------------- */
 
 #id_beer_style,
