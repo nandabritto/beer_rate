@@ -7,7 +7,8 @@
 }
 
 
-body {
+body,
+html {
     height: 100%;
 }
 
@@ -46,6 +47,12 @@ button,
     width: fit-content;
     background-color: var(--black);
     margin: 2% auto;
+}
+
+ul.dropdown-menu {
+    height: 250px !important;
+    overflow: auto;
+    z-index: 3;
 }
 
 /*------------------------ Buttons ---------------------- */
@@ -87,6 +94,11 @@ button,
 }
 
 /*------------------------ Containers ---------------------- */
+
+.container,
+.card {
+    z-index: -1;
+}
 
 .section-container {
     max-width: 1000px;
@@ -157,18 +169,23 @@ button,
 @media (min-width: 1200px) {
     .pull-right-lg {
         float: right;
-
     }
 
-    @media only screen and (max-width: 600px) {
+   
+}
+
+@media only screen and (max-width: 600px) {
 
 
-        body {
-            background-position-x: 20%;
-        }
-
-        .section-container {
-            max-width: 80%;
-        }
+    body {
+        background-position-x: 20%;
     }
+
+    .section-container {
+        max-width: 80%;
+    }
+    .container-box {
+        margin-top: 10vh;
+    }
+
 }

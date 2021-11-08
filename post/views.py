@@ -3,15 +3,15 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import BeerReview
+from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
+from django.db.models import Q 
 
 
 class HomeView(ListView):
     '''Render homepage view '''
     model = BeerReview
     template_name = 'home.html'
-
 
 class AddReviewView(View):
     '''Render add review page'''
@@ -124,3 +124,37 @@ class DeleteReviewView(DeleteView):
 def style_category_view(request, style):
     style_reviews = BeerReview.objects.filter(slug = style)
     return render(request, 'review_list/stylecategories.html', {'style': style, 'style_reviews': style_reviews })
+
+
+def category_list(request):
+    # Category loops on index page.
+    cat_style_menu=BeerStyle.objects.all
+    return render(request, 'base.html', {'cat_style_menu': cat_style_menu})
+
+
+
+def cat_style_menu_on_all_pages(request):
+    return {'cat_style_menu': BeerStyle.objects.all()}
+
+
+
+# def beer_list(request):
+#     beer_list = request.Get('search')
+
+#     if beer_list:
+#         posts = BeerReview.objects.filter(Q(beer_name=beer_list))
+#     else:
+#         # If not searched, return default posts  
+#         posts = BeerReview.objects.all().order_by("-pub_date")
+
+# class BaseView(ListView):
+#     '''Render homepage view '''
+#     model = BeerReview
+#     template_name = 'base.html'
+
+#     def get_context_data(self, *args, **kwargs):
+#         cat_style_menu = BeerStyle.objects.all()
+#         context = super().get_context_data(*args, **kwargs)
+#         context["cat_style_menu"] = cat_style_menu
+#         return context
+     

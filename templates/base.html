@@ -72,30 +72,29 @@
                         <a class="nav-link {% active_link 'register' %}" href="{% url 'register' %}">Register</a></li>
                     <li class="nav-item">
                         <a class="nav-link {% active_link 'login' %}" href="{% url 'login' %}">Login</a></li>
-
-
                     </li>
 
                     {% endif %}
+                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Beer Types
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Beer Styles
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Beers types</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for item in cat_style_menu %}
+                          <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
+                          {% endfor %}
                         </ul>
-                </ul>
-
-                <form class="d-flex" action="" method="get">
+                      </li>
+                    </ul>
+                <form class="d-flex text-end" action="{% url 'review_list'%}" method="get">
                     <input class="form-control me-2" type="search" placeholder="Search your beer"
-                        aria-label="Search your beer" name="q">
+                        aria-label="Search your beer" name="search">
                     <button class="btn btn-light" name="submit" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-
     <!-- Alert messages -->
     {% if messages %}
     {% for message in messages %}
@@ -105,7 +104,6 @@
     </div>
     {% endfor %}
     {% endif %}
-
 
 
     {% block content %}

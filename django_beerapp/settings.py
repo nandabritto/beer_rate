@@ -1,4 +1,5 @@
 from pathlib import Path
+from os import path
 import os
 import dj_database_url
 import logging
@@ -78,10 +79,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'post.views.cat_style_menu_on_all_pages',
             ],
         },
     },
 ]
+
 
 crispy_template_pack = 'uni_form'
 
@@ -144,3 +147,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Default primary key field type
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+

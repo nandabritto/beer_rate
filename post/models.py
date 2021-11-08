@@ -12,7 +12,7 @@ class BeerStyle(models.Model):
 
     def __str__(self):
         '''Return beer style name string'''
-        return str(self.beer_style).capitalize()
+        return str(self.beer_style).lower()
 
     def get_absolute_url(self):
         '''Redirect user to add review page'''
@@ -26,7 +26,7 @@ class Beer(models.Model):
 
     def __str__(self):
         '''Return beer name string'''
-        return str(self.beer_name).capitalize()
+        return str(self.beer_name).lower()
 
     def get_absolute_url(self):
         '''Redirect user to add home'''
@@ -67,7 +67,7 @@ class BeerReview(models.Model):
 
     def __str__(self):
         '''Return beer review with beer name string'''
-        return str(self.beer).capitalize()
+        return str(self.beer).lower()
 
     def get_absolute_url(self):
         '''Redirect user to review detail page'''
