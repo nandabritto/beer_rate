@@ -14,7 +14,7 @@
 {% block content %}
 
 <!---------------- Reviews section  --------->
-<section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
+<section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 text-center">
    <!---------------- Reviews title  --------->
     <div class="container text-light text-center ">
         <h1 class="title p-2"> Beer reviews </h1>
@@ -71,7 +71,7 @@
                         
                         <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
                             -{{ review.pub_date }} </p>
-                        </div>
+                        </div></a>
 
                     <!---------------- Delete and Edit Options  --------->
                         {% if user.is_authenticated %}
@@ -96,7 +96,7 @@
                     </div>
                 </div>
         {% endfor %}
-        </div> </a>
+        </div> 
 
     <!---------------- Cards pagination  --------->
 
