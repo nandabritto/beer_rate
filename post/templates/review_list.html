@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-<!---------------------------- My CSS link --------->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+{% load cloudinary %}
 
 {% block additional_styles %}
 <style>
@@ -11,21 +9,21 @@
     }
 </style>
 {% endblock %}
-{% load cloudinary %}
+
 
 {% block content %}
 
-
-
-
+<!---------------- Reviews section  --------->
 <section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
-
+   <!---------------- Reviews title  --------->
     <div class="container text-light text-center ">
         <h1 class="title p-2"> Beer reviews </h1>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            {% for review in object_list %}
+    </div>
 
-
+    <!---------------- Reviews card  --------->
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        
+        {% for review in object_list %}
             <div class="col col-md-6 col-lg-4 d-flex">
                 <div class="card w-100 text-light bg-dark rounded ">
                     <a href="{% url 'review_detail' review.pk %}"
@@ -33,27 +31,25 @@
 
                         <h2 class="card-title m-3 text-center text-truncate "> {{ review.beer }} </h2>
                         <h3>{{ review.beer_style}}</h3>
+                
+                        {% if review.beer_image %}
+                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
 
-                    </a>
+                        {% else %}
+                            <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp"
+                                class="card-img-top rounded-2" alt="default error image">
 
-
-                    {% if review.beer_image %}
-
-
-                    <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp"
-                        class="card-img-top rounded-2" alt="default error image">
-                    {% endif %}
-                    <div class="card-body">
-                        <p class="card-text text-truncate"> {{ review.review }} </p>
-                        <p class="card-text"> Biterness:
-                            <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
-                        </p>
+                        {% endif %}
+                        
+                        <div class="card-body">
+                            <p class="card-text text-truncate"> {{ review.review }} </p>
+                            <p class="card-text"> Biterness:
+                                <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
+                                <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
+                                <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
+                                <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
+                                <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
+                            </p>
 
                         <p class="card-text"> Money-value:
                             <span
@@ -72,46 +68,53 @@
                             <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
+                        
                         <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
                             -{{ review.pub_date }} </p>
-                    </div>
-                    {% if user.is_authenticated %}
-                    {% if user.id == review.user_name.id %}
+                        </div>
 
-                    <span class="m-auto">
-                        <h4>
-                            <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
-                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
-                                    class="fas fa-edit px-2"></i>
-                            </a>
-                            <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white"
-                                id="edit" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                title="Delete your review">
-                                <i class="fas fa-trash px-2 pb-2 "></i>
-                            </a></h4>
-                    </span>
-                    {% endif %}
-                    {% endif %}
+                    <!---------------- Delete and Edit Options  --------->
+                        {% if user.is_authenticated %}
+                            {% if user.id == review.user_name.id %}
+
+                                <span class="m-auto">
+                                    <h4>
+                                        <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
+                                            <i class="fas fa-edit px-2"></i></a>
+                                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white"
+                                            id="edit" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            title="Delete your review">
+                                            <i class="fas fa-trash px-2 pb-2 "></i>
+                                        </a>
+                                    </h4>
+                                </span>
+
+                            {% endif %}
+
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
+        </div> </a>
+
+    <!---------------- Cards pagination  --------->
 
         <nav aria-label="Page navigation example ">
             <ul class="pagination justify-content-center ">
-
                 <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
 
                 {% if page_obj.has_previous %}
-                <li class="page-item">
                 <li class="page-item"><a class="page-link bg-dark border-0 "
                         href="?page={{ page_obj.previous_page_number }}">Previous</a>
                 </li>
-                </li>{% endif %}
+                {% endif %}
                 <li class="page-item">
-                    {% if page_obj.has_next %}
+
+                {% if page_obj.has_next %}
                 <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                        href="?page={{ page_obj.next_page_number }}">Next</a>
+                </li>
                 <li class="page-item"><a class="page-link bg-dark border-0 "
                         href="?page={{ page_obj.paginator.num_pages }}">Last</a>
                 </li>
@@ -122,7 +125,9 @@
     </div>
 </section>
 
+
+
 <!---------------------------- My JS -->
-<script src="{% static 'js/review_list.js' %}"></script>
+<script src="{% static 'js/toollip.js' %}"></script>
 
 {% endblock %}

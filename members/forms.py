@@ -13,7 +13,7 @@ class SignUpForm(forms.Form):
         label='Enter Email')
     password1 = forms.CharField(
         label='Enter Password',
-        widget=forms.PasswordInput)
+        widget=forms.PasswordInput,)
     password2 = forms.CharField(
         label='Confirm Password',
         widget=forms.PasswordInput)

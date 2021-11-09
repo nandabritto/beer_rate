@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block additional_styles %}
 <style>
    body {
@@ -11,6 +12,7 @@
 
 {% block content %}
 
+<!----------------Welcome jumbotron -->
 
 <div class=" container container-box-home bg-dark rounded text-light text-center p-2 col-lg-4 col-11 float-start">
     <div class="row justify-content-start">
@@ -21,8 +23,9 @@
         </div>
     </div>
 </div>
-<ul>
 
-    <!---------------------------- My JS -->
-    <script src="{% static 'js/script.js' %}"></script>
-    {% endblock content %}
+
+<!---------------------- My JS -->
+<script src="{% static 'js/script.js' %}"></script>
+
+{% endblock content %}
