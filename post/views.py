@@ -137,17 +137,30 @@ def style_category_view(request, style):
 def cat_style_menu_on_all_pages(request):
     return {'cat_style_menu': BeerStyle.objects.all()}
 
-
 def beer_category_view(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
+    elif  request.method == "GET":
+        searched = request.GET['searched']
 
-        p = Paginator(beers, 2) 
-        page = request.GET.get('page')
-        beers_page = p.get_page(page)
+    beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
 
-        return render(request, 'review_list/beercategories.html', {'searched':searched, 'beers': beers, 'beers_page':beers_page})
+    paginator = Paginator(beers, 3) 
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    else:
-         return render(request, 'review_list/beercategories.html', {})
+    return render(request, 'review_list/beercategories.html', {'searched':searched, 'page_obj': page_obj })
+
+
+    # if request.method == "GET":
+    #     searched = request.GET['searched']
+    #     beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
+
+    #     paginator = Paginator(beers, 3) 
+    #     page_number = request.GET.get('page')
+    #     page_obj = paginator.get_page(page_number)
+
+    #     return render(request, 'review_list/beercategories.html', {'searched':searched, 'page_obj': page_obj })
+
+    # else:
+    #      return render(request, 'review_list/beercategories.html', {})
