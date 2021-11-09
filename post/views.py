@@ -150,17 +150,3 @@ def beer_category_view(request):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'review_list/beercategories.html', {'searched':searched, 'page_obj': page_obj })
-
-
-    # if request.method == "GET":
-    #     searched = request.GET['searched']
-    #     beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
-
-    #     paginator = Paginator(beers, 3) 
-    #     page_number = request.GET.get('page')
-    #     page_obj = paginator.get_page(page_number)
-
-    #     return render(request, 'review_list/beercategories.html', {'searched':searched, 'page_obj': page_obj })
-
-    # else:
-    #      return render(request, 'review_list/beercategories.html', {})

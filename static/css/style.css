@@ -12,6 +12,7 @@ html {
     height: 100%;
 }
 
+
 /*------------------------ Typho settings  ---------------------- */
 
 h1,
@@ -30,17 +31,25 @@ button,
     font-family: 'Open Sans', sans-serif;
 }
 
+a {
+    font-weight: 700;
+}
+
+
 /*------------------------ Background settings  ---------------------- */
 
 .bg {
     background-image: url("/media/background.jpg");
     background-size: cover;
-
 }
 
 .bg-dark,
 .bg-light {
     opacity: 0.98;
+}
+
+.bg-dark {
+    background-color: var(--black) !important;
 }
 
 .title {
@@ -50,12 +59,13 @@ button,
 }
 
 ul.dropdown-menu {
-    height: 250px !important;
+    height: 150px !important;
     overflow: auto;
-
+    z-index: 10000;
 }
 
 /*------------------------ Buttons ---------------------- */
+
 
 .btn-submit {
     background-color: var(--green);
@@ -72,7 +82,8 @@ ul.dropdown-menu {
 .btn-submit:hover {
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
-    color: var(--white);
+    color: var(-black);
+    font-weight: 600;
 }
 
 .fa-edit:hover {
@@ -94,6 +105,7 @@ ul.dropdown-menu {
 }
 
 /*------------------------ Containers ---------------------- */
+
 
 .section-container {
     max-width: 1000px;
@@ -170,7 +182,7 @@ ul.dropdown-menu {
         float: right;
     }
 
-   
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -183,6 +195,7 @@ ul.dropdown-menu {
     .section-container {
         max-width: 80%;
     }
+
     .container-box {
         margin-top: 10vh;
     }

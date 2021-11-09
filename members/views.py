@@ -41,10 +41,13 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request,user)
             return redirect('home')
+        else:
+            messages.success(request,('There was an error with your register. Please, Try again.'))
+            return redirect('register')
+
     else:
         form = SignUpForm()
 
     return render(request, 'authenticate/register_user.html', {
         'form': form,
-        
-        })
+         })

@@ -19,7 +19,9 @@
 
 
 <section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
-
+    <div class="container text-light text-center ">
+        <h1 class="title p-2"> You searhed for: {{ searched|title }}</h1>
+        </div>
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for beer in page_obj %}
         <div class="col col-md-6 col-lg-4 d-flex">
@@ -111,30 +113,6 @@
     </nav>
 
 
-
-
-
-<!-- 
-
-
-    <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-    
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-    
-            {% if page_obj.has_next %}
-                <a href="?searched={{searched}}&page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-        </span>
-    </div>
-</section> -->
 
 <!---------------------------- My JS -->
 <script src="{% static 'js/review_list.js' %}"></script>

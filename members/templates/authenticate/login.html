@@ -2,9 +2,9 @@
 {% load static %}
 {% block additional_styles %}
 <style>
-   body {
-    background-image: url("{{MEDIA_URL}}login_background.jpg")!important;
-   }
+  body {
+    background-image: url("{{MEDIA_URL}}login_background.jpg") !important;
+  }
 </style>
 {% endblock %}
 {%block title %} Login {% endblock %}
@@ -12,16 +12,16 @@
 {% block content %}
 
 
-<!-----------------------------------Login container ----------------------->
+<!-------------Login container ----------------------->
 <div class="container container-box">
   <div class="d-flex justify-content-center col-lg-4 col-12 float-end">
     <div class="bg-dark">
       <div class="card-header text-light">
-        <h3 class = "text-end">Log In &nbsp<i class="fas fa-sign-in-alt"></i></h3>
+        <h3 class="text-end">Log In &nbsp;<i class="fas fa-sign-in-alt"></i></h3>
       </div>
-      <!-----------------------------------Login form ----------------------->
+      <!------------------Login form ----------------------->
       <div class="card-body m-auto">
-        <form action="" method="POST">
+        <form method="POST">
 
           {% csrf_token %}
 
@@ -37,29 +37,26 @@
             </div>
             <input type="password" class="form-control" name="password" placeholder="password">
           </div>
-          <!-- <div class="row align-items-center remember text-light m-2">
-            <input type="checkbox" name="remember_me" value="true">Remember Me</input>
-          </div> -->
           <div class="form-group text-center">
-            <input type="submit" value="Login" class="btn btn-warning m-1 login-button">
+            <input type="submit" value="Login" class="btn btn-warning m-2 login-button">
           </div>
         </form>
       </div>
 
-      <!-----------------------------------Create a account section ----------------------->
+      <!---------------Create a account section ----------------------->
 
       <div class="card-footer">
         <div class="d-flex justify-content-center text-light">
           Don't have an account? &nbsp;<a href="{% url 'register' %}"
-            class="text-decoration-none text-warning zoom">Sign Up</a>
+            class="text-decoration-none text-warning zoom ">Sign Up</a>
         </div>
-        <div class="d-flex justify-content-center">
+        <!-- <div class="d-flex justify-content-center">
           <a href="#" class="text-decoration-none text-warning zoom">Forgot your password?</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </div>
 
-
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock content %}

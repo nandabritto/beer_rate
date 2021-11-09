@@ -5,7 +5,7 @@ from .views import HomeView, BeerRatingView, AddReviewView, \
 from . import views
 
 urlpatterns = [
-    path('', HomeView.as_view(), name="home"),
+    path('home', HomeView.as_view(), name="home"),
     path('add_review/', AddReviewView.as_view(), name='add_review'),
     path('review_list/', BeerRatingView.as_view(), name='review_list'),
     path('review_list/review_detail/<int:pk>',
