@@ -82,7 +82,7 @@ class BeerRatingView(ListView):
     model = BeerReview
     template_name = 'review_list.html'
     paginate_by = 6
-    ordering = ['pub_date']
+    ordering = ['-pub_date']
 
 
 class BeerStyleCreateView(ListView):

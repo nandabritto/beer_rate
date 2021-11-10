@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
-<!---------------------------- My CSS link --------->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+{% load cloudinary %}
+{% block title %} Beer Search {% endblock %}
 
 {% block additional_styles %}
+<!---------------------------- My CSS link --------->
 <style>
     body {
         background-image: url("/media/background.jpg");
     }
 </style>
 {% endblock %}
-{% load cloudinary %}
+
 
 {% block content %}
-
-
 
 
 <section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
     <div class="container text-light text-center ">
         <h1 class="title p-2"> You searhed for: {{ searched|title }}</h1>
-        </div>
+    </div>
+
     <div class="row row-cols-1 row-cols-md-2 g-4">
+
         {% for beer in page_obj %}
         <div class="col col-md-6 col-lg-4 d-flex">
             <div class="card w-100 text-light bg-dark rounded text-center ">
@@ -31,12 +31,15 @@
                     <h2 class="card-title m-3 text-truncate "> {{ beer.beer }} </h2>
                     <h3>{{ beer.beer_style}}</h3>
                 </a>
+
                 {% if beer.beer_image %}
-                <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container">
+                <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container"
+                    alt="Uploaded {{beer.beer}} review image">
                 {% else %}
                 <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" class="card-img-top rounded-2"
-                    alt="default error image">
+                    alt="default beer review image">
                 {% endif %}
+
                 <div class="card-body">
                     <p class="card-text text-truncate"> {{ beer.review }} </p>
                     <p class="card-text"> Biterness:
@@ -64,57 +67,64 @@
                     <p class="card-text text-truncate text-muted text-sm"> {{ beer.user_name }}
                         -{{ beer.pub_date }} </p>
                 </div>
+
                 {% if user.is_authenticated %}
-                {% if user.id == beer.user_name.id %}
+                    {% if user.id == beer.user_name.id %}
 
-                <span class="m-auto">
-                    <h4>
-                        <a href="{% url 'review_update' beer.pk %}" class="text-decoration-none text-white"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your beer"><i
-                                class="fas fa-edit px-2"></i>
-                        </a>
-                        <a href="{% url 'review_delete' beer.pk %}" class="text-decoration-none text-white" id="edit"
-                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
-                            <i class="fas fa-trash px-2 pb-2 "></i>
-                        </a></h4>
-                </span>
+                    <span class="m-auto">
+                        <h4>
+                            <a href="{% url 'review_update' beer.pk %}" class="text-decoration-none text-white"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your beer"><i
+                                    class="fas fa-edit px-2"></i>
+                            </a>
+                            <a href="{% url 'review_delete' beer.pk %}" class="text-decoration-none text-white" id="edit"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
+                                <i class="fas fa-trash px-2 pb-2 "></i>
+                            </a>
+                        </h4>
+                    </span>
+                    {% endif %}
                 {% endif %}
-                {% endif %}
-               
-
             </div>
         </div>
         {% endfor %}
-
     </div>
 
-
+    <!-- Cards pagination  -->
     <nav aria-label="Page navigation example ">
         <ul class="pagination justify-content-center ">
 
-            <li class="page-item"><a class="page-link bg-dark border-0  " href="?searched={{searched}}&page=1">First</a></li>
+            <li class="page-item"><a class="page-link bg-dark border-0  " href="?searched={{searched}}&page=1">First</a>
+            </li>
 
             {% if page_obj.has_previous %}
+
             <li class="page-item">
-            <li class="page-item"><a class="page-link bg-dark border-0 "
-                    href="?searched={{searched}}&page={{ page_obj.previous_page_number }}">Previous</a>
-            </li>
+                <a class="page-link bg-dark border-0 "
+                    href="?searched={{searched}}&page={{ page_obj.previous_page_number }}">Previous
+                </a>
             </li>{% endif %}
             <li class="page-item">
+
                 {% if page_obj.has_next %}
             <li class="page-item"><a class="page-link bg-dark border-0 "
-                    href="?searched={{searched}}&page={{ page_obj.next_page_number }}">Next</a></li>
+                    href="?searched={{searched}}&page={{ page_obj.next_page_number }}">Next</a>
+            </li>
             <li class="page-item"><a class="page-link bg-dark border-0 "
                     href="?searched={{searched}}&page={{ page_obj.paginator.num_pages }}">Last</a>
             </li>
-
             {% endif %}
         </ul>
     </nav>
+</section>
 
 
-
-<!---------------------------- My JS -->
-<script src="{% static 'js/toollip.js' %}"></script>
 
 {% endblock %}
+
+{% block extra_js %}
+
+<!-- My JS -->
+<script src="{% static 'js/toollip.js' %}"></script>
+
+{% endblock extra_js %}

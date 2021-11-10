@@ -106,6 +106,9 @@ ul.dropdown-menu {
 
 /*------------------------ Containers ---------------------- */
 
+.card-img-top {
+    height: 300px !important;
+}
 
 .section-container {
     max-width: 1000px;
@@ -120,8 +123,14 @@ ul.dropdown-menu {
     margin-top: 20vh;
 }
 
-.img-container {
+/* .img-container {
     max-height: 300px;
+} */
+
+.review-detail-box{
+    width:90%;
+    border:solid 1px var(--white);
+    margin: 5% auto;
 }
 
 .detail-container {
@@ -144,8 +153,8 @@ ul.dropdown-menu {
 #id_bitterness,
 #id_money_value,
 #id_beer_image {
-    width: 200px;
-    font-size: 1rem !important;
+    width: 300px;
+    font-size: 1.3rem !important;
 }
 
 #id_username,
@@ -185,6 +194,12 @@ ul.dropdown-menu {
 
 }
 
+@media only screen and (max-width: 900px) {
+    .margin-screen-md {
+        margin: 1%;
+    }
+}
+
 @media only screen and (max-width: 600px) {
 
 
@@ -200,4 +215,7 @@ ul.dropdown-menu {
         margin-top: 10vh;
     }
 
-}
+    .margin-screen-md {
+        margin: 0 auto;
+
+    }

@@ -1,52 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% block title %} Update Review {% endblock %}
+
+<section>
+	<!-- Update Review Container -->
+	<div class="container mt-3">
+		<div class="bg-dark col-lg-9 col-11 m-auto rounded">
+			<h1 class="text-light text-center bold p-3"> Update your beer review</h1>
+			<div class="text-light">
+
+				<!-- Update Review Form -->
+				<form method="POST" class="review-form" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="m-2">
+						<h4>Beer Style: {{ form.beer_style}} </h4>
+					</div>
+					<div class="align-middle m-2">
+						<h4>Beer : {{ form.beer}}</h4>
+					</div>
+					<div>
+						<h3 class="text-center p-2 m-2">Update your review: </h3> {{ form.review}}
+					</div>
+					<div class="m-3">
+						<h4>Bitterness: {{ form.bitterness}}</h4>
+						<h4>Money Value : {{ form.money_value}} </h4>
+					</div>
+					<div class="m-3">
+							<h4> Add your beer picture : {{form.beer_image}} </h4>
+					</div>
+					
+					<!-- Star Rating -->
+					<div class="mt-2 stars"> {{form.score}}
+						<h3 class="text-center">Rate your beer!</h3>
+						<span class="fa fa-star fa-3x my-btn" id="first"></span>
+						<span class="fa fa-star fa-3x my-btn" id="second"></span>
+						<span class="fa fa-star fa-3x my-btn" id="third"></span>
+						<span class="fa fa-star fa-3x my-btn" id="fourth"></span>
+						<span class="fa fa-star fa-3x my-btn" id="fifth"></span>
+					</div>
+					<div class="text-center">
+						<input type="submit" value="Update" name="htmlsubmitbutton1"
+							class="btn btn-submit btn-lg m-3 ">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</section>
 
 
-
-<fieldset>
-
-  <div class="container mt-3">
-    <div class="bg-dark col-lg-9 col-11 m-auto rounded">
-      <h1 class="text-light text-center bold p-3"> Update your beer review</h1>
-      <div class="text-light">
-        <form method="POST" actions="/add_review" class=" review-form" enctype="multipart/form-data">
-          {% csrf_token %}
-          <div class="m-3 align-middle p-2">
-            Beer Style: {{ form.beer_style}}
-
-            <div class="m-3 align-middle p-2 ">
-              Beer : {{ form.beer}}
-            </div>
-            <div>
-
-              Update your review: {{ form.review}}
-            </div>
-            <div class="align-middle p-2 text-center">
-              Bitterness: {{ form.bitterness}} &nbsp;| &nbsp; Money Value : {{ form.money_value}}
-              <div class="p-3"> Add your beer picture : {{form.beer_image}}</div>
-            </div>
-        
-              
-             <div class="mt-2 stars"> {{form.score}}
-            <h3 class="text-center">Rate your beer!</h3>
-              <span class="fa fa-star fa-3x my-btn" id="first"></span>
-              <span class="fa fa-star fa-3x my-btn" id="second"></span>
-              <span class="fa fa-star fa-3x my-btn" id="third"></span>
-              <span class="fa fa-star fa-3x my-btn" id="fourth"></span>
-              <span class="fa fa-star fa-3x my-btn" id="fifth"></span>
-          </div>
-            <div class="text-center">
-              <input type="submit" value="Update" name="htmlsubmitbutton1"
-                class="btn btn-secondary btn-success login-button btn-lg m-3 fw-bold">
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</fieldset>
-
-
-<script src="{% static 'js/add_review.js' %}"></script>
 
 {% endblock content %}
+
+{% block extra_js %}
+
+	<!-- My JS -->
+	<script src="{% static 'js/add_review.js' %}"></script>
+
+{% endblock extra_js %}

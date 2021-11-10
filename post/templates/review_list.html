@@ -13,15 +13,15 @@
 
 {% block content %}
 
-<!---------------- Reviews section  --------->
+<!-- Reviews section -->
 <section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 text-center">
-   <!---------------- Reviews title  --------->
+   <!-- Reviews title  -->
     <div class="container text-light text-center ">
         <h1 class="title p-2"> Beer reviews </h1>
     </div>
 
-    <!---------------- Reviews card  --------->
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <!-- Reviews card -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 margin-screen-md">
         
         {% for review in object_list %}
             <div class="col col-md-6 col-lg-4 d-flex">
@@ -33,11 +33,11 @@
                         <h3>{{ review.beer_style}}</h3>
                 
                         {% if review.beer_image %}
-                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
+                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="review {{review.beer}} uploaded image">
 
                         {% else %}
-                            <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp"
-                                class="card-img-top rounded-2" alt="default error image">
+                            <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" 
+                                class="card-img-top rounded-2" alt="default beer review image">
 
                         {% endif %}
                         
@@ -51,7 +51,7 @@
                                 <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
                             </p>
 
-                        <p class="card-text"> Money-value:
+                            <p class="card-text"> Money-value:
                             <span
                                 class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
                             <span
@@ -60,20 +60,21 @@
                                 class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
                             <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
                             <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
-                        </p>
+                            </p>
 
-                        <p class="card-text"> Rating:
+                            <p class="card-text"> Rating:
                             <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
                         
-                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
+                            <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
                             -{{ review.pub_date }} </p>
-                        </div></a>
+                        </div>
+                    </a>
 
-                    <!---------------- Delete and Edit Options  --------->
+                    <!-- Delete and Edit Options  -->
                         {% if user.is_authenticated %}
                             {% if user.id == review.user_name.id %}
 
@@ -98,9 +99,9 @@
         {% endfor %}
         </div> 
 
-    <!---------------- Cards pagination  --------->
+         <!-- Cards pagination  -->
 
-        <nav aria-label="Page navigation example ">
+         <nav aria-label="Page navigation example ">
             <ul class="pagination justify-content-center ">
                 <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
 
@@ -122,12 +123,14 @@
                 {% endif %}
             </ul>
         </nav>
-    </div>
 </section>
 
+   
 
 
-<!---------------------------- My JS -->
+
+
+<!-- My JS -->
 <script src="{% static 'js/toollip.js' %}"></script>
 
 {% endblock %}

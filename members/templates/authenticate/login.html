@@ -12,14 +12,15 @@
 {% block content %}
 
 
-<!-------------Login container ----------------------->
+<!-- Login container -->
 <div class="container container-box">
   <div class="d-flex justify-content-center col-lg-4 col-12 float-end">
     <div class="bg-dark">
       <div class="card-header text-light">
         <h3 class="text-end">Log In &nbsp;<i class="fas fa-sign-in-alt"></i></h3>
       </div>
-      <!------------------Login form ----------------------->
+
+      <!-- Login form -->
       <div class="card-body m-auto">
         <form method="POST">
 
@@ -43,8 +44,7 @@
         </form>
       </div>
 
-      <!---------------Create a account section ----------------------->
-
+      <!-- Create a account -->
       <div class="card-footer">
         <div class="d-flex justify-content-center text-light">
           Don't have an account? &nbsp;<a href="{% url 'register' %}"
@@ -59,4 +59,5 @@
 </div>
 
 <script src="{% static 'js/script.js' %}"></script>
+
 {% endblock content %}

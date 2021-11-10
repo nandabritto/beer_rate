@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block additional_styles %}
 <style>
   body {
@@ -7,25 +8,25 @@
   }
 </style>
 {% endblock %}
-{% load crispy_forms_tags %}
+
 {%block title %} Register {% endblock %}
 
 {% block content %}
 
-<!-----------------------------------Login container ----------------------->
+<!-- Register container -->
 <div class="container container-box">
   <div class="d-flex justify-content-center col-lg-6 col-12 float-end">
     <div class=" bg-dark">
       <div class="card-header text-light">
-        <h3 class="text-end">Register &nbsp<i class="fas fa-user-plus"></i></h3>
+        <h3 class="text-end">Register &nbsp;<i class="fas fa-user-plus"></i></h3>
       </div>
-      <!-----------------------------------Login form ----------------------->
+
+      <!--Register form -->
       <div class="card-body m-auto text-light">
-        <form action="" method="POST">
+        <form method="POST">
 
           {% csrf_token %}
           {{form.as_p}}
-
 
           <div class="p-3 d-flex justify-content-center">
             <input type="submit" value="Sign In" class="btn btn-secondary btn-warning login-button">
@@ -34,11 +35,9 @@
       </div>
     </div>
   </div>
+</div>
 
-
-
-
-<!---------------------------- My JS -->
+<!-- My JS -->
 <script src="{% static 'js/script.js' %}"></script>
 
 {% endblock content %}
