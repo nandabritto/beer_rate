@@ -86,6 +86,11 @@ arr.forEach(item => item.addEventListener('mouseover', (event) => {
 
 }))
 
+arr.forEach(item => item.addEventListener('click', (event) => {
+    handleSelect(event.target.id)
+
+}))
+
 /// Tranform string value from stars into numeric value 
 arr.forEach(item => item.addEventListener('click', (event) => {
     const val = event.target.id
