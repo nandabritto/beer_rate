@@ -12,10 +12,13 @@
     color: var(--yellow);
 }
 
-
-body,
 html {
     height: 100%;
+}
+
+body {
+    height: 100%;
+    margin-bottom: 50px !important;
 }
 
 /*------------------------ Alert settings  ---------------------- */
@@ -248,9 +251,6 @@ img {
 
     }
 
-    body {
-        margin-bottom: 150px;
-    }
 
     #id_username,
     #id_email,
