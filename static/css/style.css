@@ -1,3 +1,5 @@
+/*------------------------ Color settings  ---------------------- */
+
 :root {
     --green: #718f5a;
     --white: #f7F7F1;
@@ -6,16 +8,22 @@
     --black: #151314;
 }
 
-.alert-warning {
-    opacity: 0.6;
-    color: var(--red);
+.yellow {
+    color: var(--yellow);
 }
+
 
 body,
 html {
     height: 100%;
 }
 
+/*------------------------ Alert settings  ---------------------- */
+
+.alert-warning {
+    color: var(--red);
+    opacity: 0.6;
+}
 
 /*------------------------ Typho settings  ---------------------- */
 
@@ -56,11 +64,15 @@ a {
     background-color: var(--black) !important;
 }
 
+/*------------------------ Home page welcome jumbotron ---------------------- */
 .title {
     width: fit-content;
     background-color: var(--black);
     margin: 2% auto;
 }
+
+
+/*------------------------ Navbar ---------------------- */
 
 ul.dropdown-menu {
     height: 150px !important;
@@ -131,16 +143,11 @@ img {
     margin-top: 20vh;
 }
 
-/* .img-container {
-    max-height: 300px;
-} */
-
 .review-detail-box {
     width: 90%;
     min-height: 140px !important;
     margin: 0 auto;
     border: solid 1px var(--white);
-
 }
 
 .detail-container {
@@ -254,7 +261,7 @@ img {
 
     #id_bitterness,
     #id_money_value,
-    #id_beer_image, 
+    #id_beer_image,
     #id_review,
     #id_beer,
     #id_beer_style {
