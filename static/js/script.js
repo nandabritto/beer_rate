@@ -7,4 +7,4 @@ setTimeout(function(){
         // Set display attribute as !important, neccessary when using bootstrap
         info_messages[i].setAttribute('style', 'display:none !important');
     }
-}, 5000);
+}, 3000);

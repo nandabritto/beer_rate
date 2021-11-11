@@ -81,10 +81,10 @@ const getNumericValue = (stringValue) => {
 const arr = [one, two, three, four, five]
 
 ///Add event listener to mouse hover on rating stars
-arr.forEach(item => item.addEventListener('mouseover', (event) => {
-    handleSelect(event.target.id)
+// arr.forEach(item => item.addEventListener('mouseover', (event) => {
+//     handleSelect(event.target.id)
 
-}))
+// }))
 
 arr.forEach(item => item.addEventListener('click', (event) => {
     handleSelect(event.target.id)
