@@ -107,7 +107,11 @@ ul.dropdown-menu {
 /*------------------------ Containers ---------------------- */
 
 .card-img-top {
-    height: 300px !important;
+    max-height: 300px !important;
+}
+
+img {
+    max-width: 100%;
 }
 
 .section-container {
@@ -127,14 +131,15 @@ ul.dropdown-menu {
     max-height: 300px;
 } */
 
-.review-detail-box{
-    width:90%;
-    border:solid 1px var(--white);
-    margin: 5% auto;
+.review-detail-box {
+    width: 90%;
+    border: solid 1px var(--white);
+
 }
 
 .detail-container {
     max-width: 840px;
+    margin: 2% auto;
 }
 
 .container-reviews {
@@ -196,7 +201,7 @@ ul.dropdown-menu {
 
 @media only screen and (max-width: 900px) {
     .margin-screen-md {
-        margin: 1%;
+        margin: 5%;
     }
 }
 
@@ -216,6 +221,18 @@ ul.dropdown-menu {
     }
 
     .margin-screen-md {
-        margin: 0 auto;
+        margin: 10%;
 
     }
+
+    body {
+        margin-bottom: 150px;
+    }
+
+    #id_username,
+    #id_email,
+    #id_password1,
+    #id_password2 {
+        width: 250px;
+    }
+}
