@@ -133,6 +133,8 @@ img {
 
 .review-detail-box {
     width: 90%;
+    min-height: 140px !important;
+    margin: 0 auto;
     border: solid 1px var(--white);
 
 }
@@ -149,6 +151,16 @@ img {
 
 .no-review-container {
     width: 400px;
+}
+
+.edit-delete-box {
+    display: ruby-base-container;
+    width: 30%;
+}
+
+.author-box {
+    display: ruby-base-container;
+    width: 70%;
 }
 
 /*------------------------ Form fields ---------------------- */
@@ -234,5 +246,14 @@ img {
     #id_password1,
     #id_password2 {
         width: 250px;
+    }
+
+    #id_bitterness,
+    #id_money_value,
+    #id_beer_image, 
+    #id_review,
+    #id_beer,
+    #id_beer_style {
+        width: 90%
     }
 }
