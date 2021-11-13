@@ -50,6 +50,61 @@ Live app link [here]()
 3. 
 4. 
 
+### 1. Strategy 
+
+ * Project Purpose
+
+    
+
+Project Goals
+
+   + 
+
+
+### 2. Scope
+
+ * A simple, straightforward intuitive UX experience;
+ * A clear content; 
+ * An easy navigation for the user trhough all the features;
+ * A site that is visually appealing on most devices.
+
+
+### 3. Structure
+
+* A clear and simple layout is in place to ensure users can navigate intuitively and have an easy experience.
+* Navbar is fixed on top to facilitate users to navigate through pages easily. Small navigation is the same on all pages to ensure easy navigation.
+* Add, Edit and Update Review are straightforward forms to alow the user use the features without isses.
+
+
+### 4. Skeleton
+
+Wireframes created with Balsamiq. The project was developed from initial wireframes and some modifications were made during the development process to assure better usability. 
+
+Click to see wireframes:
+
+[]() <br>
+
+
+### 5. Surface
+
+* Colours
+
+The Colour scheme was generated using eye dropper plugin, to get one colour from the logo image, and []() to generate the colour pallete.
+
+<p align="center" width="100%">
+  <img width="33%" src="">
+</p>
+
+
+* Font Selection
+ 
+Two complimentary fonts were chosen with [Google Fonts](https://fonts.google.com/) to be used across the whole of the website.
+
+The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, buttons and paragraphs.
+<p align="center" width="100%">
+  <img width="33%" src="media/readme/fonts.png">
+</p>
+
 ## Functional Scope 
 
 The following flowchart shows the flow of "Best Beer" graphically.
@@ -66,7 +121,7 @@ I would like to ...
 2. Create a placeholder image database to be added on post if user doesn't add a beer image on their review;
 3. Add a beer style json database on Beer style form;
 4. Add a beer json database on Beer Form; 
-5. Include icon rating for bitterness and money vale field. 
+5. Include icon rating for bitterness and money value field. 
 6. 
 
 ## Languages Used
