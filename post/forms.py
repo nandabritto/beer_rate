@@ -1,4 +1,5 @@
 '''System module'''
+from cloudinary.forms import CloudinaryFileField      
 from django import forms
 from .models import BeerReview, BeerStyle, Beer
 
@@ -21,6 +22,7 @@ class BeerReviewForm(forms.ModelForm):
             'review': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Write your review here!'}),
+            
         }
 
 

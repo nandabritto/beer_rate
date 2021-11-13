@@ -62,7 +62,7 @@ class BeerReview(models.Model):
     review = models.TextField(max_length=200)
     bitterness = models.IntegerField(choices=BITTERNESS_CHOICES, default=0)
     money_value = models.IntegerField(choices=MONEY_VALUE_CHOICES, default=0)
-    beer_image = CloudinaryField('image', blank=True)
+    beer_image = CloudinaryField('image', blank=True, transformation={'width': '600', 'height': '600', 'crop':'fill', 'gravity':"auto"})
     score = models.IntegerField(default=0)
 
     def __str__(self):
