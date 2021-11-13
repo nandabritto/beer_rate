@@ -17,6 +17,7 @@
 
 
 <section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
+    {% if beer_reviews %}
     <div class="container text-light text-center ">
         <h1 class="title p-2"> You searhed for: {{ searched|title }} </h1>
     </div>
@@ -116,6 +117,29 @@
             {% endif %}
         </ul>
     </nav>
+
+
+    {% else %}
+    <div class="container no-review text-center ">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
+            <h1> There's no review for {{ searched | title}}</h1>
+            <hr>
+            <p class="lead"> Would you like to be the first? </p>
+            {% if user.is_authenticated %}
+            <a href="{% url 'add_review' %}"><button class="btn btn-warning login-button btn-lg m-2 fw-bold">Review you
+                    Beer Now! </button></a>
+            {% else %}
+            <a href="{% url 'login' %}"><button class="btn btn-warning login-button btn-lg m-2 fw-bold">Login and
+                    Review!</button></a>
+            {% endif %}
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    {% endif %}
+
 </section>
 
 
