@@ -127,15 +127,9 @@ def style_category_view(request, style):
     return render(request, 'review_list/stylecategories.html', {'style': style, 'style_reviews': style_reviews })
 
 
-# def category_list(request):
-#     # Category loops on index page.
-#     cat_style_menu=BeerStyle.objects.all
-#     return render(request, 'base.html', {'cat_style_menu': cat_style_menu})
-
-
-
 def cat_style_menu_on_all_pages(request):
     return {'cat_style_menu': BeerStyle.objects.all()}
+    
 
 def beer_category_view(request):
     if request.method == "POST":
