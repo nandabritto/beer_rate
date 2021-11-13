@@ -1,24 +1,18 @@
 
 from django.test import TestCase
-from .models import BeerStyle
+from .models import BeerStyle, Beer
 from django.urls import reverse
 
 import logging
 
+class SetupModelTestCase(TestCase):
+    '''Base test case to be used in all PostUpdateView view tests'''
+    def setUp(self):
+        self.beer = Beer.objects.create(beer_name='Beer')
+        self.beer_style = BeerStyle.objects.create(beer_style='Style')
 
-
-# class BeerStyleModelTestCase(TestCase):
-
-    # @classmethod
-    # def setup(cls):
-    #     cls.beerstyle1 = BeerStyle( beer_style = 'style12')
-    #     cls.beerstyle1.save()
-        # return str(cls.beer_style).lower()
-
-class BeerStyleTestCase(TestCase):
+class BeerStyleTestCase(SetupModelTestCase):
 
     def test_absolute_url(self):
-        self.beerstyle1 = BeerStyle( beer_style = 'style12')
-        self.beerstyle1.save()
-        logging.debug(self.beerstyle1)
-        self.assertEqual(self.beerstyle1.get_absolute_url(), reverse('add_review'))
+        logging.debug(self.beer_style)
+        self.assertEqual(self.beer_style.get_absolute_url(), reverse('add_review'))
