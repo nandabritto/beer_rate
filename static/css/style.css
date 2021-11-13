@@ -9,7 +9,7 @@
 }
 
 .yellow {
-    color: var(--yellow);
+    color: var(--yellow)!important;
 }
 
 html {
@@ -48,6 +48,12 @@ button,
 
 a {
     font-weight: 700;
+    text-decoration: none;
+    color: var(--red);
+}
+
+a:hover {
+    color: var(--yellow);
 }
 
 
@@ -182,10 +188,8 @@ img {
 #id_beer_style,
 #id_beer,
 #id_bitterness,
-#id_money_value,
-#id_beer_image {
-    width: 300px;
-    font-size: 1.3rem !important;
+#id_money_value {
+    margin: 10px;
 }
 
 #id_username,

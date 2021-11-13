@@ -22,8 +22,7 @@ class BeerReviewForm(forms.ModelForm):
             'review': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Write your review here!'}),
-            
-        }
+    }
 
 
 class CreateBeerStyleForm(forms.ModelForm):

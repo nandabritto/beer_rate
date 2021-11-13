@@ -21,7 +21,7 @@ class BeerStyle(models.Model):
 
 class Beer(models.Model):
     '''Create a beer model form'''
-    beer_name = models.CharField(max_length=50, unique=True)
+    beer_name = models.CharField(max_length=10, unique=True)
     style = models.ManyToManyField(BeerStyle)
 
     def __str__(self):
