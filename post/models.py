@@ -30,7 +30,7 @@ class Beer(models.Model):
 
     def get_absolute_url(self):
         '''Redirect user to add home'''
-        return reverse('home')
+        return reverse('add_review')
 
 
 class BeerReview(models.Model):
@@ -71,7 +71,7 @@ class BeerReview(models.Model):
 
     def get_absolute_url(self):
         '''Redirect user to review detail page'''
-        return reverse('review_list', kwargs={'pk': self.pk})
+        return reverse('review_detail', kwargs={'pk': self.pk})
 
 
 beer_review = BeerReview.objects.all()
