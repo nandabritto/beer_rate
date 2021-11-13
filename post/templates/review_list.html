@@ -2,6 +2,8 @@
 {% load static %}
 {% load cloudinary %}
 
+
+
 {% block additional_styles %}
 <style>
     body {
@@ -9,7 +11,7 @@
     }
 </style>
 {% endblock %}
-
+{% block title %} Review{% endblock title %}
 
 {% block content %}
 
@@ -21,10 +23,10 @@
     </div>
 
     <!-- Reviews card -->
-    <div class="row row-cols-1 row-cols-md-2 g-4 m-auto">
+    <div class="row row-cols-1 row-cols-md-2 g-4 m-auto d-flex justify-content-center">
         
         {% for review in object_list %}
-            <div class="col col-md-6 col-lg-4 d-flex">
+            <div class="col col-md-6 col-lg-4 ">
                 <div class="card w-100 text-light bg-dark rounded ">
                     <a href="{% url 'review_detail' review.pk %}"
                         class="text-decoration-none text-capitalize fw-bold text-white">

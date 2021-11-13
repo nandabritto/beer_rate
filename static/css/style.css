@@ -126,7 +126,7 @@ ul.dropdown-menu {
 /*------------------------ Containers ---------------------- */
 
 .card-img-top {
-    max-height: 300px !important;
+    height: 300px !important;
 }
 
 img {
