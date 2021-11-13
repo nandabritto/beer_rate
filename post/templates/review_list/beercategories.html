@@ -18,7 +18,7 @@
 
 <section class="pt-5 pb-5 shadow-sm m-auto section-container mb-4 ">
     <div class="container text-light text-center ">
-        <h1 class="title p-2"> You searhed for: {{ searched|title }}</h1>
+        <h1 class="title p-2"> You searhed for: {{ searched|title }} </h1>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -28,7 +28,7 @@
             <div class="card w-100 text-light bg-dark rounded text-center ">
                 <a href="{% url 'review_detail' beer.pk %}"
                     class="text-decoration-none text-capitalize fw-bold text-white">
-                    <h2 class="card-title m-3 text-truncate "> {{ beer.beer }} </h2>
+                    <h2 class="card-title m-3 text-truncate "> {{ beer.beer }} </h2> <hr> 
                     <h3>{{ beer.beer_style}}</h3>
                 </a>
 

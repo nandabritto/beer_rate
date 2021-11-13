@@ -5,13 +5,20 @@
 
 <fieldset>
 
-    <div class="container mt-5">
-        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2">
-            <h1 class="text-light text-center bold p-3"> Delete review</h1>
+    <div class="container mt-5 ">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3">
+            <h1 class="text-light text-center bold p-3 yellow"> Delete review <hr></h1>
             <div class="text-light text-center">
-                <h5> Beer: {{ object.beer }}</h5>
-                <h5> Beer: {{ object.beer_style }}</h5>
-                <p>{{ object.review }}</p>
+                <h5 class = "mb-2"> Beer: {{ object.beer|title }}</h5>
+                <h5 class = "mb-3"> Beer Style: {{ object.beer_style|title }}</h5>
+                <div class= "review-detail-box p-3 d-flex align-items-center justify-content-center overflow-auto mb-3">
+               
+                    <p>{{ object.review|title }}</p>
+                </div>
+                
+                
+                
+                <!-- <p>{{ object.review }}</p> -->
                 <p class= "text-muted">Author:{{ object.user_name }} <br/>Created at: {{ object.pub_date }}</p>
                 <form method="POST" actions="">
                     {% csrf_token %}
@@ -21,7 +28,7 @@
                 </form>
             </div>
         </div>
-    </div>
+ 
 </fieldset>
 
 

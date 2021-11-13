@@ -8,6 +8,9 @@
     --black: #151314;
 }
 
+hr {
+    color: var(--yellow);
+}
 .yellow {
     color: var(--yellow)!important;
 }
@@ -42,7 +45,9 @@ a,
 button,
 #id_bitterness,
 #id_money_value,
-#id_beer_image {
+#id_beer_image, 
+#id_beer_style,
+#id_beer {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -169,8 +174,8 @@ img {
     margin: 0px auto;
 }
 
-.no-review-container {
-    width: 400px;
+.no-review {
+    margin-top: 20vh;
 }
 
 .edit-delete-box {
@@ -188,8 +193,10 @@ img {
 #id_beer_style,
 #id_beer,
 #id_bitterness,
-#id_money_value {
+#id_money_value,
+#id_beer_image {
     margin: 10px;
+    font-size: 1rem;
 }
 
 #id_username,

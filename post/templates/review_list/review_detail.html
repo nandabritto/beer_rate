@@ -7,7 +7,7 @@
     <!-- Reviews card -->
     <div class="card mb-3 mt-5 detail-container margin-screen-md bg-dark text-light">
         <div class="card-header">
-            <h1 class="text-center text-capitalize">{{ object.beer }}</h1>
+            <h1 class="text-center text-capitalize ">{{ object.beer }} <hr></h1>
         </div>
         <div class="row g-0">
             <div class="col-md-5">
@@ -22,7 +22,7 @@
 
             <div class="col-md-7">
                 <div class="card-body">
-                    <h4 class="text-right mb-4 ">Beer Style : {{ object.beer_style|title }}</h4>
+                    <h4 class="text-right mb-4 mx-2 ">Beer Style : {{ object.beer_style|title }}</h4>
                     
                     <p class="card-text m-2"> Biterness:
                         <span class="fas fa-beer {% if object.money_value > 0 %} checked {% endif %}"></span>

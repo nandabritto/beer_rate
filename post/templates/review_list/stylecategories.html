@@ -27,25 +27,26 @@
     <div class="row row-cols-1 row-cols-md-2 g-4 m-auto d-flex justify-content-center">
 
         {% for review in style_reviews %}
-            <div class="col col-md-6 col-lg-4">
-                <div class="card w-100 text-light bg-dark rounded text-center ">
-                    <a href="{% url 'review_detail' review.pk %}"
-                        class="text-decoration-none text-capitalize fw-bold text-white">
+        <div class="col col-md-6 col-lg-4">
+            <div class="card w-100 text-light bg-dark rounded text-center ">
+                <a href="{% url 'review_detail' review.pk %}"
+                    class="text-decoration-none text-capitalize fw-bold text-white">
 
-                        <h2 class="card-title m-3 text-truncate "> {{ review.beer }} </h2>
-                        <h3>{{ review.beer_style}}</h3>    
+                    <h2 class="card-title m-3 text-truncate "> {{ review.beer }} </h2>
+                    <hr>
+                    <h3>{{ review.beer_style}}</h3>
 
                     {% if review.beer_image %}
-                        <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
+                    <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
 
                     {% else %}
-                        <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" class="card-img-top rounded-2"
-                            alt="default error image">
+                    <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp"
+                        class="card-img-top rounded-2" alt="default error image">
 
                     {% endif %}
                     <div class="card-body">
                         <p class="card-text text-truncate">{{ review.review }}</p>
-                        
+
                         <p class="card-text"> Biterness:
                             <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
                             <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
@@ -55,9 +56,12 @@
                         </p>
 
                         <p class="card-text"> Money-value:
-                            <span class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
-                            <span class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
-                            <span class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
+                            <span
+                                class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
+                            <span
+                                class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
+                            <span
+                                class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
                             <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
                             <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
                         </p>
@@ -68,31 +72,33 @@
                             <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
                             <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
-                        
-                            <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }} - {{ review.pub_date }} </p>
-                    </div></a>
-            
-            
-                    <!---------------- Delete and Edit Options  --------->
 
-                    {% if user.is_authenticated %}
-                        {% if user.id == review.user_name.id %}
+                        <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }} -
+                            {{ review.pub_date }} </p>
+                    </div>
+                </a>
 
-                        <span class="m-auto">
-                            <h4><a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
-                                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
-                                    <i class="fas fa-edit px-2"></i></a>
 
-                                <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" id="edit"
-                                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
-                                    <i class="fas fa-trash px-2 pb-2 "></i>
-                                </a></h4>
-                        </span>
-                        {% endif %}
-                    {% endif %}
+                <!---------------- Delete and Edit Options  --------->
 
-                </div>
+                {% if user.is_authenticated %}
+                {% if user.id == review.user_name.id %}
+
+                <span class="m-auto">
+                    <h4><a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
+                            <i class="fas fa-edit px-2"></i></a>
+
+                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" id="edit"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
+                            <i class="fas fa-trash px-2 pb-2 "></i>
+                        </a></h4>
+                </span>
+                {% endif %}
+                {% endif %}
+
             </div>
+        </div>
         {% endfor %}
 
     </div>
@@ -102,20 +108,20 @@
     <nav aria-label="Page navigation example ">
         <ul class="pagination justify-content-center ">
             {% if page_obj.has_previous %}
-                <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
-                <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                </li>
+            <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
+            <li class="page-item"><a class="page-link bg-dark border-0 "
+                    href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            </li>
             {% endif %}
 
             <li class="page-item">
 
-            {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.next_page_number }}">Next</a></li>
-                <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                </li>
+                {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link bg-dark border-0 "
+                    href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link bg-dark border-0 "
+                    href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            </li>
             {% endif %}
         </ul>
     </nav>
@@ -123,9 +129,24 @@
 
 
     {% else %}
-        <div class=" no-review-container bg-dark text-light text-center m-auto">
-            <h1> There's no review</h1>
+    <div class="container no-review ">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
+            <h1> There's no review for {{ style | title}}</h1>
+            <hr>
+            <p class="lead"> Would you like to be the first? </p>
+            {% if user.is_authenticated %}
+            <a href="{% url 'add_review' %}"><button class="btn btn-warning login-button btn-lg m-2 fw-bold">Review you
+                    Beer Now! </button></a>
+            {% else %}
+            <a href="{% url 'login' %}"><button class="btn btn-warning login-button btn-lg m-2 fw-bold">Login and
+                    Review!</button></a>
+            {% endif %}
         </div>
+    </div>
+
+
+    </div>
+    </div>
     {% endif %}
 </section>
 
