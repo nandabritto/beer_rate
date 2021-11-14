@@ -12,12 +12,9 @@
         <div class="row g-0">
             <div class="col-md-5">
 
-                {% if object.beer_image %}
-                <img src="{{ object.beer_image.url }}" class="img-fluid rounded-start"
+               <img src="{{ object.beer_image.url }}" class="img-fluid rounded-start"
                     alt="review {{review.beer}} uploaded image">
-                {% else %}
-                <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" alt="default beer review image">
-                {% endif %}
+                
             </div>
 
             <div class="col-md-7">

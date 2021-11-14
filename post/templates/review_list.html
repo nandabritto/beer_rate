@@ -34,16 +34,9 @@
 
                         <h2 class="card-title m-1 text-center text-truncate  "> {{ review.beer }} <hr></h2>
                         <h3>{{ review.beer_style}}</h3>
-                
-                        {% if review.beer_image %}
+               
                             <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="review {{review.beer}} uploaded image">
 
-                        {% else %}
-                            <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" 
-                                class="card-img-top rounded-2" alt="default beer review image">
-
-                        {% endif %}
-                        
                         <div class="card-body">
                             <p class="card-text text-truncate"> {{ review.review }} </p>
                             <p class="card-text"> Biterness:

@@ -33,13 +33,9 @@
                     <h3>{{ beer.beer_style}}</h3>
                 </a>
 
-                {% if beer.beer_image %}
                 <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container"
                     alt="Uploaded {{beer.beer}} review image">
-                {% else %}
-                <img src="{{ MEDIA_URL }}vintage-retro-beer-illustration_5586-351.webp" class="card-img-top rounded-2"
-                    alt="default beer review image">
-                {% endif %}
+               
 
                 <div class="card-body">
                     <p class="card-text text-truncate"> {{ beer.review }} </p>
