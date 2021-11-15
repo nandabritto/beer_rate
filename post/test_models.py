@@ -7,6 +7,7 @@ from django.urls import reverse
 
 import logging
 
+
 class SetupModelTestCase(TestCase):
     '''Base test case to be used in all models tests'''
     def setUp(self):

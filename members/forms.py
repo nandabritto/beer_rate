@@ -1,3 +1,4 @@
+'''System module'''
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django import forms
@@ -27,8 +28,8 @@ class SignUpForm(forms.Form):
     def clean_username(self):
         '''Clean username field after form creation'''
         username = self.cleaned_data['username'].lower()
-        r = User.objects.filter(username=username)
-        if r.count():
+        filterusername = User.objects.filter(username=username)
+        if filterusername.count():
             raise ValidationError("Username already exists")
         return username
 
@@ -36,8 +37,8 @@ class SignUpForm(forms.Form):
         '''Clean email field after form creation'''
 
         email = self.cleaned_data['email'].lower()
-        r = User.objects.filter(email=email)
-        if r.count():
+        filteremail = User.objects.filter(email=email)
+        if filteremail.count():
             raise ValidationError("Email already exists")
         return email
 
@@ -52,7 +53,7 @@ class SignUpForm(forms.Form):
 
         return password2
 
-    def save(self, commit=True):
+    def save(self):
         '''Save register form if all information is valid'''
         user = User.objects.create_user(
             self.cleaned_data['username'],
