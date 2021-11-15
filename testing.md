@@ -52,13 +52,25 @@ I would like to have option to login directly form there, without needing to go 
 1 - On bottom of review container, where we see "Written by:", I would rather to have it as "Review by: <name of author>"  and on same row "Created at: <date>"
 
 
-Code Validation
+# Code Validation
 
-    Automated tests
+## Automated tests
 
 
+### **Members App** 
 
-    Manual Testing
+All functions on members app were tested using unittests. 
+
+  * Views 
+<p><img src="media/readme/unittests_ss/members_unitest_testviews.jpg"></p>
+
+  * Forms 
+<p><img src="media/readme/unittests_ss/members_unitest_testforms.jpg"></p>
+
+  * Members Unittests Overall
+<p><img src="media/readme/unittests_ss/members_unitest_members.jpg"></p>
+
+## Manual Testing
 
     Desktop
 
