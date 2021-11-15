@@ -19,6 +19,7 @@ class TestRegister(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_register_user_invalid(self):
+        ''' Test redirect if user is invalid '''
         response = self.client.post(reverse('register'), data={
             'username': 'FernandaB',
             'email': 'fernandab@gmail.com',
@@ -30,7 +31,6 @@ class TestRegister(TestCase):
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
-
 
 
 class TestLogin(TestCase):

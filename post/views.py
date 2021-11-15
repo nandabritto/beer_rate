@@ -3,9 +3,8 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import BeerReview, BeerStyle, Beer
+from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
-from django.db.models import Q 
 from django.core.paginator import Paginator
 
 
