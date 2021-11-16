@@ -49,7 +49,7 @@ class TestLogin(TestCase):
             "username": "fernanda",
             "password": "12345"})
         self.assertRedirects(
-            response, '/',
+            response, '/home',
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
@@ -81,4 +81,4 @@ class TestLogout(TestCase):
     def test_logout(self):
         ''' Test redirection if user logout '''
         response = self.client.get(reverse('logout'))
-        self.assertRedirects(response, '/', status_code=302)
+        self.assertRedirects(response, '/home', status_code=302)
