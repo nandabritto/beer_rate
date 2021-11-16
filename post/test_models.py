@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import BeerStyle, Beer, BeerReview
 
+import logging
+
 
 class SetupModelTestCase(TestCase):
     '''Base test case to be used in all models tests'''
@@ -51,8 +53,7 @@ class BeerReviewTestCase(SetupModelTestCase):
     '''Test BeerReview model functions'''
     def test__str__(self):
         '''Test if review is returning all model objetcs and pk'''
-        beerreview = BeerReview.objects.get(pk=1)
-        self.assertEqual(str(beerreview.beer), self.beer.beer_name.lower())
+        self.assertEquals(str(self.beer_review), self.beer.beer_name.lower())
 
     def test_absolute_url(self):
         '''Test if its redirecting correctly to beer detail view with
