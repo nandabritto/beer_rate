@@ -1,8 +1,9 @@
+'''System Module'''
 from pathlib import Path
-from os import path
 import os
-import dj_database_url
 import logging
+import dj_database_url
+
 if os.path.isfile("env.py"):
     import env
 
@@ -12,29 +13,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = True 
-# SITE = os.environ.get('SITE')
-# if SITE == "2":
-#    DEBUG = False
-# else:
-#    DEBUG = True
-
+DEBUG = True
 
 # For debugging
 if DEBUG:
-    # will output to your console
     logging.basicConfig(
         level=logging.DEBUG,
         format='%(asctime)s %(levelname)s %(message)s',
     )
-# else:
-#     # will output to logging file
-#     logging.basicConfig(
-#         level=logging.DEBUG,
-#         format='%(asctime)s %(levelname)s %(message)s',
-#         filename='/my_log_file.log',
-#         filemode='a'
-#     )
 
 ALLOWED_HOSTS = ["bestbeer-app.herokuapp.com", "localhost"]
 
@@ -90,8 +76,6 @@ TEMPLATES = [
     },
 ]
 
-
-crispy_template_pack = 'uni_form'
 
 WSGI_APPLICATION = 'django_beerapp.wsgi.application'
 
@@ -152,7 +136,3 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Default primary key field type
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
