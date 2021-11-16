@@ -1,16 +1,15 @@
-
+'''System Module'''
 from django.test import TestCase
 from django.contrib.auth.models import User
-
-from .models import BeerStyle, Beer, BeerReview
 from django.urls import reverse
-
-import logging
+from .models import BeerStyle, Beer, BeerReview
 
 
 class SetupModelTestCase(TestCase):
     '''Base test case to be used in all models tests'''
+
     def setUp(self):
+        ''' Setup for testing models '''
         self.username = 'joe'
         self.password = '12345'
         user = User.objects.create_user(
@@ -29,28 +28,34 @@ class SetupModelTestCase(TestCase):
             bitterness='5',
             money_value='3',
             score='1')
-        
+
 
 class BeerStyleTestCase(SetupModelTestCase):
+    '''Test BeerStyle model function'''
 
     def test_absolute_url(self):
-        # logging.debug(self.beer_style)
-        self.assertEqual(self.beer_style.get_absolute_url(), reverse('add_review'))
+        '''Test if redirection to add review page is correct'''
+        self.assertEqual(
+            self.beer_style.get_absolute_url(), reverse('add_review'))
+
 
 class BeerTestCase(SetupModelTestCase):
+    '''Test Beer model function'''
 
     def test_absolute_url(self):
-        # logging.debug(self.beer)
+        '''Test if redirection to add review page is correct'''
         self.assertEqual(self.beer.get_absolute_url(), reverse('add_review'))
 
-class BeerReviewTestCase(SetupModelTestCase):
 
+class BeerReviewTestCase(SetupModelTestCase):
+    '''Test BeerReview model functions'''
     def test__str__(self):
-        # logging.debug(str(self.beer.beer_name))
+        '''Test if review is returning all model objetcs and pk'''
         beerreview = BeerReview.objects.get(pk=1)
         self.assertEqual(str(beerreview.beer), self.beer.beer_name.lower())
-        # self.assertEqual(self.beer.beer_name, self.beer.beer_name.lower())
 
     def test_absolute_url(self):
-        # logging.debug(self.beer_review.id)
-        self.assertEqual(self.beer_review.get_absolute_url(), reverse('review_detail', kwargs={'pk':self.beer_review.id}))
+        '''Test if its redirecting correctly to beer detail view with
+        correct pk '''
+        self.assertEqual(self.beer_review.get_absolute_url(), reverse(
+            'review_detail', kwargs={'pk': self.beer_review.id}))
