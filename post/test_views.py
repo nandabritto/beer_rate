@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import BeerReview, Beer, BeerStyle
 
-
 class SetupViewTestCase(TestCase):
     '''Base test case to be used in all PostUpdateView view tests'''
     def setUp(self):
@@ -281,3 +280,33 @@ class SuccessfulPostUpdateViewTests(SetupViewTestCase):
             'pk': self.beer_review.id}))
         self.assertNotContains(
             response, 'Hi there! I should not be on the page.')
+
+# class TestStyleCategoryView(SetupViewTestCase):
+#     def test_style_category_view(self):
+#         stylereview = self.beer_review.filter(slug=beer_style)
+#         logging.debug(slug)
+
+class TestStyleCategoryView(SetupViewTestCase):
+    def setUp(self):
+        '''Setup user and review from SetupViewTestCase'''
+        super().setUp()
+        self.client.login(username=self.username, password=self.password)
+
+    def test_style_category_view(self):
+        style = self.beer_style.beer_style
+        response = self.client.get(reverse('category', kwargs={
+            'style': style}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'review_list/stylecategories.html')
+
+    def test_beer_category_view_get(self):
+        search = {'searched':self.beer.beer_name}
+        response = self.client.get(reverse('beercategory'), search)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'review_list/beercategories.html')
+
+    def test_beer_category_view_post(self):
+        search = {'searched':self.beer.beer_name}
+        response = self.client.post(reverse('beercategory'), search)
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'review_list/beercategories.html')
