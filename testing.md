@@ -24,7 +24,7 @@ A session was held with an end user. The feedback obtained is listed below:
 
 1 - The page which we are is slightly highlighted, I would like a more visual appealing color to better differentiate which page I am.
 
-2 - "Beer Styles" dropdown menu is mixed with operational menu options. I would like to have on Left: "Best Beer" (as home), "Beer Reviews", "Beer Styles" and "Search your beer". On Right, "Register", "Login", "Logout", "Home", "Register"
+2 - "Beer Styles" dropdown menu is mixed with operational menu options. I would like to have on Left: "Best Beer" (as home), "Beer Reviews", "Beer Styles" and "Search your beer". On Right, "Register", "Login", "Logout".
 
 + Home Page
 

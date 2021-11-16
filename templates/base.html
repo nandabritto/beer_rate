@@ -39,7 +39,7 @@
     {% endblock  %}
 
     <title>BestBeer | {% block title %}{% endblock title %}</title>
-  
+
 
 </head>
 
@@ -48,8 +48,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light  mt-2">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Best Beer</a>
-           <!-- Collapse Navigation --> 
+            <a class="navbar-brand {% active_link 'home' %}" href="{% url 'home' %}">Best Beer</a>
+            <!-- Collapse Navigation -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -57,45 +57,48 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
-                   <!--  Navigation Items --> 
-                    <li class="nav-item ">
-                        <a class="nav-link {% active_link 'home' %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a></li>
+
+                    <!--  Navigation Items -->
+                  
                     <li class="nav-item">
                         <a class="nav-link {% active_link 'review_list' %}" aria-current="page"
                             href="{% url 'review_list' %}">Beer Reviews</a></li>
-                    <li class="nav-item">
-                    <!--  Authentication Navigation Items --> 
-                        {% if user.is_authenticated %}
-                        <a class="nav-link {% active_link 'logout' %}" href="{% url 'logout' %}">Logout</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link {% active_link 'add_review' %}" href="{% url 'add_review' %}">Rate your
-                            Beer</a></li>
-                        {% else %}
+
+                    <!--  Authentication Navigation Items -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% active_link 'add_review' %}" href="{% url 'add_review' %}">Rate your
+                                Beer</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {% active_link 'logout' %}" href="{% url 'logout' %}">Logout</a></li>
+
+                    {% else %}
                         <li class="nav-item">
                             <a class="nav-link {% active_link 'register' %}" href="{% url 'register' %}">Register</a></li>
                         <li class="nav-item">
                             <a class="nav-link {% active_link 'login' %}" href="{% url 'login' %}">Login</a></li>
-                        {% endif %}
-                   
-                    <!--  Search beer style button -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                            data-bd-auto-close="True" aria-expanded="false">
-                            Beer Styles</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% endif %}
+                    
+                </ul>
+                <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!--  Search beer style button -->
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" data-bd-auto-close="True" aria-expanded="false">
+                                Beer Styles</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            {% for item in cat_style_menu %}
-                            <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
-                            {% endfor %}
+                                {% for item in cat_style_menu %}
+                                <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
+                                {% endfor %}
 
-                        </ul>
-                    </li>
+                            </ul>
+                    </ul>
                 </ul>
                 <!--  Search beer button -->
                 <form class="d-flex text-end" action="{% url 'beercategory' %}" method="post">
-                    
+
                     {% csrf_token %}
 
                     <input class="form-control me-2" type="search" placeholder="Search your beer"
@@ -109,16 +112,16 @@
     <!-- Alert messages -->
 
     {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-warning alert-dismissible fade show" id="alert" role="alert">
-            <strong>{{ message }}</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endfor %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" id="alert" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
     {% endif %}
 
 
-    {% block content %}    {% endblock %}
+    {% block content %} {% endblock %}
 
     <!-- Footer -->
 
@@ -143,7 +146,7 @@
 
                 <!-- Github -->
                 <a class="m-3" style="color: #4b5252c9;" href="#!" role="button"><i class="fab fa-github"></i></a>
-                </div>
+            </div>
         </div>
 
         <!-- Copyright -->
@@ -154,9 +157,9 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    
 
-{% block extra_js %}{% endblock extra_js %}
+
+    {% block extra_js %}{% endblock extra_js %}
 
 </body>
 

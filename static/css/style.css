@@ -94,7 +94,8 @@ ul.dropdown-menu {
     z-index: 10000;
 }
 
-.nav-link.active{
+.nav-link.active,
+.navbar-brand.active {
     color:var(--red)!important;
 }
 
