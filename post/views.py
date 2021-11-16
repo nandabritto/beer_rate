@@ -3,15 +3,16 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
-from django.core.paginator import Paginator
 
 
 class HomeView(ListView):
     '''Render homepage view '''
     model = BeerReview
     template_name = 'home.html'
+
 
 class AddReviewView(View):
     '''Render add review page'''
@@ -103,14 +104,14 @@ class UpdateReviewView(UpdateView):
     form_class = BeerReviewForm
     template_name = 'review_list/review_update.html'
 
-    # def __init__(self, form):
-    #     self.object = form.save(commit=False)
+    def __init__(self):
+        self.updform = None
 
     def form_valid(self, form):
         '''validate update review form and save it'''
-        self.object = form.save(commit=False)
-        self.object.save()
-        return redirect('review_detail', self.object.pk)
+        self.updform = form.save(commit=False)
+        self.updform.save()
+        return redirect('review_detail', self.updform.pk)
 
 
 class DeleteReviewView(DeleteView):
@@ -122,24 +123,29 @@ class DeleteReviewView(DeleteView):
 
 
 def style_category_view(request, style):
-    style_reviews = BeerReview.objects.filter(slug = style)
-    return render(request, 'review_list/stylecategories.html', {'style': style, 'style_reviews': style_reviews })
+    '''Define beer style view on search'''
+    style_reviews = BeerReview.objects.filter(slug=style)
+    return render(request, 'review_list/stylecategories.html', {
+        'style': style, 'style_reviews': style_reviews})
 
 
-def cat_style_menu_on_all_pages(request):
+def cat_style_menu_on_all_pages(_request):
+    '''Add beer style view search in all pages'''
     return {'cat_style_menu': BeerStyle.objects.all()}
-    
+
 
 def beer_category_view(request):
+    '''Add a beer search feature on navbar'''
     if request.method == "POST":
         searched = request.POST['searched']
-    elif  request.method == "GET":
+    elif request.method == "GET":
         searched = request.GET['searched']
 
     beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
 
-    paginator = Paginator(beers, 3) 
+    paginator = Paginator(beers, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'review_list/beercategories.html', {'searched':searched, 'page_obj': page_obj })
+    return render(request, 'review_list/beercategories.html', {
+        'searched': searched, 'page_obj': page_obj})

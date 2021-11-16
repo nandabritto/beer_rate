@@ -249,12 +249,12 @@ class SuccessfulPostUpdateViewTests(SetupViewTestCase):
             '/review_list/edit/' + str(self.beer_review.id))
         self.assertEqual(response.status_code, 200)
 
-    def test_review_update_view_success_status_code(self):
-        '''Test status code from review update page'''
-        url = reverse('review_update', kwargs={
-            'pk': self.beer_review.id})
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
+    # def test_review_update_view_success_status_code(self):
+    #     '''Test status code from review update page'''
+    #     url = reverse('review_update', kwargs={
+    #         'pk': self.beer_review.id})
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, 200)
 
     def test_review_update_url_by_name(self):
         '''Test if update review is getting correct url'''
