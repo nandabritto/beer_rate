@@ -7,7 +7,7 @@ class TestUrls(TestCase):
 
     def test_home_view_is_resolved(self):
         ''' Test if home view load without errors'''
-        response = self.client.get('/home')
+        response = self.client.get('')
         self.assertEqual(response.status_code, 200)
 
     def test_add_review_view_is_resolved(self):

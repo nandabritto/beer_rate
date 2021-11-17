@@ -22,7 +22,7 @@ class BeerStyle(models.Model):
 
 class Beer(models.Model):
     '''Create a beer model form'''
-    beer_name = models.CharField(max_length=10, unique=True)
+    beer_name = models.CharField(max_length=50, unique=True)
     style = models.ManyToManyField(BeerStyle)
 
     def __str__(self):
@@ -56,7 +56,7 @@ class BeerReview(models.Model):
         BeerStyle, on_delete=models.CASCADE)
     beer = models.ForeignKey(
         Beer, on_delete=models.CASCADE)
-    slug = AutoSlugField(populate_from='beer_style', default='style')
+    slug = models.CharField(max_length=50)
     pub_date = models.DateTimeField(auto_now_add=True)
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE)

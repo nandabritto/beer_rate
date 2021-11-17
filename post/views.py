@@ -51,6 +51,7 @@ class AddReviewView(View):
             if review_form.is_valid():
                 review = review_form.save(commit=False)
                 review.user_name = request.user
+                review.slug = review.beer_style
                 review.save()
                 return redirect('review_detail', review.pk)
 
@@ -133,10 +134,6 @@ def style_category_view(request, style):
 def cat_style_menu_on_all_pages(_request):
     '''Add beer style view search in all pages'''
     return {'cat_style_menu': BeerStyle.objects.all().order_by('beer_style')}
-
-
-def cat_style_menu_on_all_pages(request):
-    return {'cat_style_menu': BeerStyle.objects.all()}
 
 
 def beer_category_view(request):
