@@ -1,5 +1,6 @@
 '''System module'''
 from django.shortcuts import redirect, render
+from django.contrib import messages
 from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -62,6 +63,7 @@ class AddReviewView(View):
             style_form = CreateBeerStyleForm(request.POST)
 
             if style_form.is_valid():
+                messages.success(request, f'Beer style has been created. ' )
                 style_form.save()
             else:
                 ctxt['style_form'] = style_form
@@ -70,6 +72,7 @@ class AddReviewView(View):
             beer_form = CreateBeerForm(request.POST)
 
             if beer_form.is_valid():
+                messages.success(request, 'Beer has been created. ' )
                 beer_form.save()
             else:
                 ctxt['beer_form'] = beer_form
@@ -90,7 +93,6 @@ class BeerStyleCreateView(ListView):
     '''Create a beer style on add review page'''
     template_name = 'add_review/create_style.html'
     form_class = CreateBeerStyleForm
-    # success_message = 'Success: Beer Style was created.'
 
 
 class ReviewDetailView(DetailView):
