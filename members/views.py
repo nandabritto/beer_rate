@@ -14,7 +14,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, ("You're logged in"))
+            messages.success(request, ("You are logged in. :)"))
             return redirect('home')
         else:
             messages.error(request, (
@@ -27,7 +27,7 @@ def login_user(request):
 def logout_user(request):
     ''' Logut user and redirect to Home page'''
     logout(request)
-    messages.success(request, ('You were logged out'))
+    messages.success(request, ('You were logged out. See you soon! :)'))
     return redirect('home')
 
 
@@ -43,10 +43,7 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('home')
-        # else:
-        #     messages.success(request, (
-        #         'There was an error with your register. Please, Try again.'))
-        #     return redirect('register')
+ 
     else:
         form = SignUpForm()
     return render(request, 'authenticate/register_user.html', {
