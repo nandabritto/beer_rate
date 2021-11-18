@@ -53,7 +53,7 @@ class BeerRatingView(SetupViewTestCase):
     def test_beer_rating_view_contains_correct_html(self):
         ''' Test if review list is rendering correct html'''
         response = self.client.get(reverse('review_list'))
-        self.assertContains(response, ' Beer reviews')
+        self.assertContains(response, ' Latest Beer Reviews')
 
     def test_beer_rating_view_does_not_contain_incorrect_html(self):
         ''' Test if review list is rendering incorrect html and

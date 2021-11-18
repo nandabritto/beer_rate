@@ -1,9 +1,7 @@
 '''System Module '''
-
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
-
 
 class TestRegister(TestCase):
     ''' Test Register Function '''
@@ -26,11 +24,11 @@ class TestRegister(TestCase):
             'password1': '1234567',
             'password2': '123456'
         })
-        self.assertRedirects(
-            response, '/members/register_user',
-            status_code=302,
-            target_status_code=200,
-            fetch_redirect_response=True)
+        self.assertEqual(response.status_code, 200)
+        
+    def test_register_user_get(self):
+        response = self.client.get(reverse('register'))
+        self.assertEqual(response.status_code, 200)
 
 
 class TestLogin(TestCase):
@@ -49,7 +47,7 @@ class TestLogin(TestCase):
             "username": "fernanda",
             "password": "12345"})
         self.assertRedirects(
-            response, '/home',
+            response, '/',
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True)
@@ -81,4 +79,4 @@ class TestLogout(TestCase):
     def test_logout(self):
         ''' Test redirection if user logout '''
         response = self.client.get(reverse('logout'))
-        self.assertRedirects(response, '/home', status_code=302)
+        self.assertRedirects(response, '/', status_code=302)
