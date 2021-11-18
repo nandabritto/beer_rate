@@ -11,6 +11,7 @@
 hr {
     color: var(--yellow);
 }
+
 .yellow {
     color: var(--yellow)!important;
 }
@@ -154,7 +155,7 @@ img {
 }
 
 .section-container {
-    max-width: 1000px;
+    max-width: 80%;
 }
 
 .container-box-home {
@@ -241,7 +242,6 @@ img {
     .pull-right-lg {
         float: right;
     }
-
 
 }
 

@@ -39,8 +39,8 @@
 									Create Beer </button></h4>
 						</div>
 						<div class="text-center label">
-							<h2 class="m-2"> Write your review: {{ review_form.review}}</h2>
-						</div>
+							<h2 class="m-2 p-2"> Write your review:</h2>
+						</div> {{ review_form.review}}
 						<div class="m-2 field_container label">
 							<h4>Money Value: {{ review_form.money_value}} </h4>
 						</div>
@@ -85,7 +85,7 @@
 							{{ style_form }}
 							<!------------------------------------------- Button trigger modal ----------------------------->
 							<div class="m-2 text-center">
-								<input name="comment" class="btn btn-success" type="submit" value="Submit" />
+								<input name="comment" class="btn btn-submit" type="submit" value="Create Style" />
 								</button> </div>
 						</form>
 					</div>
@@ -110,7 +110,7 @@
 							{{ beer_form.beer_name }}
 							<!------------------------------------------- Button trigger modal ----------------------------->
 							<div class="m-2 text-center">
-								<input name="comment" class="btn btn-success " type="submit" value="Create" />
+								<input name="comment" class="btn btn-submit " type="submit" value="Create Beer" />
 								</button></div>
 						</form>
 					</div>
