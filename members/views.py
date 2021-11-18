@@ -17,8 +17,8 @@ def login_user(request):
             messages.success(request, ("You're logged in"))
             return redirect('home')
         else:
-            messages.success(request, (
-                'There was an error logging in. Please, Try again.'))
+            messages.error(request, (
+                'There was an error logging in. Username or Password are not correct. Please, Try again.'))
             return redirect('login')
     else:
         return render(request, 'authenticate/login.html', {})
@@ -43,10 +43,10 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('home')
-        else:
-            messages.success(request, (
-                'There was an error with your register. Please, Try again.'))
-            return redirect('register')
+        # else:
+        #     messages.success(request, (
+        #         'There was an error with your register. Please, Try again.'))
+        #     return redirect('register')
     else:
         form = SignUpForm()
     return render(request, 'authenticate/register_user.html', {

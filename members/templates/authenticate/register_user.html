@@ -27,7 +27,8 @@
 
           {% csrf_token %}
           {{form.as_p}}
-
+         
+      
           <div class="p-3 d-flex justify-content-center">
             <input type="submit" value="Sign In" class="btn btn-secondary btn-warning login-button fw-bold">
           </div>
@@ -36,6 +37,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- My JS -->
 <script src="{% static 'js/script.js' %}"></script>
