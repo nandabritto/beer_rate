@@ -15,7 +15,7 @@
 {% block content %}
 <section>
 	<!-- Update Review Container -->
-	<div class="container mt-3">
+	<div class="container mt-4">
 		<div class="bg-dark col-lg-9 col-11 m-auto rounded">
 			<h1 class="text-light text-center bold p-3 yellow"> Update your beer review
 				<hr>
@@ -26,19 +26,19 @@
 				<form method="POST" class="review-form" enctype="multipart/form-data">
 					{% csrf_token %}
 
-					<div class="mt-3 mx-auto d-flex justify-content-center">
+					<div class="mx-auto d-flex justify-content-center">
 						<h4>Beer Style: {{ form.beer_style}}
 							Beer : {{ form.beer}}
 						</h4>
 					</div>
 					<div>
-						<h3 class="text-center p-2 m-2">Update your review: </h3> {{ form.review}}
+						<h3 class="text-center">Update your review: </h3> {{ form.review}}
 					</div>
-					<div class="mt-3 mx-auto d-flex justify-content-center">
+					<div class="mx-auto d-flex justify-content-center">
 						<h4>Bitterness: {{ form.bitterness}}
 							Money Value : {{ form.money_value}} </h4>
 					</div>
-					<div class="m-3 text-center">
+					<div class="text-center">
 						<h4> Change your beer picture :</h4>
 						<p> {{form.beer_image}}</p>
 					</div>
