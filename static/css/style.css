@@ -54,11 +54,11 @@ button,
 a {
     font-weight: 700;
     text-decoration: none;
-    color: var(--red);
+    color: var(--yellow);
 }
 
 a:hover {
-    color: var(--yellow);
+    color: var(--green);
 }
 
 
@@ -87,6 +87,9 @@ a:hover {
 
 
 /*------------------------ Navbar ---------------------- */
+.navbar{
+    z-index: 100!important;
+}
 
 ul.dropdown-menu {
     height: 150px !important;

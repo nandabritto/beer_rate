@@ -98,10 +98,11 @@
          <!-- Cards pagination  -->
 
          <nav aria-label="Page navigation example ">
+            {% if page_obj.has_previous %}
             <ul class="pagination justify-content-center ">
                 <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
 
-                {% if page_obj.has_previous %}
+               
                 <li class="page-item"><a class="page-link bg-dark border-0 "
                         href="?page={{ page_obj.previous_page_number }}">Previous</a>
                 </li>

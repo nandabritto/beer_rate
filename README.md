@@ -111,7 +111,76 @@ The following flowchart shows the flow of "Best Beer" graphically.
 
 <img width= "800" src="">
 
-## Features
+## Existing Features
+
+### Navbar 
+
+1. Fixed Navbar allow the user easy access to all pages. 
+
+   1.1 Login and  Register User buttons present on navbar if the user is not logged. 
+
+<p align="center" width="100%">
+  <img width="90%" src="media/readme/features/navbar_logedout.jpg">
+</p>
+
+   1.2 Logout and Rate your beer buttons are present if the user is logged. 
+
+<p align="center" width="100%">
+  <img width="90%" src="media/readme/features/navbar loggedin.jpg">
+</p>
+
+   1.3 Beer reviews and search beer by name and style are present to all users (logged or not).
+
+   1.4 User can search their prefered beer by name or style on navbar. 
+
+   i. Beer style has a dropdown menu with all styles registered;
+
+   ii. On Beer name seach, the user can add just few letters to find their prefered beer. 
+
+<p align="center" width="100%">
+  <img width="90%" src="media/readme/features/navbar_search.jpg">
+</p>
+
+   iii. If there no review for searched beer or style, user is informed about it. 
+
+   iv. If any review is found on Database, user is redirect to a page with all reviews for that style or beer name. (Details about it on Beer style and Beer reviews page)
+
+  <p align="center" width="100%">
+  <img width="50%" src="media/readme/features/no-reviews-container.jpg">
+</p>
+
+2. Colapsed navbar on smaller devices to wrap in all options and assure better navbar design.
+
+<p align="center" width="100%">
+  <img width="33%" src="media/readme/features/collapsed_navbar.jpg"></p>
+
+### Beer review page 
+
+1. On this page user can access beer reviews available on the website ordered by decrescing publication date. 
+
+<p align="center" width="100%">
+  <img width="90%" src="media/readme/features/beer_reviews.jpg"></p>
+
+2. Each review card contains beer name, style, image, preview of beer review (full available on beer detail page), bitterness and money-value level, beer rating, author and publication date. 
+
+* The entire card is a link to beer details page.
+
+<p align="center" width="100%">
+  <img height="50%" src="media/readme/features/beer_card.jpg"></p>
+
+### Beer detail page 
+
+1. On this page user can access the entire content for beer review. 
+<p align="center" width="100%">
+  <img width="90%" src="media/readme/features/review_detail.jpg"></p>
+
+   1.1 If the reviews on this page was made for the user accessing it, two buttons became available:
+   
+<p align="center" width="100%">
+  <img height="90%" src="media/readme/features/review_detail_buttons.jpg"></p>
+
+     i. Edit Review (highlited on green)
+     ii. Delete Review (highlited on red)
 
 ## Future Features
 
@@ -144,9 +213,9 @@ All testing and code validation details are described in a separate file called 
 | Bugs              | Solutions |
 | ---               | --------- |
 | Database inconsistency during unittests|Restart all project adding two different databases (development and production) in order to  make possible to run tests successfully.
-| Update Review Unittest failed when tried to change a review | 
-| 
-| 
+| Update Review Unittest failed when tried to change a review | Debug Update review class models and change save function resolved the problem. 
+| Navbar dropdown opening behing site divs | Add z-index to navbar resolved the problem. 
+| Register feature were not showing the error when it hapenned | Debug Reiste function and remove else statment to redirect user to the same page when it happens. After delete this part of function, everything worked fine. 
 
 ## Deployment 
 
