@@ -13,37 +13,42 @@ Cheers!
 
 Live app link [here](https://bestbeer-app.herokuapp.com)
 
- ## Project Purpose
-
-
 
 ## User Experience
 
 ### User Stories
 
-+ As a user, I would like to be able to …
+1. As a user, I would like to be able to …
 
-1. Register on website using my username, email and password;
-2. Check all beer reviews added on website;
-3. Check beer review details about all added beers.
-4. Search for a beer or beer style on navbar.
+    1.1 Register on website using my username, email and password;
+    
+    1.2. Check all beer reviews added on website;
+    
+    1.3 Check beer review details about all added beers.
+    
+    1.4 Search for a beer or beer style on navbar.  
 
-+ As a logged user, I would like to be able to …
+2. As a logged user, I would like to be able to …
 
-1. Create a beer review of my favorites beers including :
- + Beer Name,
- + Beer Style,
- + My thoughts about the beer,
- + Beer bitterness level,
- + Beer maney and value ratio, and
- + Overall beer rating;
-2. Create a new beer or beer style if my beer or beer style are not added on Database;
-3. Check my beer review after added;
-4. Edit or delete my beer reviews. 
+    2.1 Create a beer review of my favorites beers including :
+    + Beer Name,
+    + Beer Style,
+    + My thoughts about the beer,
+    + Beer bitterness level,
+    + Beer maney and value ratio, and
+    + Overall beer rating;
 
-### 1. Project Goal
+    2.2 Create a new beer or beer style if my beer or beer style are not added on Database;
 
-   + Create a platafom that allows people (users) to evaluate beer and share their thoughts in beer reviews. 
+    2.3 Check my beer review after added;
+
+    2.4 Edit or delete my beer reviews. 
+
+### 1. Strategy
+
+  + **Project Goal**
+
+   Create a platafom that allows people (users) to evaluate beer and share their thoughts in beer reviews. 
 
 
 ### 2. Scope
@@ -76,7 +81,6 @@ Click to see wireframes:
 
 []() <br>
 
-
 ### 5. Surface
 
 * Colours
@@ -86,7 +90,6 @@ The Colour scheme was generated using eye dropper plugin, to get one color from 
 <p align="center" width="100%">
   <img width="45%" src="media/readme/color_pallete.jpg">
 </p>
-
 
 * Font Selection
  
@@ -227,7 +230,7 @@ Grammarly: Used to correct any spell mistakes on readme and app text.
 Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 GitHub: GitHub is used to store the project's code after being pushed from Git.
 Google Fonts: Google fonts used to add fonts for aesthetic and UX purposes.
-Django: 
+Django: Framework used to add structure to the plataform. 
 
 ## Testing and Code validation 
 
@@ -336,19 +339,15 @@ Press Enter. Your local clone will be created.
 
 # Credits
 
-### Media
+## Media
 
 + All pictures and images used in this project are from [Depositphotos](https://depositphotos.com).
 
-### Work based on other code
+## Work based on other code
 
 [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw) - Used as a base to develop several features as: login, registration and beer review form. <br>
 [Pyplane](https://www.youtube.com/channel/UCQtHyVB4O4Nwy1ff5qQnyRw) - Star rating tutorial used to develop beer ratin feature. <br>
 [Tutorials Point](https://www.tutorialspoint.com/django-handling-multiple-forms-in-single-view) - Used to add different  django forms on same add review page. <br>
-
-### Media 
-
-+ All media used 
 
 # Acknowledgements
 
