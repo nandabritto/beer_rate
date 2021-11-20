@@ -41,24 +41,9 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 3. Check my beer review after added;
 4. Edit or delete my beer reviews. 
 
-### App Owner Stories
+### 1. Project Goal
 
-+ As App Owner, I would like to be able to provide …
-
-1. 
-2. 
-3. 
-4. 
-
-### 1. Strategy 
-
- * Project Purpose
-
-    
-
-Project Goals
-
-   + 
+   + Create a platafom that allows people (users) to evaluate beer and share their thoughts in beer reviews. 
 
 
 ### 2. Scope
@@ -68,6 +53,13 @@ Project Goals
  * An easy navigation for the user trhough all the features;
  * A site that is visually appealing on most devices.
 
+## Functional Scope 
+
+The following flowchart shows the flow of "Best Beer" graphically.
+
+<p align="center" width="100%">
+<img width= "800" src="media/readme/bestbeer_flowchart.jpg">
+</p>
 
 ### 3. Structure
 
@@ -89,10 +81,10 @@ Click to see wireframes:
 
 * Colours
 
-The Colour scheme was generated using eye dropper plugin, to get one colour from the logo image, and []() to generate the colour pallete.
+The Colour scheme was generated using eye dropper plugin, to get one color from the logo image, and [coolors](https://coolors.co/) to generate the colour pallete.
 
 <p align="center" width="100%">
-  <img width="33%" src="">
+  <img width="45%" src="media/readme/color_pallete.jpg">
 </p>
 
 
@@ -105,11 +97,6 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
   <img width="33%" src="media/readme/fonts.png">
 </p>
 
-## Functional Scope 
-
-The following flowchart shows the flow of "Best Beer" graphically.
-
-<img width= "800" src="">
 
 ## Existing Features
 
@@ -200,16 +187,15 @@ The following flowchart shows the flow of "Best Beer" graphically.
 
 1. After searcher a beer by its style on navbar, the user is redirect to this page where they can find all reviews related to the search. 
 
-   1.1 Beer Style search example:
+    1.1 Beer Style search example:
  <p align="center" width="100%">
-  <img width="50%" src="">
+  <img width="90%"  src="media/readme/features/style_page.jpg">
+</p>
+    1.2 Beer search example: 
+ <p align="center" width="100%">
+  <img height="90%" src="media/readme/features/beer_page.jpg">
 </p>
 
-   1.2 Beer search example: 
-
- <p align="center" width="100%">
-  <img width="50%" src="">
-</p>
 2. If no review is available, a message will be in place to inform it and suggest a first review. 
 
  <p align="center" width="100%">
@@ -225,7 +211,8 @@ I would like to ...
 3. Add a beer style json database on Beer style form;
 4. Add a beer json database on Beer Form; 
 5. Include icon rating for bitterness and money value field. 
-6. 
+6. Include Brewery Name on beer review.
+
 
 ## Languages Used
 
@@ -233,9 +220,13 @@ Python 3.0
 
 ## Frameworks, Libraries & Programs Used
 
+Balsamiq: Balsamiq was used to create the wireframes during the design process.
+Favicon generator: Used to create favicon used on the website.
+Font Awesome: Font Awesome was used on all pages to add icons for aesthetic and UX purposes.
 Grammarly: Used to correct any spell mistakes on readme and app text.
 Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 GitHub: GitHub is used to store the project's code after being pushed from Git.
+Google Fonts: Google fonts used to add fonts for aesthetic and UX purposes.
 Django: 
 
 ## Testing and Code validation 
@@ -267,51 +258,56 @@ This app is deployed using Heroku.
     2.1 Go to Heroku website (https://www.heroku.com/). 
     2.2 Login to Heroku and go to Create App.
     
-    <img src="images/readme_images/deployment/heroku_login.png">
+    <img src="media/readme/deployment/heroku_login.png">
     
-    <img src="images/readme_images/deployment/heroku_login2.png">
+    <img src="media/readme/deployment/heroku_login2.png">
     
     2.3 Click in New and Create a new app
     
-    <img src="images/readme_images/deployment/heroku_newapp.png">
+    <img src="media/readme/deployment/heroku_newapp.png">
     
     2.4 Choose a name and set your location
     
-    <img src="images/readme_images/deployment/heroku_createnewapp.png">
+    <img src="media/readme/deployment/heroku_createnewapp.png">
+
+    2.5. Navigate to Resources tab 
+
+    <img src="media/readme/deployment/heroku_resoursces_tab.png">
+
+    2.6. Click on Resources and Seach for Heroku Postgres and select it on the list.
     
-    2.5. Navigate to the deploy tab
+    <img src="media/readme/deployment/heroku-postgres.png">
     
-    <img src="images/readme_images/deployment/heroku_dashboard_deploy.png">
+    2.7. Navigate to the deploy tab
     
-    2.6. Click in Connect to Github and search for 'nandabritto' GitHub account and 'search_your_brand' repository
+    <img src="media/readme/deployment/heroku_dashboard_deploy.png">
     
-    <img src="images/readme_images/deployment/heroku_github_deploy.png">
+    2.8. Click in Connect to Github and search for 'nandabritto' GitHub account and 'search_your_brand' repository
     
-    2.7.  Navigate to the settings tab
+    <img src="media/readme/deployment/heroku_github_deploy.png">
     
-    <img src="images/readme_images/deployment/heroku_dashboard_settings.png">
+    2.9.  Navigate to the settings tab
     
-    2.8.  Click on Config Vars, and add your Twitter and Google Sheets API keys, Google Spreadsheets file and worksheets names.
+    <img src="media/readme/deployment/heroku_dashboard_settings.png">
     
-    <img src="images/readme_images/deployment/heroku_vars_settings.png">
+    2.10.  Click on Config Vars, and add your Cloudinary, Database URL (from herku-postgres) and Secret key.    
+    <img src="media/readme/deployment/heroku_vars_settings.png">
     
-    2.9. Click on Add a buildpack on the same page. Select Python and node.js, ensuring Python is listed first after you save the changes.
-    
-    <img src="images/readme_images/deployment/heroku_buildpacks_settings.png">
+ 
 
 3. Deployment on Heroku
 
     3.1.  Navigate to the Deploy tab.
     
-    <img src="images/readme_images/deployment/heroku_dashboard_deploy.png">
+    <img src="media/readme/deployment/heroku_dashboard_deploy.png">
     
     3.2.  Choose main branch to deploy and enable automatic deployment to build Heroku everytime any changes are pushed on the repository.
     
-    <img src="images/readme_images/deployment/heroku_automatic_deploys.png">
+    <img src="media/readme/deployment/heroku_automatic_deploys.png">
     
     3.3 Click on manual deploy to build the app.  When complete, click on View to redirect to the live site. 
     
-    <img src="images/readme_images/deployment/heroku_view.png">
+    <img src="media/readme/deployment/heroku_view.png">
 </details>
 
 <details>
@@ -340,12 +336,19 @@ Press Enter. Your local clone will be created.
 
 # Credits
 
+### Media
+
++ All pictures and images used in this project are from [Depositphotos](https://depositphotos.com).
+
 ### Work based on other code
 
 [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw) - Used as a base to develop several features as: login, registration and beer review form. <br>
 [Pyplane](https://www.youtube.com/channel/UCQtHyVB4O4Nwy1ff5qQnyRw) - Star rating tutorial used to develop beer ratin feature. <br>
 [Tutorials Point](https://www.tutorialspoint.com/django-handling-multiple-forms-in-single-view) - Used to add different  django forms on same add review page. <br>
 
+### Media 
+
++ All media used 
 
 # Acknowledgements
 
