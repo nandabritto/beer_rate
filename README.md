@@ -145,10 +145,7 @@ The following flowchart shows the flow of "Best Beer" graphically.
 
    iv. If any review is found on Database, user is redirect to a page with all reviews for that style or beer name. (Details about it on Beer style and Beer reviews page)
 
-  <p align="center" width="100%">
-  <img width="50%" src="media/readme/features/no-reviews-container.jpg">
-</p>
-
+ 
 2. Colapsed navbar on smaller devices to wrap in all options and assure better navbar design.
 
 <p align="center" width="100%">
@@ -184,13 +181,40 @@ The following flowchart shows the flow of "Best Beer" graphically.
 
 ### Update Review Page 
 
-1. On this page a logged user can change a review made by them. All fields are already populated, aloowing the user to see which information they would like to change. 
+1. On this page a logged user can change a review made by them. All fields are already populated, allowing the user to see which information they would like to change. 
+2. The back buttton redirect user to the previous page wiithout changes on review. 
 
 <p align="center" width="100%">
-  <img height="90%" src="media/readme/features/update_review.jpg"></p>
+  <img width="90%" src="media/readme/features/update_review.jpg"></p>
 
 + Constrains : The beer rate stars are not populated on this version. This issue will be correct on a future version of the website. 
 
+### Delete Review Page 
+
+1. If user click to delete a review, they will be redirect to a delete page to confirm the deletion or cancel it. 
+
+<p align="center" width="100%">
+  <img width="90%" src=""></p>
+
+### Beer Style and Beer Categories Pages 
+
+1. After searcher a beer by its style on navbar, the user is redirect to this page where they can find all reviews related to the search. 
+
+   1.1 Beer Style search example:
+ <p align="center" width="100%">
+  <img width="50%" src="">
+</p>
+
+   1.2 Beer search example: 
+
+ <p align="center" width="100%">
+  <img width="50%" src="">
+</p>
+2. If no review is available, a message will be in place to inform it and suggest a first review. 
+
+ <p align="center" width="100%">
+  <img width="50%" src="media/readme/features/no-reviews-container.jpg">
+</p>
 
 ## Future Features
 

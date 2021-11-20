@@ -114,6 +114,15 @@ ul.dropdown-menu {
     color: var(--white);
 }
 
+.btn-cancel{
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.btn-cancel:hover{
+    color:var(--black)!important;
+}
+
 .btn-back {
     background-color: var(--red);
     color: var(--white);
@@ -131,7 +140,7 @@ ul.dropdown-menu {
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
     font-weight: 600;
-    color: var(--white)!important;
+    color: var(--white);
 }
 
 .fa-edit:hover {
