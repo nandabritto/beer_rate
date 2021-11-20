@@ -88,13 +88,27 @@ All functions on members app were tested using unittests.
   * Post Unittests Overall
 <p><img src="media/readme/unittests_ss/post_unitest_testoverall.jpg"></p>
 
+### **Overal Test on plataform** 
+
+Ate the end of development og this project (fase 1 - before submission day), coverage tool were used to assert that all functions were covered by automated tests. 
+
+<p><img src="media/readme/unittests_ss/coverage_beer_app.jpg"></p>
+
++ **post/views.py**
+
+    The lines uncovered by unit tests on post/views.py refers to update view function. This was described on bugs section in readme.md. As this automated test were not done, manual tests were conducted to be sure that feature were working as expected and without errors. 
+
++ **django_beerapp/settings.py**
+
+    This uncovered lines refers to databased used (f production or development) and it was tested manually as well. 
+
 ## Manual Testing
+============================================================================================
+### Desktop
 
-    Desktop
+  Mozilla Firefox, Google Chrome, Microsoft Edge: everything is working good. Page loads, all features are working and no problems were found in adding, updating, deleting or siply seeing the content. 
 
-Mozilla Firefox, Google Chrome, Microsoft Edge: everything is working good. Page loads and all features are working.
+### Mobile
 
-    Mobile
-
-
+  Tested with Xiaomi Mi6 and Xiaomi Mi8 and plataform works well and without any issues. 
 

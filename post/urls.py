@@ -1,4 +1,4 @@
-'''System Module '''
+""" System Module """
 from django.urls import path
 from .views import HomeView, BeerRatingView, AddReviewView, \
     ReviewDetailView, UpdateReviewView, DeleteReviewView, \

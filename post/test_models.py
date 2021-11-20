@@ -1,17 +1,15 @@
-'''System Module'''
+""" System Module """
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
 from .models import BeerStyle, Beer, BeerReview
 
-import logging
-
 
 class SetupModelTestCase(TestCase):
-    '''Base test case to be used in all models tests'''
+    """ Base test case to be used in all models tests """
 
     def setUp(self):
-        ''' Setup for testing models '''
+        """ Setup for testing models """
         self.username = 'joe'
         self.password = '12345'
         user = User.objects.create_user(
@@ -33,30 +31,28 @@ class SetupModelTestCase(TestCase):
 
 
 class BeerStyleTestCase(SetupModelTestCase):
-    '''Test BeerStyle model function'''
-
+    """ Test BeerStyle model function """
     def test_absolute_url(self):
-        '''Test if redirection to add review page is correct'''
+        """ Test if redirection to add review page is correct """
         self.assertEqual(
             self.beer_style.get_absolute_url(), reverse('add_review'))
 
 
 class BeerTestCase(SetupModelTestCase):
-    '''Test Beer model function'''
-
+    """ Test Beer model function """
     def test_absolute_url(self):
-        '''Test if redirection to add review page is correct'''
+        """Test if redirection to add review page is correct"""
         self.assertEqual(self.beer.get_absolute_url(), reverse('add_review'))
 
 
 class BeerReviewTestCase(SetupModelTestCase):
-    '''Test BeerReview model functions'''
+    """ Test BeerReview model functions """
     def test__str__(self):
-        '''Test if review is returning all model objetcs and pk'''
-        self.assertEquals(str(self.beer_review), self.beer.beer_name.lower())
+        """ Test if review is returning all model objetcs and pk """
+        self.assertEqual(str(self.beer_review), self.beer.beer_name.lower())
 
     def test_absolute_url(self):
-        '''Test if its redirecting correctly to beer detail view with
-        correct pk '''
+        """ Test if its redirecting correctly to beer detail view with
+        correct pk """
         self.assertEqual(self.beer_review.get_absolute_url(), reverse(
             'review_detail', kwargs={'pk': self.beer_review.id}))

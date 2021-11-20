@@ -1,41 +1,39 @@
-'''System module'''
+""" System module """
 from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from slugger import AutoSlugField
 
 
 class BeerStyle(models.Model):
-    '''Create a beer style model form'''
-
+    """ Create a beer style model form """
     beer_style = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
-        '''Return beer style name string'''
+        """ Return beer style name string """
         return str(self.beer_style).lower()
 
     def get_absolute_url(self):
-        '''Redirect user to add review page'''
+        """ Redirect user to add review page """
         return reverse('add_review')
 
 
 class Beer(models.Model):
-    '''Create a beer model form'''
+    """ Create a beer model form """
     beer_name = models.CharField(max_length=50, unique=True)
     style = models.ManyToManyField(BeerStyle)
 
     def __str__(self):
-        '''Return beer name string'''
+        """ Return beer name string """
         return str(self.beer_name).lower()
 
     def get_absolute_url(self):
-        '''Redirect user to add home'''
+        """ Redirect user to add home """
         return reverse('add_review')
 
 
 class BeerReview(models.Model):
-    '''Create a beer review model form'''
+    """ Create a beer review model form """
 
     BITTERNESS_CHOICES = (
         (1, '1'),
@@ -73,11 +71,11 @@ class BeerReview(models.Model):
     score = models.IntegerField(default=0)
 
     def __str__(self):
-        '''Return beer review with beer name string'''
+        """ Return beer review with beer name string """
         return str(self.beer).lower()
 
     def get_absolute_url(self):
-        '''Redirect user to review detail page'''
+        """ Redirect user to review detail page """
         return reverse('review_detail', kwargs={'pk': self.pk})
 
 

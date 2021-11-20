@@ -1,4 +1,4 @@
-''' System Module '''
+""" System Module """
 from django.urls import path
 from . import views
 
