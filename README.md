@@ -9,9 +9,9 @@ Cheers!
  <br>
  </p>
 
-<img src="">
+<img src="media/readme/bestbeer_mockup.jpg">
 
-Live app link [here]()
+Live app link [here](https://bestbeer-app.herokuapp.com)
 
  ## Project Purpose
 

@@ -144,7 +144,8 @@ def beer_category_view(request):
     elif  request.method == "GET":
         searched = request.GET['searched']
 
-    beers = BeerReview.objects.filter(beer__beer_name__icontains=searched)
+    beers = BeerReview.objects.filter(
+        beer__beer_name__icontains=searched).order_by('-pub_date')
 
     paginator = Paginator(beers, 3) 
     page_number = request.GET.get('page')
