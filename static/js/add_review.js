@@ -97,3 +97,4 @@ arr.forEach(item => item.addEventListener('click', (event) => {
     const val_num = getNumericValue(val)
     form.score.value = val_num
 }))
+

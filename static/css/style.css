@@ -114,18 +114,24 @@ ul.dropdown-menu {
     color: var(--white);
 }
 
+.btn-back {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
 .btn-warning {
     background-color: var(--yellow);
     border: var(--yellow);
     color: var(--black);
 }
 
-.login-button:hover,
-.btn-submit:hover {
+
+.btn:hover {
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
-    color: var(-black);
     font-weight: 600;
+    color: var(--white)!important;
 }
 
 .fa-edit:hover {

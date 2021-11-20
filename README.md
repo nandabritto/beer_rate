@@ -182,6 +182,16 @@ The following flowchart shows the flow of "Best Beer" graphically.
      i. Edit Review (highlited on green)
      ii. Delete Review (highlited on red)
 
+### Update Review Page 
+
+1. On this page a logged user can change a review made by them. All fields are already populated, aloowing the user to see which information they would like to change. 
+
+<p align="center" width="100%">
+  <img height="90%" src="media/readme/features/update_review.jpg"></p>
+
++ Constrains : The beer rate stars are not populated on this version. This issue will be correct on a future version of the website. 
+
+
 ## Future Features
 
 I would like to ...
