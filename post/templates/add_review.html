@@ -23,41 +23,38 @@
 	{% endif %}
 
 	<fieldset>
-		<div class="container p-3">
+		<div class="container p-3 mt-2">
 			<div class="bg-dark  col-lg-9 col-11 m-auto rounded">
 				<h1 class="text-light text-center bold p-3"> Add your beer review</h1>
 				<div class="text-light">
 					<form method="POST" actions="/add_review" enctype="multipart/form-data" class=" review-form">
 						{% csrf_token %}
 
-						<div class="m-2 align-middle field_container">
+						<div class="align-middle field_container text-center">
 							<h4>Beer Style: &nbsp; {{ review_form.beer_style}}
 
 								<!------------------------------------------------ Button trigger create a beer style modal -->
-								<button type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal"
+								<button type="button" class="btn btn-sm btn-warning mx-2 " data-bs-toggle="modal"
 									data-bs-target="#beerstylemodal">
 									Create Beer Style
 								</button></h4>
 						</div>
 
-						<div class="m-2 align-middle label">
+						<div class="align-middle label text-center">
 							<h4> Beer Name: {{ review_form.beer}}
 								<!------------------------------------------------------- Button trigger create a beer  modal -->
-								<button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal"
+								<button type="button" class="btn btn-sm btn-warning ms-2 " data-bs-toggle="modal"
 									data-bs-target="#beermodal">
 									Create Beer </button></h4>
 						</div>
 						<div class="text-center label">
 							<h2 class="m-2 p-2"> Write your review:</h2>
 						</div> {{ review_form.review}}
-						<div class="m-2 field_container label">
-							<h4>Money Value: {{ review_form.money_value}} </h4>
+						<div class="field_container label text-center">
+							<h4>Money Value: {{ review_form.money_value}} 
+							Bitterness: {{review_form.bitterness}} </h4>
 						</div>
-
-						<div class="m-2 field_container label">
-							<h4> Bitterness: {{review_form.bitterness}} </h4>
-						</div>
-						<div class="m-2">
+						<div class=" text-center">
 							<h3>Image: {{review_form.beer_image}}</h3>
 						</div>
 						<div class="stars p-2"> {{review_form.score}}
