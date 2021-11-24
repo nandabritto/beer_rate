@@ -117,12 +117,12 @@ Beer Search
                         <!-- First button -->
                         {% if page_obj.has_previous %}
                             <li class="page-item">
-                                <a class="page-link bg-dark border-0" href="?searched={{searched}}&page=1">First</a>
+                                <a class="page-link bg-dark border-1 rounded-3" href="?searched={{searched}}&page=1">First</a>
                             </li>
 
                             <!-- Previous button -->
                             <li class="page-item">
-                                <a class="page-link bg-dark border-0 "
+                                <a class="page-link bg-dark border-1 rounded-3"
                                     href="?searched={{searched}}&page={{ page_obj.previous_page_number }}">Previous</a>
                             </li>
                         {% endif %}
@@ -131,13 +131,13 @@ Beer Search
                         
                             <!-- Next button -->
                             <li class="page-item">
-                                <a class="page-link bg-dark border-0"
+                                <a class="page-link bg-dark border-1 rounded-3"
                                     href="?searched={{searched}}&page={{ page_obj.next_page_number }}">Next</a>
                             </li>
                             
                             <!-- Last button -->
                             <li class="page-item">
-                                <a class="page-link bg-dark border-0 "
+                                <a class="page-link bg-dark border-1 rounded-3"
                                     href="?searched={{searched}}&page={{ page_obj.paginator.num_pages }}">Last</a>
                             </li>
                         {% endif %}

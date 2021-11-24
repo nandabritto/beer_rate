@@ -78,7 +78,7 @@ class BeerRatingView(ListView):
     """ Creates a list view of all reviews on website """
     model = BeerReview
     template_name = 'review_list.html'
-    paginate_by = 6
+    paginate_by = 8
     ordering = ['-pub_date']
 
 

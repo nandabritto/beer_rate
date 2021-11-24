@@ -125,10 +125,10 @@ Reviews by Style
 
                     <!-- First button -->
                     {% if page_obj.has_previous %}
-                        <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3" href="?page=1">First</a></li>
 
                         <!-- Previous button -->
-                        <li class="page-item"><a class="page-link bg-dark border-0 "
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3"
                                 href="?page={{ page_obj.previous_page_number }}">Previous</a>
                         </li>
                     {% endif %}
@@ -137,14 +137,14 @@ Reviews by Style
 
                         <!-- Next button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-0 "
+                            <a class="page-link bg-dark border-1 rounded-3"
                                 href="?page={{ page_obj.next_page_number }}">Next
                             </a>
                         </li>
                         
                         <!-- Last button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-0 "
+                            <a class="page-link bg-darkborder-1 rounded-3"
                                 href="?page={{ page_obj.paginator.num_pages }}">Last
                             </a>
                         </li>

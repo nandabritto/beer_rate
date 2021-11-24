@@ -1,32 +1,36 @@
 {% extends 'base.html' %}
+
 {% load static %}
-{% block title %} Home {% endblock %}
+
+{% block title %} 
+Home 
+{% endblock %}
+
 {% block additional_styles %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<style>
-   body {
-    background-image: url('https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/background_image_3_ofq6ch.jpg')!important;
-    background-position-x: 55%;
-   }
-</style>
+    <style>
+    body {
+        background-image: url('https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/background_image_3_ofq6ch.jpg')!important;
+        background-position-x: 55%;
+    }
+    </style>
 {% endblock %}
 
 {% block content %}
 
-<!--Welcome jumbotron -->
-
-<div class=" container container-box-home bg-dark rounded text-light text-center p-2 col-lg-4 col-11 float-start">
-    <div class="row justify-content-start">
-        <div class="col ">
-            <p class ="lead">The best place to review your beer</p>
-            <h1 class="bold">Welcome to Best Beer</h1>
-                <p>Add your review about the beer you already taste and search about beers aroud the world.</p>
+    <!--Welcome jumbotron -->
+    <div class=" container container-box-home bg-dark rounded text-light text-center p-2 col-lg-4 col-11 float-start">
+        <div class="row justify-content-start">
+            <div class="col ">
+                <p class ="lead">The best place to review your beer</p>
+                <h1 class="bold">Welcome to Best Beer</h1>
+                    <p>Add your review about the beer you already taste and search about beers aroud the world.</p>
+            </div>
         </div>
     </div>
-</div>
 
-
-<!-- My JS -->
-<script src="{% static 'js/script.js' %}"></script>
+    {% block extra_js %}
+            <!-- Customizible JS -->
+        <script src="{% static 'js/script.js' %}"></script>
+    {% endblock extra_js %}
 
 {% endblock content %}
