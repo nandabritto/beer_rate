@@ -1,168 +1,184 @@
-{% load static %} {% load bootstrap5 %} {% load active_link_tags %}
+{% load static %}
 
+{% load bootstrap5 %} 
+
+{% load active_link_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon link -->
-    <link rel="shortcut icon" href="https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/favicon_s0na8a.ico" />
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A plataform where you can review your favorites beers">
+        <meta name="keywords" content="beer, rating, beer style">
 
-    <!-- Google Fonts link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@1,300&display=swap"
-        rel="stylesheet">
+        <!-- Favicon link -->
+        <link rel="shortcut icon" href="https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/favicon_s0na8a.ico" />
 
-    <!-- Fontawesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Google Fonts link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@1,300&display=swap"
+            rel="stylesheet">
 
-    <!-- Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- Fontawesome link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+        <!-- Bootstrap CSS link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- My CSS link -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
 
-    {% block additional_styles %}
-    {% endblock  %}
+        <!-- My CSS link -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <title>BestBeer | {% block title %}{% endblock title %}</title>
+        {% block additional_styles %}
+        {% endblock  %}
 
+        <title> BestBeer | 
+            {% block title %}
+            {% endblock title %}
+        </title>
+    </head>
 
-</head>
+    <body class="bg">
 
-<body class="bg">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light  mt-2">
-        <div class="container-fluid">
-            <a class="navbar-brand {% active_link '/' %}" href="{% url 'home' %}">Best Beer</a>
-            <!-- Collapse Navigation -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                    <!--  Navigation Items -->
-                  
-                    <li class="nav-item">
-                        <a class="nav-link {% active_link 'review_list' %}" aria-current="page"
-                            href="{% url 'review_list' %}">Beer Reviews</a></li>
-
-                    <!--  Authentication Navigation Items -->
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link {% active_link 'add_review' %}" href="{% url 'add_review' %}">Rate your
-                                Beer</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link {% active_link 'logout' %}" href="{% url 'logout' %}">Logout</a></li>
-
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link {% active_link 'register' %}" href="{% url 'register' %}">Register</a></li>
-                        <li class="nav-item">
-                            <a class="nav-link {% active_link 'login' %}" href="{% url 'login' %}">Login</a></li>
-                    {% endif %}
-                    
-                </ul>
-                <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  mt-2">
+            <div class="container-fluid">
+                <a class="navbar-brand {% active_link '/' %}" href="{% url 'home' %}">Best Beer</a>
+                
+                <!-- Collapse Navigation -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <!--  Search beer style button -->
-                        <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" data-bd-auto-close="True" aria-expanded="false">
-                                Beer Styles</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                {% for item in cat_style_menu %}
-                                <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
-                                {% endfor %}
+                        <!--  Navigation Items -->
+                        <li class="nav-item">
+                            <a class="nav-link {% active_link 'review_list' %}" aria-current="page"
+                                href="{% url 'review_list' %}">Beer Reviews
+                            </a>
+                        </li>
 
-                            </ul>
+                        <!--  Authentication Navigation Items -->
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link {% active_link 'add_review' %}" href="{% url 'add_review' %}">Rate your
+                                    Beer
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% active_link 'logout' %}" href="{% url 'logout' %}">Logout</a></li>
+
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link {% active_link 'register' %}" href="{% url 'register' %}">Register
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% active_link 'login' %}" href="{% url 'login' %}">Login
+                                </a>
+                            </li>
+                        {% endif %}
                     </ul>
-                </ul>
-                <!--  Search beer button -->
-                <form class="d-flex text-end" action="{% url 'beercategory' %}" method="post">
 
-                    {% csrf_token %}
+                    <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <input class="form-control me-2" type="search" placeholder="Search your beer"
-                        aria-label="Search your beer" name="searched">
-                    <button class="btn btn-light btn-outline-dark" name="submit" type="submit">Search</button>
-                </form>
+                            <!--  Search beer style button -->
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" data-bd-auto-close="True" aria-expanded="false">
+                                    Beer Styles
+                                </a>                       
+                            
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    {% for item in cat_style_menu %}
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </ul>
+
+                    <!--  Search beer button -->
+                    <form class="d-flex text-end" action="{% url 'beercategory' %}" method="post">
+                        {% csrf_token %}
+                        <input class="form-control me-2" type="search" placeholder="Search your beer"
+                            aria-label="Search your beer" name="searched">
+                        <button class="btn btn-light btn-outline-dark" name="submit" type="submit">Search</button>
+                    </form>
+
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Alert messages -->
+        <!-- Alert messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" id="alert" role="alert">
+                    <strong> {{ message }} </strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
 
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-warning alert-dismissible fade show" id="alert" role="alert">
-        <strong>{{ message }}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {% endfor %}
-    {% endif %}
+        {% block content %}
+        {% endblock %}
 
+        <!-- Footer -->
+        <footer class="bg-light text-center text-dark fixed-bottom">
+            <div class="container p-1">
 
-    {% block content %} {% endblock %}
+                <!-- Section: Social media -->
+                <div class="m-0">
 
-    <!-- Footer -->
+                    <!-- Facebook -->
+                    <a class="m-3" style="color: #4b5252c9;" href="https://www.facebook.com/" role="button" target="_blank"><i
+                            class="fab fa-facebook-f fa-lg"></i></a>
 
-    <footer class="bg-light text-center text-dark fixed-bottom">
+                    <!-- Twitter -->
+                    <a class="m-2" style="color: #4b5252c9;" href="https://twitter.com/" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
 
-        <div class="container p-1">
+                    <!-- Instagram -->
+                    <a class="m-3" style="color: #4b5252c9;" href="https://www.instagram.com/" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
 
-            <!-- Section: Social media -->
-            <div class="m-0">
-                <!-- Facebook -->
-                <a class="m-3" style="color: #4b5252c9;" href="https://www.facebook.com/" role="button" target="_blank"><i
-                        class="fab fa-facebook-f fa-lg"></i></a>
+                    <!-- Linkedin -->
+                    <a class="m-3" style="color: #4b5252c9;" href="https://www.linkedin.com/in/fernanda-brito200585/" role="button" target="_blank"><i class="fab fa-linkedin-in"></i></a>
 
-                <!-- Twitter -->
-                <a class="m-2" style="color: #4b5252c9;" href="https://twitter.com/" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
-
-                <!-- Instagram -->
-                <a class="m-3" style="color: #4b5252c9;" href="https://www.instagram.com/" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
-
-                <!-- Linkedin -->
-                <a class="m-3" style="color: #4b5252c9;" href="https://www.linkedin.com/in/fernanda-brito200585/" role="button" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-
-                <!-- Github -->
-                <a class="m-3" style="color: #4b5252c9;" href="https://github.com/nandabritto" role="button" target="_blank"><i class="fab fa-github"></i></a>
+                    <!-- Github -->
+                    <a class="m-3" style="color: #4b5252c9;" href="https://github.com/nandabritto" role="button" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
             </div>
-        </div>
 
-        <!-- Copyright -->
-        <div class="text-center p-1 small">
-            © 2021 Copyright: Best Beer
-        </div>
+            <!-- Copyright -->
+            <div class="text-center p-1 small">
+                © 2021 Copyright: Best Beer
+            </div>
+        </footer>
 
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
+        {% block extra_js %}
+        {% endblock extra_js %}
 
-    {% block extra_js %}{% endblock extra_js %}
-
-</body>
-
-
-
+    </body>
 </html>
