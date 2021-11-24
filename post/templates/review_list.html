@@ -1,8 +1,8 @@
 {% extends "base.html" %}
+
 {% load static %}
+
 {% load cloudinary %}
-
-
 
 {% block additional_styles %}
 <style>
@@ -12,73 +12,90 @@
     }
 </style>
 {% endblock %}
-{% block title %} Review{% endblock title %}
+
+{% block title %} 
+Review
+{% endblock title %}
 
 {% block content %}
+    <!-- Reviews section -->
+    <section class=" shadow-sm m-auto section-container text-center">
 
-<!-- Reviews section -->
-<section class=" shadow-sm m-auto section-container text-center">
-   <!-- Reviews title  -->
-    <div class="container text-light text-center ">
-        <h1 class="title p-5"> Latest Beer Reviews </h1>
-    </div>
+    <!-- Reviews title  -->
+        <div class="container text-light text-center ">
+            <h1 class="title p-5"> Latest Beer Reviews </h1>
+        </div>
 
-    <!-- Reviews card -->
-    <div class="row row-cols-1 row-cols-md-2 g-4 m-auto d-flex justify-content-center">
-        
-        {% for review in object_list %}
-            <div class="col col-md-6 col-lg-4 col-xl-3">
-                <div class="card w-100 text-light bg-dark rounded ">
-                    <a href="{% url 'review_detail' review.pk %}"
-                        class="text-decoration-none text-capitalize fw-bold text-white">
+        <!-- Reviews card -->
+        <div class="row row-cols-1 row-cols-md-2 g-4 m-auto d-flex justify-content-center">
+            
+            <!-- Reviews for loop -->
+            {% for review in object_list %}
+                <div class="col col-md-6 col-lg-4 col-xl-3">
+                    <div class="card w-100 text-light bg-dark rounded ">
+                        
+                        <!-- Card hyperlink to beer detail page -->
+                        <a href="{% url 'review_detail' review.pk %}"
+                            class="text-decoration-none text-capitalize fw-bold text-white">     
+                            
+                            <!-- Review's beer name -->
+                            <h2 class="card-title m-1 text-center text-truncate"> {{ review.beer }} <hr></h2>
 
-                        <h2 class="card-title m-1 text-center text-truncate  "> {{ review.beer }} <hr></h2>
-                        <h3>{{ review.beer_style}}</h3>
-               
+                            <!-- Review's beer style -->
+                            <h3>{{ review.beer_style}}</h3>
+                            
+                            <!-- Review's beer image -->
                             <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="review {{review.beer}} uploaded image">
 
-                        <div class="card-body">
-                            <p class="card-text text-truncate"> {{ review.review }} </p>
-                            <p class="card-text"> Biterness:
-                                <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
-                                <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
-                                <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
-                                <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
-                                <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
-                            </p>
+                            
+                            <div class="card-body">
+                                <!-- Review's text -->
+                                <p class="card-text text-truncate"> {{ review.review }} </p>
 
-                            <p class="card-text"> Money-value:
-                            <span
-                                class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
-                            <span
-                                class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
-                            <span
-                                class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
-                            <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
-                            <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
-                            </p>
+                                <!-- Review's biterness level -->
+                                <p class="card-text"> Biterness:
+                                    <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
+                                    <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
+                                    <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
+                                    <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
+                                    <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
+                                </p>
 
-                            <p class="card-text"> Rating:
-                            <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
-                            <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
-                        
-                            <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
-                            | &nbsp;{{ review.pub_date }} </p>
-                        </div>
-                    </a>
+                                <!-- Review's money-value level -->
+                                <p class="card-text"> Money-value:
+                                <span
+                                    class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
+                                <span
+                                    class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
+                                <span
+                                    class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
+                                <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
+                                <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
+                                </p>
 
-                    <!-- Delete and Edit Options  -->
+                                <!-- Review's rating -->
+                                <p class="card-text"> Rating:
+                                <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
+                                <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span>
+                                <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
+                                <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
+                                <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
+                            
+                                <!-- Review's author and publication date -->
+                                <p class="card-text text-truncate text-muted text-sm"> {{ review.user_name }}
+                                | &nbsp;{{ review.pub_date }} </p>
+                            </div>
+                        </a>
+
+                        <!-- Delete and Edit Options -->
                         {% if user.is_authenticated %}
                             {% if user.id == review.user_name.id %}
-
                                 <span class="m-auto">
                                     <h4>
                                         <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
-                                            <i class="fas fa-edit px-2"></i></a>
+                                            <i class="fas fa-edit px-2"></i>
+                                        </a>
                                         <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white"
                                             id="edit" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                             title="Delete your review">
@@ -86,48 +103,43 @@
                                         </a>
                                     </h4>
                                 </span>
-
                             {% endif %}
-
                         {% endif %}
+                        
                     </div>
-                </div>
-        {% endfor %}
-        </div> 
+                </div> 
+            {% endfor %}
 
-         <!-- Cards pagination  -->
+            <!-- Cards pagination  -->
+            <nav aria-label="Page navigation example ">          
+                {% if page_obj.has_previous %}
+                    <ul class="pagination justify-content-center ">
 
-         <nav aria-label="Page navigation example ">
-            {% if page_obj.has_previous %}
-            <ul class="pagination justify-content-center ">
-                <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
+                        <!-- First button -->
+                        <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
 
-               
-                <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                </li>
+                        <!-- Previous button -->
+                        <li class="page-item"><a class="page-link bg-dark border-0 "
+                                href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
                 {% endif %}
-                <li class="page-item">
 
                 {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.next_page_number }}">Next</a>
-                </li>
-                <li class="page-item"><a class="page-link bg-dark border-0 "
-                        href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                </li>
 
+                    <!-- Next button -->
+                    <li class="page-item"><a class="page-link bg-dark border-0 "
+                            href="?page={{ page_obj.next_page_number }}">Next</a></li>
+
+                    <!-- Last button -->
+                    <li class="page-item"><a class="page-link bg-dark border-0 "
+                            href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
                 {% endif %}
-            </ul>
-        </nav>
-</section>
+                    </ul>
+            </nav>
+    </section>
 
-   
-
-
-
-
-<!-- My JS -->
-<script src="{% static 'js/toollip.js' %}"></script>
+    {% block extra_js %}
+        <!-- Customizible JS -->
+        <script src="{% static 'js/toollip.js' %}"></script>
+    {% endblock %}
 
 {% endblock %}

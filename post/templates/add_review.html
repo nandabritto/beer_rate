@@ -17,7 +17,6 @@ Add Review
 {% endblock %}
 
 {% block content %}
-
 	<!-- Add review container available if user is authenticated -->
 	{% if user.is_authenticated %}
 		<section>
@@ -163,10 +162,12 @@ Add Review
 
 	{% endif %}
 	
+	{% block extra_js %}
+		<!-- Customizible JS -->
+		<script src="{% static 'js/add_review.js' %}"></script>
+		<script src="{% static 'js/script.js' %}"></script>
+	{% endblock extra_js %}
+
 {% endblock %}
 
-{% block extra_js %}
-<!-- Customimzible JS -->
-<script src="{% static 'js/add_review.js' %}"></script>
-<script src="{% static 'js/script.js' %}"></script>
-{% endblock extra_js %}
+
