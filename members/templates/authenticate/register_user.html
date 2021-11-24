@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% load static %}
 
 {% block additional_styles %}
@@ -9,37 +10,35 @@
 </style>
 {% endblock %}
 
-{%block title %} Register {% endblock %}
+{% block title %} 
+Register
+{% endblock %}
 
 {% block content %}
-
 <!-- Register container -->
 <div class="container container-box">
-  <div class="d-flex justify-content-center col-lg-6 col-12 float-end">
-    <div class=" bg-dark">
-      <div class="card-header text-light">
-        <h3 class="text-end yellow">Register &nbsp;<i class="fas fa-user-plus"></i></h3>
-      </div>
+	<div class="d-flex justify-content-center col-lg-6 col-12 float-end">
+		<div class=" bg-dark">
+			<div class="card-header text-light">
+				<h3 class="text-end yellow">Register &nbsp;<i class="fas fa-user-plus"></i></h3>
+			</div>
 
-      <!--Register form -->
-      <div class="card-body m-auto text-light">
-        <form method="POST">
-
-          {% csrf_token %}
-          {{form.as_p}}
-         
-      
-          <div class="p-3 d-flex justify-content-center">
-            <input type="submit" value="Sign In" class="btn btn-secondary btn-warning login-button fw-bold">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+			<!--Register form -->
+			<div class="card-body m-auto text-light">
+				<form method="POST">
+					{% csrf_token %}
+					{{form.as_p}}
+					<!--Submit button -->
+					<div class="p-3 d-flex justify-content-center">
+						<input type="submit" value="Sign In" class="btn btn-secondary btn-warning login-button fw-bold">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
-
-<!-- My JS -->
+<!-- Customizable JS -->
 <script src="{% static 'js/script.js' %}"></script>
 
 {% endblock content %}
