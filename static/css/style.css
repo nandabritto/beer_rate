@@ -255,8 +255,12 @@ img {
 
 
 
-.footer-button {
-    color: #4b5252c9;    
+.footer-button{
+    color: #4b5252c9!important;    
+}
+
+.footer-button:hover{
+    color:var(--black)!important;
 }
 
 /*------------------------ Media Query  ---------------------- */

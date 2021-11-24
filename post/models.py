@@ -67,7 +67,10 @@ class BeerReview(models.Model):
         transformation={
             'width': '600', 'height': '600', 'crop': 'fill', 'gravity': "auto"
             },
-        default="https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/default-review-image.webp")
+        default=(
+            "https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/def-img.webp"
+            )
+            )
     score = models.IntegerField(default=0)
 
     def __str__(self):
