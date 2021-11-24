@@ -150,8 +150,14 @@ Ate the end of development og this project (fase 1 - before submission day), cov
         
 ## CSS Code Validation
 
++ On first round of checks, all functions were mmissing semicolon at the end. 
 <p float="left">
-        <img src= "media/readme/css validation/css-validation.png" width="50%" alt="W3C CSS validation"/>
+        <img src= "media/readme/js validation/add-reviewjs-validation-before.png" width="40%" alt="JShint validation - before"/>
+</p>
+
++ The missing semicolons were placed and all issues have been solved. 
+<p float="left">
+        <img src= "media/readme/js validation/add-reviewjs-validation-after.png" width="40%" alt="JShint validation - after "/>
 </p>
 
 ## JavaScript Code Validation
