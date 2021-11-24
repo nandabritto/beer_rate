@@ -253,6 +253,12 @@ img {
     width: fit-content;
 }
 
+
+
+.footer-button {
+    color: #4b5252c9;    
+}
+
 /*------------------------ Media Query  ---------------------- */
 
 @media (min-width: 1200px) {
