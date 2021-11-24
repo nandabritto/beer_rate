@@ -1,92 +1,115 @@
 {% extends "base.html" %}
-{% block title %} Review Details {% endblock %}
+
+{% block title %} 
+Review Details 
+{% endblock %}
 
 {% block additional_styles %}
-<!---------------------------- My CSS link --------->
-<style>
-    body {
-        background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
-    }
-</style>
+<!-- Customizible CSS -->
+    <style>
+        body {
+            background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
+    <section>
 
-<section>
-    <!-- Reviews card -->
-    <div class="card mb-3 mt-5 detail-container margin-screen-md bg-dark text-light">
-        <div class="card-header">
-            <h1 class="text-center text-capitalize ">{{ object.beer }} <hr></h1>
-        </div>
-        <div class="row g-0">
-            <div class="col-md-5">
+        <!-- Reviews card -->
+        <div class="card mb-3 mt-5 detail-container margin-screen-md bg-dark text-light">
 
-               <img src="{{ object.beer_image.url }}" class="img-fluid rounded-start"
-                    alt="review {{review.beer}} uploaded image">
+            <!-- Reviews card header-->
+            <div class="card-header">
+                <h1 class="text-center text-capitalize ">{{ object.beer }} <hr></h1>
+            </div>
+
+            <!-- Reviews card subheader-->
+            <div class="row g-0">
+
+                <!-- Reviews beer image-->
+                <div class="col-md-5">
+                    <img src="{{ object.beer_image.url }}" class="img-fluid rounded-start"
+                        alt="review {{review.beer}} uploaded image">
+                </div>
+
+                <!-- Reviews beer body -->
+                <div class="col-md-7">
+                    <div class="card-body">
+
+                        <!-- Reviews beer name-->
+                        <h4 class="text-right mb-4 mx-2 ">Beer Style : {{ object.beer_style|title }}</h4>
+                        
+                        <!-- Reviews beer bitterness level-->
+                        <p class="card-text m-2"> Biterness:
+                            <span class="fas fa-beer {% if object.money_value > 0 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.money_value > 1 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.money_value > 2 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.money_value > 3 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.money_value > 4 %} checked {% endif %}"></span>
+                        </p>
+
+                        <!-- Reviews beer money value level -->
+                        <p class="card-text m-2"> Money-value:
+                            <span class="fas fas fa-euro-sign {% if object.money_value > 0 %} checked {% endif %}"></span>
+                            <span class="fas fas fa-euro-sign {% if object.money_value > 1 %} checked {% endif %}"></span>
+                            <span class="fas fas fa-euro-sign {% if object.money_value > 2 %} checked {% endif %}"></span>
+                            <span class="fas fa-euro-sign {% if object.money_value > 3 %} checked {% endif %}"></span>
+                            <span class="fas fa-euro-sign {% if object.money_value > 4 %} checked {% endif %}"></span>
+                        </p>
+
+                        <!-- Reviews beer rating-->
+                        <p class="card-text m-2"> Rating:
+                            <span class="fa fa-star {% if object.score > 0 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if object.score > 1 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if object.score > 2 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if object.score > 3 %} checked {% endif %}"></span>
+                            <span class="fa fa-star {% if object.score > 4 %} checked {% endif %}"></span></p>
+                    </div>
                 
+                    <!-- Reviews text -->
+                    <div class= "review-detail-box p-3 d-flex align-items-center justify-content-center overflow-auto ">
+                        <p>{{ object.review|title }}</p>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="col-md-7">
-                <div class="card-body">
-                    <h4 class="text-right mb-4 mx-2 ">Beer Style : {{ object.beer_style|title }}</h4>
-                    
-                    <p class="card-text m-2"> Biterness:
-                        <span class="fas fa-beer {% if object.money_value > 0 %} checked {% endif %}"></span>
-                        <span class="fas fa-beer {% if object.money_value > 1 %} checked {% endif %}"></span>
-                        <span class="fas fa-beer {% if object.money_value > 2 %} checked {% endif %}"></span>
-                        <span class="fas fa-beer {% if object.money_value > 3 %} checked {% endif %}"></span>
-                        <span class="fas fa-beer {% if object.money_value > 4 %} checked {% endif %}"></span>
-                    </p>
-
-                    <p class="card-text m-2"> Money-value:
-                        <span class="fas fas fa-euro-sign {% if object.money_value > 0 %} checked {% endif %}"></span>
-                        <span class="fas fas fa-euro-sign {% if object.money_value > 1 %} checked {% endif %}"></span>
-                        <span class="fas fas fa-euro-sign {% if object.money_value > 2 %} checked {% endif %}"></span>
-                        <span class="fas fa-euro-sign {% if object.money_value > 3 %} checked {% endif %}"></span>
-                        <span class="fas fa-euro-sign {% if object.money_value > 4 %} checked {% endif %}"></span>
-                    </p>
-
-                    <p class="card-text m-2"> Rating:
-                        <span class="fa fa-star {% if object.score > 0 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if object.score > 1 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if object.score > 2 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if object.score > 3 %} checked {% endif %}"></span>
-                        <span class="fa fa-star {% if object.score > 4 %} checked {% endif %}"></span></p>
-                </div>
-               
-                <div class= "review-detail-box p-3 d-flex align-items-center justify-content-center overflow-auto ">
-               
-                    <p>{{ object.review|title }}</p>
-                </div>
-
-               
-            </div>
+         <!-- Reviews author and pub date -->   
+        <div class="card-footer text-center text-muted">
+            <small>Reviewed by: {{ object.user_name }} | Created at:
+                {{ object.pub_date }}
+            </small>
         </div>
-        <div class="card-footer text-center text-muted"><small>Reviewed by: {{ object.user_name }} | Created at:
-                {{ object.pub_date }}</small>
-        </div>
-         <!-- Edit and delete options if user is logged in -->
-         {% if user.is_authenticated %}
-         {% if user.id == object.user_name.id %}
-             <span>
-                 <h4 class="m-3 text-center">
-                     <a href="{% url 'review_update' object.pk %}" class="text-decoration-none text-white"
-                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
-                             class="fas fa-edit px-2"></i>
-                     </a>
-                     <a href="{% url 'review_delete' object.pk %}" class="text-decoration-none text-white"
-                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
-                         <i class="fas fa-trash px-2 pb-2 "></i>
-                     </a></h4>
-             </span>
-         {% endif %}
-     {% endif %}
 
+        <!-- Edit and delete options if user is logged in -->
+        {% if user.is_authenticated %}
+            {% if user.id == object.user_name.id %}
+                <span>
+
+                    <!-- Edit button -->
+                    <h4 class="m-3 text-center">
+                        <a href="{% url 'review_update' object.pk %}" class="text-decoration-none text-white"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review"><i
+                                class="fas fa-edit px-2"></i>
+                        </a>
+
+                        <!-- Delete button -->
+                        <a href="{% url 'review_delete' object.pk %}" class="text-decoration-none text-white"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
+                            <i class="fas fa-trash px-2 pb-2 "></i>
+                        </a></h4>
+                </span>
+            {% endif %}
+        {% endif %}
     </div>
-    <div class="m-2 text-center">
-        <a href="{% url 'review_list'%}"><button type="button" class="btn btn-submit btn-lg fw-bold">Back to Reviews</button></a>
-        </div>
-</section>
 
+    <!-- Back button -->
+    <div class="m-2 text-center">
+        <a href="{% url 'review_list'%}">
+            <button type="button" class="btn btn-submit btn-lg fw-bold">Back to Reviews</button>
+        </a>
+    </div>
+</section>
 
 {% endblock %}

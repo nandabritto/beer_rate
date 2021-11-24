@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
-{% block title %} Update Review {% endblock %}
+{% block title %} 
+Update Review 
+{% endblock %}
 
 {% block additional_styles %}
-<!---------------------------- My CSS link --------->
-<style>
-    body {
-        background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
-    }
-</style>
+	<!-- Customizible CSS -->
+	<style>
+		body {
+			background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
+		}
+	</style>
 {% endblock %}
 
 {% block content %}
 <section>
+
 	<!-- Update Review Container -->
 	<div class="container mt-4">
 		<div class="bg-dark col-lg-9 col-11 m-auto rounded">
@@ -25,25 +29,36 @@
 				<!-- Update Review Form -->
 				<form method="POST" class="review-form" enctype="multipart/form-data">
 					{% csrf_token %}
-
 					<div class="mx-auto d-flex justify-content-center">
+
+						<!-- Update beer style-->
 						<h4>Beer Style: {{ form.beer_style}}
+
+							<!-- Update beer name-->
 							Beer : {{ form.beer}}
 						</h4>
 					</div>
+
+					<!-- Update review text-->
 					<div>
 						<h3 class="text-center">Update your review: </h3> {{ form.review}}
 					</div>
 					<div class="mx-auto d-flex justify-content-center">
+
+						<!-- Update beer bitterness level -->
 						<h4>Bitterness: {{ form.bitterness}}
+
+							<!-- Update beer money-value level -->
 							Money Value : {{ form.money_value}} </h4>
 					</div>
+
+					<!-- Update beer image -->
 					<div class="text-center">
 						<h4> Change your beer picture :</h4>
 						<p> {{form.beer_image}}</p>
 					</div>
 
-					<!-- Star Rating -->
+					<!-- Update Star Rating -->
 					<div class="stars"> {{form.score}}
 						<h3 class="text-center">Rate your beer!</h3>
 						<span class="fa fa-star fa-2x my-btn" id="first"></span>
@@ -52,26 +67,22 @@
 						<span class="fa fa-star fa-2x my-btn" id="fourth"></span>
 						<span class="fa fa-star fa-2x my-btn" id="fifth"></span>
 					</div>
+					
+					<!-- Submit and cancel buttons -->
 					<div class="text-center">
 						<input type="submit" value="Update" name="htmlsubmitbutton1" class="btn btn-submit btn-lg m-3">
 						<input type="button" value="Go back!" onclick="history.back()" class="btn btn-back btn-lg m-3">
-						   
-
 					</div>
+
 				</form>
 			</div>
 		</div>
 	</div>
-
 </section>
 
-
+	{% block extra_js %}
+		<!-- Customizible JS -->
+		<script src="{% static 'js/add_review.js' %}"></script>
+	{% endblock extra_js %}
 
 {% endblock content %}
-
-{% block extra_js %}
-
-<!-- My JS -->
-<script src="{% static 'js/add_review.js' %}"></script>
-
-{% endblock extra_js %}

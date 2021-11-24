@@ -113,34 +113,42 @@ Review
 
             <!-- Cards pagination  -->
             <nav aria-label="Page navigation example ">      
-                    <ul class="pagination justify-content-center ">
-                        
+                <ul class="pagination justify-content-center ">
+                                        
+                    {% if page_obj.has_previous %}
+
                         <!-- First button -->
-                        {% if page_obj.has_previous %}
                         <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
 
                         <!-- Previous button -->
                         <li class="page-item"><a class="page-link bg-dark border-0 "
                                 href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-                {% endif %}
+                    {% endif %}
+                                            
+                    {% if page_obj.has_next %}
 
-                {% if page_obj.has_next %}
+                        <!-- Next button -->
+                        <li class="page-item">
+                            <a class="page-link bg-dark border-0 "
+                                href="?page={{ page_obj.next_page_number }}">Next
+                            </a>
+                        </li>
 
-                    <!-- Next button -->
-                    <li class="page-item"><a class="page-link bg-dark border-0 "
-                            href="?page={{ page_obj.next_page_number }}">Next</a></li>
-
-                    <!-- Last button -->
-                    <li class="page-item"><a class="page-link bg-dark border-0 "
-                            href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
-                {% endif %}
-                    </ul>
+                        <!-- Last button -->
+                        <li class="page-item">
+                            <a class="page-link bg-dark border-0 "
+                                href="?page={{ page_obj.paginator.num_pages }}">Last
+                            </a>
+                        </li>
+                        
+                    {% endif %}
+                </ul>
             </nav>
     </section>
 
-    {% block extra_js %}
-        <!-- Customizible JS -->
-        <script src="{% static 'js/toollip.js' %}"></script>
-    {% endblock %}
+        {% block extra_js %}
+            <!-- Customizible JS -->
+            <script src="{% static 'js/toollip.js' %}"></script>
+        {% endblock %}
 
 {% endblock %}

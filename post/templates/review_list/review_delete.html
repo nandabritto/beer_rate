@@ -1,49 +1,62 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-{% block title %} Delete review {% endblock %}
-
-{% block additional_styles %}
-<!---------------------------- My CSS link --------->
-<style>
-    body {
-        background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
-    }
-</style>
+{% block title %} 
+Delete review 
 {% endblock %}
 
-{% if user.is_authenticated %}
+{% block additional_styles %}
+<!-- Customizible CSS -->
+    <style>
+        body {
+            background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
+        }
+    </style>
+{% endblock %}
 
-<fieldset>
+{% block content %}
 
-    <div class="container mt-5 ">
-        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3">
-            <h1 class="text-light text-center bold p-3 yellow"> Delete review <hr></h1>
-            <div class="text-light text-center">
-                <h5 class = "mb-2"> Beer: {{ object.beer|title }}</h5>
-                <h5 class = "mb-3"> Beer Style: {{ object.beer_style|title }}</h5>
-                <div class= "review-detail-box p-3 d-flex align-items-center justify-content-center overflow-auto mb-3">
-               
-                    <p>{{ object.review|title }}</p>
-                </div>
-                
-                
-                
-                <!-- <p>{{ object.review }}</p> -->
-                <p class= "text-muted">Author:{{ object.user_name }} <br/>Created at: {{ object.pub_date }}</p>
-                <form method="POST" actions="">
-                    {% csrf_token %}
-                  
-                        <button class="btn btn-secondary btn-danger login-button btn-lg m-2 fw-bold" >Delete </button>
-                        <input type="button" value="Cancel" onclick="history.back()" class="btn btn-cancel btn-lg m-3">
+    <!-- If user is authenticated shows delete container -->
+    {% if user.is_authenticated %}
+        <fieldset>
+
+            <!-- Delete review container -->
+            <div class="container mt-5 ">
+                <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3">
+
+                    <!-- Delete review container title -->
+                    <h1 class="text-light text-center bold p-3 yellow"> Delete review <hr></h1>
+                    <div class="text-light text-center">
+
+                        <!-- Review title -->
+                        <h5 class = "mb-2"> Beer: {{ object.beer|title }}</h5>
+
+                        <!-- Review style -->
+                        <h5 class = "mb-3"> Beer Style: {{ object.beer_style|title }}</h5>
+                        
+                        <!-- Review text -->
+                        <div class= "review-detail-box p-3 d-flex align-items-center justify-content-center overflow-auto mb-3">
+                            <p>{{ object.review|title }}</p>
+                        </div>
+                        
+                        <!-- Review author and publication date -->
+                        <p class= "text-muted">Author:{{ object.user_name }} <br/>Created at: {{ object.pub_date }}</p>
+
+                        <!-- Delete form -->
+                        <form method="POST" actions="">
+                            {% csrf_token %}
+
+                            <!-- Delete button -->
+                            <button class="btn btn-secondary btn-danger login-button btn-lg m-2 fw-bold" >Delete</button>
+
+                            <!-- Back button -->
+                            <input type="button" value="Cancel" onclick="history.back()" class="btn btn-cancel btn-lg m-3">
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
- 
-</fieldset>
-
-
-{% endif %}
+        </fieldset>
+    {% endif %}
 
 {% endblock content %}
