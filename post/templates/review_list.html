@@ -5,6 +5,7 @@
 {% load cloudinary %}
 
 {% block additional_styles %}
+<!-- Customizible CSS -->
 <style>
     body {
         background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1636886150/media/background_2_dsc35b.jpg")!important;
@@ -111,11 +112,11 @@ Review
             {% endfor %}
 
             <!-- Cards pagination  -->
-            <nav aria-label="Page navigation example ">          
-                {% if page_obj.has_previous %}
+            <nav aria-label="Page navigation example ">      
                     <ul class="pagination justify-content-center ">
-
+                        
                         <!-- First button -->
+                        {% if page_obj.has_previous %}
                         <li class="page-item"><a class="page-link bg-dark border-0  " href="?page=1">First</a></li>
 
                         <!-- Previous button -->
