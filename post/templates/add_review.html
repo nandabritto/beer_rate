@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+
 {% load static %}
-{% block title %} Add Review {% endblock %}
+
+{% block title %} 
+Add Review
+{% endblock %}
 
 {% block additional_styles %}
-<!---------------------------- My CSS link --------->
+
+<!-- Customizable CSS -->
 <style>
     body {
         background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
@@ -12,127 +17,156 @@
 {% endblock %}
 
 {% block content %}
-<section>
+
+	<!-- Add review container available if user is authenticated -->
 	{% if user.is_authenticated %}
+		<section>
+			{% if error_message %}
+			<!-- Alert message -->
+			<div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+				<p><strong>{{ error_message }} </strong></p>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% endif %}
 
-	{% if error_message %}
-	<div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
-		<p><strong>{{ error_message }} </strong></p>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	</div>
+			<!-- Review container -->
+			<fieldset>
+				<div class="container p-3 mt-2">
+					<div class="bg-dark  col-lg-9 col-11 m-auto rounded">
+						<h1 class="text-light text-center bold p-3"> Add your beer review</h1>
+						<div class="text-light">
+
+							<!-- Review form -->
+							<form method="POST" actions="/add_review" enctype="multipart/form-data" class=" review-form">
+								{% csrf_token %}
+
+								<!-- Add Beer Style -->
+								<div class="align-middle field_container text-center">
+									<h4>Beer Style: &nbsp; {{ review_form.beer_style}}
+
+										<!-- Button trigger create a beer style modal -->
+										<button type="button" class="btn btn-sm btn-warning mx-2 " data-bs-toggle="modal"
+											data-bs-target="#beerstylemodal">
+											Create Beer Style
+										</button>
+									</h4>
+								</div>
+
+								<!-- Add Beer Name -->
+								<div class="align-middle label text-center">
+									<h4> Beer Name: {{ review_form.beer}}
+
+										<!-- Button trigger create a beer modal -->
+										<button type="button" class="btn btn-sm btn-warning ms-2 " data-bs-toggle="modal"
+											data-bs-target="#beermodal">
+											Create Beer 
+										</button>
+									</h4>
+								</div>
+
+								<!-- Add Beer Review -->
+								<div class="text-center label">
+									<h2 class="m-2 p-2"> Write your review:</h2>
+								</div> {{ review_form.review}}
+
+								<!-- Choose level of bitterness and money value -->
+								<div class="field_container label text-center">
+									<h4>Money Value: {{ review_form.money_value}}
+										Bitterness: {{review_form.bitterness}} 
+									</h4>
+								</div>
+
+								<!-- Add beer image on review -->
+								<div class=" text-center">
+									<h3>Image: {{review_form.beer_image}}</h3>
+								</div>
+
+								<!-- Add beer rating with stars -->
+								<div class="stars p-2"> {{review_form.score}}
+									<h3 class="text-center">Rate your beer!</h3>
+									<span class="fa fa-star fa-2x my-btn" id="first"></span>
+									<span class="fa fa-star fa-2x my-btn" id="second"></span>
+									<span class="fa fa-star fa-2x my-btn" id="third"></span>
+									<span class="fa fa-star fa-2x my-btn" id="fourth"></span>
+									<span class="fa fa-star fa-2x my-btn" id="fifth"></span>
+								</div>
+
+								<!-- Submit review button -->
+								<div class="text-center p-2">
+									<input type="submit" value="Save your review" name="htmlsubmitbutton1"
+										class="btn btn-submit btn-lg m-3">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<!-- Beer Style Modal -->
+			<fieldset>
+				<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-labelledby="BeerStyleModal" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+
+							<!-- Create a beer style title -->
+							<div class="modal-header">
+								<h5 class="modal-title" id="BeerStyleModalLabel">Create a beer Style</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+
+							<!-- Create a beer style form-->
+							<div class="modal-body">
+								<form method="POST" actions="/add_review">
+									{% csrf_token %}
+									{{ style_form }}
+
+									<!-- Create style submit button -->
+									<div class="m-2 text-center">
+										<input name="comment" class="btn btn-submit" type="submit" value="Create Style"/>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
+			<!-- Beer Modal -->
+			<fieldset>
+				<div class="modal fade" id="beermodal" tabindex="-1" aria-labelledby="BeerModal" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+
+							<!-- Create a beer title -->
+							<div class="modal-header">
+								<h5 class="modal-title" id="BeerModalLabel">Create a beer </h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+
+							<!-- Create a beer form-->
+							<div class="modal-body">
+								<form method="POST" actions="">
+									{% csrf_token %}
+									{{ beer_form.beer_name }}
+
+									<!-- Create beer submit button -->
+									<div class="m-2 text-center">
+										<input name="comment" class="btn btn-submit " type="submit" value="Create Beer"/>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</section>
+
 	{% endif %}
-
-	<fieldset>
-		<div class="container p-3 mt-2">
-			<div class="bg-dark  col-lg-9 col-11 m-auto rounded">
-				<h1 class="text-light text-center bold p-3"> Add your beer review</h1>
-				<div class="text-light">
-					<form method="POST" actions="/add_review" enctype="multipart/form-data" class=" review-form">
-						{% csrf_token %}
-
-						<div class="align-middle field_container text-center">
-							<h4>Beer Style: &nbsp; {{ review_form.beer_style}}
-
-								<!------------------------------------------------ Button trigger create a beer style modal -->
-								<button type="button" class="btn btn-sm btn-warning mx-2 " data-bs-toggle="modal"
-									data-bs-target="#beerstylemodal">
-									Create Beer Style
-								</button></h4>
-						</div>
-
-						<div class="align-middle label text-center">
-							<h4> Beer Name: {{ review_form.beer}}
-								<!------------------------------------------------------- Button trigger create a beer  modal -->
-								<button type="button" class="btn btn-sm btn-warning ms-2 " data-bs-toggle="modal"
-									data-bs-target="#beermodal">
-									Create Beer </button></h4>
-						</div>
-						<div class="text-center label">
-							<h2 class="m-2 p-2"> Write your review:</h2>
-						</div> {{ review_form.review}}
-						<div class="field_container label text-center">
-							<h4>Money Value: {{ review_form.money_value}} 
-							Bitterness: {{review_form.bitterness}} </h4>
-						</div>
-						<div class=" text-center">
-							<h3>Image: {{review_form.beer_image}}</h3>
-						</div>
-						<div class="stars p-2"> {{review_form.score}}
-							<h3 class="text-center">Rate your beer!</h3>
-							<span class="fa fa-star fa-2x my-btn" id="first"></span>
-							<span class="fa fa-star fa-2x my-btn" id="second"></span>
-							<span class="fa fa-star fa-2x my-btn" id="third"></span>
-							<span class="fa fa-star fa-2x my-btn" id="fourth"></span>
-							<span class="fa fa-star fa-2x my-btn" id="fifth"></span>
-						</div>
-
-						<div class="text-center p-2">
-							<input type="submit" value="Save your review" name="htmlsubmitbutton1"
-								class="btn btn-submit btn-lg m-3">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</fieldset>
-
-	<fieldset>
-		<!------------------------------------------------------ Beer Style Modal -------------------------------->
-		<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-labelledby="BeerStyleModal" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="BeerStyleModalLabel">Create a beer Style</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<form method="POST" actions="/add_review">
-							{% csrf_token %}
-							{{ style_form }}
-							<!------------------------------------------- Button trigger modal ----------------------------->
-							<div class="m-2 text-center">
-								<input name="comment" class="btn btn-submit" type="submit" value="Create Style" />
-								</button> </div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</fieldset>
-
-
-	<fieldset>
-		<!---------------------------------------------------- Beer Modal --------------------------------------->
-		<div class="modal fade" id="beermodal" tabindex="-1" aria-labelledby="BeerModal" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="BeerModalLabel">Create a beer </h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<form method="POST" actions="">
-							{% csrf_token %}
-							{{ beer_form.beer_name }}
-							<!------------------------------------------- Button trigger modal ----------------------------->
-							<div class="m-2 text-center">
-								<input name="comment" class="btn btn-submit " type="submit" value="Create Beer" />
-								</button></div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</fieldset>
-
-
-	{% endif %}
-</section>
+	
 {% endblock %}
 
 {% block extra_js %}
-
+<!-- Customimzible JS -->
 <script src="{% static 'js/add_review.js' %}"></script>
 <script src="{% static 'js/script.js' %}"></script>
-
 {% endblock extra_js %}
