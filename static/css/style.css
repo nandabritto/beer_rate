@@ -13,11 +13,11 @@ hr {
 }
 
 .yellow {
-    color: var(--yellow)!important;
+    color: var(--yellow) !important;
 }
 
 html {
-    height:100%;
+    height: 100%;
 }
 
 body {
@@ -45,7 +45,7 @@ a,
 button,
 #id_bitterness,
 #id_money_value,
-#id_beer_image, 
+#id_beer_image,
 #id_beer_style,
 #id_beer {
     font-family: 'Open Sans', sans-serif;
@@ -79,16 +79,16 @@ a:hover {
 }
 
 /*------------------------ Home page welcome jumbotron ---------------------- */
+
 .title {
     width: fit-content;
     background-color: var(--black);
     margin: 2% auto;
 }
 
-
 /*------------------------ Navbar ---------------------- */
-.navbar{
-    z-index: 100!important;
+.navbar {
+    z-index: 100 !important;
 }
 
 ul.dropdown-menu {
@@ -99,28 +99,29 @@ ul.dropdown-menu {
 
 .nav-link.active,
 .navbar-brand.active {
-    color:var(--red)!important;
+    color: var(--red) !important;
 }
 
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
-    background-color: var(--red,0.2)!important;
-    color:var(--white)!important;   
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    background-color: var(--red) !important;
+    color: var(--white) !important;
 }
+
 /*------------------------ Buttons ---------------------- */
-
 
 .btn-submit {
     background-color: var(--green);
     color: var(--white);
 }
 
-.btn-cancel{
+.btn-cancel {
     background-color: var(--yellow);
     color: var(--black);
 }
 
-.btn-cancel:hover{
-    color:var(--black)!important;
+.btn-cancel:hover {
+    color: var(--black) !important;
 }
 
 .btn-back {
@@ -128,13 +129,11 @@ ul.dropdown-menu {
     color: var(--white);
 }
 
-
 .btn-warning {
     background-color: var(--yellow);
     border: var(--yellow);
     color: var(--black);
 }
-
 
 .btn:hover {
     transform: scale(1.2);
@@ -159,12 +158,12 @@ ul.dropdown-menu {
 .page-link:hover {
     color: var(--red);
     font-weight: 800;
-    background-color: var(--yellow)!important;
+    background-color: var(--yellow) !important;
     border: var(--red);
-    }
+}
 
 .pagination {
-    width: fit-content!important;
+    width: fit-content !important;
 }
 
 img {
@@ -253,14 +252,14 @@ img {
     width: fit-content;
 }
 
+/*------------------------ Footer  ---------------------- */
 
-
-.footer-button{
-    color: #4b5252c9!important;    
+.footer-button {
+    color: #4b5252c9 !important;
 }
 
-.footer-button:hover{
-    color:var(--black)!important;
+.footer-button:hover {
+    color: var(--black) !important;
 }
 
 /*------------------------ Media Query  ---------------------- */
@@ -297,7 +296,6 @@ img {
         margin: 10%;
 
     }
-
 
     #id_username,
     #id_email,

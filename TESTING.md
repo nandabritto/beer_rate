@@ -137,13 +137,22 @@ Ate the end of development og this project (fase 1 - before submission day), cov
 ### Post App 
 
 <p float="left">
-        <img src="" width="500" height="200" alt=""/>
+        <img src="media/readme/pep8_ss/post-admin.png" width="500" height="300" alt="Pep8 validation post admin.py"/>
+        <img src="media/readme/pep8_ss/post-apps.png" width="500" height="300" alt="Pep8 validation post apps.py"/>
+        <img src="media/readme/pep8_ss/post-forms.png" width="500" height="300" alt="Pep8 validation post forms.py"/>
+        <img src="media/readme/pep8_ss/post-models.png" width="500" height="300" alt="Pep8 validation post models.py"/>
+        <img src="media/readme/pep8_ss/post-test_models.png" width="500" height="300" alt="Pep8 validation post test_models.py"/>
+        <img src="media/readme/pep8_ss/post-test_urls.png" width="500" height="300" alt="Pep8 validation post test_urls.py"/>
+        <img src="media/readme/pep8_ss/post-test_views.png" width="500" height="300" alt="Pep8 validation post test_views.py"/>
+        <img src="media/readme/pep8_ss/post-urls.png" width="500" height="300" alt="Pep8 validation post urls.py"/>
+        <img src="media/readme/pep8_ss/post-views.png" width="500" height="300" alt="Pep8 validation post views.py"/>
 </p>
-
         
-
-
 ## CSS Code Validation
+
+<p float="left">
+        <img src= "media/readme/css validation/css-validation.png" width="50%" alt="W3C CSS validation"/>
+</p>
 
 ## JavaScript Code Validation
 
