@@ -7,9 +7,11 @@ Check it out! <br/>
 Cheers! 
 
  <br>
- </p>
 
+</p>
+<p align="center">
 <img src="media/readme/bestbeer_mockup.jpg">
+</p>
 
 Live app link [here](https://bestbeer-app.herokuapp.com)
 
@@ -60,11 +62,14 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 
 ## Functional Scope 
 
-The following flowchart shows the flow of "Best Beer" graphically.
+**Best Beer Flowchart**
 
-<p align="center" width="100%">
-<img width= "800" src="media/readme/bestbeer_flowchart.jpg">
-</p>
+<img height= "700" src="media/readme/bestbeer_flowchart.jpg">
+
+**Best Beer DER - Diagram Entity Relationship**
+
+<img width= "800" src="media/readme/bestbeer_der.png">
+
 
 ### 3. Structure
 
@@ -87,18 +92,16 @@ Click to see wireframes:
 
 The Colour scheme was generated using eye dropper plugin, to get one color from the logo image, and [coolors](https://coolors.co/) to generate the colour pallete.
 
-<p align="center" width="100%">
-  <img width="45%" src="media/readme/color_pallete.jpg">
-</p>
+  <img width="300" src="media/readme/color_pallete.jpg">
 
 * Font Selection
  
 Two complimentary fonts were chosen with [Google Fonts](https://fonts.google.com/) to be used across the whole of the website.
 
 The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, buttons and paragraphs.
-<p align="center" width="100%">
-  <img width="33%" src="media/readme/fonts.png">
-</p>
+
+  <img width="300" src="media/readme/fonts.png">
+
 
 
 ## Existing Features
@@ -109,15 +112,11 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
    1.1 Login and  Register User buttons present on navbar if the user is not logged. 
 
-<p align="center" width="100%">
-  <img width="90%" src="media/readme/features/navbar_logedout.jpg">
-</p>
+<img width="800" src="media/readme/features/navbar_logedout.jpg">
 
    1.2 Logout and Rate your beer buttons are present if the user is logged. 
 
-<p align="center" width="100%">
-  <img width="90%" src="media/readme/features/navbar loggedin.jpg">
-</p>
+  <img width="800" src="media/readme/features/navbar loggedin.jpg">
 
    1.3 Beer reviews and search beer by name and style are present to all users (logged or not).
 
@@ -127,9 +126,7 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
    ii. On Beer name seach, the user can add just few letters to find their prefered beer. 
 
-<p align="center" width="100%">
-  <img width="90%" src="media/readme/features/navbar_search.jpg">
-</p>
+  <img width="400" src="media/readme/features/navbar_search.jpg">
 
    iii. If there no review for searched beer or style, user is informed about it. 
 
@@ -138,44 +135,43 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
  
 2. Colapsed navbar on smaller devices to wrap in all options and assure better navbar design.
 
-<p align="center" width="100%">
-  <img width="33%" src="media/readme/features/collapsed_navbar.jpg"></p>
+  <img width="400" src="media/readme/features/collapsed_navbar.jpg">
 
 ### Beer review page 
 
 1. On this page user can access beer reviews available on the website ordered by decrescing publication date. 
 
-<p align="center" width="100%">
-  <img width="90%" src="media/readme/features/beer_reviews.jpg"></p>
+
+  <img width="800" src="media/readme/features/beer_reviews.jpg">
 
 2. Each review card contains beer name, style, image, preview of beer review (full available on beer detail page), bitterness and money-value level, beer rating, author and publication date. 
 
 * The entire card is a link to beer details page.
 
-<p align="center" width="100%">
-  <img height="50%" src="media/readme/features/beer_card.jpg"></p>
+
+<img height="50%" src="media/readme/features/beer_card.jpg">
 
 ### Beer detail page 
 
 1. On this page user can access the entire content for beer review. 
-<p align="center" width="100%">
-  <img width="90%" src="media/readme/features/review_detail.jpg"></p>
 
-   1.1 If the reviews on this page was made for the user accessing it, two buttons became available:
+<img width="800" src="media/readme/features/review_detail.jpg">
+
+  1.1 If the reviews on this page was made for the user accessing it, two buttons became available:
    
-<p align="center" width="100%">
-  <img height="90%" src="media/readme/features/review_detail_buttons.jpg"></p>
 
-     i. Edit Review (highlited on green)
-     ii. Delete Review (highlited on red)
+<img width="200" src="media/readme/features/review_detail_buttons.jpg">
+
+  i. Edit Review (highlited on green)
+   ii. Delete Review (highlited on red)
 
 ### Update Review Page 
 
 1. On this page a logged user can change a review made by them. All fields are already populated, allowing the user to see which information they would like to change. 
 2. The back buttton redirect user to the previous page wiithout changes on review. 
 
-<p align="center" width="100%">
-  <img width="90%" src="media/readme/features/update_review.jpg"></p>
+
+<img width="800" src="media/readme/features/update_review.jpg">
 
 + Constrains : The beer rate stars are not populated on this version. This issue will be correct on a future version of the website. 
 
@@ -183,27 +179,24 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 1. If user click to delete a review, they will be redirect to a delete page to confirm the deletion or cancel it. 
 
-<p align="center" width="100%">
-  <img width="90%" src=""></p>
+<img width="800" src="">
 
 ### Beer Style and Beer Categories Pages 
 
 1. After searcher a beer by its style on navbar, the user is redirect to this page where they can find all reviews related to the search. 
 
-    1.1 Beer Style search example:
- <p align="center" width="100%">
-  <img width="90%"  src="media/readme/features/style_page.jpg">
-</p>
-    1.2 Beer search example: 
- <p align="center" width="100%">
-  <img height="90%" src="media/readme/features/beer_page.jpg">
-</p>
+  1.1 Beer Style search example:
+
+  <img width="800"  src="media/readme/features/style_page.jpg">
+
+  1.2 Beer search example: 
+
+  <img height="800" src="media/readme/features/beer_page.jpg">
 
 2. If no review is available, a message will be in place to inform it and suggest a first review. 
 
- <p align="center" width="100%">
-  <img width="50%" src="media/readme/features/no-reviews-container.jpg">
-</p>
+<img width="800" src="media/readme/features/no-reviews-container.jpg">
+
 
 ## Future Features
 
