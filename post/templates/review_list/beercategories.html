@@ -45,7 +45,7 @@ Beer Search
                                 <h3>{{ beer.beer_style }}</h3>
 
                                 <!-- Review's beer image -->
-                                <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container">
+                                <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="Beer image uploaded">
 
                                 <!-- Review's card body -->
                                 <div class="card-body">
@@ -93,14 +93,13 @@ Beer Search
                             {% if user.is_authenticated %}
                                 {% if user.id == beer.user_name.id %}
                                 <span class="m-auto">
-                                    <h4>
                                         <a href="{% url 'review_update' beer.pk %}" class="text-decoration-none text-white"
-                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your beer"><i
-                                                class="fas fa-edit px-2"></i>
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your beer" aria-label="edit"><i
+                                                class="fas fa-lg fa-edit px-2"></i>
                                         </a>
                                         <a href="{% url 'review_delete' beer.pk %}" class="text-decoration-none text-white" id="edit"
-                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
-                                            <i class="fas fa-trash px-2 pb-2 "></i>
+                                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review" aria-label="delete">
+                                            <i class="fas fa-lg fa-trash px-2 pb-2 "></i>
                                         </a>
                                     </h4>
                                 </span>

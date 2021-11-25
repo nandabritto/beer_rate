@@ -246,7 +246,25 @@ A session was held with an end user. The feedback obtained is listed below:
    * The "suspicius alternative text" are related to default image/ uploaded image on beer review card.
 
 <p>
-    <img  src="media/readme/wave/wave-beerreview.png" width="60%" alt="Beer Reviews WAVE Results"/>
+    <img  src="" width="60%" alt="Beer Reviews WAVE Results"/>
+</p>
+
+**Add review Page WAVE analysis**
+
+  <p>
+    <img  src="media/readme/wave/wave-addreview.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+</p>
+
+**Update review Page WAVE analysis**
+
+  <p>
+    <img  src="media/readme/wave/wave_updatereview.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+</p>
+
+**Beer Style Search Page WAVE analysis**
+
+  <p>
+    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Beer Style Search Page (No reviews) WAVE analysis**
