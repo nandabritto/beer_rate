@@ -106,6 +106,7 @@ class UpdateReviewView(UpdateView):
     def form_valid(self, form):
         """  Validate update review form and save it """
         self.updform = form.save(commit=False)
+        self.slug = self.updform.beer_style
         self.updform.save()
         return redirect('review_detail', self.updform.pk)
 

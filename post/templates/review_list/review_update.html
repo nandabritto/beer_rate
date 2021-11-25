@@ -66,11 +66,11 @@ Update Review
 					<!-- Update Star Rating -->
 					<div class="stars"> {{form.score}}
 						<h3 class="text-center">{{form.score.label_tag}}</h3>
-						<span class="fa fa-star fa-2x my-btn" id="first"></span>
-						<span class="fa fa-star fa-2x my-btn" id="second"></span>
-						<span class="fa fa-star fa-2x my-btn" id="third"></span>
-						<span class="fa fa-star fa-2x my-btn" id="fourth"></span>
-						<span class="fa fa-star fa-2x my-btn" id="fifth"></span>
+						<span class="fa fa-2x fa-star {% if object.score > 0 %} checked {% endif %}" id="first"></span>
+						<span class="fa fa-2x fa-star {% if object.score > 1 %} checked {% endif %}" id="second"></span>
+						<span class="fa fa-2x fa-star {% if object.score > 2 %} checked {% endif %}" id="third"></span>
+						<span class="fa fa-2x fa-star {% if object.score > 3 %} checked {% endif %}" id="fourth"></span>
+						<span class="fa fa-2x fa-star {% if object.score > 4 %} checked {% endif %}" id="fifth"></span>
 					</div>
 					
 					<!-- Submit and cancel buttons -->
