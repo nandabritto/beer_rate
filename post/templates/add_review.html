@@ -29,7 +29,7 @@ Add Review
 			{% endif %}
 
 			<!-- Review container -->
-			<fieldset>
+			<div>
 				<div class="container p-3 mt-3">
 					<div class="bg-dark  col-lg-9 col-11 m-auto rounded">
 						<h1 class="text-light text-center bold p-3"> Add your beer review</h1>
@@ -41,7 +41,7 @@ Add Review
 
 								<!-- Add Beer Style -->
 								<div class="align-middle field_container text-center">
-									<h4>Beer Style: &nbsp; {{ review_form.beer_style }} 
+									<h4>{{ review_form.beer_style.label_tag }} {{ review_form.beer_style }} 
 
 										<!-- Button trigger create a beer style modal -->
 										<button type="button" class="btn btn-sm btn-warning mx-2 " data-bs-toggle="modal"
@@ -53,7 +53,7 @@ Add Review
 
 								<!-- Add Beer Name -->
 								<div class="align-middle label text-center">
-									<h4> Beer Name: {{ review_form.beer }}
+									<h4> {{ review_form.beer.label_tag }} {{ review_form.beer }}
 
 										<!-- Button trigger create a beer modal -->
 										<button type="button" class="btn btn-sm btn-warning ms-2 " data-bs-toggle="modal"
@@ -73,8 +73,8 @@ Add Review
 
 								<!-- Choose level of bitterness and money value -->
 								<div class="field_container label text-center">
-									<h4>Money Value: {{ review_form.money_value}}
-										Bitterness: {{review_form.bitterness}} 
+									<h4>{{ review_form.money_value.label_tag }} {{ review_form.money_value}}
+										{{review_form.bitterness.label_tag }}  {{review_form.bitterness}} 
 									</h4>
 								</div>
 
@@ -102,11 +102,11 @@ Add Review
 						</div>
 					</div>
 				</div>
-			</fieldset>
+			</div>
 
 			<!-- Beer Style Modal -->
-			<fieldset>
-				<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-labelledby="BeerStyleModal" aria-hidden="true">
+			<div>
+				<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-label="BeerStyleModal" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
 
@@ -120,7 +120,7 @@ Add Review
 							<div class="modal-body">
 								<form method="POST" actions="/add_review">
 									{% csrf_token %}
-									{{ style_form.as_p }}
+									{{ style_form.beer_style }}
 
 									<!-- Create style submit button -->
 									<div class="m-2 text-center">
@@ -131,11 +131,11 @@ Add Review
 						</div>
 					</div>
 				</div>
-			</fieldset>
+			</div>
 
 			<!-- Beer Modal -->
-			<fieldset>
-				<div class="modal fade" id="beermodal" tabindex="-1" aria-labelledby="BeerModal" aria-hidden="true">
+			<div>
+				<div class="modal fade" id="beermodal" tabindex="-1" aria-label="BeerModal" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
 
@@ -149,7 +149,7 @@ Add Review
 							<div class="modal-body">
 								<form method="POST" actions="">
 									{% csrf_token %}
-									{{ beer_form.as_p }}
+									{{ beer_form.beer }}
 
 									<!-- Create beer submit button -->
 									<div class="m-2 text-center">
@@ -160,7 +160,7 @@ Add Review
 						</div>
 					</div>
 				</div>
-			</fieldset>
+			</div>
 		</section>
 
 	{% endif %}
