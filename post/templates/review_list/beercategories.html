@@ -55,32 +55,32 @@ Beer Search
 
                                     <!-- Review's beer bitterness level -->
                                     <p class="card-text"> Biterness:
-                                        <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if beer.money_value > 0 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if beer.money_value > 1 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if beer.money_value > 2 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if beer.money_value > 3 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if beer.money_value > 4 %} checked {% endif %}"></span>
                                     </p>
 
                                     <!-- Review's beer money-value level -->
                                     <p class="card-text"> Money-value:
                                         <span
-                                            class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
+                                            class="fas fas fa-euro-sign {% if beer.money_value > 0 %} checked {% endif %}"></span>
                                         <span
-                                            class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
+                                            class="fas fas fa-euro-sign {% if beer.money_value > 1 %} checked {% endif %}"></span>
                                         <span
-                                            class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
-                                        <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
-                                        <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
+                                            class="fas fas fa-euro-sign {% if beer.money_value > 2 %} checked {% endif %}"></span>
+                                        <span class="fas fa-euro-sign {% if beer.money_value > 3 %} checked {% endif %}"></span>
+                                        <span class="fas fa-euro-sign {% if beer.money_value > 4 %} checked {% endif %}"></span>
                                     </p>
 
                                     <!-- Review's beer rating -->
                                     <p class="card-text"> Rating:
-                                        <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
+                                        <span class="fa fa-star {% if beer.score > 0 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if beer.score > 1 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if beer.score > 2 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if beer.score > 3 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if beer.score > 4 %} checked {% endif %}"></span></p>
 
                                     <!-- Review's beer author and pub date -->
                                     <p class="card-text text-truncate text-muted text-sm"> {{ beer.user_name }} -
@@ -107,9 +107,9 @@ Beer Search
                                 {% endif %}
                             {% endif %}
                         </div>
-                    <div>
+                    </div>
                 {% endfor %}
-            </div>
+            
 
                 <!-- Cards pagination  -->
                 <nav aria-label="Page navigation example ">
