@@ -23,12 +23,12 @@ class BeerReviewForm(forms.ModelForm):
                 'placeholder': 'Write your review here!'}),
                 },
         labels = {
-                'beer_style': ('Beer Style'),
+                'beer_style': ('Beer Style:'),
                 'beer': ('Beer Name'),
-                'review': ('Write your review:'),
-                'bitterness': ('Bitterness level'),
-                'money_value': ('Money-value'),
-                'beer_image': ('Image'),
+                'review': ('Review Text:'),
+                'bitterness': ('Bitterness level:'),
+                'money_value': ('Money-value:'),
+                'beer_image': ('Image:'),
                 'score': ('Rate your Beer!')
             }
 

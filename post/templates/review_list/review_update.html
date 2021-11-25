@@ -32,16 +32,16 @@ Update Review
 					<div class="mx-auto d-flex justify-content-center">
 
 						<!-- Update beer style-->
-						<h4>Beer Style: {{ form.beer_style}}
+						<h4>{{ form.beer_style.label_tag }} {{ form.beer_style}}
 
 							<!-- Update beer name-->
-							Beer : {{ form.beer}}
+							{{ form.beer.label_tag}} {{ form.beer}}
 						</h4>
 					</div>
 
 					<!-- Update review text-->
 					<div>
-						<h3 class="text-center">Update your review: </h3> 
+						<h3 class="text-center">{{ form.review.label_tag }}</h3> 
 						<p class ="text-center">
 							{{ form.review}}
 						</p>
@@ -51,21 +51,21 @@ Update Review
 					<div class="mx-auto d-flex justify-content-center">
 
 						<!-- Update beer bitterness level -->
-						<h4>Bitterness: {{ form.bitterness}}
+						<h4>{{ form.bitterness.label_tag }}  {{ form.bitterness}} &nbsp;
 
 							<!-- Update beer money-value level -->
-							Money Value : {{ form.money_value}} </h4>
+							{{ form.money_value.label_tag }} {{ form.money_value}} </h4>
 					</div>
 
 					<!-- Update beer image -->
 					<div class="text-center">
-						<h4> Change your beer picture :</h4>
+						<h4> {{form.beer_image.label_tag }}</h4>
 						<p> {{form.beer_image}}</p>
 					</div>
 
 					<!-- Update Star Rating -->
 					<div class="stars"> {{form.score}}
-						<h3 class="text-center">Rate your beer!</h3>
+						<h3 class="text-center">{{form.score.label_tag}}</h3>
 						<span class="fa fa-star fa-2x my-btn" id="first"></span>
 						<span class="fa fa-star fa-2x my-btn" id="second"></span>
 						<span class="fa fa-star fa-2x my-btn" id="third"></span>
