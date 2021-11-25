@@ -19,7 +19,7 @@ Beer Search
 
 {% block content %}
     <!-- Reviews by beer style -->
-    <section class="shadow-sm m-auto section-container">
+    <section class="shadow-sm m-auto section-container text-center">
 
         <!-- If reviews != 0 shows reviews container -->
         {% if beer_review %}
@@ -30,7 +30,7 @@ Beer Search
             </div>
 
             <!-- Reviews card -->
-            <div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center">
+            <div class="row row-cols-1 row-cols-md-2 g-4 m-auto d-flex justify-content-center">
                 {% for beer in beer_review %}
                     <div class="col col-md-6 col-lg-4 col-xl-3">
                         <div class="card w-100 text-light bg-dark rounded text-center ">
