@@ -232,18 +232,13 @@ A session was held with an end user. The feedback obtained is listed below:
 
 ### WAVE Accessibility validation
 
-* The "empty links" errors are related to social accounts links on footer. They are empty because icons were used on it.
-
 **Home page WAVE analysis**
     
 <p>
-    <img  src="media/readme/wave/wave-home.png" width="60%" alt="Home Page WAVE Results"/>
+    <img  src="" width="60%" alt="Home Page WAVE Results"/>
 </p>
 
 **Beer Reviews WAVE analysis**
-
-  * The 6 "empty links" errors are related to delete and edit review button. They are empty because icons were used on it.
-   * The "suspicius alternative text" are related to default image/ uploaded image on beer review card.
 
 <p>
     <img  src="" width="60%" alt="Beer Reviews WAVE Results"/>
@@ -252,13 +247,13 @@ A session was held with an end user. The feedback obtained is listed below:
 **Add review Page WAVE analysis**
 
   <p>
-    <img  src="media/readme/wave/wave-addreview.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Update review Page WAVE analysis**
 
   <p>
-    <img  src="media/readme/wave/wave_updatereview.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Beer Style Search Page WAVE analysis**
@@ -270,7 +265,7 @@ A session was held with an end user. The feedback obtained is listed below:
 **Beer Style Search Page (No reviews) WAVE analysis**
 
   <p>
-    <img  src="media/readme/wave/wave-beerstyle-noreview.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Beer Search Page WAVE analysis**
@@ -282,5 +277,5 @@ A session was held with an end user. The feedback obtained is listed below:
 **Beer Search Page (No reviews) WAVE analysis**
 
   <p>
-    <img  src="media/readme/wave/wave-beername-noreview.png" width="60%" alt="Beer Search (no review) WAVE Results"/>
+    <img  src="" width="60%" alt="Beer Search (no review) WAVE Results"/>
 </p>
