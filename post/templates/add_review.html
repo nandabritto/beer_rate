@@ -17,13 +17,6 @@ Add Review
 {% endblock %}
 
 {% block content %}
-{% for field in review_form %}
-     
-        {{ field.label }}
-       
- {% endfor %}
-
-
 	<!-- Add review container available if user is authenticated -->
 	{% if user.is_authenticated %}
 		<section>
@@ -37,7 +30,7 @@ Add Review
 
 			<!-- Review container -->
 			<fieldset>
-				<div class="container p-3 mt-2">
+				<div class="container p-3 mt-3">
 					<div class="bg-dark  col-lg-9 col-11 m-auto rounded">
 						<h1 class="text-light text-center bold p-3"> Add your beer review</h1>
 						<div class="text-light">

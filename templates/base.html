@@ -94,27 +94,23 @@
                             </li>
                         {% endif %}
                     </ul>
-
                     <ul class="navbar-nav me-4 mb-2 mb-lg-0">
                         
-
-                            <!--  Search beer style button -->
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" data-bd-auto-close="True" aria-expanded="false">
-                                    Beer Styles
-                                </a>                       
-                            
-                                <ul class="dropdown-menu" aria-label="Dropdaown Beer Style">
-                                    {% for item in cat_style_menu %}
-                                    <li>
-                                        <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        
+                        <!--  Search beer style button -->
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" data-bd-auto-close="True" aria-expanded="false">
+                                Beer Styles
+                            </a>                       
+                            <ul class="dropdown-menu" aria-label="Dropdaown Beer Style">
+                                {% for item in cat_style_menu %}
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                     </ul>
 
                     <!--  Search beer button -->
@@ -124,7 +120,6 @@
                             aria-label="Search your beer" name="searched">
                         <button class="btn btn-light btn-outline-dark" name="submit" type="submit">Search</button>
                     </form>
-
                 </div>
             </div>
         </nav>

@@ -41,8 +41,13 @@ Update Review
 
 					<!-- Update review text-->
 					<div>
-						<h3 class="text-center">Update your review: </h3> {{ form.review}}
+						<h3 class="text-center">Update your review: </h3> 
+						<p class ="text-center">
+							{{ form.review}}
+						</p>
 					</div>
+					
+					
 					<div class="mx-auto d-flex justify-content-center">
 
 						<!-- Update beer bitterness level -->
@@ -70,7 +75,7 @@ Update Review
 					
 					<!-- Submit and cancel buttons -->
 					<div class="text-center">
-						<input type="submit" value="Update" name="htmlsubmitbutton1" class="btn btn-submit btn-lg m-3">
+						<input type="submit" value="Update" name="htmlsubmitbutton1" class="btn btn-submit  fw-bold btn-lg m-3">
 						<input type="button" value="Go back!" onclick="history.back()" class="btn btn-back btn-lg m-3">
 					</div>
 
