@@ -20,70 +20,71 @@ Beer Search
 {% block content %}
     <!-- Reviews by beer style -->
     <section class="shadow-sm m-auto section-container text-center">
-
-        <!-- If reviews != 0 shows reviews container -->
         {% if beer_review %}
 
-            <!-- Reviews searched user's text -->
-            <div class="container text-light text-center">
-                <h1 class="title p-5"> You seached for: {{ searched|title }} </h1>
+            <!-- Reviews title -->
+            <div class="container text-light text-center ">
+                <h1 class="title p-5"> You seached for: {{ searched|title }}</h1>
             </div>
 
             <!-- Reviews card -->
             <div class="row row-cols-1 row-cols-md-2 g-4 m-auto d-flex justify-content-center">
                 {% for beer in beer_review %}
                     <div class="col col-md-6 col-lg-4 col-xl-3">
-                        <div class="card w-100 text-light bg-dark rounded text-center ">
+                        <div class="card w-100 text-light bg-dark rounded text-center">
 
                             <!-- Card hyperlink to beer detail page -->
                             <a href="{% url 'review_detail' beer.pk %}"
                                 class="text-decoration-none text-capitalize fw-bold text-white">
 
                                 <!-- Review's beer name -->
-                                <h2 class="card-title m-3 text-truncate "> {{ beer.beer }} </h2><hr>
+                                <h2 class="card-title m-3 text-truncate "> {{ beer.beer }} </h2>
+                                <hr>
 
-                                <!-- Review's beer style -->
-                                <h3>{{ beer.beer_style}}</h3>
-                                
+                                <!-- Review's beer's style name -->
+                                <h3>{{ beer.beer_style }}</h3>
+
                                 <!-- Review's beer image -->
-                                <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container"
-                                alt="Uploaded {{beer.beer}} review image">
+                                <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container">
 
-
+                                <!-- Review's card body -->
                                 <div class="card-body">
+
                                     <!-- Review's text -->
-                                    <p class="card-text text-truncate"> {{ beer.review }}</p>
+                                    <p class="card-text text-truncate">{{ beer.review }}</p>
 
-                                    <!-- Review's biterness level -->
+                                    <!-- Review's beer bitterness level -->
                                     <p class="card-text"> Biterness:
-                                        <span class="fas fa-beer {% if beer.money_value > 0 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if beer.money_value > 1 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if beer.money_value > 2 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if beer.money_value > 3 %} checked {% endif %}"></span>
-                                        <span class="fas fa-beer {% if beer.money_value > 4 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if review.money_value > 0 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if review.money_value > 1 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if review.money_value > 2 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if review.money_value > 3 %} checked {% endif %}"></span>
+                                        <span class="fas fa-beer {% if review.money_value > 4 %} checked {% endif %}"></span>
                                     </p>
 
-                                    <!-- Review's money-value level -->
+                                    <!-- Review's beer money-value level -->
                                     <p class="card-text"> Money-value:
-                                        <span class="fas fas fa-euro-sign {% if beer.money_value > 0 %} checked {% endif %}"></span>
-                                        <span class="fas fas fa-euro-sign {% if beer.money_value > 1 %} checked {% endif %}"></span>
-                                        <span class="fas fas fa-euro-sign {% if beer.money_value > 2 %} checked {% endif %}"></span>
-                                        <span class="fas fa-euro-sign {% if beer.money_value > 3 %} checked {% endif %}"></span>
-                                        <span class="fas fa-euro-sign {% if beer.money_value > 4 %} checked {% endif %}"></span>
+                                        <span
+                                            class="fas fas fa-euro-sign {% if review.money_value > 0 %} checked {% endif %}"></span>
+                                        <span
+                                            class="fas fas fa-euro-sign {% if review.money_value > 1 %} checked {% endif %}"></span>
+                                        <span
+                                            class="fas fas fa-euro-sign {% if review.money_value > 2 %} checked {% endif %}"></span>
+                                        <span class="fas fa-euro-sign {% if review.money_value > 3 %} checked {% endif %}"></span>
+                                        <span class="fas fa-euro-sign {% if review.money_value > 4 %} checked {% endif %}"></span>
                                     </p>
 
-                                    <!-- Review's rating -->
+                                    <!-- Review's beer rating -->
                                     <p class="card-text"> Rating:
-                                        <span class="fa fa-star {% if beer.score > 0 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if beer.score > 1 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if beer.score > 2 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if beer.score > 3 %} checked {% endif %}"></span>
-                                        <span class="fa fa-star {% if beer.score > 4 %} checked {% endif %}"></span>
-                                    </p>
+                                        <span class="fa fa-star {% if review.score > 0 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if review.score > 1 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if review.score > 2 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if review.score > 3 %} checked {% endif %}"></span>
+                                        <span class="fa fa-star {% if review.score > 4 %} checked {% endif %}"></span></p>
 
-                                    <!-- Review's author and publication date -->
-                                    <p class="card-text text-truncate text-muted text-sm"> {{ beer.user_name }}
-                                        -{{ beer.pub_date }}
+                                    <!-- Review's beer author and pub date -->
+                                    <p class="card-text text-truncate text-muted text-sm"> {{ beer.user_name }} -
+                                        {{ review.pub_date }} 
                                     </p>
                                 </div>
                             </a>
@@ -106,9 +107,9 @@ Beer Search
                                 {% endif %}
                             {% endif %}
                         </div>
-                    </div>
+                    <div>
                 {% endfor %}
-            
+            </div>
 
                 <!-- Cards pagination  -->
                 <nav aria-label="Page navigation example ">
@@ -143,7 +144,7 @@ Beer Search
                         {% endif %}
                     </ul>
                 </nav>
-
+            
         {% else %}
             <!-- No reviews container -->
             <div class="container no-review text-center ">
@@ -168,7 +169,7 @@ Beer Search
                     </a>
                     {% endif %}
                 </div>
-            </div>
+            
         {% endif %}
 
 
