@@ -65,10 +65,10 @@ Add Review
 
 								<!-- Add Beer Review -->
 								<div class="text-center label">
-									<h2 class="m-2 p-2"> Write your review:</h2>
+									<h2 class="m-2 p-2"> {{ review_form.review.label_tag }}</h2>
 								</div> 
 								<div class="text-center">
-									{{ review_form.review}}
+									 {{ review_form.review}}
 								</div>
 
 								<!-- Choose level of bitterness and money value -->
@@ -80,12 +80,12 @@ Add Review
 
 								<!-- Add beer image on review -->
 								<div class=" text-center">
-									<h3>Image: {{review_form.beer_image}}</h3>
+									<h3>{{ review_form.beer_image.label_tag }} {{review_form.beer_image}}</h3>
 								</div>
 
 								<!-- Add beer rating with stars -->
 								<div class="stars p-2"> {{review_form.score}}
-									<h3 class="text-center">Rate your beer!</h3>
+									<h3 class="text-center">{{review_form.score.label_tag }}</h3>
 									<span class="fa fa-star fa-2x my-btn" id="first"></span>
 									<span class="fa fa-star fa-2x my-btn" id="second"></span>
 									<span class="fa fa-star fa-2x my-btn" id="third"></span>
@@ -120,7 +120,7 @@ Add Review
 							<div class="modal-body">
 								<form method="POST" actions="/add_review">
 									{% csrf_token %}
-									{{ style_form }}
+									{{ style_form.as_p }}
 
 									<!-- Create style submit button -->
 									<div class="m-2 text-center">
@@ -149,7 +149,7 @@ Add Review
 							<div class="modal-body">
 								<form method="POST" actions="">
 									{% csrf_token %}
-									{{ beer_form.beer_name }}
+									{{ beer_form.as_p }}
 
 									<!-- Create beer submit button -->
 									<div class="m-2 text-center">

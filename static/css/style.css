@@ -139,7 +139,7 @@ ul.dropdown-menu {
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
     font-weight: 600;
-    color: var(--white);
+    
 }
 
 .fa-edit:hover {
@@ -221,7 +221,7 @@ img {
 #id_bitterness,
 #id_money_value,
 #id_beer_image {
-    margin: 10px;
+    margin: 10px 0;
     font-size: 1rem;
 }
 

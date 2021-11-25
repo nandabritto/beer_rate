@@ -25,11 +25,11 @@ class BeerReviewForm(forms.ModelForm):
         labels = {
                 'beer_style': ('Beer Style'),
                 'beer': ('Beer Name'),
-                'review': ('Beer review'),
+                'review': ('Write your review:'),
                 'bitterness': ('Bitterness level'),
-                'money_value': ('Money-value level'),
-                'beer_image': ('Beer Image'),
-                'score': ('Beer Rating')
+                'money_value': ('Money-value'),
+                'beer_image': ('Image'),
+                'score': ('Rate your Beer!')
             }
 
 

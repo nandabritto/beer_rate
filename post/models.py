@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 
 class BeerStyle(models.Model):
     """ Create a beer style model form """
-    beer_style = models.CharField(max_length=50, unique=True)
+    beer_style = models.CharField( max_length=50, unique=True)
 
     def __str__(self):
         """ Return beer style name string """
