@@ -17,6 +17,13 @@ Add Review
 {% endblock %}
 
 {% block content %}
+{% for field in review_form %}
+     
+        {{ field.label }}
+       
+ {% endfor %}
+
+
 	<!-- Add review container available if user is authenticated -->
 	{% if user.is_authenticated %}
 		<section>
@@ -41,7 +48,7 @@ Add Review
 
 								<!-- Add Beer Style -->
 								<div class="align-middle field_container text-center">
-									<h4>Beer Style: &nbsp; {{ review_form.beer_style}}
+									<h4>Beer Style: &nbsp; {{ review_form.beer_style }} 
 
 										<!-- Button trigger create a beer style modal -->
 										<button type="button" class="btn btn-sm btn-warning mx-2 " data-bs-toggle="modal"
@@ -53,7 +60,7 @@ Add Review
 
 								<!-- Add Beer Name -->
 								<div class="align-middle label text-center">
-									<h4> Beer Name: {{ review_form.beer}}
+									<h4> Beer Name: {{ review_form.beer }}
 
 										<!-- Button trigger create a beer modal -->
 										<button type="button" class="btn btn-sm btn-warning ms-2 " data-bs-toggle="modal"
@@ -66,7 +73,10 @@ Add Review
 								<!-- Add Beer Review -->
 								<div class="text-center label">
 									<h2 class="m-2 p-2"> Write your review:</h2>
-								</div> {{ review_form.review}}
+								</div> 
+								<div class="text-center">
+									{{ review_form.review}}
+								</div>
 
 								<!-- Choose level of bitterness and money value -->
 								<div class="field_container label text-center">
@@ -169,5 +179,3 @@ Add Review
 	{% endblock extra_js %}
 
 {% endblock %}
-
-

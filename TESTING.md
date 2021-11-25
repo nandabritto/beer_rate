@@ -5,7 +5,7 @@ During code development of each function tests were in place to be sure that it 
 ## Code Validation Testing
 
 ## Automated tests
-=============================================================================================
+========================================================================================
 ### **Members App** 
 
 All functions on members app were tested using unittests. 
@@ -19,7 +19,7 @@ All functions on members app were tested using unittests.
   * Members Unittests Overall
 <p><img src="media/readme/unittests_ss/members_unitest_membersoverall.jpg"></p>
 
-=============================================================================================
+========================================================================================
 ### **Post App** 
 
   * Views 
@@ -123,48 +123,64 @@ Ate the end of development og this project (fase 1 - before submission day), cov
 
 ## Python (PEP8) Validation
 
-### Members App 
+###  **Members App** 
 
 <p float="left">
-        <img src="media/readme/pep8_ss/members-apps.png" width="500" height="300" alt="Pep8 validation members apps.py"/>
-        <img src="media/readme/pep8_ss/members-form.png" width="500" height="300" alt="Pep8 validation members forms.py"/>
-        <img src="media/readme/pep8_ss/members-test_forms.png" width="500" height="300" alt="Pep8 validation members test_forms.py"/>
-        <img src="media/readme/pep8_ss/members-test_views.png" width="500" height="300" alt="Pep8 validation members test_views.py"/>
-        <img src="media/readme/pep8_ss/members-views.png" width="500" height="300" alt="Pep8 validation members views.py"/>
-        <img src="media/readme/pep8_ss/members-urls.png" width="500" height="300" alt="Pep8 validation members urls.py"/>
+        <img src="media/readme/pep8_ss/members-apps.png" width="400" height="200" alt="Pep8 validation members apps.py"/>
+        <img src="media/readme/pep8_ss/members-form.png" width="400" height="200" alt="Pep8 validation members forms.py"/>
+        <img src="media/readme/pep8_ss/members-test_forms.png" width="400" height="200" alt="Pep8 validation members test_forms.py"/>
+        <img src="media/readme/pep8_ss/members-test_views.png" width="400" height="200" alt="Pep8 validation members test_views.py"/>
+        <img src="media/readme/pep8_ss/members-views.png" width="400" height="200" alt="Pep8 validation members views.py"/>
+        <img src="media/readme/pep8_ss/members-urls.png" width="400" height="200" alt="Pep8 validation members urls.py"/>
 </p>
 
-### Post App 
+### **Post App** 
 
 <p float="left">
-        <img src="media/readme/pep8_ss/post-admin.png" width="500" height="300" alt="Pep8 validation post admin.py"/>
-        <img src="media/readme/pep8_ss/post-apps.png" width="500" height="300" alt="Pep8 validation post apps.py"/>
-        <img src="media/readme/pep8_ss/post-forms.png" width="500" height="300" alt="Pep8 validation post forms.py"/>
-        <img src="media/readme/pep8_ss/post-models.png" width="500" height="300" alt="Pep8 validation post models.py"/>
-        <img src="media/readme/pep8_ss/post-test_models.png" width="500" height="300" alt="Pep8 validation post test_models.py"/>
-        <img src="media/readme/pep8_ss/post-test_urls.png" width="500" height="300" alt="Pep8 validation post test_urls.py"/>
-        <img src="media/readme/pep8_ss/post-test_views.png" width="500" height="300" alt="Pep8 validation post test_views.py"/>
-        <img src="media/readme/pep8_ss/post-urls.png" width="500" height="300" alt="Pep8 validation post urls.py"/>
-        <img src="media/readme/pep8_ss/post-views.png" width="500" height="300" alt="Pep8 validation post views.py"/>
+        <img src="media/readme/pep8_ss/post-admin.png" width="400" height="200" alt="Pep8 validation post admin.py"/>
+        <img src="media/readme/pep8_ss/post-apps.png" width="400" height="200" alt="Pep8 validation post apps.py"/>
+        <img src="media/readme/pep8_ss/post-forms.png" width="400" height="200" alt="Pep8 validation post forms.py"/>
+        <img src="media/readme/pep8_ss/post-models.png" width="400" height="200" alt="Pep8 validation post models.py"/>
+        <img src="media/readme/pep8_ss/post-test_models.png" width="400" height="200" alt="Pep8 validation post test_models.py"/>
+        <img src="media/readme/pep8_ss/post-test_urls.png" width="400" height="200" alt="Pep8 validation post test_urls.py"/>
+        <img src="media/readme/pep8_ss/post-test_views.png" width="400" height="200" alt="Pep8 validation post test_views.py"/>
+        <img src="media/readme/pep8_ss/post-urls.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
+        <img src="media/readme/pep8_ss/post-views.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 </p>
         
 ## CSS Code Validation
 
-+ On first round of checks, all functions were mmissing semicolon at the end. 
 <p float="left">
-        <img src= "media/readme/js validation/add-reviewjs-validation-before.png" width="40%" alt="JShint validation - before"/>
-</p>
-
-+ The missing semicolons were placed and all issues have been solved. 
-<p float="left">
-        <img src= "media/readme/js validation/add-reviewjs-validation-after.png" width="40%" alt="JShint validation - after "/>
+        <img src="media/readme/css validation/css-validation.png" width="40%" alt="W23C css validation"/>
 </p>
 
 ## JavaScript Code Validation
 
+### **add_review.js** 
+
++ On first round of checks, all functions were mmissing semicolon at the end. 
+<p>
+   <img src= "media/readme/js validation/add-reviewjs-validation-before.png" width="40%" alt="JShint validation - before"/>
+</p>
+
++ The missing semicolons were placed and all issues have been solved. 
+<p>
+   <img src= "media/readme/js validation/add-reviewjs-validation-after.png" width="40%" alt="JShint validation - after "/>
+</p>
+
+### **script.js** 
+<p>
+   <img src= "media/readme/js validation/scriptjs-validation.png" width="40%" alt="JShint validation - before"/>
+</p>
+
+### **toollip.js** 
+<p>
+   <img src= "media/readme/js validation/toollipjs-validation.png" width="40%" alt="JShint validation - before"/>
+</p>
+
 
 ## Exploratory Testing
-=============================================================================================
+========================================================================================
 
 ### Initial User Testing (Alpha)
 
@@ -205,7 +221,7 @@ A session was held with an end user. The feedback obtained is listed below:
   All user feedback were incorporated on platform except by points 2.1 and 4.1 that is planned to implemented as future features. 
 
 ## Manual Testing
-============================================================================================
+========================================================================================
 ### Desktop
 
   Mozilla Firefox, Google Chrome, Microsoft Edge: everything is working good. Page loads, all features are working and no problems were found in adding, updating, deleting or siply seeing the content. 

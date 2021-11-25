@@ -21,7 +21,16 @@ class BeerReviewForm(forms.ModelForm):
             'review': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Write your review here!'}),
-                }
+                },
+        labels = {
+                'beer_style': ('Beer Style'),
+                'beer': ('Beer Name'),
+                'review': ('Beer review'),
+                'bitterness': ('Bitterness level'),
+                'money_value': ('Money-value level'),
+                'beer_image': ('Beer Image'),
+                'score': ('Beer Rating')
+            }
 
 
 class CreateBeerStyleForm(forms.ModelForm):

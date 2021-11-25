@@ -1,5 +1,4 @@
-
-
+// dismiss alert
 var info_messages = document.getElementsByClassName('alert');
 
 setTimeout(function(){

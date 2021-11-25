@@ -112,7 +112,7 @@ ul.dropdown-menu {
 
 .btn-submit {
     background-color: var(--green);
-    color: var(--white);
+    color: var(--black)!important;
 }
 
 .btn-cancel {
