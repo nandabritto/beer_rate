@@ -27,7 +27,7 @@ class SignUpForm(forms.Form):
 
     def clean_username(self):
         """Clean username field after form creation"""
-        username = self.cleaned_data['username']
+        username = self.cleaned_data['username'].lower()
         filterusername = User.objects.filter(username=username)
         if filterusername.count():
             raise ValidationError("Username already exists")
@@ -35,7 +35,7 @@ class SignUpForm(forms.Form):
 
     def clean_email(self):
         """Clean email field after form creation"""
-        email = self.cleaned_data['email']
+        email = self.cleaned_data['email'].lower()
         filteremail = User.objects.filter(email=email)
         if filteremail.count():
             raise ValidationError("Email already exists")
