@@ -70,6 +70,46 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 
 <img width= "800" src="media/readme/bestbeer_der.png">
 
+**Agile Methodology**
+
+All functionality and development of this project will be managed using Jira (https://bestbeer.atlassian.net)
+
+*Credentials to this management tool will be provided during submission.
+
+<details>
+<summary>All sprits are described here.</summary>
+
+* Sprint 1
+
+<img width= "800" src="media/readme/jira/sprint1.png">
+
+* Sprint 2
+
+<img width= "800" src="media/readme/jira/sprint2.png">
+
+* Sprint 3
+
+<img width= "800" src="media/readme/jira/sprint3.png">
+
+* Sprint 4
+
+<img width= "800" src="media/readme/jira/sprint4.png">
+
+* Sprint 5
+
+<img width= "800" src="media/readme/jira/sprint5.png">
+
+* Sprint 6
+
+<img width= "800" src="media/readme/jira/sprint6.png">
+
+* Sprint 7
+
+<img width= "800" src="media/readme/jira/sprint7.png">
+
+</details>
+
+
 
 ### 3. Structure
 
