@@ -81,10 +81,17 @@ All functionality and development of this project will be managed using Jira (ht
 
 * Sprint 1
 
+  + Setup Django 
+  + Heroku Deployment 
+
 <img width= "800" src="media/readme/jira/sprint1.png">
 
 * Sprint 2
 
+  + Create User Profile
+  + Create Register Page
+  + Create Login Page 
+  
 <img width= "800" src="media/readme/jira/sprint2.png">
 
 * Sprint 3

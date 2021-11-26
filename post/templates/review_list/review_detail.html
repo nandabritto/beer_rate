@@ -41,12 +41,12 @@ Review Details
                         <h4 class="text-right mb-4 mx-2 ">Beer Style : {{ object.beer_style|title }}</h4>
                         
                         <!-- Reviews beer bitterness level-->
-                        <p class="card-text m-2"> Biterness:
-                            <span class="fas fa-beer {% if object.money_value > 0 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if object.money_value > 1 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if object.money_value > 2 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if object.money_value > 3 %} checked {% endif %}"></span>
-                            <span class="fas fa-beer {% if object.money_value > 4 %} checked {% endif %}"></span>
+                        <p class="card-text m-2"> Bitterness:
+                            <span class="fas fa-beer {% if object.bitterness > 0 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.bitterness > 1 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.bitterness > 2 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.bitterness > 3 %} checked {% endif %}"></span>
+                            <span class="fas fa-beer {% if object.bitterness > 4 %} checked {% endif %}"></span>
                         </p>
 
                         <!-- Reviews beer money value level -->
