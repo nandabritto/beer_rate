@@ -106,41 +106,39 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 ## Existing Features
 
-### Navbar 
+### **Navbar** 
 
-1. Fixed Navbar allow the user easy access to all pages. 
++ Fixed Navbar allow the user easy access to all pages. 
 
-   1.1 Login and  Register User buttons are present on the navbar if the user is not logged. 
+1. Login and  Register User buttons are present on the navbar if the user is not logged. 
 
 <img width="800" src="media/readme/features/navbar_logedout.jpg">
 
-   1.2 Logout and Rate your beer buttons are present if the user is logged. 
+2. Logout and Rate your beer buttons are present if the user is logged. 
 
-  <img width="800" src="media/readme/features/navbar loggedin.jpg">
+<img width="800" src="media/readme/features/navbar loggedin.jpg">
 
-   1.3 Beer reviews and search beer by name and style are present to all users (logged or not).
+3. Beer reviews and search beer by name and style are present to all users (logged or not).
 
-   1.4 User can search their prefered beer by name or style on the navbar. 
+4. User can search their prefered beer by name or style on the navbar. 
 
-   i. Beer style has a dropdown menu with all styles registered;
+    i. Beer style has a dropdown menu with all styles registered;
 
-   ii. On the Beer name search, the user can add just a few letters to find their prefered beer. 
+    ii. On the Beer name search, the user can add just a few letters to find their prefered beer. 
 
-  <img width="400" src="media/readme/features/navbar_search.jpg">
+     <img width="400" src="media/readme/features/navbar_search.jpg">
 
-   iii. If there is no review for searched beer or style, the user is informed about it. 
+    iii. If there is no review for searched beer or style, the user is informed about it. 
 
-   iv. If any review is found on the Database, the user is redirected to a page with all reviews for that style or beer name. (Details about it on Beer style and Beer reviews page)
+    iv. If any review is found on the Database, the user is redirected to a page with all reviews for that style or beer name. (Details about it on Beer style and Beer reviews page)
 
- 
-2. Collapsed navbar on smaller devices to wrap in all options and assure better navbar design.
+5. Collapsed navbar on smaller devices to wrap in all options and assure better navbar design.
 
   <img width="400" src="media/readme/features/collapsed_navbar.jpg">
 
-### Beer review page 
+### **Beer review page**
 
 1. On this page users can access beer reviews available on the website ordered by decreasing the publication date. 
-
 
   <img width="800" src="media/readme/features/beer_reviews.jpg">
 
@@ -148,10 +146,9 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 * The entire card is a link to the beer details page.
 
-
 <img height="50%" src="media/readme/features/beer_card.jpg">
 
-### Beer detail page 
+### **Beer detail page** 
 
 1. On this page users can access the entire content for a beer review. 
 
@@ -159,27 +156,26 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
   1.1 If the reviews on this page were made for the user accessing it, two buttons became available:
    
-
 <img width="200" src="media/readme/features/review_detail_buttons.jpg">
 
   i. Edit Review (highlighted on green)
-   ii. Delete Review (highlighted on red)
+  
+  ii. Delete Review (highlighted on red)
 
-### Update Review Page 
+### **Update Review Page** 
 
 1. On this page a logged user can change a review made by them. All fields are already populated, allowing the user to see which information they would like to change. 
 2. The back button redirect the user to the previous page without changes on review. 
 
-
 <img width="800" src="media/readme/features/update_review.jpg">
 
-### Delete Review Page 
+### **Delete Review Page** 
 
 1. If users click to delete a review, they will be redirected to a deleted page to confirm the deletion or cancel it. 
 
 <img width="800" src="">
 
-### Beer Style and Beer Categories Pages 
+### **Beer Style and Beer Categories Pages** 
 
 1. After searcher a beer by its style on the navbar, the user is redirected to this page where they can find all reviews related to the search. 
 
@@ -194,7 +190,6 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 2. If no review is available, a message will be in place to inform it and suggest the first review. 
 
 <img width="500" src="media/readme/features/no-reviews-container.jpg">
-
 
 ## Future Features
 
@@ -224,10 +219,9 @@ Google Fonts: Google fonts are used to add fonts for aesthetic and UX purposes.
 Django: Framework used to add structure to the platform. 
 PGAdmin: Used to administer Database and generate DER.
 
-
 ## Testing and Code validation 
 
-All testing and code validation details are described in a separate file called TESTING.md and can be found [here]().
+All testing and code validation details are described in a separate file called TESTING.md and can be found [here](TESTING.md).
 
 ## Project Bugs and Solutions:
 
@@ -351,3 +345,4 @@ I would also like to thank:
 
 + My husband Guilherme for all the support on stressful moments, helping to figure out lots of bugs and for reviewing everything.
 + Code institute tutors, for help with several issues and bugs.
+

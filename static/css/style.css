@@ -155,7 +155,8 @@ ul.dropdown-menu {
     font-weight: 200;
 }
 
-.page-link:hover {
+.page-link:hover, 
+.page-link:focus {
     color: var(--red);
     font-weight: 800;
     background-color: var(--yellow) !important;
