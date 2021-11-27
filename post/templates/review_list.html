@@ -40,10 +40,10 @@ Review
                             class="text-decoration-none text-capitalize fw-bold text-white">     
                             
                             <!-- Review's beer name -->
-                            <h2 class="card-title m-1 text-center text-truncate"> {{ review.beer }} </h2> <hr>
+                            <h2 class="card-title m-3 text-center text-truncate"> {{ review.beer }} </h2> <hr>
 
                             <!-- Review's beer style -->
-                            <h3 class="text-truncate mx-4">{{ review.beer_style}}</h3>
+                            <h3 class="text-truncate mx-2">{{ review.beer_style}}</h3>
                             
                             <!-- Review's beer image -->
                             <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="{{ review.beer }}" >
@@ -92,11 +92,11 @@ Review
                         {% if user.is_authenticated %}
                             {% if user.id == review.user_name.id %}
                                 <span class="m-auto">
-                                        <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white" aria-label="Edit"
+                                        <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white shadow-none" aria-label="Edit"
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
                                             <i class="fas fa-lg fa-edit px-2"></i>
                                         </a>
-                                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" aria-label="Delete"
+                                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white shadow-none" aria-label="Delete"
                                             id="edit" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                             title="Delete your review">
                                             <i class="fas fa-lg fa-trash px-2 pb-2 "></i>
@@ -117,25 +117,23 @@ Review
                     {% if page_obj.has_previous %}
 
                         <!-- First button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" href="?page=1">First</a></li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none" href="?page=1">First</a></li>
                     
                         <!-- Previous button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" {% if page_obj.previous_page_number == 1 %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use First Button"
-                              {% else %}  href="?page={{ page_obj.previous_page_number }}"  {% endif %} >Previous</a></li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none">Previous</a></li>
                     {% endif %}
                                             
                     {% if page_obj.has_next %}
 
                         <!-- Next button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3" {% if page_obj.next_page_number == page_obj.paginator.num_pages %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use Last Button"
-                            {% else %} href="?page={{ page_obj.next_page_number }}" {% endif %}>Next
+                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3 shadow-none">Next
                             </a>
                         </li>
 
                         <!-- Last button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3 m-3 p-3"
+                            <a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none"
                                 href="?page={{ page_obj.paginator.num_pages }}">Last
                             </a>
                         </li>

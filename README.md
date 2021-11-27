@@ -210,7 +210,7 @@ The chosen fonts were Lobster for headings and navbar and Open Sans for lists, b
 
 <img height="50%" src="media/readme/features/beer_card.jpg">
 
-* When beer name is length, should apply a truncate class. The full name can be seen on the beer review details page.
+* When beer name and beer style are length, should apply a truncate class. The full names can be seen on the beer review details page.
 
 ### **Beer  review detail page** 
 
@@ -265,6 +265,7 @@ I would like to ...
 4. Add a beer JSON database on Beer Form; 
 5. Include icon rating for bitterness and money value field. 
 6. Include Brewery Name on beer review.
+7. Include a user profile page with all beer reviews made by them. 
 
 
 ## Languages Used
