@@ -131,7 +131,13 @@ Wireframes created with Balsamiq. The project was developed from initial wirefra
 
 Click to see wireframes:
 
-[]() <br>
+[HomePage](media/readme/wireframes/wireframe_home.png) <br>
+[Add Review Page](media/readme/wireframes/wireframe_addreview.png) <br>
+[Review Page](media/readme/wireframes/wireframe_review.png) <br>
+[Login and Register Pages](media/readme/wireframes/wireframe_login_register.png) <br>
+
++ Add Review Page Wireframe was used in Upadate review Page development.
++ Review Page Wireframe was also used on Searching pages design.
 
 ### 5. Surface
 
