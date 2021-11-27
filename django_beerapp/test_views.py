@@ -1,3 +1,4 @@
+""" System Module """
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -31,7 +32,7 @@ class SetupViewTestCase(TestCase):
 
 
 class TestHttpErrors(SetupViewTestCase):
-
+    """ Test raised errors pages """
     def setUp(self):
         """Setup user and review from SetupViewTestCase"""
         super().setUp()

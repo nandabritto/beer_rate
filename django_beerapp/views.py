@@ -13,7 +13,8 @@ def my_custom_error_view(request, *args, **argv):
 
 
 def error_403(request, exception):
-    return render(request,'403.html')
+    """ 403 error page """
+    return render(request, '403.html')
 
 
 def my_custom_bad_request_view(request, exception):

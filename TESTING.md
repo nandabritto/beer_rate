@@ -159,7 +159,24 @@ At the end of the development of this project (phase 1 - before submission day),
         <img src="media/readme/pep8_ss/post-urls.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
         <img src="media/readme/pep8_ss/post-views.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 </p>
-        
+
+## HTML Code Validation
+
+All Html pages were validated using W3 tool. 
+
+All results can be foound here
+        <img src="media/readme/htmlvalidation/validation_home.png" width="400" height="200" alt="Pep8 validation post admin.py"/>
+        <img src="media/readme/htmlvalidation/validation_register.png" width="400" height="200" alt="Pep8 validation post apps.py"/>
+        <img src="media/readme/htmlvalidation/validation_login.png" width="400" height="200" alt="Pep8 validation post forms.py"/>
+        <img src="media/readme/htmlvalidation/validation_stylesearch.png" width="400" height="200" alt="Pep8 validation post models.py"/>
+        <img src="media/readme/htmlvalidation/validation_stylesearchnoreview.png" width="400" height="200" alt="Pep8 validation post test_models.py"/>
+        <img src="media/readme/htmlvalidation/validation_beerseach.png" width="400" height="200" alt="Pep8 validation post test_urls.py"/>
+        <img src="media/readme/htmlvalidation/validation_beerseachnoreview.png" width="400" height="200" alt="Pep8 validation post test_views.py"/>
+        <img src="media/readme/htmlvalidation/validation403page.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
+        <img src="media/readme/htmlvalidation/validation404page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+        <img src="media/readme/htmlvalidation/validation500page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+        <img src="media/readme/htmlvalidation/validation400page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+
 ## CSS Code Validation
 
 <p float="left">

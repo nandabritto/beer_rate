@@ -5,10 +5,10 @@ from django.views.generic import ListView, DetailView, \
     View, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.http import HttpResponseServerError
+
 
 class HomeView(ListView):
     """ Render homepage view """
@@ -109,8 +109,8 @@ class UpdateReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         obj = self.get_object()
-        return obj.user_name == self.request.user 
-        
+        return obj.user_name == self.request.user
+
     def __init__(self):
         self.updform = None
 
@@ -120,10 +120,6 @@ class UpdateReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         self.slug = self.updform.beer_style
         self.updform.save()
         return redirect('review_detail', self.updform.pk)
-    
-    def test_func(self):
-        obj = self.get_object()
-        return obj.user_name == self.request.user
 
 
 class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -134,7 +130,7 @@ class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = reverse_lazy('review_list')
     login_url = reverse_lazy('login')
     redirect_field_name = 'redirect_to'
-    
+
     def test_func(self):
         obj = self.get_object()
         return obj.user_name == self.request.user
@@ -168,4 +164,3 @@ def beer_category_view(request):
 
     return render(request, 'review_list/beercategories.html', {
         'searched': searched, 'beer_review': page_obj})
-
