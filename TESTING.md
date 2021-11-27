@@ -1,6 +1,6 @@
 # Testing
 
-During code development of each function tests were in place to be sure that it was running as expected. The following sections describe all tests are done and error handling in place.
+During the code development of each function, tests were in place to be sure that it was running as expected. The following sections describe all tests and error handling in place.
 
 ## Code Validation Testing
 
@@ -39,23 +39,23 @@ All functions on the members' app were tested using unit tests.
 
 ### **Overal Test on plataform** 
 
-At the end of the development of this project (phase 1 - before submission day), coverage tools were used to assert that all functions were covered by automated tests. 
+At the end of the development of this project (phase 1 - before submission day), used coverage tools to assert that automated tests covered all functions. 
 
 <p><img src="media/readme/unittests_ss/coverage_beer_app.jpg"></p>
 
 + **post/views.py**
 
-    The lines uncovered by unit tests on post/views.py refer to the update view function. This was described in the bugs section in the readme.md. As this automated test was not done, manual tests were conducted to be sure that features were working as expected and without errors. 
+    The lines uncovered by unit tests on post/views.py refer to the update view function and are described in the bugs section in the readme.md. As this automated test was not done, manual tests were conducted to ensure that features were working as expected and without errors. 
 
 + **django_beerapp/settings.py**
 
-    These uncovered lines refer to databased used (f production or development) and it was tested manually as well. 
+    These uncovered lines refer to databased used (f production or development), and it was tested manually as well. 
 
 ## Integration Test Case
 
-+ On this project the Incremental Testing method was used.
++ On this project, the Incremental Testing method was used.
 
- Integrated units were checked after the developer finished writing code for every new feature. This approach was used to find defects early and because was easy to find the cause of the defect thanks to a step-by-step examination. 
+ Integrated units were checked after the developer finished writing code for every new feature. This approach was used to find defects early and because it was easy to find the cause of the defect thanks to a step-by-step examination. 
 
 + The integration tests were divided by features/pages and its described below: 
 
@@ -90,7 +90,7 @@ At the end of the development of this project (phase 1 - before submission day),
 | Test Case Id | Description | Expect result|
 |:----:|:----:|:----:|
 | 1 | Enter all register data and click on the Sign In button| To be directed to the home page, presented to a success message and already logged in|
-| 2 | Enter invalid register data in any field and click on the Login button| To be presented to an error message|
+| 2 | Enter invalid register data in any field and click on the Login button| To be given to an error message|
 
 ### **Reviews Card**
 
@@ -133,7 +133,7 @@ At the end of the development of this project (phase 1 - before submission day),
         <img src="media/readme/pep8_ss/django_beerapp_settings.png" width="400" height="200" alt="Pep8 validation django_beerapp settings.py"/>
 </p>
 
-+ The 4 too long line errors found on settings were related to links from Cloudinary, and Auth Password Validators.
++ The four too long line errors found on settings were related to links from Cloudinary and Auth Password Validators.
 
 ###  **Members App** 
 
@@ -200,53 +200,60 @@ A session was held with an end-user. The feedback obtained is listed below:
 
 1. **Navbar**
 
-   1.1 The page which we are is slightly highlighted, I would like a more visual appealing colour to better differentiate which page I am on.
+   1.1 The page which we are is slightly highlighted. I would like a more visual appealing colour to differentiate better which page I am on.
 
    1.2 "Beer Styles" dropdown menu is mixed with operational menu options. I would like to have on Left: "Best Beer" (as home), "Beer Reviews", "Beer Styles" and "Search your beer". On Right, "Register", "Login", "Logout".
 
 2. **Home Page**
 
-   2.1 I would like to have the option to log in directly from there, without needing to go to the login page, and then log in.
+   2.1 I would like to have the option to log in directly from there, without needing to go to the login page and then log in.
 
 3. **Register User Page**
 
-   3.1 When entered a password that do not match, a very quick message appeared on top, but it was not possible to read in time. I would like this message to stick to the bottom of the "Register" container so users can read and understand the error.
+   3.1 When entering a password that did not match, a rapid message appeared on top, but it was impossible to read in time. I would like this message to stick to the bottom of the "Register" container so users can read and understand the error.
 
-   3.2 When logged successful, I have been redirected to the home page, the page which I just came from. I would like to be redirected to the reviews page, where I can use the information on the website.
+   3.2 When logged successfully, I have been redirected to the home page, where I just came. I would like to be redirected to the reviews page to use the information on the website.
 
 4. **Beer Reviews page**
 
    4.1 I would like to have the option to search, filter and choose different sort options (like Money-Value) directly on-page, without needing to go through the top bar
 
-   4.2 - The "Beer reviews" title looks blended with the background image, I would like to use a larger box with different text sizes or even some logo images. These "Beer reviews" there may also not be required if the top bar use a more distinct colour when the page is the one selected.
+   4.2 - The "Beer reviews" title looks blended with the background image. I would like to use a larger box with different text sizes or even some logo images. These "Beer reviews" there may also not be required if the top bar uses a more distinct colour when the page is selected.
 
-   4.3 Buttons "First Next Last" looks too close to the card box and background colour blend then. I would like a better visual to differentiate between they are buttons and not random text on the foot of the page.
+   4.3 Buttons "First Next Last" looks too close to the card box and background colour blend. I would like a better visual to differentiate between buttons and not random text on the foot of the page.
 
    4.4 The page should inform default sort order, like displaying "Latest beer reviews" instead of just "Beer reviews" and sort that page by review date.
 
 5. **Review Detail Page**
 
-   5.1 At bottom of the review container, where we see "Written by:", I would rather have it as "Review by: <name of author>"  and on the same row "Created at <date>"
+   5.1 at the bottom of the review container, where we see "Written by:", I would rather have it as "Review by: <name of author>"  and on the same row "Created at <date>."
 
 
 ### **Response to the user experience test:**
-  All user feedback was incorporated on the platform except by points 2.1 and 4.1 that is planned to be implemented as future features. 
+
++ All user feedback was incorporated on the platform except by points 2.1 and 4.1 that is planned to be implemented as future features. 
 
 ### Final User Testing (Beta)
 
-On this test, a checklist was developed to guide user along all pages ans features on platform. This checklist and the results can be viewed here: 
+On this test, a checklist was developed to guide the user along with all pages and features on the platform. This checklist and the results can be viewed here: 
 
+[Features](media/readme/usertest/userbeta_test1.pdf)
+[Pages](media/readme/usertest/userbeta_test2.pdf)
 
+### **Response to the user experience test:**
+
++ All bugs were fixed before submission. 
 
 ## Manual Testing
 ========================================================================================
 ### Desktop
 
-  Mozilla Firefox, Google Chrome, Microsoft Edge: everything is working good. Page loads, all features are working and no problems were found in adding, updating, deleting or simply seeing the content. 
+  Mozilla Firefox: everything is working good. Pages load, all features are working and found no problems in adding, updating, deleting or simply seeing the content. 
+  Google Chrome: Some issues were found(described in the bugs section) and handled before submission. After this, pages load, all features are working, and no problems were found in adding, updating, deleting or simply seeing the content. 
 
 ### Mobile
 
-  Tested with Xiaomi Mi6 and Xiaomi Mi8 and the platform works well and without any issues. 
+  Tested with Xiaomi Mi6, Mi8 and Mi9, and the platform works well and without any issues. 
 
 ### WAVE Accessibility validation
 
@@ -297,5 +304,3 @@ On this test, a checklist was developed to guide user along all pages ans featur
   <p>
     <img  src="media/readme/wave/wave_nobeersearch.png" width="60%" alt="Beer Search (no review) WAVE Results"/>
 </p>
-
-
