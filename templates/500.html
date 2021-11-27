@@ -18,21 +18,22 @@ Beer Search
 {% endblock %}
 
 {% block content %}
-    <section>
-            <!-- 404 container -->
-            <div class="container no-review text-center ">
-                <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
-                    <h1> 500 </h1> <hr>
-                    <p class="lead"> </p>   
-                </div>
-            </div>
-  
-      <!-- Back to reviews page button -->
-        <div class="m-2 text-center">
-            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3">Back to Reviews</a>
-            </a>
+<section>
+    <!-- 404 error container -->
+    <div class="container no-review text-center ">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
+            <h1 class= "display-1 fw-bolder yellow"> 500 </h1>
+            <h2> There was an error.</h2> <hr>
+            <h2> The server is not responding. Please, try again later. </h2>
         </div>
-    </section>
+    </div>
+
+<!-- Back to reviews page button -->
+<div class="m-2 text-center">
+    <a href="{% url 'home'%}" class="btn btn-submit btn-lg fw-bold mt-3">Home</a>
+    </a>
+</div>
+</section>
 
 
 {% endblock %}

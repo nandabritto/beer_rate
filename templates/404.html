@@ -19,17 +19,18 @@ Beer Search
 
 {% block content %}
     <section>
-            <!-- 404 container -->
+            <!-- 404 error container -->
             <div class="container no-review text-center ">
                 <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
-                    <h1> 404</h1> <hr>
-                    <p class="lead"> </p>   
+                    <h1 class= "display-1 fw-bolder yellow"> 404 </h1>
+                    <h2> Ooops!</h2> <hr>
+                    <h2> Page Not Found. </h2>
                 </div>
             </div>
   
       <!-- Back to reviews page button -->
         <div class="m-2 text-center">
-            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3">Back to Reviews</a>
+            <a href="{% url 'home'%}" class="btn btn-submit btn-lg fw-bold mt-3">Home</a>
             </a>
         </div>
     </section>

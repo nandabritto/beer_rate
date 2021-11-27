@@ -18,21 +18,22 @@ Beer Search
 {% endblock %}
 
 {% block content %}
-    <section>
-            <!-- 404 container -->
-            <div class="container no-review text-center ">
-                <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
-                    <h1> 403 </h1> <hr>
-                    <p class="lead"> </p>   
-                </div>
-            </div>
-  
-      <!-- Back to reviews page button -->
-        <div class="m-2 text-center">
-            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3">Back to Reviews</a>
-            </a>
+<section>
+    <!-- 403 error container -->
+    <div class="container no-review text-center ">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
+            <h1 class= "display-1 fw-bolder yellow"> 403 </h1>
+            <h2> Forbidden </h2> <hr>
+            <h2> I'm sorry, But you dont have permission to access this resource. </h2>
         </div>
-    </section>
+    </div>
+
+<!-- Back to reviews page button -->
+<div class="m-2 text-center">
+    <a href="{% url 'home'%}" class="btn btn-submit btn-lg fw-bold mt-3">Login</a>
+    </a>
+</div>
+</section>
 
 
 {% endblock %}
