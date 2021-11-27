@@ -12,9 +12,8 @@ def my_custom_error_view(request, *args, **argv):
     return render(request, '500.html', status=500)
 
 
-def my_custom_permission_denied_view(request, exception):
-    """ 403 error page """
-    return render(request, '403.html')
+def error_403(request, exception):
+    return render(request,'403.html')
 
 
 def my_custom_bad_request_view(request, exception):
