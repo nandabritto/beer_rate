@@ -127,16 +127,14 @@ Reviews by Style
                         <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none" href="?page=1">First</a></li>
                     
                         <!-- Previous button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none" {% if page_obj.previous_page_number == 1 %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use First Button"
-                              {% else %}  href="?page={{ page_obj.previous_page_number }}"  {% endif %} >Previous</a></li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none">Previous</a></li>
                     {% endif %}
                                             
                     {% if page_obj.has_next %}
 
                         <!-- Next button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3 shadow-none" {% if page_obj.next_page_number == page_obj.paginator.num_pages %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use Last Button"
-                            {% else %} href="?page={{ page_obj.next_page_number }}" {% endif %}>Next
+                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3 shadow-none">Next
                             </a>
                         </li>
 
