@@ -235,49 +235,49 @@ A session was held with an end-user. The feedback obtained is listed below:
 **Home page WAVE analysis**
     
 <p>
-    <img  src="" width="60%" alt="Home Page WAVE Results"/>
+    <img  src="media/readme/wave/wave-homepage.png" width="60%" alt="Home Page WAVE Results"/>
 </p>
 
 **Beer Reviews WAVE analysis**
 
 <p>
-    <img  src="" width="60%" alt="Beer Reviews WAVE Results"/>
+    <img  src="media/readme/wave/wave_beerreviewpage.png" width="60%" alt="Beer Reviews WAVE Results"/>
 </p>
 
 **Add review Page WAVE analysis**
 
   <p>
-    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="media/readme/wave/wave_addreviewpage.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Update review Page WAVE analysis**
 
   <p>
-    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="media/readme/wave/wave_updatereviewpage.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Beer Style Search Page WAVE analysis**
 
   <p>
-    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="media/readme/wave/wave_beerstylesearch.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Beer Style Search Page (No reviews) WAVE analysis**
 
   <p>
-    <img  src="" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
+    <img  src="media/readme/wave/wave_nobeersearchpage.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
 
 **Beer Search Page WAVE analysis**
 
   <p>
-    <img  src="" width="60%" alt="Beer Search WAVE Results"/>
+    <img  src="media/readme/wave/wave_beerseachpage.png" width="60%" alt="Beer Search WAVE Results"/>
 </p>
 
 **Beer Search Page (No reviews) WAVE analysis**
 
   <p>
-    <img  src="" width="60%" alt="Beer Search (no review) WAVE Results"/>
+    <img  src="media/readme/wave/wave_nobeersearch.png" width="60%" alt="Beer Search (no review) WAVE Results"/>
 </p>
 
 
