@@ -232,6 +232,12 @@ A session was held with an end-user. The feedback obtained is listed below:
 ### **Response to the user experience test:**
   All user feedback was incorporated on the platform except by points 2.1 and 4.1 that is planned to be implemented as future features. 
 
+### Final User Testing (Beta)
+
+On this test, a checklist was developed to guide user along all pages ans features on platform. This checklist and the results can be viewed here: 
+
+
+
 ## Manual Testing
 ========================================================================================
 ### Desktop
