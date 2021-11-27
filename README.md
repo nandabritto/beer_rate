@@ -220,7 +220,7 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 1. If users click to delete a review, they will be redirected to a deleted page to confirm the deletion or cancel it. 
 
-<img width="800" src="">
+<img width="800" src="media/readme/features/deletereview-container.png">
 
 ### **Beer Style and Beer Categories Pages** 
 
