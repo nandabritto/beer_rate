@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
-import logging
 
 
 def login_user(request):
@@ -11,10 +10,8 @@ def login_user(request):
     if logged or not """
     if request.method == "POST":
         username = request.POST['username'].lower()
-        logging.debug(username)
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        logging.debug(user)
         if user is not None:
             login(request, user)
             messages.success(request, ("You are logged in. :)"))
