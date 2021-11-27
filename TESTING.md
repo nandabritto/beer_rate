@@ -43,9 +43,13 @@ At the end of the development of this project (phase 1 - before submission day),
 
 <p><img src="media/readme/unittests_ss/coverage_beer_app.jpg"></p>
 
++ **django_beerapp/views.py**
+
+    Uncovered lines on django_beeraap/views are related to pages error handling (400, 403,404 and 500 errors) for the entire platform. These functions were tested manually and no errors have been found. 
+
 + **post/views.py**
 
-    The lines uncovered by unit tests on post/views.py refer to the update view function and are described in the bugs section in the readme.md. As this automated test was not done, manual tests were conducted to ensure that features were working as expected and without errors. 
+    The lines uncovered by unit tests on post/views.py refers to the update and delete views functions and are described in the bugs section in the readme.md. As this automated test was not done, manual tests were conducted to ensure that features were working as expected and without errors. 
 
 + **django_beerapp/settings.py**
 
@@ -165,17 +169,18 @@ At the end of the development of this project (phase 1 - before submission day),
 All Html pages were validated using W3 tool. 
 
 All results can be foound here
-        <img src="media/readme/htmlvalidation/validation_home.png" width="400" height="200" alt="Pep8 validation post admin.py"/>
-        <img src="media/readme/htmlvalidation/validation_register.png" width="400" height="200" alt="Pep8 validation post apps.py"/>
-        <img src="media/readme/htmlvalidation/validation_login.png" width="400" height="200" alt="Pep8 validation post forms.py"/>
-        <img src="media/readme/htmlvalidation/validation_stylesearch.png" width="400" height="200" alt="Pep8 validation post models.py"/>
-        <img src="media/readme/htmlvalidation/validation_stylesearchnoreview.png" width="400" height="200" alt="Pep8 validation post test_models.py"/>
-        <img src="media/readme/htmlvalidation/validation_beerseach.png" width="400" height="200" alt="Pep8 validation post test_urls.py"/>
-        <img src="media/readme/htmlvalidation/validation_beerseachnoreview.png" width="400" height="200" alt="Pep8 validation post test_views.py"/>
-        <img src="media/readme/htmlvalidation/validation403page.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
-        <img src="media/readme/htmlvalidation/validation404page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
-        <img src="media/readme/htmlvalidation/validation500page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
-        <img src="media/readme/htmlvalidation/validation400page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+
+<img src="media/readme/htmlvalidation/validation_home.png" width="400" height="200" alt="Pep8 validation post admin.py"/>
+<img src="media/readme/htmlvalidation/validation_register.png" width="400" height="200" alt="Pep8 validation post apps.py"/>
+<img src="media/readme/htmlvalidation/validation_login.png" width="400" height="200" alt="Pep8 validation post forms.py"/>
+<img src="media/readme/htmlvalidation/validation_stylesearch.png" width="400" height="200" alt="Pep8 validation post models.py"/>
+<img src="media/readme/htmlvalidation/validation_stylesearchnoreview.png" width="400" height="200" alt="Pep8 validation post test_models.py"/>
+<img src="media/readme/htmlvalidation/validation_beerseach.png" width="400" height="200" alt="Pep8 validation post test_urls.py"/>
+<img src="media/readme/htmlvalidation/validation_beerseachnoreview.png" width="400" height="200" alt="Pep8 validation post test_views.py"/>
+<img src="media/readme/htmlvalidation/validation403page.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
+<img src="media/readme/htmlvalidation/validation404page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+<img src="media/readme/htmlvalidation/validation500page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+<img src="media/readme/htmlvalidation/validation400page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 
 ## CSS Code Validation
 
