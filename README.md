@@ -96,26 +96,37 @@ All functionality and development of this project will be managed using Jira (ht
 
 * Sprint 3
 
+  + Create Add Review
+  + Upload a image on beer review
+  + Add rating beer feature
+
 <img width= "800" src="media/readme/jira/sprint3.png">
 
 * Sprint 4
+
+ + Create a beer style
 
 <img width= "800" src="media/readme/jira/sprint4.png">
 
 * Sprint 5
 
+ + Create a search by beer style
+
 <img width= "800" src="media/readme/jira/sprint5.png">
 
 * Sprint 6
+
+ + Create a search by beer name
 
 <img width= "800" src="media/readme/jira/sprint6.png">
 
 * Sprint 7
 
+ + Create and manage final user tests
+
 <img width= "800" src="media/readme/jira/sprint7.png">
 
 </details>
-
 
 
 ### 3. Structure
