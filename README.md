@@ -104,25 +104,25 @@ All functionality and development of this project were managed using Jira (https
 
 * Sprint 4
 
- + Create a beer style
+  + Create a beer style
 
 <img width= "800" src="media/readme/jira/sprint4.png">
 
 * Sprint 5
 
- + Create a search by beer style
+  + Create a search by beer style
 
 <img width= "800" src="media/readme/jira/sprint5.png">
 
 * Sprint 6
 
- + Create a search by beer name
+  + Create a search by beer name
 
 <img width= "800" src="media/readme/jira/sprint6.png">
 
 * Sprint 7
 
- + Create and manage final user tests
+  + Create and manage final user tests
 
 <img width= "800" src="media/readme/jira/sprint7.png">
 
@@ -165,8 +165,6 @@ Two complimentary fonts were chosen with [Google Fonts](https://fonts.google.com
 The chosen fonts were Lobster for headings and navbar and Open Sans for lists, buttons and paragraphs.
 
   <img width="300" src="media/readme/fonts.png">
-
-
 
 ## Existing Features
 
@@ -224,9 +222,9 @@ The chosen fonts were Lobster for headings and navbar and Open Sans for lists, b
    
 <img width="200" src="media/readme/features/review_detail_buttons.jpg">
 
-  i. Edit Review (highlighted on green)
+   i. Edit Review (highlighted on green)
   
-  ii. Delete Review (highlighted on red)
+   ii. Delete Review (highlighted on red)
 
 ### **Update Review Page** 
 
@@ -414,4 +412,4 @@ Press Enter. Your local clone will be created.
 I would also like to thank:
 
 + My husband Guilherme for all the support on stressful moments, helping to figure out lots of bugs and for reviewing everything.
-+ Code institute tutors for help with several issues and bugs.
++ Code institute tutors, and CI Mentor Miguel Martinez and my CI Mentor Daisy Mcgirr for the guidance and help with several issues adn bugs.
