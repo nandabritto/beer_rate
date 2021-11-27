@@ -13,7 +13,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 # For debugging
 if DEBUG:
@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'active_link',
     'rest_framework',
-    
-
     # apps
     'post',
     'members',

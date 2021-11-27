@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load cloudinary %}
+
+{% block title %}
+Beer Search
+{% endblock %}
+
+{% block additional_styles %}
+<!-- Customizible CSS -->
+<style>
+    body {
+        background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <section>
+            <!-- 404 container -->
+            <div class="container no-review text-center ">
+                <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
+                    <h1> 400 </h1> <hr>
+                    <p class="lead"> </p>   
+                </div>
+            </div>
+  
+      <!-- Back to reviews page button -->
+        <div class="m-2 text-center">
+            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3">Back to Reviews</a>
+            </a>
+        </div>
+    </section>
+
+
+{% endblock %}
+

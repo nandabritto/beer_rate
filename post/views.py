@@ -8,6 +8,7 @@ from django.core.paginator import Paginator
 from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseServerError
 
 class HomeView(ListView):
     """ Render homepage view """
