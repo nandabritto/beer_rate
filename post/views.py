@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseServerError
 
 class HomeView(ListView):
@@ -99,7 +99,7 @@ class ReviewDetailView(DetailView):
     template_name = 'review_list/review_detail.html'
 
 
-class UpdateReviewView(LoginRequiredMixin, UpdateView):
+class UpdateReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """ Update a review after editing """
     model = BeerReview
     form_class = BeerReviewForm
@@ -107,6 +107,10 @@ class UpdateReviewView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     redirect_field_name = 'redirect_to'
 
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user_name == self.request.user 
+        
     def __init__(self):
         self.updform = None
 
@@ -116,9 +120,13 @@ class UpdateReviewView(LoginRequiredMixin, UpdateView):
         self.slug = self.updform.beer_style
         self.updform.save()
         return redirect('review_detail', self.updform.pk)
+    
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user_name == self.request.user
 
 
-class DeleteReviewView(LoginRequiredMixin, DeleteView):
+class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Delete a beer review form """
     model = BeerReview
     form_class = BeerReviewForm
@@ -126,7 +134,10 @@ class DeleteReviewView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('review_list')
     login_url = reverse_lazy('login')
     redirect_field_name = 'redirect_to'
-
+    
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user_name == self.request.user
 
 
 def style_category_view(request, style):

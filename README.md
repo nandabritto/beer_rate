@@ -1,7 +1,7 @@
 <h1 align=center> Best beer</h1>
 
 <p align=center>Are you a beer lover?<br/> Would you like to know what people are saying about a beer that you are eager to buy? <br/>
- Would you like to have your review list of all beers that you already tasted in your life?<br/> This app is for you! <br/>
+ Would you like to have your review list of all beers you have already tasted in your life?<br/> This App is for you! <br/>
 On beer rating, you can add a review about your favourite beers or research about beers that you are curious to taste!! <br/>
 Check it out! <br/>
 Cheers! 
@@ -32,7 +32,7 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 
 2. As a logged user, I would like to be able to …
 
-    2.1 Create a beer review of my favourite beers including :
+    2.1 Create a beer review of my favourite beers, including :
     + Beer Name,
     + Beer Style,
     + My thoughts about the beer,
@@ -55,8 +55,8 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 
 ### 2. Scope
 
- * A simple, straightforward intuitive UX experience;
- * A clear content; 
+ * A simple, straightforward, intuitive UX experience;
+ * an explicit content; 
  * An easy navigation for the user through all the features;
  * A site that is visually appealing on most devices.
 
@@ -72,9 +72,9 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 
 **Agile Methodology**
 
-All functionality and development of this project will be managed using Jira (https://bestbeer.atlassian.net)
+All functionality and development of this project were managed using Jira (https://bestbeer.atlassian.net)
 
-*Credentials to this management tool will be provided during submission.
+* Credentials to this management tool will be provided during submission.
 
 <details>
 <summary>All sprits are described here.</summary>
@@ -97,7 +97,7 @@ All functionality and development of this project will be managed using Jira (ht
 * Sprint 3
 
   + Create Add Review
-  + Upload a image on beer review
+  + Upload an image on beer review
   + Add rating beer feature
 
 <img width= "800" src="media/readme/jira/sprint3.png">
@@ -131,14 +131,14 @@ All functionality and development of this project will be managed using Jira (ht
 
 ### 3. Structure
 
-* A clear and simple layout is in place to ensure users can navigate intuitively and have an easy experience.
+* A clear and straightforward layout is in place to ensure users can navigate intuitively and have a leisurely experience.
 * Navbar is fixed on top to facilitate users to navigate through pages easily. Small navigation is the same on all pages to ensure easy navigation.
-* Add, Edit and Update Review are straightforward forms to allow the user to use the features without issues.
+* Add, Edit and Update Review are straightforward forms to allow users to use the features without issues.
 
 
 ### 4. Skeleton
 
-Wireframes created with Balsamiq. The project was developed from initial wireframes and some modifications were made during the development process to assure better usability. 
+Wireframes created with Balsamiq. The project was developed from initial wireframes, and some modifications were made during the development process to assure better usability. 
 
 Click to see wireframes:
 
@@ -147,22 +147,22 @@ Click to see wireframes:
 [Review Page](media/readme/wireframes/wireframe_review.png) <br>
 [Login and Register Pages](media/readme/wireframes/wireframe_login_register.png) <br>
 
-+ Add Review Page Wireframe was used in Upadate review Page development.
++ Add Review Page Wireframe was used in Update review Page development.
 + Review Page Wireframe was also used on Searching pages design.
 
 ### 5. Surface
 
 * Colours
 
-The Colour scheme was generated using the eyedropper plugin, to get one colour from the logo image, and [colors](https://coolors.co/) to generate the colour palette.
+The Colour scheme was generated using the eyedropper plugin to get one colour from the logo image and [colours](https://coolors.co/) to create the colour palette.
 
   <img width="300" src="media/readme/color_pallete.jpg">
 
 * Font Selection
  
-Two complimentary fonts were chosen with [Google Fonts](https://fonts.google.com/) to be used across the whole of the website.
+Two complimentary fonts were chosen with [Google Fonts](https://fonts.google.com/) to be used across the website.
 
-The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, buttons and paragraphs.
+The chosen fonts were Lobster for headings and navbar and Open Sans for lists, buttons and paragraphs.
 
   <img width="300" src="media/readme/fonts.png">
 
@@ -188,7 +188,7 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
     i. Beer style has a dropdown menu with all styles registered;
 
-    ii. On the Beer name search, the user can add just a few letters to find their prefered beer. 
+    ii. On the Beer name search, users can add just a few letters to find their prefered beer. 
 
      <img width="400" src="media/readme/features/navbar_search.jpg">
 
@@ -202,7 +202,7 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 ### **Beer review page**
 
-1. On this page users can access beer reviews available on the website ordered by decreasing the publication date. 
+1. On this page, users can access beer reviews available on the website ordered by decreasing the publication date. 
 
   <img width="800" src="media/readme/features/beer_reviews.jpg">
 
@@ -212,11 +212,11 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 <img height="50%" src="media/readme/features/beer_card.jpg">
 
-* When beer name is lenght, a truncate class should be applied. The full name can be seen on beer review details page.
+* When beer name is length, should apply a truncate class. The full name can be seen on the beer review details page.
 
 ### **Beer  review detail page** 
 
-1. On this page users can access the entire content for a beer review. 
+1. On this page, users can access the entire content for a beer review. 
 
 <img width="800" src="media/readme/features/review_detail.jpg">
 
@@ -230,7 +230,7 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 ### **Update Review Page** 
 
-1. On this page a logged user can change a review made by them. All fields are already populated, allowing the user to see which information they would like to change. 
+1. On this page, a logged user can change a review made by them. All fields are already populated, allowing the user to see which information they would like to change. 
 2. The back button redirect the user to the previous page without changes on review. 
 
 <img width="800" src="media/readme/features/update_review.jpg">
@@ -293,7 +293,7 @@ All testing and code validation details are described in a separate file called 
 
 | Bugs              | Solutions |
 | ---               | --------- |
-| Database inconsistency during unittests|Restart all projects adding two different databases (development and production) to make it possible to run tests successfully.
+| Database inconsistency during unittests|Restart all projects, adding two different databases (development and production) to make it possible to run tests successfully.
 | Update Review Unittest failed when tried to change a review | Debug Update review class models and change save function resolved the problem. 
 | Navbar dropdown opening behind site divs | Add z-index to navbar resolved the problem. 
 | Register feature was not showing the error when it happened | Debug Register function and remove else statement to redirect the user to the same page when it happens. After deleting this part of the function, everything worked fine. 
@@ -304,14 +304,14 @@ All testing and code validation details are described in a separate file called 
 
 ## Deployment 
 
-This app is deployed using Heroku.
+This App is deployed using Heroku.
 
 <details>
 <summary>Heroku Deployment steps </summary>
  
  1. Ensure all dependencies are listed on requirements.txt. 
  
- Write on python terminal ` pip3 freeze > requirements.txt` and a list with all requirements will be created to be read by Heroku. 
+ Write on python terminal ` pip3 freeze > requirements.txt`, and a list with all requirements will be created to be read by Heroku. 
  
  2. Setting up your Heroku
 
@@ -365,7 +365,7 @@ This app is deployed using Heroku.
     
     <img src="media/readme/deployment/heroku_automatic_deploys.png">
     
-    3.3 Click on manual deploy to build the app.  When complete, click on View to redirect to the live site. 
+    3.3 Click on manual deploy to build the App.  When complete, click on View to redirect to the live site. 
     
     <img src="media/readme/deployment/heroku_view.png">
 </details>
@@ -373,10 +373,10 @@ This app is deployed using Heroku.
 <details>
 <summary>Forking the GitHub Repository </summary>
 
-* By forking the GitHub Repository you will be able to make a copy of the original repository on your own GitHub account allowing you to view and/or make changes without affecting the original repository by using the following steps:
+* By forking the GitHub Repository, you will be able to make a copy of the original repository on your own GitHub account, allowing you to view and/or make changes without affecting the original repository by using the following steps:
 
     Log in to GitHub and locate the GitHub Repository
-    At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
+    At the top of the Repository (not top of page), just above the "Settings" button on the menu, locate the "Fork" button.
     You should now have a copy of the original repository in your GitHub account.
 
 * Making a Local Clone
@@ -414,5 +414,4 @@ Press Enter. Your local clone will be created.
 I would also like to thank:
 
 + My husband Guilherme for all the support on stressful moments, helping to figure out lots of bugs and for reviewing everything.
-+ Code institute tutors, for help with several issues and bugs.
-
++ Code institute tutors for help with several issues and bugs.
