@@ -6,6 +6,13 @@ During the code development of each function, tests were in place to be sure tha
 
 ## Automated tests
 ========================================================================================
+
+### **Post App** 
+
+One function from django_beerapp views were tested using unit tests. Manual testing were conducted on all others to ensure no issues on platform. 
+
+<p><img src="media/readme/unittests_ss/post_unitest_testoverall.jpg"></p>
+
 ### **Members App** 
 
 All functions on the members' app were tested using unit tests. 
