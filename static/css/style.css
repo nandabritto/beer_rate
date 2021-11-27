@@ -160,12 +160,16 @@ ul.dropdown-menu {
     font-weight: 200;
 }
 
-.page-link:hover, 
+.page-link:hover:not([disabled]), 
 .page-link:focus {
     color: var(--red);
     font-weight: 800;
     background-color: var(--yellow) !important;
     border: var(--red);
+}
+
+.page-link:hover {
+    color: var(--white)
 }
 
 .pagination {
