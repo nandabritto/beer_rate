@@ -42,7 +42,7 @@ Beer Search
                                 <hr>
 
                                 <!-- Review's beer's style name -->
-                                <h3 class="text-truncate mx-4">{{ beer.beer_style }}</h3>
+                                <h3 class="text-truncate mx-2">{{ beer.beer_style }}</h3>
 
                                 <!-- Review's beer image -->
                                 <img src="{{ beer.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="Beer image uploaded">
@@ -96,7 +96,7 @@ Beer Search
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your beer" aria-label="edit"><i
                                                 class="fas fa-lg fa-edit px-2"></i>
                                         </a>
-                                        <a href="{% url 'review_delete' beer.pk %}" class="text-decoration-none text-white" id="edit"
+                                        <a href="{% url 'review_delete' beer.pk %}" class="text-decoration-none text-white shadow-none" id="edit"
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review" aria-label="delete">
                                             <i class="fas fa-lg fa-trash px-2 pb-2 "></i>
                                         </a>
@@ -116,12 +116,12 @@ Beer Search
                         <!-- First button -->
                         {% if page_obj.has_previous %}
                             <li class="page-item">
-                                <a class="page-link bg-dark border-1 rounded-3" href="?searched={{searched}}&page=1">First</a>
+                                <a class="page-link bg-dark border-1 rounded-3 shadow-none" href="?searched={{searched}}&page=1">First</a>
                             </li>
 
                             <!-- Previous button -->
                             <li class="page-item">
-                                <a class="page-link bg-dark border-1 rounded-3"
+                                <a class="page-link bg-dark border-1 rounded-3 shadow-none"
                                     href="?searched={{searched}}&page={{ page_obj.previous_page_number }}">Previous</a>
                             </li>
                         {% endif %}
@@ -130,13 +130,13 @@ Beer Search
                         
                             <!-- Next button -->
                             <li class="page-item">
-                                <a class="page-link bg-dark border-1 rounded-3"
+                                <a class="page-link bg-dark border-1 rounded-3 shadow-none"
                                     href="?searched={{searched}}&page={{ page_obj.next_page_number }}">Next</a>
                             </li>
                             
                             <!-- Last button -->
                             <li class="page-item">
-                                <a class="page-link bg-dark border-1 rounded-3"
+                                <a class="page-link bg-dark border-1 rounded-3 shadow-none"
                                     href="?searched={{searched}}&page={{ page_obj.paginator.num_pages }}">Last</a>
                             </li>
                         {% endif %}
@@ -153,7 +153,7 @@ Beer Search
 
                     <!-- Delete and edit buttons -->
                     <a href="{% url 'add_review' %}">
-                        <button class="btn btn-warning btn-lg m-2 fw-bold">Review you
+                        <button class="btn btn-warning btn-lg m-2 fw-bold shadow-none">Review you
                             Beer Now!
                         </button>
                     </a>
@@ -161,7 +161,7 @@ Beer Search
 
                     <!-- Go to login page button -->
                     <a href="{% url 'login' %}">
-                        <button class="btn btn-warning btn-lg m-2 fw-bold">Login and
+                        <button class="btn btn-warning btn-lg m-2 fw-bold shadow-none">Login and
                             Review!
                         </button>
                     </a>
@@ -173,7 +173,7 @@ Beer Search
 
       <!-- Back to reviews page button -->
         <div class="m-2 text-center">
-            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3">Back to Reviews</a>
+            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3 shadow-none">Back to Reviews</a>
             </a>
         </div>
     </section>

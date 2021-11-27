@@ -36,14 +36,14 @@ Reviews by Style
 
                         <!-- Card hyperlink to beer detail page -->
                         <a href="{% url 'review_detail' review.pk %}"
-                            class="text-decoration-none text-capitalize fw-bold text-white">
+                            class="text-decoration-none text-capitalize fw-bold text-white shadow-none">
 
                             <!-- Review's beer name -->
                             <h2 class="card-title m-3 text-truncate "> {{ review.beer }} </h2>
                             <hr>
 
                             <!-- Review's beer's style name -->
-                            <h3 class="text-truncate mx-4">{{ review.beer_style}}</h3>
+                            <h3 class="text-truncate mx-2" >{{ review.beer_style}}</h3>
 
                             <!-- Review's beer image -->
                             <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="{{ review.beer }}">
@@ -97,13 +97,13 @@ Reviews by Style
                             <span class="m-auto">
                                 
                                     <!-- Edit button -->
-                                    <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
+                                    <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white shadow-none"
                                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review" aria-label="Edit">
                                         <i class="fas fa-lg fa-edit px-2"></i>
                                     </a>
 
                                     <!-- Delete button -->
-                                    <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" id="edit"
+                                    <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white shadow-none" id="edit"
                                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review" aria-label="Delete">
                                         <i class="fas fa-lg fa-trash px-2 pb-2 "></i>
                                     </a>
@@ -124,10 +124,10 @@ Reviews by Style
                     {% if page_obj.has_previous %}
 
                         <!-- First button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" href="?page=1">First</a></li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none" href="?page=1">First</a></li>
                     
                         <!-- Previous button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" {% if page_obj.previous_page_number == 1 %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use First Button"
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none" {% if page_obj.previous_page_number == 1 %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use First Button"
                               {% else %}  href="?page={{ page_obj.previous_page_number }}"  {% endif %} >Previous</a></li>
                     {% endif %}
                                             
@@ -135,14 +135,14 @@ Reviews by Style
 
                         <!-- Next button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3" {% if page_obj.next_page_number == page_obj.paginator.num_pages %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use Last Button"
+                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3 shadow-none" {% if page_obj.next_page_number == page_obj.paginator.num_pages %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use Last Button"
                             {% else %} href="?page={{ page_obj.next_page_number }}" {% endif %}>Next
                             </a>
                         </li>
 
                         <!-- Last button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3 m-3 p-3"
+                            <a class="page-link bg-dark border-1 rounded-3 m-3 p-3 shadow-none"
                                 href="?page={{ page_obj.paginator.num_pages }}">Last
                             </a>
                         </li>
@@ -162,7 +162,7 @@ Reviews by Style
                     {% if user.is_authenticated %}
 
                         <!-- Review now button -->
-                        <a href="{% url 'add_review' %}"><button class="btn btn-warning btn-lg m-2 fw-bold">Review you
+                        <a href="{% url 'add_review' %}"><button class="btn btn-warning btn-lg m-2 fw-bold shadow-none">Review you
                                 Beer Now! </button></a>
                     {% else %}
 
@@ -180,7 +180,7 @@ Reviews by Style
 
         <!-- Back button -->
         <div class="m-2 text-center">
-            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3">Back to Reviews</a>
+            <a href="{% url 'review_list'%}" class="btn btn-submit btn-lg fw-bold mt-3 shadow-none">Back to Reviews</a>
         </div>
     </section>
 

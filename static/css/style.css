@@ -114,9 +114,10 @@ ul.dropdown-menu {
 
 .btn:focus:active {
     background-image: none;
-    outline: 0;
-    box-shadow: none;
+    outline: 0!important;
+    box-shadow: none!important;
   }
+  
 .btn-submit {
     background-color: var(--green);
     color: var(--black)!important;
