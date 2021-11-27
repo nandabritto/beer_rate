@@ -10,7 +10,7 @@ Cheers!
 
 </p>
 <p align="center">
-<img src="media/readme/bestbeer_mockup.jpg">
+<img src="media/readme/bestbeer_mockup.png">
 </p>
 
 Live app link [here](https://bestbeer-app.herokuapp.com)
@@ -191,11 +191,13 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 2. Each review card contains beer name, style, image, the preview of beer review (full available on beer detail page), bitterness and money-value level, beer rating, author and publication date. 
 
-* The entire card is a link to the beer details page.
+* The entire card is a link to the beer review details page.
 
 <img height="50%" src="media/readme/features/beer_card.jpg">
 
-### **Beer detail page** 
+* When beer name is lenght, a truncate class should be applied. The full name can be seen on beer review details page.
+
+### **Beer  review detail page** 
 
 1. On this page users can access the entire content for a beer review. 
 
@@ -220,7 +222,7 @@ The chosen fonts were Lobster for headings, and navbar and Open Sans for lists, 
 
 1. If users click to delete a review, they will be redirected to a deleted page to confirm the deletion or cancel it. 
 
-<img width="800" src="">
+<img width="800" src="media/readme/features/deletereview-container.png">
 
 ### **Beer Style and Beer Categories Pages** 
 
@@ -256,15 +258,15 @@ Python 3.0
 
 ## Frameworks, Libraries & Programs Used
 
-Balsamiq: Balsamiq was used to create the wireframes during the design process.
-Favicon Generator: Used to create favicon used on the website.
-Font Awesome: Font Awesome was used on all pages to add icons for aesthetic and UX purposes.
-Grammarly: Used to correct any spell mistakes on readme and app text.
-Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-GitHub: GitHub is used to store the project's code after being pushed from Git.
-Google Fonts: Google fonts are used to add fonts for aesthetic and UX purposes.
-Django: Framework used to add structure to the platform. 
-PGAdmin: Used to administer Database and generate DER.
++ Balsamiq: Balsamiq was used to create the wireframes during the design process.
++ Favicon Generator: Used to create favicon used on the website.
++ Font Awesome: Font Awesome was used on all pages to add icons for aesthetic and UX purposes.
++ Grammarly: Used to correct any spell mistakes on readme and app text.
++ Git: Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
++ GitHub: GitHub is used to store the project's code after being pushed from Git.
++ Google Fonts: Google fonts are used to add fonts for aesthetic and UX purposes.
++ Django: Framework used to add structure to the platform. 
++ PGAdmin: Used to administer Database and generate DER.
 
 ## Testing and Code validation 
 
@@ -278,6 +280,10 @@ All testing and code validation details are described in a separate file called 
 | Update Review Unittest failed when tried to change a review | Debug Update review class models and change save function resolved the problem. 
 | Navbar dropdown opening behind site divs | Add z-index to navbar resolved the problem. 
 | Register feature was not showing the error when it happened | Debug Register function and remove else statement to redirect the user to the same page when it happens. After deleting this part of the function, everything worked fine. 
+| Buttons hidden by footer (only in Chrome | Switch margin-bottom to padding-bottom solved the problem. 
+| Bitterness and Money value with the same value on beer review details page | Changed variable present on HTML resolved the issue. 
+
+
 
 ## Deployment 
 
