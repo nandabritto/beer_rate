@@ -8,6 +8,7 @@ from django.core.paginator import Paginator
 from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseServerError
 
 class HomeView(ListView):
     """ Render homepage view """
@@ -156,3 +157,4 @@ def beer_category_view(request):
 
     return render(request, 'review_list/beercategories.html', {
         'searched': searched, 'beer_review': page_obj})
+

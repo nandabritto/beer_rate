@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load cloudinary %}
+
+{% block title %}
+Beer Search
+{% endblock %}
+
+{% block additional_styles %}
+<!-- Customizible CSS -->
+<style>
+    body {
+        background-image: url("https://res.cloudinary.com/fernandascloud/image/upload/v1637186919/background_2_rydjwk.jpg")!important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section>
+    <!-- 404 error container -->
+    <div class="container no-review text-center ">
+        <div class="bg-dark col-lg-5 col-11 m-auto rounded m-2 p-3 text-light">
+            <h1 class= "display-1 fw-bolder yellow"> 500 </h1>
+            <h2> There was an error.</h2> <hr>
+            <h2> The server is not responding. Please, try again later. </h2>
+        </div>
+    </div>
+
+<!-- Back to reviews page button -->
+<div class="m-2 text-center">
+    <a href="{% url 'home'%}" class="btn btn-submit btn-lg fw-bold mt-3">Home</a>
+    </a>
+</div>
+</section>
+
+
+{% endblock %}
+

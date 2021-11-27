@@ -123,6 +123,18 @@ At the end of the development of this project (phase 1 - before submission day),
 
 ## Python (PEP8) Validation
 
+###  **Django_beerapp App** 
+
+<p float="left">
+        <img src="media/readme/pep8_ss/django_beerapp_urls.png" width="400" height="200" alt="Pep8 validation django_beerapp urls.py"/>
+        <img src="media/readme/pep8_ss/django_beerapp_views.png" width="400" height="200" alt="Pep8 validation django_beerapp views.py"/>
+        <img src="media/readme/pep8_ss/django_beerapp_asgi.png" width="400" height="200" alt="Pep8 validation django_beerapp asgi.py"/>
+        <img src="media/readme/pep8_ss/django_beerapp_wsgi.png" width="400" height="200" alt="Pep8 validation django_beerapp wsgi.py"/>
+        <img src="media/readme/pep8_ss/django_beerapp_settings.png" width="400" height="200" alt="Pep8 validation django_beerapp settings.py"/>
+</p>
+
++ The 4 too long line errors found on settings were related to links from Cloudinary, and Auth Password Validators.
+
 ###  **Members App** 
 
 <p float="left">
