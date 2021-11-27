@@ -77,7 +77,9 @@ All functionality and development of this project were managed using Jira (https
 * Credentials to this management tool will be provided during submission.
 
 <details>
-<summary>All sprits are described here.</summary>
+<summary>All sprints are described here.</summary>
+
+Test cases were linked with every User story presented above, and can be found in TESTING.md(TESTING.md) - Automated testing section. 
 
 * Sprint 1
 
@@ -293,7 +295,7 @@ All testing and code validation details are described in a separate file called 
 | Bugs              | Solutions |
 | ---               | --------- |
 | Database inconsistency during unittests|Restart all projects, adding two different databases (development and production) to make it possible to run tests successfully.
-| Update Review Unittest failed when tried to change a review | Debug Update review class models and change save function resolved the problem. 
+| Update Review and Delete Unittest failed when tried to change or delete a review | Debug Update review class models and change save function resolved the problem. 
 | Navbar dropdown opening behind site divs | Add z-index to navbar resolved the problem. 
 | Register feature was not showing the error when it happened | Debug Register function and remove else statement to redirect the user to the same page when it happens. After deleting this part of the function, everything worked fine. 
 | Buttons hidden by footer (only in Chrome | Switch margin-bottom to padding-bottom solved the problem. 
