@@ -156,3 +156,4 @@ def beer_category_view(request):
 
     return render(request, 'review_list/beercategories.html', {
         'searched': searched, 'beer_review': page_obj})
+

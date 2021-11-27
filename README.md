@@ -143,7 +143,7 @@ Click to see wireframes:
 
 * Colours
 
-The Colour scheme was generated using the eyedropper plugin, to get one colour from the logo image, and [coolors](https://coolors.co/) to generate the colour palette.
+The Colour scheme was generated using the eyedropper plugin, to get one colour from the logo image, and [colors](https://coolors.co/) to generate the colour palette.
 
   <img width="300" src="media/readme/color_pallete.jpg">
 
