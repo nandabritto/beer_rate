@@ -5,13 +5,14 @@ During the code development of each function, tests were in place to be sure tha
 ## Code Validation Testing
 
 ## Automated tests
-========================================================================================
 
 ### **Dango_beerapp** 
 
 One function from django_beerapp views were tested using unit tests. Manual testing were conducted on all others to ensure no issues on platform. 
 
 <p><img src="media/readme/unittests_ss/post_unitest_testoverall.jpg"></p>
+
+========================================================================================
 
 ### **Members App** 
 
@@ -71,7 +72,7 @@ Tests covering User Story:
 | test_models| test_views |  test_forms
 |    ---    |  ---       | ---
 | BeerReviewTestCase() | AddReviewViewTest()  |  CreateBeerFormTest()
-| BeerTestCase            |BeerRatingView()|
+| BeerTestCase()           |BeerRatingView()|
 |            |ReviewDetailViewTests()|
 |            |PostUpdateViewTests()|
 |            |SuccessfulPostUpdateViewTests()|
@@ -101,7 +102,7 @@ Tests covering User Story:
 </details>
 
 <details><summary>
-**Tests covering User Story** - "BEST- 52 Search by Beer name"</summary>
+Tests covering User Story - "BEST- 52 Search by Beer name"</summary>
 
 | test_views |   
 |  ---       |    
@@ -331,7 +332,7 @@ A session was held with an end-user. The feedback obtained is listed below:
 
 On this test, a checklist was developed to guide the user along with all pages and features on the platform. This checklist and the results can be viewed here: 
 
-[Features](media/readme/usertest/userbeta_test1.pdf)
+[Features](media/readme/usertest/userbeta_test1.pdf) <br>
 [Pages](media/readme/usertest/userbeta_test2.pdf)
 
 ### **Response to the user experience test:**
@@ -363,11 +364,15 @@ On this test, a checklist was developed to guide the user along with all pages a
     <img  src="media/readme/wave/wave_beerreviewpage.png" width="60%" alt="Beer Reviews WAVE Results"/>
 </p>
 
++ Alert shown on his page refers to alt image from beer reviews cards. The alt is populate with beer review, and on this SS we can find two reviews for the same beer. 
+
 **Add review Page WAVE analysis**
 
   <p>
     <img  src="media/readme/wave/wave_addreviewpage.png" width="60%" alt="Beer Style Search WAVE (no review) Results"/>
 </p>
+
++ Alert present on this page refers to changing heading order by design. 
 
 **Update review Page WAVE analysis**
 

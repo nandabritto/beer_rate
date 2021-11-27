@@ -265,8 +265,8 @@ I would like to ...
 2. Create a random image database to be added on the post if the user doesn't add a beer image on their review;
 3. Add a beer style JSON database on Beer style form;
 4. Add a beer JSON database on Beer Form; 
-5. Include icon rating for bitterness and money value field on add_review page. 
-6. Include Brewery Name on beer review.
+5. Include icon rating for bitterness and money value field on add_review page; 
+6. Include Brewery Name on beer review;
 7. Include a user profile page with all beer reviews made by them. 
 
 
@@ -285,6 +285,8 @@ Python 3.0
 + Google Fonts: Google fonts are used to add fonts for aesthetic and UX purposes.
 + Django: Framework used to add structure to the platform. 
 + PGAdmin: Used to administer Database and generate DER.
++ Multi Device Website Mockup Generator: Used to generate mockup image.
+
 
 ## Testing and Code validation 
 
@@ -405,7 +407,7 @@ Press Enter. Your local clone will be created.
 ## Work based on other code
 
 [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw) - Used as a base to develop several features like login, registration and beer review form. <br>
-[Pyplane](https://www.youtube.com/channel/UCQtHyVB4O4Nwy1ff5qQnyRw) - Star rating tutorial used to develop beer ratin feature. <br>
+[Pyplane](https://www.youtube.com/channel/UCQtHyVB4O4Nwy1ff5qQnyRw) - Star rating tutorial used to develop beer rating feature. <br>
 [Tutorials Point](https://www.tutorialspoint.com/django-handling-multiple-forms-in-single-view) - Used to add different  django forms on same add review page. <br>
 
 # Acknowledgements
