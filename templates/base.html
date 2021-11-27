@@ -105,7 +105,7 @@
                             <ul class="dropdown-menu" aria-label="Dropdaown Beer Style">
                                 {% for item in cat_style_menu %}
                                 <li>
-                                    <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}
+                                    <a class="dropdown-item" href="{% url 'category' item %}">{{ item|title}}
                                     </a>
                                 </li>
                                 {% endfor %}
@@ -116,7 +116,7 @@
                     <!--  Search beer button -->
                     <form class="d-flex text-end" action="{% url 'beercategory' %}" method="post">
                         {% csrf_token %}
-                        <input class="form-control me-2" type="search" placeholder="Search your beer"
+                        <input class="form-control me-2" type="search" placeholder="Search by beer name"
                             aria-label="Search your beer" name="searched">
                         <button class="btn btn-light btn-outline-dark" name="submit" type="submit">Search</button>
                     </form>
