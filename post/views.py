@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 from .models import BeerReview, BeerStyle
 from .forms import BeerReviewForm, CreateBeerStyleForm, CreateBeerForm
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomeView(ListView):
     """ Render homepage view """
@@ -15,9 +15,11 @@ class HomeView(ListView):
     template_name = 'home.html'
 
 
-class AddReviewView(View):
+class AddReviewView(LoginRequiredMixin, View):
     """ Render add review page """
     template_name = 'add_review.html'
+    login_url = reverse_lazy('login')
+    redirect_field_name = 'redirect_to'
 
     def get_object(self):
         """ Get objects from BeerReview model """
@@ -82,10 +84,12 @@ class BeerRatingView(ListView):
     ordering = ['-pub_date']
 
 
-class BeerStyleCreateView(ListView):
+class BeerStyleCreateView(LoginRequiredMixin, ListView):
     """ Create a beer style on add review page """
     template_name = 'add_review/create_style.html'
     form_class = CreateBeerStyleForm
+    login_url = reverse_lazy('login')
+    redirect_field_name = 'redirect_to'
 
 
 class ReviewDetailView(DetailView):
@@ -94,11 +98,13 @@ class ReviewDetailView(DetailView):
     template_name = 'review_list/review_detail.html'
 
 
-class UpdateReviewView(UpdateView):
+class UpdateReviewView(LoginRequiredMixin, UpdateView):
     """ Update a review after editing """
     model = BeerReview
     form_class = BeerReviewForm
     template_name = 'review_list/review_update.html'
+    login_url = reverse_lazy('login')
+    redirect_field_name = 'redirect_to'
 
     def __init__(self):
         self.updform = None
@@ -111,12 +117,15 @@ class UpdateReviewView(UpdateView):
         return redirect('review_detail', self.updform.pk)
 
 
-class DeleteReviewView(DeleteView):
+class DeleteReviewView(LoginRequiredMixin, DeleteView):
     """ Delete a beer review form """
     model = BeerReview
     form_class = BeerReviewForm
     template_name = 'review_list/review_delete.html'
     success_url = reverse_lazy('review_list')
+    login_url = reverse_lazy('login')
+    redirect_field_name = 'redirect_to'
+
 
 
 def style_category_view(request, style):

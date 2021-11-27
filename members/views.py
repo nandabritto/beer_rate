@@ -9,7 +9,7 @@ def login_user(request):
     """ Login User with username and password, return a message to inform
     if logged or not """
     if request.method == "POST":
-        username = request.POST['username']
+        username = request.POST['username'].lower()
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:

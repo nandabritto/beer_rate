@@ -46,7 +46,7 @@ Review
                             <h3>{{ review.beer_style}}</h3>
                             
                             <!-- Review's beer image -->
-                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="review {{review.beer}} uploaded image">
+                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="{{ review.beer }}" >
 
                             
                             <div class="card-body">
@@ -92,17 +92,15 @@ Review
                         {% if user.is_authenticated %}
                             {% if user.id == review.user_name.id %}
                                 <span class="m-auto">
-                                    <h4>
-                                        <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
+                                        <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white" aria-label="Edit"
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
-                                            <i class="fas fa-edit px-2"></i>
+                                            <i class="fas fa-lg fa-edit px-2"></i>
                                         </a>
-                                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white"
+                                        <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" aria-label="Delete"
                                             id="edit" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                             title="Delete your review">
-                                            <i class="fas fa-trash px-2 pb-2 "></i>
+                                            <i class="fas fa-lg fa-trash px-2 pb-2 "></i>
                                         </a>
-                                    </h4>
                                 </span>
                             {% endif %}
                         {% endif %}
@@ -120,18 +118,18 @@ Review
 
                         <!-- First button -->
                         <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" href="?page=1">First</a></li>
-
+                    
                         <!-- Previous button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3"
-                                href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" {% if page_obj.previous_page_number == 1 %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use First Button"
+                              {% else %}  href="?page={{ page_obj.previous_page_number }}"  {% endif %} >Previous</a></li>
                     {% endif %}
                                             
                     {% if page_obj.has_next %}
 
                         <!-- Next button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3"
-                                href="?page={{ page_obj.next_page_number }}">Next
+                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3" {% if page_obj.next_page_number == page_obj.paginator.num_pages %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use Last Button"
+                            {% else %} href="?page={{ page_obj.next_page_number }}" {% endif %}>Next
                             </a>
                         </li>
 

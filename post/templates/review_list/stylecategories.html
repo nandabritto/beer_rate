@@ -46,7 +46,7 @@ Reviews by Style
                             <h3>{{ review.beer_style}}</h3>
 
                             <!-- Review's beer image -->
-                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container">
+                            <img src="{{ review.beer_image.url }}" class="card-img-top rounded-2 img-container" alt="{{ review.beer }}">
 
                             <!-- Review's card body -->
                             <div class="card-body">
@@ -95,21 +95,19 @@ Reviews by Style
                         {% if user.is_authenticated %}
                             {% if user.id == review.user_name.id %}
                             <span class="m-auto">
-                                <h4>
-
+                                
                                     <!-- Edit button -->
                                     <a href="{% url 'review_update' review.pk %}" class="text-decoration-none text-white"
-                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review">
-                                        <i class="fas fa-edit px-2"></i>
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit your review" aria-label="Edit">
+                                        <i class="fas fa-lg fa-edit px-2"></i>
                                     </a>
 
                                     <!-- Delete button -->
                                     <a href="{% url 'review_delete' review.pk %}" class="text-decoration-none text-white" id="edit"
-                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review">
-                                        <i class="fas fa-trash px-2 pb-2 "></i>
+                                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete your review" aria-label="Delete">
+                                        <i class="fas fa-lg fa-trash px-2 pb-2 "></i>
                                     </a>
-
-                                </h4>
+                              
                             </span>
                             {% endif %}
                         {% endif %}
@@ -119,39 +117,39 @@ Reviews by Style
 
             </div>
 
-            <!-- Cards pagination -->
-            <nav aria-label="Page navigation example ">
-                <ul class="pagination justify-content-center ">
-
-                    <!-- First button -->
+            <!-- Cards pagination  -->
+            <nav aria-label="Page navigation example ">      
+                <ul class="pagination justify-content-center mt-2 mx-auto">
+                                        
                     {% if page_obj.has_previous %}
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3" href="?page=1">First</a></li>
 
+                        <!-- First button -->
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" href="?page=1">First</a></li>
+                    
                         <!-- Previous button -->
-                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3"
-                                href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                        </li>
+                        <li class="page-item"><a class="page-link bg-dark border-1 rounded-3 m-3 p-3" {% if page_obj.previous_page_number == 1 %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use First Button"
+                              {% else %}  href="?page={{ page_obj.previous_page_number }}"  {% endif %} >Previous</a></li>
                     {% endif %}
-
+                                            
                     {% if page_obj.has_next %}
 
                         <!-- Next button -->
                         <li class="page-item">
-                            <a class="page-link bg-dark border-1 rounded-3"
-                                href="?page={{ page_obj.next_page_number }}">Next
+                            <a class="page-link bg-dark border-1 rounded-3 mt-3 mx-1 p-3" {% if page_obj.next_page_number == page_obj.paginator.num_pages %} disabled="true" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Use Last Button"
+                            {% else %} href="?page={{ page_obj.next_page_number }}" {% endif %}>Next
                             </a>
                         </li>
-                        
+
                         <!-- Last button -->
                         <li class="page-item">
-                            <a class="page-link bg-darkborder-1 rounded-3"
+                            <a class="page-link bg-dark border-1 rounded-3 m-3 p-3"
                                 href="?page={{ page_obj.paginator.num_pages }}">Last
                             </a>
                         </li>
+                        
                     {% endif %}
                 </ul>
             </nav>
-
         {% else %}
             <!-- No reviews container -->
             <div class="container no-review">
