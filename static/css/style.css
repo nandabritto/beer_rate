@@ -325,4 +325,8 @@ img {
     #id_beer_style {
         width: 90%
     }
+
+    .margin-bottom {
+        margin-bottom: 30%;
+    }
 }
