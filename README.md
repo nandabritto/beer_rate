@@ -2,7 +2,7 @@
 
 <p align=center>Are you a beer lover?<br/> Would you like to know what people are saying about a beer that you are eager to buy? <br/>
  Would you like to have your review list of all beers you have already tasted in your life?<br/> This App is for you! <br/>
-On beer rating, you can add a review about your favourite beers or research about beers that you are curious to taste!! <br/>
+On Best beer, you can add a review about your favourite beers or research about beers that you are curious to taste!! <br/>
 Check it out! <br/>
 Cheers! 
 
@@ -24,11 +24,11 @@ Live app link [here](https://bestbeer-app.herokuapp.com)
 
     1.1 Register on the website using my username, email and password;
     
-    1.2. Check all beer reviews added on the website;
+    1.2. View all beer reviews added on the website;
     
-    1.3 Check beer review details about all added beers.
+    1.3 View beer review details about all added beers.
     
-    1.4 Search for a beer or beer style on the navbar.  
+    1.4 View for a beer or beer style on the navbar.  
 
 2. As a logged user, I would like to be able to …
 
@@ -77,7 +77,9 @@ All functionality and development of this project were managed using Jira (https
 * Credentials to this management tool will be provided during submission.
 
 <details>
-<summary>All sprits are described here.</summary>
+<summary>All sprints are described here.</summary>
+
+Test cases were linked with every User story presented above, and can be found in TESTING.md(TESTING.md) - Automated testing section. 
 
 * Sprint 1
 
@@ -138,7 +140,7 @@ All functionality and development of this project were managed using Jira (https
 
 ### 4. Skeleton
 
-Wireframes created with Balsamiq. The project was developed from initial wireframes, and some modifications were made during the development process to assure better usability. 
+Wireframes created with Balsamiq. The project was developed from initial wireframes, and some modifications were made during the development process in respose to user feedbacks and to assure the best usability. 
 
 Click to see wireframes:
 
@@ -204,7 +206,7 @@ The chosen fonts were Lobster for headings and navbar and Open Sans for lists, b
 
   <img width="800" src="media/readme/features/beer_reviews.jpg">
 
-2. Each review card contains beer name, style, image, the preview of beer review (full available on beer detail page), bitterness and money-value level, beer rating, author and publication date. 
+2. Each review card contains beer name, style, image, the preview of beer review (fully available on beer detail page), bitterness and money-value level, beer rating, author and publication date. 
 
 * The entire card is a link to the beer review details page.
 
@@ -260,10 +262,10 @@ The chosen fonts were Lobster for headings and navbar and Open Sans for lists, b
 I would like to ...
 
 1. Add an infinite carousel to present beer reviews on the reviews list webpage;
-2. Create a placeholder image database to be added on the post if the user doesn't add a beer image on their review;
+2. Create a random image database to be added on the post if the user doesn't add a beer image on their review;
 3. Add a beer style JSON database on Beer style form;
 4. Add a beer JSON database on Beer Form; 
-5. Include icon rating for bitterness and money value field. 
+5. Include icon rating for bitterness and money value field on add_review page. 
 6. Include Brewery Name on beer review.
 7. Include a user profile page with all beer reviews made by them. 
 
@@ -293,11 +295,12 @@ All testing and code validation details are described in a separate file called 
 | Bugs              | Solutions |
 | ---               | --------- |
 | Database inconsistency during unittests|Restart all projects, adding two different databases (development and production) to make it possible to run tests successfully.
-| Update Review Unittest failed when tried to change a review | Debug Update review class models and change save function resolved the problem. 
+| Update Review and Delete Unittest failed when tried to change or delete a review | Debug Update review class models and change save function resolved the problem. 
 | Navbar dropdown opening behind site divs | Add z-index to navbar resolved the problem. 
 | Register feature was not showing the error when it happened | Debug Register function and remove else statement to redirect the user to the same page when it happens. After deleting this part of the function, everything worked fine. 
 | Buttons hidden by footer (only in Chrome | Switch margin-bottom to padding-bottom solved the problem. 
 | Bitterness and Money value with the same value on beer review details page | Changed variable present on HTML resolved the issue. 
+|Logged users could edit or delete reviews from other users if using delete and update urls directly pointing to others reviews pk| handled using loginmixing on post app functions|
 
 
 
@@ -413,4 +416,4 @@ Press Enter. Your local clone will be created.
 I would also like to thank:
 
 + My husband Guilherme for all the support on stressful moments, helping to figure out lots of bugs and for reviewing everything.
-+ Code institute tutors, and CI Mentor Miguel Martinez and my CI Mentor Daisy Mcgirr for the guidance and help with several issues adn bugs.
++ Code institute tutors, and CI Mentor Miguel Martinez and my CI Mentor Daisy Mcgirr for the guidance and help with several issues and bugs.

@@ -6,6 +6,13 @@ During the code development of each function, tests were in place to be sure tha
 
 ## Automated tests
 ========================================================================================
+
+### **Dango_beerapp** 
+
+One function from django_beerapp views were tested using unit tests. Manual testing were conducted on all others to ensure no issues on platform. 
+
+<p><img src="media/readme/unittests_ss/post_unitest_testoverall.jpg"></p>
+
 ### **Members App** 
 
 All functions on the members' app were tested using unit tests. 
@@ -19,7 +26,22 @@ All functions on the members' app were tested using unit tests.
   * Members Unittests Overall
 <p><img src="media/readme/unittests_ss/members_unitest_membersoverall.jpg"></p>
 
+<details>
+<summary>
+Tests covering User Story:
+
++  "BEST-20 As a user I want to create my user profile"
+</summary>
+
+| test_forms| test_views |  
+|    ---    |  ---       |
+| CreateSignUpFormTest() |  TestRegister() |  
+|CreateSignUpFormTestInvalid()|TestLogin()|
+||TestLogout()|   | 
+
+</details>
 ========================================================================================
+
 ### **Post App** 
 
   * Views 
@@ -32,10 +54,60 @@ All functions on the members' app were tested using unit tests.
 <p><img src="media/readme/unittests_ss/post_unitest_testurls.jpg"></p>
 
  * Models
+
 <p><img src="media/readme/unittests_ss/post_unitest_testmodels.jpg"></p>
 
   * Post Unittests Overall
 <p><img src="media/readme/unittests_ss/post_unitest_testoverall.jpg"></p>
+
+<details>
+<summary> Tests covering User Stories: 
+
++ "BEST-2 As a user I want to add a review of my beer"
++ "BEST-3 - As a user I want to add a picture on my beer review"
++ "BEST-46 - As a user I want to add a rating to my beer"
+</summary>
+
+| test_models| test_views |  test_forms
+|    ---    |  ---       | ---
+| BeerReviewTestCase() | AddReviewViewTest()  |  CreateBeerFormTest()
+| BeerTestCase            |BeerRatingView()|
+|            |ReviewDetailViewTests()|
+|            |PostUpdateViewTests()|
+|            |SuccessfulPostUpdateViewTests()|
+</details>
+
+<details>
+<summary>Tests covering User Story:
+
++ "BEST-45 -As a user I want to add a beer style "
+</summary>
+
+| test_forms| test_models |  test_forms |
+|    ---    |  ---       |    ----- |
+| BeerStyleCreateView() |  BeerStyleTestCase() |  CreateBeerStyleFormTest()|
+
+</details>
+
+<details>
+<summary>Tests covering User Story
+
++ "BEST-57 - As user I want to search my Beer by Style "</summary>
+
+| test_views |   
+|  ---       |    
+| TestStyleCategoryView() |  
+
+</details>
+
+<details><summary>
+**Tests covering User Story** - "BEST- 52 Search by Beer name"</summary>
+
+| test_views |   
+|  ---       |    
+| TestStyleCategoryView() |  
+
+</details>
 
 ### **Overal Test on plataform** 
 
@@ -43,13 +115,17 @@ At the end of the development of this project (phase 1 - before submission day),
 
 <p><img src="media/readme/unittests_ss/coverage_beer_app.jpg"></p>
 
++ **django_beerapp/views.py**
+
+    Uncovered lines on django_beeraap/views are related to pages error handling (400, 403,404 and 500 errors) for the entire platform. These functions were tested manually and no errors have been found. 
+
 + **post/views.py**
 
-    The lines uncovered by unit tests on post/views.py refer to the update view function and are described in the bugs section in the readme.md. As this automated test was not done, manual tests were conducted to ensure that features were working as expected and without errors. 
+    The lines uncovered by unit tests on post/views.py refers to the update and delete views functions and are described in the bugs section in the readme.md. As this automated test was not done, manual tests were conducted to ensure that features were working as expected and without errors. 
 
 + **django_beerapp/settings.py**
 
-    These uncovered lines refer to databased used (f production or development), and it was tested manually as well. 
+    These uncovered lines refer to databased used (if production or development), and it was tested manually as well. 
 
 ## Integration Test Case
 
@@ -159,7 +235,25 @@ At the end of the development of this project (phase 1 - before submission day),
         <img src="media/readme/pep8_ss/post-urls.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
         <img src="media/readme/pep8_ss/post-views.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 </p>
-        
+
+## HTML Code Validation
+
+All Html pages were validated using W3 tool. 
+
+All results can be foound here
+
+<img src="media/readme/htmlvalidation/validation_home.png" width="400" height="200" alt="Pep8 validation post admin.py"/>
+<img src="media/readme/htmlvalidation/validation_register.png" width="400" height="200" alt="Pep8 validation post apps.py"/>
+<img src="media/readme/htmlvalidation/validation_login.png" width="400" height="200" alt="Pep8 validation post forms.py"/>
+<img src="media/readme/htmlvalidation/validation_stylesearch.png" width="400" height="200" alt="Pep8 validation post models.py"/>
+<img src="media/readme/htmlvalidation/validation_stylesearchnoreview.png" width="400" height="200" alt="Pep8 validation post test_models.py"/>
+<img src="media/readme/htmlvalidation/validation_beerseach.png" width="400" height="200" alt="Pep8 validation post test_urls.py"/>
+<img src="media/readme/htmlvalidation/validation_beerseachnoreview.png" width="400" height="200" alt="Pep8 validation post test_views.py"/>
+<img src="media/readme/htmlvalidation/validation403page.png" width="400" height="200" alt="Pep8 validation post urls.py"/>
+<img src="media/readme/htmlvalidation/validation404page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+<img src="media/readme/htmlvalidation/validation500page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+<img src="media/readme/htmlvalidation/validation400page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
+
 ## CSS Code Validation
 
 <p float="left">

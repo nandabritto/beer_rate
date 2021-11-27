@@ -13,5 +13,5 @@ urlpatterns = [
 
 handler404 = "django_beerapp.views.page_not_found_view"
 handler500 = "django_beerapp.views.my_custom_error_view"
-handler403 = "django_beerapp.views.my_custom_permission_denied_view"
+handler403 = 'django_beerapp.views.error_403'
 handler400 = "django_beerapp.views.my_custom_bad_request_view"
