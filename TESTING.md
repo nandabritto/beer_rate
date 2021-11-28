@@ -407,3 +407,7 @@ On this test, a checklist was developed to guide the user along with all pages a
   <p>
     <img  src="media/readme/wave/wave_nobeersearch.png" width="60%" alt="Beer Search (no review) WAVE Results"/>
 </p>
+
+# Unfixed bugs
+
+- Django Create Beer Style class based view is case Sensitivewhich is allowing user to create "duplicated" beer styles that would be shown in lower case in navbar dropdown menu. To fix this bug will require an adicional function on Post App Forms (CreateBeerStyleForm()) and will be fix as high priority in the future.
