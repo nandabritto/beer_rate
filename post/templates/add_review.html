@@ -32,11 +32,11 @@ Add Review
 			<div>
 				<div class="container p-3 mt-3">
 					<div class="bg-dark  col-lg-9 col-11 m-auto rounded">
-						<h1 class="text-light text-center bold yellow p-3"> Add your beer review <hr> </h1>
+						<h1 class="text-light text-center bold yellow p-3"> Add your beer review </h1><hr> 
 						<div class="text-light">
 
 							<!-- Review form -->
-							<form method="POST" actions="/add_review" enctype="multipart/form-data" class=" review-form">
+							<form method="POST" enctype="multipart/form-data" class=" review-form">
 								{% csrf_token %}
 
 								<!-- Add Beer Style -->
@@ -106,7 +106,7 @@ Add Review
 
 			<!-- Beer Style Modal -->
 			<div>
-				<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-label="BeerStyleModal" aria-hidden="true">
+				<div class="modal fade" id="beerstylemodal" tabindex="-1" aria-label="Beer Style Modal" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
 
@@ -118,9 +118,9 @@ Add Review
 
 							<!-- Create a beer style form-->
 							<div class="modal-body">
-								<form method="POST" actions="/add_review">
+								<form method="POST">
 									{% csrf_token %}
-									{{ style_form.beer_style }}
+									{{ style_form.as_p }}
 
 									<!-- Create style submit button -->
 									<div class="m-2 text-center">
@@ -147,9 +147,9 @@ Add Review
 
 							<!-- Create a beer form-->
 							<div class="modal-body">
-								<form method="POST" actions="">
+								<form method="POST">
 									{% csrf_token %}
-									{{ beer_form }}
+									{{ beer_form.as_p }}
 
 									<!-- Create beer submit button -->
 									<div class="m-2 text-center">
