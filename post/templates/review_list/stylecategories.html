@@ -162,15 +162,13 @@ Reviews by Style
                     {% if user.is_authenticated %}
 
                         <!-- Review now button -->
-                        <a href="{% url 'add_review' %}"><button class="btn btn-warning btn-lg m-2 fw-bold shadow-none">Review you
-                                Beer Now! </button></a>
+                        <a href="{% url 'add_review' %}" class="btn btn-warning btn-lg m-2 fw-bold shadow-none">Review you
+                                Beer Now! </a>
                     {% else %}
 
                         <!-- Login now button -->
-                        <a href="{% url 'login' %}">
-                            <button class="btn btn-warning btn-lg m-2 fw-bold">Login and
+                        <a href="{% url 'login' %}" class="btn btn-warning btn-lg m-2 fw-bold">Login and
                                 Review!
-                            </button>
                         </a>
 
                     {% endif %}
