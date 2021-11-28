@@ -364,7 +364,11 @@ On this test, a checklist was developed to guide the user along with all pages a
     <img  src="media/readme/wave/wave_beerreviewpage.png" width="60%" alt="Beer Reviews WAVE Results"/>
 </p>
 
-+ Alert shown on his page refers to alt image from beer reviews cards. The alt is populate with beer review, and on this SS we can find two reviews for the same beer. 
++ 2 alerts on this page: 
+
+    1. Alert shown on his page refers to alt image from beer reviews cards. The alt is populate with beer review, and on this SS we can find two reviews for the same beer. 
+
+    2. Redundant link is a design choice to improve usability on pagination. 
 
 **Add review Page WAVE analysis**
 
@@ -403,3 +407,7 @@ On this test, a checklist was developed to guide the user along with all pages a
   <p>
     <img  src="media/readme/wave/wave_nobeersearch.png" width="60%" alt="Beer Search (no review) WAVE Results"/>
 </p>
+
+# Unfixed bugs
+
+- Django Create Beer Style class based view is case Sensitivewhich is allowing user to create "duplicated" beer styles that would be shown in lower case in navbar dropdown menu. To fix this bug will require an adicional function on Post App Forms (CreateBeerStyleForm()) and will be fix as high priority in the future.
