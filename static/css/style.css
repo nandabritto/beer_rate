@@ -1,7 +1,5 @@
 /*------------------------ Color settings  ---------------------- */
 
-
-
 :root {
     --green: #718f5a;
     --white: #f7F7F1;
@@ -63,7 +61,6 @@ a:hover {
     color: var(--green);
 }
 
-
 /*------------------------ Background settings  ---------------------- */
 
 .bg {
@@ -89,6 +86,7 @@ a:hover {
 }
 
 /*------------------------ Navbar ---------------------- */
+
 .navbar {
     z-index: 100 !important;
 }
@@ -114,13 +112,13 @@ ul.dropdown-menu {
 
 .btn:focus:active {
     background-image: none;
-    outline: 0!important;
-    box-shadow: none!important;
-  }
-  
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
 .btn-submit {
     background-color: var(--green);
-    color: var(--black)!important;
+    color: var(--black) !important;
 }
 
 .btn-cancel {
@@ -147,7 +145,7 @@ ul.dropdown-menu {
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
     font-weight: 600;
-    
+
 }
 
 .fa-edit:hover {
@@ -163,7 +161,7 @@ ul.dropdown-menu {
     font-weight: 200;
 }
 
-.page-link:hover:not([disabled]), 
+.page-link:hover:not([disabled]),
 .page-link:focus {
     color: var(--red);
     font-weight: 800;
@@ -256,6 +254,7 @@ img {
 }
 
 /*------------------------ Star rating  ---------------------- */
+
 .checked {
     color: var(--yellow);
 }
@@ -307,7 +306,6 @@ img {
 
     .margin-screen-md {
         margin: 10%;
-
     }
 
     #id_username,

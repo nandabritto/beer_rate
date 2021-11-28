@@ -237,6 +237,8 @@ At the end of the development of this project (phase 1 - before submission day),
         <img src="media/readme/pep8_ss/post-views.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 </p>
 
++ Models error on line 71 is related to Cloudinary defauld image link. 
+
 ## HTML Code Validation
 
 All Html pages were validated using W3 tool. 
