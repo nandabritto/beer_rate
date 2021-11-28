@@ -257,13 +257,13 @@ All results can be foound here
 <img src="media/readme/htmlvalidation/validation500page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 <img src="media/readme/htmlvalidation/validation400page.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 
-+ While validating Add revieiw page some warnings and one error could be gound :
++ While validating Add revieiw page some warnings and one error could be found :
 
-  1. Warning: Possible misuse of aria-label. 
-    This warning can be foun in 2 occurences in the code and  is being added under the hood by Django (not present in original code). The aria label should be present in all fields by design to ensure thar accessibility could be reach at maximum level.
+  1. **Warning:** Possible misuse of aria-label. 
+    This warning can be found in 2 occurences in the code. These are added by Django under the hood (not present in original code). The aria label should be present in all fields by design to ensure that accessibility could be reach at maximum level.
 
-  2. Duplicate ID id_beer_style. 
-    On this case the same Django issue is happening. The id_beer_style is added by django forms ({ style_form.as_p }}) and is not present in the original code. On this way, this error is a known bug and will be added to this section as well.  
+  2. **Error:** Duplicate ID id_beer_style. 
+    On this case the same Django issue is happening. The id_beer_style is added by django forms when using "{{ style_form.as_p }}" and is not present in the original code. On this way, this error is a known bug and will be added to this section as well.  
 
 <img src="media/readme/htmlvalidation/validatios_add_reviewpage.png" width="400" height="200" alt="Pep8 validation post views.py"/>
 
@@ -425,4 +425,4 @@ On this test, a checklist was developed to guide the user along with all pages a
 
 - Django Create Beer Style class based view is case Sensitivewhich is allowing user to create "duplicated" beer styles that would be shown in lower case in navbar dropdown menu. To fix this bug will require an adicional function on Post App Forms (CreateBeerStyleForm()) and will be fix as high priority in the future.
 
-- Django Automated Forms Creation added the same Id twice in the code when the form is loaded on the page. This bug was found on validation proccess and could not be solved because its is being added under the hood by Django. 
+- Django Automated Forms Creation added the same Id twice in the code when the form is loaded on the page. This bug was found on validation proccess and could not be solved because its is being added by Django under the hood. 
